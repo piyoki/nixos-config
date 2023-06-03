@@ -34,6 +34,7 @@ in
     ghostscript
     gnumake
     gnupg
+    gotop
     graphicsmagick
     htop
     httpie
