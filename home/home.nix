@@ -22,25 +22,36 @@ in
   home.stateVersion = "23.05";
 
   home.packages = with pkgs; [
+    bat
+    gnumake
+    gcc
     btop
     delta
     fd
+    ffmpeg
+    fish
     fish
     fzf
+    ghostscript
+    gnupg
+    graphicsmagick
     htop
     httpie
     lazygit
+    lf
     luajit
     neovim
-    oh-my-fish
     python3
     ripgrep
     shfmt
     stylua
+    trash-cli
     tree-sitter
+    ueberzugpp
     vivid
     xdg-user-dirs
     yadm
+    zoxide
 
     # devops-related
     ansible
