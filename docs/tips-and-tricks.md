@@ -267,3 +267,19 @@ home.file.".config/polybar/script/mic.sh" = { # <- copy source file to destinati
 
 ## Flakes
 
+### Introduction
+
+- Flakes is an "upcoming feature" of the Nix package manager.
+- Specify code dependencies declaratively (will be stored in `flake.lock`, e.g `home-manager`)
+- Rebuilding and updating whole system made easy
+- Very useful tool to build you rown config
+  - Multiple configs in one
+  - People with GitHub dotfiles will feel right at home
+
+### Getting Started
+
+### Configuration
+
+### Updating
+
+### Flakes on fresh install
