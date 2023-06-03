@@ -43,12 +43,15 @@
   };
 
   nix = {
+    # enable flake
     extraOptions = "experimental-features = nix-command flakes";
     package = pkgs.nixFlakes;
     settings = {
+      # auto cleanup 
       auto-optimise-store = true;
       max-jobs = lib.mkDefault 8;
     };
+    # garbage collection
     gc = {
       automatic = true;
       dates = "weekly";
