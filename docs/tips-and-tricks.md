@@ -1,7 +1,13 @@
 # Configuration Tips
 
+- [Links](#links)
 - [Updating & Upgrading](#updating-upgrading)
 - [Garbage Collection](#updating-upgrading)
+- [Home Manager](#home-mannager)
+
+## Links
+
+- [YouTube - NixOS Setup Guide - Configuration/Home-Manager/Flakes](https://www.youtube.com/watch?v=AGVXJ-TIv3Y&t=2172s)
 
 ## Updating & Upgrading
 
@@ -41,7 +47,7 @@ system.autoUpgrade = {
 
 ### Commands
 
-<details><summary>Remove undeclared packaged, dependencies and symlinks</summary>
+<details><summary>Remove undeclared packaged, dependencies, and symlinks</summary>
 </br>
 
 ```bash
@@ -115,8 +121,8 @@ nix = {
 ## Home-Manager
 
 - It's like `configuration.nix`, but for the user environment.
-- Plenty more options to declare package
-- Also a better way to manage dotfiles
+- Plenty more options to declare packages
+- A better way to manage dotfiles
 
 ### Getting Started
 
@@ -129,6 +135,119 @@ nix = {
 <details><summary>Initialize (as a user)</summary>
 </br>
 
-Add the channel
+Add the home-manager channel
 
-> **Warning**: Need to be run with root privileges if you want to use the NixOS Module
+> **Warning**: Need to run with root privileges if you want to use the NixOS Module
+
+```bash
+# add
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
+# list
+sudo nix-channel --list
+# remove
+sudo nix-channel --remove release-23.05.tar.gz
+# update
+sudo nix-channel --update
+```
+
+</details>
+
+<details><summary>NixOS Module (Recommended)</summary>
+</br>
+
+Add to `configuration.nix`
+
+```haskell
+# configuration.nix
+let
+  user = "kev";
+in
+{
+  imports = [ <home-manager/nixos> ];
+
+  users.users.${user} = {
+    isNormalUser = true;
+  }
+
+  home-manager.users.${user} = { pkgs, ... }: {
+    home.packages = [ pkgs.htop pkgs.httpie ];
+  }
+}
+```
+
+Alternatively, add to a separate `home.nix` file (Recommended)
+
+```haskell
+# configuration.nix
+let
+  user = "kev";
+in
+{
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${user} = import ./home.nix;
+  };
+}
+```
+
+```haskell
+# home.nix
+{ config, pkgs, ... }:
+
+let
+  user = "kev";
+in
+{
+  imports = [
+    ./apps/app.nix # <- app-configs go here
+  ];
+
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
+  home.stateVersion = "23.05";
+  home.packages = with pkgs; [
+    htop
+    httpie
+  ];
+}
+```
+
+</details>
+
+### Dotfiles
+
+<details><summary>Copy/Symlinks</summary>
+</br>
+
+Migrate config files
+
+```haskell
+#+BEGIN_SRC nix
+home.file = {
+  ".config/alacritty/alacritty.yml".text = ''
+    {"font": {"bild": {"style":"Bold"}}}
+  '';
+};
+#+END_SRC
+```
+
+</details>
+
+<details><summary>Stored files (also with no link to NixOS)</summary>
+</br>
+
+```haskell
+#+BEGIN_SRC nix
+home.file.".doom.d" = {
+  source ./doom.d;
+  recursive = true;
+  onChange = builtins.readFile ./doom.sh; # <- run this script when there are changes made to ".doom.d"
+};
+home.file.".config/polybar/script/mic.sh" = { # <- copy source file to destination path
+  source = ./mic.sh;
+  executable = true;
+}
+
+#+END_SRC
+```
