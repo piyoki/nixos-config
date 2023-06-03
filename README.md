@@ -21,3 +21,4 @@ This repo contains declaritive configuration of few NixOS system, with ~100% con
 ## References
 
 - [How to Learn Nix](https://ianthehenry.com/posts/how-to-learn-nix)
+- [Nix Pills](https://nixos.org/guides/nix-pills/index.html)
