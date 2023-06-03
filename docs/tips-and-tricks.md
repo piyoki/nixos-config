@@ -1,13 +1,25 @@
-# Configuration Tips
+# Tips & Tricks
 
 - [Links](#links)
+- [Examples](#examples)
+- [Extras](#extras)
 - [Updating & Upgrading](#updating-upgrading)
 - [Garbage Collection](#updating-upgrading)
 - [Home Manager](#home-mannager)
+- [Flakes](#flakes)
 
 ## Links
 
 - [YouTube - NixOS Setup Guide - Configuration/Home-Manager/Flakes](https://www.youtube.com/watch?v=AGVXJ-TIv3Y&t=2172s)
+
+## Extras
+
+- [NixOS Learn](https://nixos.org/learn.html/)
+- [Nix Pills](https://nixos.org/guides/nix-pills/)
+
+## Examples
+
+- [List of reference configurations](https://nixos.wiki/wiki/Configuration_Collection)
 
 ## Updating & Upgrading
 
@@ -34,7 +46,7 @@ sudo nixos-rebuild switch --upgrade
 <details><summary>Configuration</summary>
 </br>
 
-```haskell
+```nix
 system.autoUpgrade = {
     enable = true;
     channel = "https://nixos.org/channels/nixos-unstable";
@@ -105,7 +117,7 @@ sudo nix-collect-garbage -d
 <details><summary>Configuration</summary>
 </br>
 
-```haskell
+```nix
 nix = {
   settings.auto-optimize-store = true;
   gc = {
@@ -128,7 +140,8 @@ nix = {
 
 - [GitHub](https://github.com/nix-community/home-manager/)
 - [Manual](https://nix-community.github.io/home-manager/index.html)
-- [Appendix A](https://nix-community.github.io/home-manager/options.html)
+- [Appendix A - Configuration Options](https://nix-community.github.io/home-manager/options.html)
+- [Appendix B - NixOS Module Options](https://nix-community.github.io/home-manager/nixos-options.html)
 
 ### Setup
 
@@ -157,7 +170,7 @@ sudo nix-channel --update
 
 Add to `configuration.nix`
 
-```haskell
+```nix
 # configuration.nix
 let
   user = "kev";
@@ -177,7 +190,7 @@ in
 
 Alternatively, add to a separate `home.nix` file (Recommended)
 
-```haskell
+```nix
 # configuration.nix
 let
   user = "kev";
@@ -191,7 +204,7 @@ in
 }
 ```
 
-```haskell
+```nix
 # home.nix
 { config, pkgs, ... }:
 
@@ -222,7 +235,7 @@ in
 
 Migrate config files
 
-```haskell
+```nix
 #+BEGIN_SRC nix
 home.file = {
   ".config/alacritty/alacritty.yml".text = ''
@@ -237,7 +250,7 @@ home.file = {
 <details><summary>Stored files (also with no link to NixOS)</summary>
 </br>
 
-```haskell
+```nix
 #+BEGIN_SRC nix
 home.file.".doom.d" = {
   source ./doom.d;
@@ -251,3 +264,6 @@ home.file.".config/polybar/script/mic.sh" = { # <- copy source file to destinati
 
 #+END_SRC
 ```
+
+## Flakes
+
