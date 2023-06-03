@@ -1,0 +1,1 @@
+/home/kev/.local/share/omf/themes/sashimi/fish_prompt.fish

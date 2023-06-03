@@ -28,7 +28,6 @@
     wget
   ];
   environment.shells = with pkgs; [ fish ];
-  environment.sessionsVariables.EDITOR = nvim
 
   system= {
     stateVersion = "23.05";
