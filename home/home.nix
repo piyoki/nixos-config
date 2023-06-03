@@ -2,6 +2,10 @@
 
 let
   user = (import ../vars.nix).user;
+  python-pkgs = python-pkgs: with python-pkgs; [
+    requests
+    black
+  ];
 in
 {
   imports =
@@ -11,6 +15,7 @@ in
           (readDir ./apps)));
 
   programs.home-manager.enable = true;
+  programs.go.enable = true;
 
   home.username = user;
   home.homeDirectory = "/home/${user}";
@@ -22,14 +27,36 @@ in
     fd
     fish
     fzf
-    go
     htop
     httpie
     lazygit
+    luajit
     neovim
+    oh-my-fish
+    python3
     ripgrep
+    shfmt
+    stylua
+    tree-sitter
     vivid
     xdg-user-dirs
     yadm
+
+    # devops-related
+    ansible
+    terraform
+    terragrunt
+
+    # python-related
+    black
+
+    # nodejs-related
+    nodePackages.prettier
+    nodejs_latest
+    yarn
+
+    # go-related
+    golangci-lint
+    gopls
   ];
 }
