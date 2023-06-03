@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   user = "kev";
@@ -81,6 +81,25 @@ in
     autoUpgrade = {
       enable = true;
       channel = "https://nixos.org/channels/nixos-unstable";
+    };
+  };
+
+  nixpkgs = {
+    config.allowUnfree = true;
+    hostPlatform = lib.mkDefault "x86_64-linux";
+  };
+
+  nix = {
+    extraOptions = "experimental-features = nix-command flakes";
+    package = pkgs.nixFlakes;
+    settings = {
+      auto-optimise-store = true;
+      max-jobs = lib.mkDefault 8;
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete older-than 7d";
     };
   };
 

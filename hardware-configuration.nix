@@ -65,24 +65,6 @@
     nameservers = ["10.178.0.5"];
   };
 
-  nixpkgs = {
-    config.allowUnfree = true;
-    hostPlatform = lib.mkDefault "x86_64-linux";
-  };
-
-  nix = {
-    extraOptions = "experimental-features = nix-command flakes";
-    package = pkgs.nixFlakes;
-    settings = {
-      auto-optimise-store = true;
-      max-jobs = lib.mkDefault 8;
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete older-than 7d";
-    };
-  };
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # High-DPI console
