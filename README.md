@@ -5,8 +5,8 @@
 
 <p align="center">
     <img src="https://custom-icon-badges.herokuapp.com/github/license/yqlbu/nixos-config?logo=law&color=orange" alt="License"/>
-    <img src="https://img.shields.io/static/v1?logo=nixos&logoColor=white&label=&message=Built%20with%20Nix&color=41439a" alt="License"/>
-    <img src="https://custom-icon-badges.herokuapp.com/badge/nixos-22.3-navy.svg?logo=kubernetes&logoColor=white" alt="Kubernetes">
+    <img src="https://img.shields.io/static/v1?logo=nixos&logoColor=white&label=&message=Built%20with%20Nix&color=41439a" alt="NixOS"/>
+    <img src="https://custom-icon-badges.herokuapp.com/badge/nixos-22.3-navy.svg?logo=nixos&logoColor=white" alt="NixOS">
     <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/yqlbu/nixos-config?logo=history&logoColor=white" alt="lastcommit"/>
 </p>
 
