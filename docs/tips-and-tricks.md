@@ -491,7 +491,7 @@ sudo nixos-rebuild switch --flake .#nixos
 
 ### Updating
 
-> **Note**: This will update the `flake.lock` file
+> **Note**: This will update the `flake.lock` file. If the flake is hosted on GitHub, then every time before you rebuild the system, you need to run `git add .` to make sure flake can pick up any new local changes.
 
 ```bash
 # update state lock
@@ -508,7 +508,7 @@ sudo nixos-rebuild switch --flake .#nixos
 sudo su
 nix-env -iA nixos.git
 git clone <repo url> /mnt/<path>
-nixos-install --flae .#<host>
+nixos-install --flak .#<host>
 reboot
 ```
 
