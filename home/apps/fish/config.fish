@@ -36,7 +36,7 @@ abbr lg "lazygit"
 abbr top "btop"
 abbr weather "curl wttr.in/"
 abbr lf "lfrun"
-# # programs and system
+# programs and system
 abbr ls "ls -ltrh"
 abbr du "du -d 1 -h"
 abbr kill "killall"
@@ -46,15 +46,22 @@ abbr t "tmux"
 # kubernetes related
 abbr k "kubectl"
 abbr kz "kubectl kustomize"
-# brew
-abbr brew-cleanup "brew cleanup --prune=all"
+# git related
+abbr g  "git"
+abbr gs "git status"
+abbr gc "git checkout"
+abbr gp "git pull"
+abbr gf "git fetch origin --prune"
+abbr gl "git log --all --decorate --oneline --graph"
+abbr gcc "git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
+abbr gcb "git checkout -b"
 # tmux
 abbr t "tmux"
 # neofetch
 abbr logo "neofetch"
 # package manager related
-abbr nb "sudo nixos-rebuild switch --flake .#nixos --verbose"
-abbr up "cd $HOME/nixos-config; nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake .#nixos --verbose"
+abbr nb "sudo nixos-rebuild switch --flake $HOME/Workspace/nixos-config#nixos --verbose"
+abbr up "nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake $HOME/Workspace/nixos-config#nixos --verbose"
 # kubernetes related
 abbr k "kubectl"
 # program
