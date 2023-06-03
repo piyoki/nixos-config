@@ -1,14 +1,20 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running `nixos-help`).
-
 { config, pkgs, ... }:
 
+let
+  user = "kev";
+in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      <home-manager/nixos>
       ./hardware-configuration.nix
     ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${user} = import ./home.nix;
+  };
 
   time.timeZone = "Asia/Hong_kong";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -29,10 +35,11 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kev = {
+  users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
+    shell = pkgs.fish;
     # Add ssh public key
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwdl7F0NrGj+Z6LW6qg50SSC1cm7brKlujQdNt4+Bw6tnxL8uL9FNSBhgcscArCNRSZXw3RTMoyq2gH5SDClMtAstSicf8ReNXl4p5/aR94yE+baUFucHDFtJI1nKUdIy/2gPus9jtVY2AabtC4lhx+LN8tJ6AGHJNQvoQVcdQzGTuy2fk+HdtSm7HKOhAL0vh8tQXx/tHWz1y0sucqfK/ZNN5ATzwpy3/8hWQSwN1avv0mAcMm4Otx3RobIB4CtYcP9qFUM7d2nsa5vSskuB/eL9prz+zhtYnVxU/AdO5AVsSDIl71wBKHA/hC2lZscBaWCMQz61KvDnt+Gxr3Astpeytz9NQZvb1wvm678KrpvSeE6OXqsAYnuGUbgIZ194SShKYTHmpRZQT5presmpKXQQyORaNldx+yqpYTdRbsMjndSpPYauJJUygdnmTpRZ5MXFitckQ9LcHUW9R+HdWNV2yyQaSIjR7FZAjMwWy4ifeUIzcNUMkMKGEHI1q0Dk= kev@arch-desktop"
@@ -43,21 +50,20 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    curl
+    git
+    neofetch
+    nix-prefetch-scripts
+    tmux
+    tree
     vim
     wget
-    curl
-    bash-completion
-    neofetch
-    ripgrep
-    tree
-    fish
-    tmux
-    nix-prefetch-scripts
   ];
+  environment.shells = with pkgs; [ fish ];
+  programs.fish.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
@@ -77,14 +83,23 @@
     };
   };
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
+  system= {
+    stateVersion = "23.05";
+    autoUpgrade = {
+      enable = true;
+      channel = "https://nixos.org/channels/nixos-unstable";
+    };
+  };
 
-  system.stateVersion = "23.05"; # Did you read the comment?
-  hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
+  nix = {
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete older-than 7d";
+    };
+  };
 }
 
