@@ -3,10 +3,9 @@
   programs.tmux = {
     enable = true;
     baseIndex = 1;
-    escapeTime = 0;
-    clock24 = true;
-    shell = "${pkgs.fish}/bin/fish";
+    escapeTime = 10;
     keyMode = "vi";
+    shell = "${pkgs.fish}/bin/fish";
 
     plugins = with pkgs; [
       tmuxPlugins.cpu
@@ -93,16 +92,14 @@
       # foreground_color '#8c8c8c'
       # comment_color '#121212'
       # dark '#1f2226'
-      # lightblue '#b6dcef'
+      # lightblue '#77cff2'
       # darkblue '#48b5cf'
-      # violet '#b6dcef'
-      # darkviolet '#48b5cf'
       # gray '#8c8c8c'
       # black '#262626'
 
       # pane border
       set -g pane-border-style fg='#121212'
-      set -g pane-active-border-style fg='#b6dcef'
+      set -g pane-active-border-style fg='#77cff2'
 
       # message text
       set -g message-style bg='#1f2226',fg='#8c8c8c'
@@ -111,17 +108,16 @@
       set -g status-interval 0.5
 
       # status left
-      set -g status-left '#[bg=#121212]#[fg=#8c8c8c]#{?client_prefix,#[bg=#b6dcef]#[fg=#121212],}  '
+      set -g status-left '#[bg=#121212]#[fg=#8c8c8c]#{?client_prefix,#[bg=#77cff2]#[fg=#121212],}  '
       set-window-option -g window-status-style fg='#1f2226',bg=default
-      set-window-option -g window-status-current-style fg='#b6dcef',bg='#282a36'
+      set-window-option -g window-status-current-style fg='#77cff2',bg='#282a36'
 
       set -g window-status-current-format "#[fg=#121212]#[bg=#1f2226]#[fg=#8c8c8c]#[bg=#1f2226] #I #W #[fg=#1f2226]#[bg=#121212] "
       set -g window-status-format "#[fg=#8c8c8c]#[bg=#121212]#I #W #[fg=#121212] "
 
       # status right
-      # set -g status-right '#[fg=#1f2226,bg=#121212]#[fg=#8c8c8c,bg=#1f2226] #{cpu_percentage}'
-      set -ga status-right '#[fg=#b6dcef,bg=#1f2226]#[fg=#121212,bg=#b6dcef] #{cpu_percentage} '
-      set -ga status-right '#[fg=#1f2226,bg=#b6dcef]#[fg=#48b5cf,bg=#262626]  %a %H:%M #[fg=#8c8c8c]%m-%d '
+      set -ga status-right '#[fg=#77cff2,bg=#1f2226]#[fg=#121212,bg=#77cff2] #{cpu_percentage} '
+      set -ga status-right '#[fg=#1f2226,bg=#77cff2]#[fg=#48b5cf,bg=#262626]  %a %H:%M #[fg=#8c8c8c]%m-%d '
 
       # Tmux Rescurrect
       run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux
