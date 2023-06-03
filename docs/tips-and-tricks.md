@@ -277,7 +277,7 @@ home.file.".config/polybar/script/mic.sh" = { # <- copy source file to destinati
 - Specify code dependencies declaratively (will be stored in `flake.lock`, e.g `home-manager`)
 - Rebuilding and updating whole system made easy
   - Store the entire system based on `git`, setting pin ref to a specific commit if wanted
-- Very useful tool to build you rown config
+- A Very useful tool to build you own configs
   - Multiple configs in one
   - People with GitHub dotfiles will feel right at home
 
@@ -291,14 +291,229 @@ home.file.".config/polybar/script/mic.sh" = { # <- copy source file to destinati
 </details>
 
 <details><summary>Setup</summary>
-</br>
 
-<https://nixos.wiki/wiki/Flakes>
+## Enable flakes in configuration
+
+```nix
+# configuration.nix
+#+BEGIN_SRC nix
+nix = {
+  package = pkgs.nixFlakes;
+  extraOptions = "experimental-features = nix-command flakes";
+};
+#+END_SRC
+```
+
+## Generate
+
+> **Note**: The following commands will generate a flake.nix and flake.lock file
+
+```bash
+# mkdir flake location
+mkdir ~/flake; cd ~/flake
+nix flake init
+```
+
+```nix
+# flake.nix
+{
+  description = "A very basic flake";
+
+  outputs = { self, nixpkgs }: {};
+}
+```
+
+## Inputs and Outputs
+
+### Inputs
+
+Attribute set of all the dependencies used in in the flake
+
+```nix
+# flake.nix
+#+BEGIN_SRC nix
+{
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  };
+}
+#+END_SRC
+```
+
+### Outputs
+
+Functions of an argument that uses inputs for reference
+
+- Configure what you imported
+- Can be pretty much anything : packages / configurations / modules / etc ...
+
+```nix
+# flake.nix
+#+BEGIN_SRC nix
+{
+  outputs = { self, nixpkgs }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      lib = nixpkgs.lib;
+    in {
+      nixosConfigurations = {
+        nixos = lib.nixosSystem {
+          inherit system;
+          modules = [ ./configuration.nix ];
+        };
+      };
+  };
+}
+#+END_SRC
+```
 
 </details>
 
 ### Configuration
 
+<details><summary>NixOS</summary>
+
+## flake.nix
+
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  };
+
+  outputs = { self, nixpkgs }:
+    let
+      system = "x86_64-linux"
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true
+      };
+      lib = nixpkgs.lib;
+    in {
+      nixosConfigurations = {
+        nixos = lib.nixosSystem { # <- the configuration hostname is set to "nixos"
+          inherit system;
+          modules = [ ./configuration.nix ];
+        };
+      };
+    };
+}
+```
+
+## Build
+
+> **Note**: `.(#)` will just build host found in the current location.
+
+Copy config
+
+```bash
+cp -r /etc/nixos/* <flake_location>
+# e.g
+# cp -r /etc/nixos/* ~/flake
+```
+
+Build
+
+```bash
+sudo nixos-rebuild switch --flake .#nixos
+```
+
+> **Note**: `flake.lock` will be generated afterwards
+
+</details>
+
+<details><summary>Home Manager</summary>
+
+## flake.nix
+
+Configure inside nixosConfigurations
+
+```nix
+# flake.nix
+{
+  inputs = {
+    ...
+    home-manager = {
+      url = github:nix-community/home-manager;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { self, nixpkgs, home-manager, ... }:
+    let
+      ...
+      user = "kev";
+    in {
+      nixosConfigurations = {
+        nixos = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./configuration.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.${user} = {
+                imports = [ ./home.nix ];
+              };
+            }
+          ];
+        };
+      };
+    };
+}
+```
+
+## Build
+
+> **Note**: `.(#)` will just build host found in the current location.
+
+Copy config
+
+```bash
+cp -r /etc/nixos/* <flake_location>
+# e.g
+# cp -r /etc/nixos/* ~/flake
+```
+
+Build
+
+```bash
+sudo nixos-rebuild switch --flake .#nixos
+```
+
+> **Note**: `flake.lock` will be generated afterwards
+
+</details>
+
 ### Updating
 
+> **Note**: This will update the `flake.lock` file
+
+```bash
+# update state lock
+nix flake update # --recreate-lock-file
+# rebuild and switch
+sudo nixos-rebuild switch --flake .#nixos
+```
+
 ### Flakes on fresh install
+
+> **Note**: (Prerequisites) Boot into ISO
+
+```bash
+sudo su
+nix-env -iA nixos.git
+git clone <repo url> /mnt/<path>
+nixos-install --flae .#<host>
+reboot
+```
+
+Remove default configurations (Not needed anymore)
+
+```bash
+sudo rm -rf /etc/nixos/configuration.nix
+```
