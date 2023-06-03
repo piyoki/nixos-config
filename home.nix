@@ -14,10 +14,16 @@ in
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
     btop
+    delta
+    fd
     fish
+    fzf
     htop
     httpie
+    lazygit
+    neovim
     ripgrep
+    vivid
     xdg-user-dirs
     yadm
   ];
