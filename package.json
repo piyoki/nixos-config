@@ -5,9 +5,9 @@
   "license": "Apache",
   "repository": "github:daeuniverse/dae",
   "scripts": {
-    "check-broken-link": "./node_modules/.bin/remark --quiet --frail ./docs/ README*.md",
-    "markdown-lint": "./node_modules/.bin/markdownlint-cli2 './docs/**/*.md' README*.md",
-    "markdown-lint-fix": "./node_modules/.bin/markdownlint-cli2-fix './docs/**/*.md' README*.md"
+    "check-broken-link": "./node_modules/.bin/remark --quiet --frail ./docs/ README.md",
+    "markdown-lint": "./node_modules/.bin/markdownlint-cli2 './docs/*.md' README*.md",
+    "markdown-lint-fix": "./node_modules/.bin/markdownlint-cli2-fix './docs/*.md' README*.md"
   },
   "dependencies": {
     "markdownlint-cli2": "^0.7.1",

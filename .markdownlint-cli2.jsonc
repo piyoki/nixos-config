@@ -32,7 +32,9 @@
         "p",
         "span",
         "sup",
-        "iframe"
+        "iframe",
+        "details",
+        "summary"
       ]
     },
     "fenced-code-language": false,

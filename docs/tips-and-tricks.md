@@ -14,8 +14,8 @@
 
 ## Extras
 
-- [NixOS Learn](https://nixos.org/learn.html/)
-- [Nix Pills](https://nixos.org/guides/nix-pills/)
+- [NixOS Learn](https://nixos.org/learn.html)
+- [Nix Pills](https://nixos.org/guides/nix-pills)
 
 ## Examples
 
@@ -140,7 +140,7 @@ nix = {
 
 ### Getting Started
 
-- [GitHub](https://github.com/nix-community/home-manager/)
+- [GitHub](https://github.com/nix-community/home-manager)
 - [Manual](https://nix-community.github.io/home-manager/index.html)
 - [Appendix A - Configuration Options](https://nix-community.github.io/home-manager/options.html)
 - [Appendix B - NixOS Module Options](https://nix-community.github.io/home-manager/nixos-options.html)
@@ -276,11 +276,26 @@ home.file.".config/polybar/script/mic.sh" = { # <- copy source file to destinati
 - Flakes is an "upcoming feature" of the Nix package manager.
 - Specify code dependencies declaratively (will be stored in `flake.lock`, e.g `home-manager`)
 - Rebuilding and updating whole system made easy
+  - Store the entire system based on `git`, setting pin ref to a specific commit if wanted
 - Very useful tool to build you rown config
   - Multiple configs in one
   - People with GitHub dotfiles will feel right at home
 
 ### Getting Started
+
+<details><summary>Flakes Wiki</summary>
+</br>
+
+<https://nixos.wiki/wiki/Flakes>
+
+</details>
+
+<details><summary>Setup</summary>
+</br>
+
+<https://nixos.wiki/wiki/Flakes>
+
+</details>
 
 ### Configuration
 
