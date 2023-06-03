@@ -22,6 +22,7 @@ in
     fd
     fish
     fzf
+    go
     htop
     httpie
     lazygit
