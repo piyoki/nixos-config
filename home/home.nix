@@ -22,13 +22,10 @@ in
   home.stateVersion = "23.05";
 
   home.packages = with pkgs; [
-    bat
+    # essentials
     btop
-    cargo
-    delta
     fd
     ffmpeg
-    fish
     fish
     fzf
     gcc
@@ -39,17 +36,9 @@ in
     graphicsmagick
     htop
     httpie
-    lazygit
     lf
-    luajit
-    neovim
-    python3
     ripgrep
-    rustc
-    shfmt
-    stylua
     trash-cli
-    tree-sitter
     ueberzugpp
     unzip
     vivid
@@ -57,12 +46,27 @@ in
     zip
     zoxide
 
+    # dev-toolings
+    bat
+    delta
+    lazygit
+    luajit
+    neovim
+    shfmt
+    stylua
+    tree-sitter
+
     # devops-related
     ansible
     terraform
     terragrunt
 
+    # rust-related
+    rustc
+    cargo
+
     # python-related
+    python3
     black
 
     # nodejs-related
