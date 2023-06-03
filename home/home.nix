@@ -23,8 +23,6 @@ in
 
   home.packages = with pkgs; [
     bat
-    gnumake
-    gcc
     btop
     delta
     fd
@@ -32,7 +30,9 @@ in
     fish
     fish
     fzf
+    gcc
     ghostscript
+    gnumake
     gnupg
     graphicsmagick
     htop
@@ -50,7 +50,6 @@ in
     ueberzugpp
     vivid
     xdg-user-dirs
-    yadm
     zoxide
 
     # devops-related
