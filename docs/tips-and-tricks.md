@@ -265,6 +265,8 @@ home.file.".config/polybar/script/mic.sh" = { # <- copy source file to destinati
 #+END_SRC
 ```
 
+</details>
+
 ## Flakes
 
 ### Introduction
