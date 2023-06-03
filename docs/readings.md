@@ -4,3 +4,4 @@
 - [My NixOS Journey - Intro and Installation](https://tech.aufomm.com/my-nixos-journey-intro-and-installation)
 - [My NixOS Journey - Home Manager](https://tech.aufomm.com/my-nixos-journey-home-manager)
 - [My NixOS Journey - Flakes](https://tech.aufomm.com/my-nixos-journey-flakes)
+- [Setting up your dotfiles with home-manager as a flake](https://www.chrisportela.com/posts/home-manager-flake)
