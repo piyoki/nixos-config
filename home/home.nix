@@ -24,6 +24,7 @@ in
   home.packages = with pkgs; [
     bat
     btop
+    cargo
     delta
     fd
     ffmpeg
@@ -44,13 +45,16 @@ in
     neovim
     python3
     ripgrep
+    rustc
     shfmt
     stylua
     trash-cli
     tree-sitter
     ueberzugpp
+    unzip
     vivid
     xdg-user-dirs
+    zip
     zoxide
 
     # devops-related
