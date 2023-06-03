@@ -14,7 +14,6 @@ fish_add_path /usr/local/bin
 
 ### Link Sources ###
 source $HOME/.config/fish/themes/cool-beans.fish
-source $HOME/.config/fish/themes/cool-beans.fish
 source $HOME/.config/fish/functions/bangbang.fish
 source $HOME/.config/fish/functions/gnupg.fish
 
@@ -34,13 +33,9 @@ abbr ... "cd ../../"
 abbr home "cd ~"
 abbr vim "nvim"
 abbr lg "lazygit"
-abbr ra "ranger"
-abbr edit "notepadqq"
 abbr top "btop"
 abbr weather "curl wttr.in/"
 abbr lf "lfrun"
-# abbr go_async_run "when-changed -r -v -1 . go run"
-# abbr python_async_run "when-changed -r -v -1 . python"
 # # programs and system
 abbr ls "ls -ltrh"
 abbr du "du -d 1 -h"
@@ -51,8 +46,6 @@ abbr t "tmux"
 # kubernetes related
 abbr k "kubectl"
 abbr kz "kubectl kustomize"
-# journalctl
-abbr journal "journalctl -xefu"
 # brew
 abbr brew-cleanup "brew cleanup --prune=all"
 # tmux
@@ -69,22 +62,10 @@ abbr k "kubectl"
 alias vlc "org.videolan.VLC"
 
 ### Device Control ###
-# system
-abbr sleep "xset dpms force suspend"
-# audio
-abbr get-audio-out "$HOME/.local/scripts/get-audio-out"
-abbr set-audio-out "pactl set-default-sink"
-abbr get-vol "wpctl get-volume @DEFAULT_AUDIO_SINK@"
-abbr set-vol "wpctl set-volume @DEFAULT_AUDIO_SINK@"
 # pb
 alias pb="curl -F 'c=@-' https://fars.ee/"
-# streamdeck
-alias streamdeck="$HOME/.virtualenvs/streamdeck/bin/streamdeck"
 
 ### Dev ENV ###
-
-# Homebrew env
-[ -d $HOME/.linuxbrew ] && eval ($HOME/.linuxbrew/bin/brew shellenv)
 
 # fzf key-remaps
 fzf_configure_bindings --git_status --history=\ch --variables=\cv --directory=\cx --git_log=\cg
