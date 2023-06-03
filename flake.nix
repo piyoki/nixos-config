@@ -15,7 +15,7 @@
         inherit system;
       };
       lib = nixpkgs.lib;
-      user = "kev";
+      user = (import ./vars.nix).user;
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
@@ -26,7 +26,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.${user} = {
-                imports = [ ./home.nix ];
+                imports = [ ./home/home.nix ];
               };
             }
           ];
