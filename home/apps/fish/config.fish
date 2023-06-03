@@ -53,9 +53,8 @@ abbr t "tmux"
 # neofetch
 abbr logo "neofetch"
 # package manager related
-abbr pacsyu "sudo pacman -Syyu --noconfirm"
-abbr yaysyu "paru -Syyu --noconfirm"
-alias yay="paru"
+abbr nb "nix flake update --commit-lock-file"
+abbr up "nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake $HOME/nixos-config#nixos --verbose"
 # kubernetes related
 abbr k "kubectl"
 # program
