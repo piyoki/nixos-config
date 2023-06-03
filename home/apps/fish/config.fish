@@ -53,8 +53,8 @@ abbr t "tmux"
 # neofetch
 abbr logo "neofetch"
 # package manager related
-abbr nb "nix flake update --commit-lock-file"
-abbr up "nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake $HOME/nixos-config#nixos --verbose"
+abbr nb "sudo nixos-rebuild switch --flake .#nixos --verbose"
+abbr up "cd $HOME/nixos-config; nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake .#nixos --verbose"
 # kubernetes related
 abbr k "kubectl"
 # program
