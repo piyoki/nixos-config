@@ -6,15 +6,8 @@ in
 {
   imports =
     [
-      <home-manager/nixos>
       ./hardware-configuration.nix
     ];
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.${user} = import ./home.nix;
-  };
 
   time.timeZone = "Asia/Hong_kong";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -60,7 +53,6 @@ in
     wget
   ];
   environment.shells = with pkgs; [ fish ];
-  programs.fish.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -68,6 +60,7 @@ in
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  programs.fish.enable = true;
 
   # Install Docker
   virtualisation.docker.enable = true;
@@ -91,15 +84,4 @@ in
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
-
-  nix = {
-    settings.auto-optimise-store = true;
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete older-than 7d";
-    };
-  };
 }
-

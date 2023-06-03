@@ -8,6 +8,7 @@ in
     ./apps/fish.nix
   ];
 
+  programs.home-manager.enable = true;
   home.username = user;
   home.homeDirectory = "/home/${user}";
   home.stateVersion = "23.05";

@@ -65,9 +65,25 @@
     nameservers = ["10.178.0.5"];
   };
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs = {
+    config.allowUnfree = true;
+    hostPlatform = lib.mkDefault "x86_64-linux";
+  };
 
-  nix.settings.max-jobs = lib.mkDefault 8;
+  nix = {
+    extraOptions = "experimental-features = nix-command flakes";
+    package = pkgs.nixFlakes;
+    settings = {
+      auto-optimise-store = true;
+      max-jobs = lib.mkDefault 8;
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete older-than 7d";
+    };
+  };
+
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
