@@ -130,7 +130,9 @@ nix = {
 
 </details>
 
-## Home-Manager
+## HomeManager
+
+### Introduction
 
 - It's like `configuration.nix`, but for the user environment.
 - Plenty more options to declare packages
