@@ -24,6 +24,7 @@ in
   home.packages = with pkgs; [
     # essentials
     btop
+    cmake
     fd
     ffmpeg
     fish
