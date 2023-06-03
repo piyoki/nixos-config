@@ -10,7 +10,7 @@ function fish_prompt
   set -l green (set_color -o green)
   set -g pale (set_color -o dedbdb)
   set -g gray (set_color -o 707070)
-  set -g lightgray (set_color -o eaeaea)
+  set -g lightgray (set_color -o bbc9c9)
   set -g lightpale (set_color -o faffec)
   set -g lightviolet (set_color -o ccccff)
   set -g darkgray (set_color -o 404040)
@@ -20,7 +20,7 @@ function fish_prompt
   set -g whitespace ' '
 
   if test $last_status = 0
-    set initial_indicator "$blue◆"
+    set initial_indicator "$lightgray◆"
     set status_indicator "$normal❯$lightblue❯$lightblue2❯"
   else
     set initial_indicator "$red✖ $last_status"
