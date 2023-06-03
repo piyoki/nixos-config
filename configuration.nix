@@ -28,6 +28,7 @@
     wget
   ];
   environment.shells = with pkgs; [ fish ];
+  environment.sessionsVariables.EDITOR = nvim
 
   system= {
     stateVersion = "23.05";
@@ -47,7 +48,7 @@
     extraOptions = "experimental-features = nix-command flakes";
     package = pkgs.nixFlakes;
     settings = {
-      # auto cleanup 
+      # auto cleanup
       auto-optimise-store = true;
       max-jobs = lib.mkDefault 8;
     };

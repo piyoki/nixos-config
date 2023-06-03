@@ -21,13 +21,16 @@
 
   programs = {
     # gnupg-agent
-    # gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
+    gnupg = {
+      agent = {
+        enable = false;
+        pinentryFlavor = "curses";
+        enableSSHSupport = true;
+      };
+    };
     fish.enable = true;
   };
-  
+
   # docker
   virtualisation.docker.enable = true;
 }
