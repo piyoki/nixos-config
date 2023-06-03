@@ -13,7 +13,7 @@ fish_add_path /usr/bin
 fish_add_path /usr/local/bin
 
 ### Link Sources ###
-source $HOME/.config/fish/themes/cool-beans.fish
+source $HOME/.config/fish/themes/cool-beans-nix.fish
 source $HOME/.config/fish/functions/bangbang.fish
 source $HOME/.config/fish/functions/gnupg.fish
 
