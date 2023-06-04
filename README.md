@@ -22,3 +22,4 @@ This repo contains declaritive configuration of few NixOS system, with ~100% con
 
 - [How to Learn Nix](https://ianthehenry.com/posts/how-to-learn-nix)
 - [Nix Pills](https://nixos.org/guides/nix-pills/index.html)
+- [Nix Flakes](https://nixos.wiki/wiki/Flakes)
