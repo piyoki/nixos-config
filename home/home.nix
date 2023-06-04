@@ -30,6 +30,7 @@ in
     fish
     fzf
     gcc
+    github-cli
     ghostscript
     gnumake
     gnupg
