@@ -33,7 +33,6 @@ in
     github-cli
     ghostscript
     gnumake
-    gnupg
     gotop
     graphicsmagick
     htop
@@ -47,6 +46,11 @@ in
     xdg-user-dirs
     zip
     zoxide
+
+    # encryption
+    ccid
+    gnupg
+    pcsctools
 
     # dev-toolings
     bat
@@ -80,4 +84,12 @@ in
     golangci-lint
     gopls
   ];
+
+  services = {
+    gpg-agent = {
+      enable = true;
+      defaultCacheTtl = 1800;
+      enableSshSupport = true;
+    };
+  };
 }
