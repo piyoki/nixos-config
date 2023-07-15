@@ -1,9 +1,9 @@
 {
-  "name": "dae",
-  "version": "1.0.0",
-  "author": "Daeuniverse",
-  "license": "Apache",
-  "repository": "github:daeuniverse/dae",
+  "name": "nix-config",
+  "version": "0.1.0",
+  "author": "yqlbu",
+  "license": "ISC",
+  "repository": "github:yqlbu/nixos-config",
   "scripts": {
     "check-broken-link": "./node_modules/.bin/remark --quiet --frail ./docs/ README.md",
     "markdown-lint": "./node_modules/.bin/markdownlint-cli2 './docs/*.md' README*.md",
