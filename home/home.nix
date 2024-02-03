@@ -19,22 +19,6 @@ in
 
   # fonts
   fonts.fontconfig.enable = true;
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    fira-code
-    fira-code-symbols
-    jetbrains-mono
-    source-code-pro
-
-    # icons
-    material-design-icons
-    
-    # chinese fonts
-    source-han-sans
-    source-han-serif
-  ];
 
   home.packages = with pkgs; [
     # fonts

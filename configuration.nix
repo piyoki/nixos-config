@@ -24,10 +24,10 @@
   # Select internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable CUPS to print documents.
+  # Enable CUPS to print documents
   # services.printing.enable = true;
 
-  # Enable sound
+  # Enable audio
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -59,6 +59,25 @@
     pavucontrol
   ];
 
+  # Enable fonts
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    fira-code
+    fira-code-symbols
+    jetbrains-mono
+    source-code-pro
+
+    # icons
+    material-design-icons
+    
+    # chinese fonts
+    source-han-sans
+    source-han-serif
+  ];
+
+  # NixOS configuration (with HomeManager)
   system = {
     stateVersion = "23.11";
     autoUpgrade = {
