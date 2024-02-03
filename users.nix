@@ -11,23 +11,23 @@ in
       shell = pkgs.fish;
       openssh.authorizedKeys.keys = [];
       packages = with pkgs; [
-        neovim
-        neofetch
-        git
-        tmux
-        ripgrep
-        yadm
-        dnsutils
+      #   neovim
+      #   neofetch
+      #   git
+      #   tmux
+      #   ripgrep
+      #   yadm
+      #   dnsutils
    
-        fzf
-        fd
-        delta
-        gopass
-        minio-client
+      #   fzf
+      #   fd
+      #   delta
+      #   gopass
+      #   minio-client
 
-        firefox
-        kitty
-        waybar
+      #   firefox
+      #   kitty
+      #   waybar
       ];
     };
     users.root = {
