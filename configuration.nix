@@ -21,15 +21,19 @@
 
   time.timeZone = "Asia/Hong_Kong";
 
-  # Select internationalisation properties.
+  # Select internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
+  # Enable sound
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -42,6 +46,9 @@
     tree
     vim
     wget
+
+    # bluetooth
+    blueberry
   ];
 
   system = {
