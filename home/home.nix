@@ -72,6 +72,7 @@ in
     telegram-desktop
     dolphin
     gwenview
+    swww
 
     # dev-toolings
     bat
