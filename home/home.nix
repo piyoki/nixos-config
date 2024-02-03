@@ -67,6 +67,7 @@ in
     waybar
     dunst
     wofi
+    telegram-desktop
 
     # dev-toolings
     bat
@@ -77,7 +78,6 @@ in
     shfmt
     stylua
     tree-sitter
-    waybar
 
     # devops-related
     ansible
