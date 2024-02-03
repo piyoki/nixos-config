@@ -71,22 +71,25 @@
   ];
 
   # Enable fonts
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    fira-code
-    fira-code-symbols
-    jetbrains-mono
-    source-code-pro
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      fira-code
+      fira-code-symbols
+      jetbrains-mono
+      source-code-pro
 
-    # icons
-    material-design-icons
-    
-    # chinese fonts
-    source-han-sans
-    source-han-serif
-  ];
+      # icons
+      material-design-icons
+      
+      # chinese fonts
+      source-han-sans
+      source-han-serif
+    ];
+  };
 
   # NixOS configuration (with HomeManager)
   system = {
