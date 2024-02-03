@@ -60,6 +60,7 @@
 
     # audio
     pavucontrol
+    pamixer
 
     # display
     ddcutil
