@@ -81,6 +81,7 @@
       fira-code-symbols
       jetbrains-mono
       source-code-pro
+      nerdfonts
 
       # icons
       material-design-icons
