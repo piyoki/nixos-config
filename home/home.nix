@@ -71,6 +71,7 @@ in
     wofi
     telegram-desktop
     dolphin
+    gwenview
 
     # dev-toolings
     bat
