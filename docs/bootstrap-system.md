@@ -73,6 +73,18 @@ nixos-generate-config --root /mnt
 
 This should result with `/mnt/etc/nixos/hardware-configuration.nix`.
 
+```nix
+{
+  ...
+
+  # Add the followings
+  # Power Management
+  powerManagement.cpuFreqGoverner = lib.mkDefault "powersaver";
+  # High-DPI console
+  console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
+}
+```
+
 Although it’s possible to customize `/etc/nixos/configuration.nix` at this point to set up all the things you need in one fell swoop, I recommend starting out with a reletively minimal config (bare bone) to make sure everything works fine. I went with something like this:
 
 ```nix
@@ -91,16 +103,39 @@ Although it’s possible to customize `/etc/nixos/configuration.nix` at this poi
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
-  # Enable zramd.
-  zramSwap.enable = true;
+  # Set timezone.
+  time.timeZone = "Asia/Hong_Kong";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.delta = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "ter-v32b";
+    keyMap = "us";
   };
 
-  system.stateVersion = "21.03";
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.kev = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [ firefox ];
+  };
+
+  # Enable openssh daemon.
+  services.openssh.enable = true;
+
+  # Enable zramd daemon.
+  zramSwap.enable = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search <pkg>
+  environment.systemPackages = with pkgs; [ vim, wget ];
+
+  # Open ports in the firewall.
+  networking.firewall.allowedTCPPorts = [ 22 ];
+
+  nix.settings.max-jobs = lib.mkDefault 8;
+  nixpkgs.config.allowUnfree = true;
+  system.stateVersion = "21.11";
 }
 ```
 
