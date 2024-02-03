@@ -17,7 +17,13 @@ in
   home.homeDirectory = "/home/${user}";
   home.stateVersion = "23.11";
 
+  # fonts
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
+    # fonts
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+
     # monitoring
     btop
     htop
