@@ -25,6 +25,7 @@ in
     # monitoring
     btop
     htop
+    nvtop
 
     # networking
     dnsutils
