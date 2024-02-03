@@ -2,10 +2,6 @@
 
 let
   user = (import ../vars.nix).user;
-  python-pkgs = python-pkgs: with python-pkgs; [
-    requests
-    black
-  ];
 in
 {
   imports =
