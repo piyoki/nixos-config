@@ -36,14 +36,17 @@ in
     cmake
     fd
     ffmpeg
+    ffmpegthumbs
     fzf
     gcc
-    ghostscript
     git
     github-cli
+    glow
     gnumake
     graphicsmagick
     httpie
+    imagemagick
+    jq
     lf
     minio-client
     neofetch
@@ -54,8 +57,10 @@ in
     yadm
     zip
     zoxide
-    jq
-    glow
+
+    # libs
+    libsForQt5.qt5.qtimageformats
+    qt6.qtimageformats
 
     # encryption
     ccid
@@ -63,17 +68,18 @@ in
     pcsctools
 
     # window manager essentials
-    xdg-user-dirs
-    firefox
-    kitty
-    waybar
-    dunst
-    wofi
-    rofi-wayland
-    telegram-desktop
     dolphin
+    dunst
+    gnome.file-roller
+    firefox
     gwenview
+    kitty
+    rofi-wayland
     swww
+    telegram-desktop
+    waybar
+    wofi
+    xdg-user-dirs
 
     # dev-toolings
     bat
