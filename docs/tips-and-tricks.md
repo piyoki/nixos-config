@@ -469,7 +469,7 @@ Configure inside nixosConfigurations
 
 ## Build
 
-> **Note**: `.(#)` will just build host found in the current location.
+> **Note**: `.(#)` will just build the host found in the current location.
 
 Copy config
 
@@ -485,7 +485,7 @@ Build
 sudo nixos-rebuild switch --flake .#nixos
 ```
 
-> **Note**: `flake.lock` will be generated afterwards
+> **Note**: `flake.lock` will be generated afterward
 
 </details>
 
@@ -508,7 +508,7 @@ sudo nixos-rebuild switch --flake .#nixos
 sudo su
 nix-env -iA nixos.git
 git clone <repo url> /mnt/<path>
-nixos-install --flak .#<host>
+nixos-install --flake .#<host>
 reboot
 ```
 
