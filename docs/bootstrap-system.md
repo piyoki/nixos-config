@@ -9,6 +9,7 @@
 * [Format partitions](#format-partitions)
 * [Create sub-volumes](#create-sub-volumes)
 * [Generate Nix configurations](#generate-nix-configurations)
+* [Build the system](#build-the-system)
 
 <!-- vim-markdown-toc -->
 
@@ -102,3 +103,14 @@ Although it’s possible to customize `/etc/nixos/configuration.nix` at this poi
   system.stateVersion = "21.03";
 }
 ```
+
+## Build the system
+
+Take a deep breath.
+
+```bash
+nixos-install
+reboot
+```
+
+If all goes well, we’ll be prompted for the passphrase for $DISK entered earlier. Switch to another `tty` with `Ctrl+Alt+F1`, login as `root`, passwd <passwd> to set your password. Once you’re logged in, you can continue to tweak your NixOS configuration as you want. However, I generally recommend keeping enabled services at a minimum, and setting up opt-in state first.
