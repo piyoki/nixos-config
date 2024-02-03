@@ -16,13 +16,16 @@
 
   hardware.enableAllFirmware = true;
 
-  networking.hostName = "nixos-x1-carbon"; # Define your hostname.
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "Asia/Hong_Kong";
+  # Set hostname
+  networking.hostName = "nixos-x1-carbon";
 
   # Select internationalisation properties
+  time.timeZone = "Asia/Hong_Kong";
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
+  };
 
   # Enable CUPS to print documents
   # services.printing.enable = true;
