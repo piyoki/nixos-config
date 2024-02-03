@@ -71,3 +71,34 @@ nixos-generate-config --root /mnt
 ```
 
 This should result with `/mnt/etc/nixos/hardware-configuration.nix`.
+
+Although it’s possible to customize `/etc/nixos/configuration.nix` at this point to set up all the things you need in one fell swoop, I recommend starting out with a reletively minimal config (bare bone) to make sure everything works fine. I went with something like this:
+
+```nix
+{ config, pkgs, ... }:
+{
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = [ "btrfs" ];
+  hardware.enableAllFirmware = true;
+  nixpkgs.config.allowUnfree = true;
+
+  networking.hostName = "nixos"; # Define your hostname.
+  networking.networkmanager.enable = true;
+
+  # Enable zramd.
+  zramSwap.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.delta = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  };
+
+  system.stateVersion = "21.03";
+}
+```
