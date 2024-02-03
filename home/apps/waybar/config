@@ -43,6 +43,8 @@
             "2": "",
             "3": "",
             "4": "",
+            "5": "",
+            "6": "",
             "default": "",
             "active": "",
         },
@@ -51,6 +53,8 @@
             "2": [],
             "3": [],
             "4": [],
+            "5": [],
+            "6": [],
         }
     },
     "temperature": {
@@ -126,15 +130,5 @@
     "custom/weather": {
         "exec": "curl 'https://wttr.in/HongKong?format=1'",
         "interval": 3600
-    },
-    "custom/pacman": {
-        "format": " {}",
-        "interval": 3600,                     			// every hour
-        "exec": "checkupdates | wc -l",	// # of updates
-        "exec-if": "exit 0",                  			// always run; consider advanced run conditions
-        "signal": 8,
-        "tooltip": false,
-        "max-length": 5,
-        "min-length": 3
     },
 }
