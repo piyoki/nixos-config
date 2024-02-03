@@ -80,6 +80,7 @@ in
     waybar
     wofi
     xdg-user-dirs
+    yubikey-manager
 
     # dev-toolings
     bat
