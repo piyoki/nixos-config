@@ -39,6 +39,7 @@ in
     fd
     ffmpeg
     ffmpegthumbs
+    figlet
     fzf
     gcc
     git
