@@ -27,7 +27,9 @@ in
     # monitoring
     btop
     htop
-    nvtop
+    nvtop # gpu
+    bottom # process
+    ncdu # disk utilization
 
     # networking
     dnsutils
