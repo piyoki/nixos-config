@@ -93,7 +93,7 @@ abbr yp "yadm pull"
 abbr ypp "yadm push"
 
 # nixos
-abbr build "sudo nixos-rebuild switch --flake .#nixos"
+abbr rebuild "sudo nixos-rebuild switch --flake .#nixos"
 
 # flux
 abbr fra "flux reconcile kustomization flux-system --with-source"

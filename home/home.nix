@@ -68,7 +68,7 @@ in
     dunst
     wofi
     telegram-desktop
-    thunar
+    dolphin
 
     # dev-toolings
     bat
