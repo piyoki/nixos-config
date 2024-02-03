@@ -69,6 +69,7 @@ in
     waybar
     dunst
     wofi
+    rofi-wayland
     telegram-desktop
     dolphin
     gwenview
