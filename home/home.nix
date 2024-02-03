@@ -54,6 +54,8 @@ in
     yadm
     zip
     zoxide
+    jq
+    glow
 
     # encryption
     ccid
