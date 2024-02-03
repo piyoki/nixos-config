@@ -54,7 +54,6 @@
     tree
     vim
     wget
-    cronie
 
     # bluetooth
     blueberry
