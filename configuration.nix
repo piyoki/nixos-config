@@ -61,6 +61,9 @@
     # audio
     pavucontrol
 
+    # display
+    ddcutil
+
     # xdg-related
     xdg-utils
     xdg-user-dirs # run: xdg-user-dirs-update
