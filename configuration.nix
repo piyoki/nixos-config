@@ -28,8 +28,13 @@
   # services.printing.enable = true;
 
   # Enable sound
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   # Enable bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -49,6 +54,9 @@
 
     # bluetooth
     blueberry
+
+    # audio
+    pavucontrol
   ];
 
   system = {

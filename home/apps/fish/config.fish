@@ -84,12 +84,16 @@ abbr gcc "git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | x
 abbr gcb "git checkout -b"
 abbr gcm "git commit -m"
 abbr gca "git commit --amend"
+abbr gpp "git push -u origin"
 abbr gd "git diff"
 abbr ys "yadm status"
 abbr yadd "yadm add"
 abbr ycm "yadm commit -m"
 abbr yp "yadm pull"
 abbr ypp "yadm push"
+
+# nixos
+abbr build "sudo nixos-rebuild switch --flake .#nixos"
 
 # flux
 abbr fra "flux reconcile kustomization flux-system --with-source"
@@ -105,16 +109,20 @@ abbr rgf "rg --files | rg"
 abbr icat "viu"
 
 ### Device Control ###
+
 # audio
 abbr get-audio-out "$HOME/.local/scripts/get-audio-out"
 abbr set-audio-out "pactl set-default-sink"
+
 # ddcutil
 abbr set-br "sudo ddcutil setvcp 10 --display"
 abbr get-br "sudo ddcutil getvcp 10 --display"
 abbr dd "sudo ddcutil"
+
 # audio (wirepulmer)
 abbr get-vol "wpctl get-volume @DEFAULT_AUDIO_SINK@"
 abbr set-vol "wpctl set-volume @DEFAULT_AUDIO_SINK@"
+
 # audio (pamixer)
 # abbr get-vol "pamixer --get-volume"
 # abbr set-vol "pamixer --set-volume"
