@@ -1,0 +1,140 @@
+{
+  "output": "eDP-1",
+    "layer": "top",
+    "position": "top",
+    "spacing": 5,
+    "height": 34,
+    "margin-top": 10,
+    "margin-bottom": 0,
+    "margin-left": 25,
+    "margin-right": 25,
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/weather",
+        "custom/pacman"
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "tray",
+        "temperature",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "custom/power"
+    ],
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-click-right": "fullscreen",
+        "icon-theme": "WhiteSur",
+        "icon-size": 25,
+        "tooltip-format": "{title}"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "default": "",
+            "active": "",
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+        }
+    },
+    "temperature": {
+        "interval": "2",
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 74,
+        "format-critical": "  {temperatureC}°C",
+        "format": "{icon}  {temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "max-length": 7,
+        "min-length": 7
+    },
+    "cpu": {
+        "interval": 2,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 2,
+        "format": "󰍛 {}%",
+        "exec": "free -h | awk '/Mem:/{printf $3}'",
+        "max-length": 10
+    },
+    "tray": {
+        "spacing": 15
+    },
+    "clock": {
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "format-alt": "  {:%a, %d %b %Y}",
+        "format": "  {:%m/%d %I:%M %p}"
+    },
+    "network": {
+        "format-wifi" : "{icon}",
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+        "format-ethernet": "󰈀",
+	"format-alt" : "󱛇",
+        "format-disconnected" : "󰖪",
+	"tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "󰈀  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+	"tooltip-format-disconnected": "Disconnected",
+	"on-click": "~/.config/rofi/wifi/wifi.sh &",
+        "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
+	"interval": 5,
+	"nospacing": 1,
+    },
+    "bluetooth": {
+        "interval": 30,
+        "format": "{icon}",
+        "format-icons": {
+            "enabled": "",
+            "disabled": "󰂲"
+        },
+        "on-click": "blueberry"
+    },   
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰",
+        "nospacing": 1,
+        "tooltip-format": "Volume : {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "",
+            "default": ["󰖀","󰕾",""]
+        },
+        "on-click": "pamixer -t",
+        "scroll-step": 1
+    },
+    "custom/power": {
+        "format": "󰤆",
+        "tooltip": false,
+        "on-click": "$HOME/.config/rofi/bin/powermenu"
+    },
+    "custom/weather": {
+        "exec": "curl 'https://wttr.in/HongKong?format=1'",
+        "interval": 3600
+    },
+    "custom/pacman": {
+        "format": " {}",
+        "interval": 3600,                     			// every hour
+        "exec": "checkupdates | wc -l",	// # of updates
+        "exec-if": "exit 0",                  			// always run; consider advanced run conditions
+        "signal": 8,
+        "tooltip": false,
+        "max-length": 5,
+        "min-length": 3
+    },
+}
