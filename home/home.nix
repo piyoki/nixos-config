@@ -63,6 +63,7 @@ in
     firefox
     kitty
     waybar
+    dunst
 
     # dev-toolings
     bat
