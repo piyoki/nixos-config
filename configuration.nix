@@ -2,10 +2,11 @@
 
 {
   imports = [
+    ./hardware-configuration.nix
+    ./system.nix
     ./users.nix
     ./services.nix
     ./networking.nix
-    ./hardware-configuration.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -45,30 +46,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    nix-prefetch-scripts
-    tmux
-    tree
-    vim
-    wget
-
-    # bluetooth
-    blueberry
-
-    # audio
-    pavucontrol
-    pamixer
-
-    # display
-    ddcutil
-
-    # xdg-related
-    xdg-utils
-    xdg-user-dirs # run: xdg-user-dirs-update
-  ];
 
   # Enable fonts
   fonts = {
