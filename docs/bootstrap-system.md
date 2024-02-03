@@ -85,7 +85,16 @@ This should result with `/mnt/etc/nixos/hardware-configuration.nix`.
 }
 ```
 
-Although it’s possible to customize `/etc/nixos/configuration.nix` at this point to set up all the things you need in one fell swoop, I recommend starting out with a reletively minimal config (bare bone) to make sure everything works fine. I went with something like this:
+Make sure you have the right `UUID` mappings for your partitions
+
+```bash
+# check uuid for a specific partition
+blkid /dev/nvme0n1p1
+blkid /dev/mapper/root
+```
+
+> [!NOTE]
+> Although it’s possible to customize `/etc/nixos/configuration.nix` at this point to set up all the things you need in one fell swoop, I recommend starting out with a reletively minimal config (bare bone) to make sure everything works fine. I went with something like this:
 
 ```nix
 { config, pkgs, ... }:
