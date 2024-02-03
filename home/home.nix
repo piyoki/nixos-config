@@ -60,6 +60,7 @@ in
     yadm
     zip
     zoxide
+    viu # terminal image viewer
 
     # libs
     libsForQt5.qt5.qtimageformats
