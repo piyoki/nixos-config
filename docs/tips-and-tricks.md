@@ -1,12 +1,39 @@
 # Tips & Tricks
 
-- [Links](#links)
-- [Examples](#examples)
-- [Extras](#extras)
-- [Updating & Upgrading](#updating-upgrading)
-- [Garbage Collection](#updating-upgrading)
-- [Home Manager](#home-mannager)
-- [Flakes](#flakes)
+<!-- vim-markdown-toc GFM -->
+
+* [Links](#links)
+* [Extras](#extras)
+* [Examples](#examples)
+* [Updating & Upgrading](#updating--upgrading)
+  * [Commands](#commands)
+* [Garbage Collection](#garbage-collection)
+  * [Commands](#commands-1)
+* [HomeManager](#homemanager)
+  * [Introduction](#introduction)
+  * [Getting Started](#getting-started)
+  * [Setup](#setup)
+  * [Dotfiles](#dotfiles)
+* [Flakes](#flakes)
+  * [Introduction](#introduction-1)
+  * [Getting Started](#getting-started-1)
+* [Enable flakes in configuration](#enable-flakes-in-configuration)
+* [Generate](#generate)
+* [Inputs and Outputs](#inputs-and-outputs)
+  * [Inputs](#inputs)
+  * [Outputs](#outputs)
+  * [Configuration](#configuration)
+* [flake.nix](#flakenix)
+* [Build](#build)
+* [flake.nix](#flakenix-1)
+* [Build](#build-1)
+  * [Updating](#updating)
+  * [Flakes on fresh install](#flakes-on-fresh-install)
+* [Prefetch link (git and url)](#prefetch-link-git-and-url)
+  * [Git](#git)
+  * [URL](#url)
+
+<!-- vim-markdown-toc -->
 
 ## Links
 
@@ -516,4 +543,58 @@ Remove default configurations (Not needed anymore)
 
 ```bash
 sudo rm -rf /etc/nixos/configuration.nix
+```
+
+## Prefetch link (git and url)
+
+Reference: https://old.reddit.com/r/NixOS/comments/10ueaev/how_do_i_get_the_sha256_for_a_package_to_use_in/
+
+### Git
+
+```bash
+nix-prefetch-git
+# nix-prefetch-git --url 'https://github.com/yqlbu/dot-rofi' --rev 'refs/heads/x1-carbon'
+
+# output:
+git revision is caf2c90fdd081479692a5bf48d669d5d2d2ec0be
+path is /nix/store/w69sjd6qrnvkadr4pwwhq38nw8z856q3-dot-rofi
+git human-readable version is -- none --
+Commit date is 2024-02-04 17:19:38 +0800
+hash is 030rzigrh33gd4mxydjrj9gl7pnl1d72hj9a5344zmxvcx1y1v0c
+{
+  "url": "https://github.com/yqlbu/dot-rofi",
+  "rev": "caf2c90fdd081479692a5bf48d669d5d2d2ec0be",
+  "date": "2024-02-04T17:19:38+08:00",
+  "path": "/nix/store/w69sjd6qrnvkadr4pwwhq38nw8z856q3-dot-rofi",
+  "sha256": "030rzigrh33gd4mxydjrj9gl7pnl1d72hj9a5344zmxvcx1y1v0c",
+  "hash": "sha256-DOzgQ2e710/IKCpJKE4L1N5DX5JZNt8raW8MmF/8GQw=",
+  "fetchLFS": false,
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+```
+
+usage
+
+```nix
+{ pkgs, ... }:
+
+let
+  repo = pkgs.fetchFromGitHub {
+    owner = "yqlbu";
+    repo = "dot-hypr";
+    rev = "5e71f2fd9b0992c73872d34d0bc6a8570724172f";
+    sha256 = "0sa4s1gx13lcrlf85jklixgcl7k1plzy6v6xlpy49h673xxivrnl";
+  };
+in
+{
+  xdg.configFile."hypr".source = (repo + "/");
+}
+```
+
+### URL
+
+```bash
+nix-prefetch-url
 ```
