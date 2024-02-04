@@ -86,11 +86,6 @@ abbr gcm "git commit -m"
 abbr gca "git commit --amend"
 abbr gpp "git push -u origin"
 abbr gd "git diff"
-abbr ys "yadm status"
-abbr yadd "yadm add"
-abbr ycm "yadm commit -m"
-abbr yp "yadm pull"
-abbr ypp "yadm push"
 
 # nixos
 abbr rebuild "sudo nixos-rebuild switch --flake .#nixos"

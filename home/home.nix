@@ -61,7 +61,6 @@ in
     viu # terminal image viewer
     vivid
     xfce.tumbler  # thumbnailer service
-    yadm
     zip
     zoxide
 
