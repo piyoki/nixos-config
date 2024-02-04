@@ -68,6 +68,7 @@ in
     # libs
     libsForQt5.qt5.qtimageformats
     qt6.qtimageformats
+    yt-dlp # youtube video protocol
 
     # encryption
     ccid
