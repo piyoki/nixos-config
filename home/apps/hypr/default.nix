@@ -9,5 +9,5 @@ let
   };
 in
 {
-  xdg.configFile."hypr".source = (repo + "/");
+  # xdg.configFile."hypr".source = (repo + "/");
 }
