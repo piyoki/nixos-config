@@ -75,6 +75,11 @@
     ];
   };
 
+  # Wayland specific
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   # Samba client
   # reference: https://nixos.wiki/wiki/Samba
   # fileSystems."/mnt/share/Tank" = {
