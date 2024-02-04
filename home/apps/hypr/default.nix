@@ -4,8 +4,8 @@ let
   repo = pkgs.fetchFromGitHub {
     owner = "yqlbu";
     repo = "dot-hypr";
-    rev = "56c50104b0c771f54c45be1b970170a8490c50c6";
-    sha256 = "1jdgnxzq1qzzppwbzpa5mf0cx5svpnzimhk115ajpll2qq3pcxm6";
+    rev = "c28b373206cf654e62a86595bfb78d300e928fb5";
+    sha256 = "0p4vjrb8cgsp3w7rq836b8w138l8wcklnqwqx32jsmp8fninh957";
   };
 in
 {
