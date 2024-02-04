@@ -4,8 +4,8 @@ let
   repo = pkgs.fetchFromGitHub {
     owner = "yqlbu";
     repo = "dot-waybar";
-    rev = "7ee7e41d14c35c052d8ec65b467ac8af9a966bfe";
-    sha256 = "18qv6sxjv1d8779pvvmzhny5vvjqjlgpgdcvglhcjwi8sk6qigvr";
+    rev = "6be67d2322119acd1a3208576b848e6033188334";
+    sha256 = "0gibgwv0hxcf477wxcpvcj0gjdvrkd3vsvsqj9z2lccdad21hvfq";
   };
 in
 {
