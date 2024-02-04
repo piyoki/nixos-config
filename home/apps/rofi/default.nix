@@ -4,8 +4,8 @@ let
   repo = pkgs.fetchFromGitHub {
     owner = "yqlbu";
     repo = "dot-rofi";
-    rev = "c9891dbe2d34e3c4ef541229365fb86355741132";
-    sha256 = "16ixjrm01qwvxx9awa47i49s0narjnf6gni6wq9ljd7ps76f3wk6";
+    rev = "caf2c90fdd081479692a5bf48d669d5d2d2ec0be";
+    sha256 = "030rzigrh33gd4mxydjrj9gl7pnl1d72hj9a5344zmxvcx1y1v0c";
   };
 in
 {
