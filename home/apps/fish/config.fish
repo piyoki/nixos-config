@@ -115,10 +115,9 @@ abbr icat "viu"
 abbr get-audio-out "$HOME/.local/scripts/get-audio-out"
 abbr set-audio-out "pactl set-default-sink"
 
-# ddcutil
-abbr set-br "sudo ddcutil setvcp 10 --display"
-abbr get-br "sudo ddcutil getvcp 10 --display"
-abbr dd "sudo ddcutil"
+# brightnessctl
+abbr kbd_backlight_off "brightnessctl --device='tpacpi::kbd_backlight' set 0"
+abbr kbd_backlight_on "brightnessctl --device='tpacpi::kbd_backlight' set 1"
 
 # audio (wirepulmer)
 abbr get-vol "wpctl get-volume @DEFAULT_AUDIO_SINK@"
