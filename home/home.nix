@@ -84,10 +84,14 @@ in
     handbrake # video editor
     hyprpicker
     kitty
+    microsoft-edge-dev
     mpv
+    networkmanagerapplet
+    notepadqq
     playerctl
     rofi-wayland
     slurp
+    spotify
     swappy
     swww # wallpaper manager
     telegram-desktop
@@ -95,9 +99,6 @@ in
     wl-screenrec # screen recorder
     xdg-user-dirs
     yubikey-manager
-    networkmanagerapplet
-    notepadqq
-    spotify
 
     # wayland-specific
     wdisplays
