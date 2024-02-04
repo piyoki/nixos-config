@@ -80,7 +80,8 @@ in
     pcsctools
 
     # window manager essentials
-    dolphin
+    xfce.thunar
+    xfce.thunar-archive-plugin
     dunst
     firefox
     gnome.file-roller
