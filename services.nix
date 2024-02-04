@@ -2,6 +2,8 @@
 
 {
   services = {
+    # gvfs
+    gvfs.enable = true;
     # openssh daemon
     openssh = {
       enable = true;
@@ -31,7 +33,6 @@
 
   # zramd
   zramSwap.enable = true;
-
   # docker
   virtualisation.docker.enable = true;
 }

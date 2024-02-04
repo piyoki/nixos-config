@@ -10,20 +10,18 @@
     vim
     wget
 
+    # samba
+    pkgs.cifs-utils
     # bluetooth
     blueberry
-
     # audio
     pavucontrol
     pamixer
-
     # display
     ddcutil
-
     # xdg-related
     xdg-utils
     xdg-user-dirs # run: xdg-user-dirs-update
-
     # fish-related
     fishPlugins.fzf-fish
   ];
