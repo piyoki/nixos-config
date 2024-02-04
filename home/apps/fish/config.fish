@@ -88,7 +88,7 @@ abbr gpp "git push -u origin"
 abbr gd "git diff"
 
 # nixos
-abbr rebuild "sudo nixos-rebuild switch --flake .#nixos"
+abbr rebuild "sudo nixos-rebuild switch --upgrade --flake .#nixos"
 abbr prefetch-git "nix-prefetch-git --url 'https://github.com/yqlbu/' --rev 'refs/heads/x1-carbon'"
 
 # flux
