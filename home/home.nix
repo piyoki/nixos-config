@@ -35,6 +35,7 @@ in
     dnsutils
 
     # essentials
+    cliphist # clipboard manager
     cmake
     fd
     ffmpeg
@@ -56,11 +57,12 @@ in
     ripgrep
     trash-cli
     unzip
+    viu # terminal image viewer
     vivid
+    xfce.tumbler  # thumbnailer service
     yadm
     zip
     zoxide
-    viu # terminal image viewer
 
     # libs
     libsForQt5.qt5.qtimageformats
@@ -92,6 +94,11 @@ in
     wl-screenrec # screen recorder
     xdg-user-dirs
     yubikey-manager
+    notepadqq
+
+    # wayland-specific
+    wdisplays
+    wl-clipboard
 
     # peripherals
     projecteur # logitech spotlight app
