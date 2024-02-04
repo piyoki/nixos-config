@@ -80,13 +80,11 @@ in
     pcsctools
 
     # window manager essentials
-    xfce.thunar
-    xfce.thunar-archive-plugin
     dunst
     firefox
     gnome.file-roller
     grim
-    gwenview
+    gwenview # image viewer
     handbrake # video editor
     hyprpicker
     kitty
@@ -94,6 +92,7 @@ in
     mpv
     networkmanagerapplet
     notepadqq
+    okular # document viewer
     playerctl
     rofi-wayland
     slurp
@@ -104,6 +103,8 @@ in
     waybar
     wl-screenrec # screen recorder
     xdg-user-dirs
+    xfce.thunar
+    xfce.thunar-archive-plugin
     yubikey-manager
 
     # wayland-specific
