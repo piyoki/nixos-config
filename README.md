@@ -10,7 +10,10 @@
     <em>Declare Nix System as Code</em>
 </p>
 
-This repo contains declaritive configuration of few NixOS system, with ~100% config Nixfied.
+![image_2024-02-04_17-08-38](https://github.com/yqlbu/nixos-config/assets/31861128/59537664-211c-471b-80fe-8b70c1879bfd)
+
+
+This repo contains the declarative configuration of a few NixOS systems, with ~100% config Nixfied.
 
 [NixOS-CN-telegram](https://t.me/nixos_zhcn)
 
