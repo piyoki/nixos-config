@@ -94,6 +94,7 @@ abbr ypp "yadm push"
 
 # nixos
 abbr rebuild "sudo nixos-rebuild switch --flake .#nixos"
+abbr prefetch-git "nix-prefetch-git --url 'https://github.com/yqlbu/' --rev 'refs/heads/x1-carbon'"
 
 # flux
 abbr fra "flux reconcile kustomization flux-system --with-source"
