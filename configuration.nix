@@ -8,6 +8,7 @@
     ./services.nix
     ./networking.nix
     ./theme.nix
+    ./environment.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -73,11 +74,6 @@
       source-han-sans
       source-han-serif
     ];
-  };
-
-  # Wayland specific
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
   };
 
   # Samba client
