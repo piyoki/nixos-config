@@ -156,5 +156,10 @@ in
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
+
+    font = {
+      name = "Cantarell Regular";
+      size = 12;
+    };
   };
 }

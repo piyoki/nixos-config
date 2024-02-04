@@ -55,6 +55,7 @@
       noto-fonts-cjk
       noto-fonts-emoji
       fira-code
+      cantarell-fonts
       fira-code-symbols
       jetbrains-mono
       source-code-pro
@@ -62,7 +63,7 @@
 
       # icons
       material-design-icons
-      
+
       # chinese fonts
       source-han-sans
       source-han-serif
