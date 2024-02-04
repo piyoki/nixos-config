@@ -29,10 +29,9 @@
     };
     fish.enable = true;
     hyprland.enable = true;
+    dconf.enable = true;
   };
 
-  # zramd
   zramSwap.enable = true;
-  # docker
   virtualisation.docker.enable = true;
 }

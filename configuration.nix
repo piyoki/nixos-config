@@ -7,6 +7,7 @@
     ./users.nix
     ./services.nix
     ./networking.nix
+    ./theme.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
