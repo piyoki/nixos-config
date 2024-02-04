@@ -95,6 +95,7 @@ in
     wl-screenrec # screen recorder
     xdg-user-dirs
     yubikey-manager
+    networkmanagerapplet
     notepadqq
 
     # wayland-specific
