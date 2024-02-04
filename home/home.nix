@@ -97,6 +97,7 @@ in
     yubikey-manager
     networkmanagerapplet
     notepadqq
+    spotify
 
     # wayland-specific
     wdisplays
