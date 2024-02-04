@@ -121,7 +121,7 @@ in
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
+    name = "Bibata-Modern-Ice";
   };
 
   gtk = {
@@ -130,7 +130,7 @@ in
       package = pkgs.flat-remix-gtk;
       name = "Flat-Remix-GTK-Grey-Darkest";
     };
-  
+
     iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
