@@ -66,6 +66,8 @@ in
 
     # libs
     libsForQt5.qt5.qtimageformats
+    libsForQt5.ffmpegthumbs
+    libsForQt5.kio-extras
     qt6.qtimageformats
     yt-dlp # youtube video protocol
 
