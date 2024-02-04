@@ -74,11 +74,14 @@ in
     # window manager essentials
     dolphin
     dunst
-    gnome.file-roller
     firefox
+    gnome.file-roller
+    grim
     gwenview
     kitty
     rofi-wayland
+    slurp
+    swappy
     swww
     telegram-desktop
     waybar
