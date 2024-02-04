@@ -78,16 +78,23 @@ in
     gnome.file-roller
     grim
     gwenview
+    handbrake # video editor
+    hyprpicker
     kitty
+    mpv
+    playerctl
     rofi-wayland
     slurp
     swappy
-    swww
+    swww # wallpaper manager
     telegram-desktop
     waybar
-    wofi
+    wl-screenrec # screen recorder
     xdg-user-dirs
     yubikey-manager
+
+    # peripherals
+    projecteur # logitech spotlight app
 
     # dev-toolings
     bat
