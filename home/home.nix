@@ -35,6 +35,7 @@ in
     dnsutils
 
     # essentials
+    brightnessctl
     cliphist # clipboard manager
     cmake
     fd
