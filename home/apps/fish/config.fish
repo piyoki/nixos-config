@@ -18,7 +18,7 @@ fish_add_path $HOME/.nix-profile/bin
 ### Link Sources ###
 source $HOME/.config/fish/themes/cool-beans-nix.fish
 source $HOME/.config/fish/functions/bangbang.fish
-# source $HOME/.config/fish/gnupg.fish
+source $HOME/.config/fish/functions/gnupg.fish
 
 ### General Settings ###
 set fish_greeting # Turns off the intro message when pulling up fish shell
