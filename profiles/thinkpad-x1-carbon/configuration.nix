@@ -3,12 +3,12 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./system.nix
-    ./users.nix
-    ./services.nix
-    ./networking.nix
-    ./theme.nix
-    ./environment.nix
+    ../../system/packages/system.nix
+    ../../system/networking/networking.nix
+    ../../system/services/services.nix
+    ../../themes/qt.nix
+    ../../home/environment.nix
+    ../../home/users.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

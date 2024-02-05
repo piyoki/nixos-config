@@ -15,13 +15,13 @@
         inherit system;
       };
       lib = nixpkgs.lib;
-      user = (import ./vars.nix).user;
+      user = (import ./home/vars.nix).user;
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
           modules = [
-            ./configuration.nix
+            ./profiles/thinkpad-x1-carbon/configuration.nix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
