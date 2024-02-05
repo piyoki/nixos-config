@@ -3,7 +3,6 @@
 {
   imports = [
     ./fonts
-    ./qt.nix
+    ./qt
   ];
 }
-

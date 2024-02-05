@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../system/system.nix
-    ../../themes/qt.nix
+    ../../themes
     ../../home/environment.nix
     ../../home/users.nix
   ];
@@ -37,29 +37,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Enable fonts
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-      fira-code
-      cantarell-fonts
-      fira-code-symbols
-      jetbrains-mono
-      source-code-pro
-      nerdfonts
-
-      # icons
-      material-design-icons
-
-      # chinese fonts
-      source-han-sans
-      source-han-serif
-    ];
-  };
 
   # Samba client
   # reference: https://nixos.wiki/wiki/Samba
