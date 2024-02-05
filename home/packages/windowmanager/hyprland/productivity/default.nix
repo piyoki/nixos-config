@@ -2,12 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    rofi-wayland # app launcher
-    minio-client # minio client
     handbrake # video editor
-    lf # terminal file manager
-    yubikey-manager
     hyprpicker # color picker
+    lf # terminal file manager
+    minio-client # minio client
+    rofi-wayland # app launcher
     wl-screenrec # screen recorder
     xfce.thunar # file manager
     xfce.thunar-archive-plugin
