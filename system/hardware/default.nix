@@ -2,9 +2,8 @@
 
 {
   imports = [
-    ./audio.nix
     ./bluetooth.nix
-    ./display.nix
+    ./audio.nix
     ./usb.nix
   ];
 }
