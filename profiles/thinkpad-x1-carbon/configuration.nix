@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../system/packages/system.nix
+    ../../system/system.nix
     ../../system/networking/networking.nix
     ../../system/services/services.nix
     ../../themes/qt.nix
