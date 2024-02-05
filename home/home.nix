@@ -4,11 +4,10 @@ let
   user = (import ./vars.nix).user;
 in
 {
-  imports =
-    map (d: ./apps + d)
-      (map (n: "/" + n)
-        (with builtins;attrNames
-          (readDir ./apps)));
+  imports = [
+    ./apps.nix
+    ./hardware
+  ];
 
   programs.home-manager.enable = true;
   programs.go.enable = true;
