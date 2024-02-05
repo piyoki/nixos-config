@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../system/system.nix
+    ../../system
     ../../themes
     ../../home/environment.nix
     ../../home/users.nix
