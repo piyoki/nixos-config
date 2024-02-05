@@ -3,7 +3,7 @@
     <em>Declare Nix System as Code</em>
 </p>
 
-![image_2024-02-05_13-14-03](https://github.com/yqlbu/nixos-config/assets/31861128/46d01418-b718-421c-b1e0-39cd4558eb1a)
+![image_2024-02-05_13-15-16](https://github.com/yqlbu/nixos-config/assets/31861128/5bef76fa-d27d-4c76-8f29-1a0e4c91b113)
 
 <p align="left">
     <img src="https://custom-icon-badges.herokuapp.com/github/license/yqlbu/nixos-config?logo=law&color=orange" alt="License"/>
