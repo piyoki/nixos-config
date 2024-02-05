@@ -106,6 +106,7 @@ in
     xfce.thunar
     xfce.thunar-archive-plugin
     yubikey-manager
+    polkit
 
     # wayland-specific
     wdisplays
