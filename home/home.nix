@@ -4,11 +4,10 @@ let
   user = (import ./vars.nix).user;
 in
 {
-  imports =
-    map (d: ./apps + d)
-      (map (n: "/" + n)
-        (with builtins;attrNames
-          (readDir ./apps)));
+  imports = [
+    ./apps.nix
+    ./hardware
+  ];
 
   programs.home-manager.enable = true;
   programs.go.enable = true;
@@ -124,6 +123,10 @@ in
     shfmt
     stylua
     tree-sitter
+
+    # xdg-related
+    xdg-utils
+    xdg-user-dirs # run: xdg-user-dirs-update
 
     # devops-related
     ansible
