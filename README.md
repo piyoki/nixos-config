@@ -23,6 +23,7 @@ This repo contains the declarative configuration of a few NixOS systems, with ~1
 - [How to Learn Nix](https://ianthehenry.com/posts/how-to-learn-nix)
 - [Nix Pills](https://nixos.org/guides/nix-pills/index.html)
 - [Nix Flakes](https://nixos.wiki/wiki/Flakes)
+- [NixOS Config Example (@librephoenix/nixos-config)](https://github.com/librephoenix/nixos-config)
 
 ## Community
 
