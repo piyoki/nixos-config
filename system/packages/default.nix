@@ -10,11 +10,9 @@
     vim
     wget
 
-    # samba
-    pkgs.cifs-utils
-    # display
-    ddcutil
     # fish-related
     fishPlugins.fzf-fish
+    # notification
+    libnotify
   ];
 }
