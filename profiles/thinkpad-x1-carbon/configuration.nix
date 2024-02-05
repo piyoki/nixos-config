@@ -4,8 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../system/system.nix
-    ../../system/networking/networking.nix
-    ../../system/services/services.nix
     ../../themes/qt.nix
     ../../home/environment.nix
     ../../home/users.nix
