@@ -8,6 +8,7 @@ in
     ./apps.nix
     ./hardware
     ./packages
+    ./services
   ];
 
   programs.home-manager.enable = true;
