@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # Reference: https://nixos.wiki/wiki/Yubikey
   environment.systemPackages = with pkgs; [
     ccid # ccid drivers for pcsclite
     gnupg
@@ -12,7 +13,7 @@
     pcsctools # Tools used to test a PC/SC driver, card or reader
     pinentry # GnuPG’s interface to passphrase input
     yubico-pam
-    yubikey-personalization
+    yubikey-personalization # A library and command line tool to personalize YubiKeys
   ];
 
   services.udev.packages = with pkgs; [
