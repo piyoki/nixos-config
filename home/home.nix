@@ -125,6 +125,10 @@ in
     stylua
     tree-sitter
 
+    # xdg-related
+    xdg-utils
+    xdg-user-dirs # run: xdg-user-dirs-update
+
     # devops-related
     ansible
 
