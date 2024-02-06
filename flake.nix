@@ -6,13 +6,17 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = github:Mic92/sops-nix;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs-wayland = {
       url = "github:nix-community/nixpkgs-wayland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, sops-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -34,6 +38,7 @@
                 imports = [ ./home/home.nix ];
               };
             }
+            sops-nix.nixosModules.sops
           ];
         };
       };
