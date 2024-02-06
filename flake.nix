@@ -10,9 +10,13 @@
       url = github:Mic92/sops-nix;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-wayland = {
+      url = "github:nix-community/nixpkgs-wayland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, sops-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -24,6 +28,7 @@
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
+          specialArgs = inputs;
           modules = [
             ./profiles/thinkpad-x1-carbon/configuration.nix
             home-manager.nixosModules.home-manager {
