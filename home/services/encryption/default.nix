@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    gopass # The slightly more awesome Standard Unix Password Manager for Teams. Written in Go
     sops # Simple and flexible tool for managing secrets
     age # Modern encryption tool with small explicit keys
     age-plugin-yubikey # YubiKey plugin for age
