@@ -9,6 +9,10 @@ in
     inputs.sops-nix.homeManagerModules.sops
   ];
 
+  home.packages = with pkgs; [
+    inputs.nixpkgs-wayland."${pkgs.system}".nixpkgs-wayland
+  ];
+
   sops.secrets.foo = {
     sopsFile = ./foo.enc.yml;
     format = "yaml";

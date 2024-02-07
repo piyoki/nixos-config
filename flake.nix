@@ -16,7 +16,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, sops-nix, ... }:
+  outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -28,7 +28,7 @@
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
-          specialArgs = inputs;
+          specialArgs = { inherit inputs; };
           modules = [
             ./profiles/thinkpad-x1-carbon/configuration.nix
             home-manager.nixosModules.home-manager {
