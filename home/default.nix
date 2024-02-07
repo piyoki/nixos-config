@@ -1,18 +1,26 @@
-{ inputs, system, user, ... }:
-
+{ inputs, pkgs, ... }:
 
 let
-  homeProfile = ./home.nix;
+  user = (import ./vars.nix).user;
 in
 {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
+    ./apps.nix
+    ./hardware
+    ./packages
+    ./services
   ];
 
-  home.packages = with pkgs; [
-    inputs.nixpkgs-wayland."${pkgs.system}".nixpkgs-wayland
-  ];
+  # home-manager settings
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
+  home.stateVersion = "23.11";
 
+  programs.home-manager.enable = true;
+  programs.go.enable = true;
+
+  # sops-nix
   sops.secrets.foo = {
     sopsFile = ./foo.enc.yml;
     format = "yaml";
@@ -21,14 +29,32 @@ in
   # disable importing host ssh keys
   sops.gnupg.sshKeyPaths = [];
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.${user} = {
-      imports = [
-        homeProfile
-      ];
+  # fonts
+  fonts.fontconfig.enable = true;
+
+  # themes
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.flat-remix-gtk;
+      name = "Flat-Remix-GTK-Grey-Darkest";
     };
-    extraSpecialArgs = { inherit inputs system user; };
+
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
+    };
+
+    font = {
+      name = "Cantarell Regular";
+      size = 12;
+    };
   };
 }

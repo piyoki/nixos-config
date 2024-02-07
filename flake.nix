@@ -28,15 +28,13 @@
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
           modules = [
             ./profiles/thinkpad-x1-carbon/configuration.nix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.${user} = {
-                imports = [ ./home/home.nix ];
-              };
+              home-manager.extraSpecialArgs = { inherit inputs system user; };
+              home-manager.users.${user} = import ./home;
             }
             sops-nix.nixosModules.sops
           ];
