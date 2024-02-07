@@ -10,7 +10,7 @@
 
 ## Set flags for application
 
-Ref: https://old.reddit.com/r/NixOS/comments/13bo4fw/how_to_set_flags_for_application/
+Ref: https://discourse.nixos.org/t/where-are-desktop-files-located/17391
 
 Copy the .desktop file to $HOME/.local/share/applications
 
