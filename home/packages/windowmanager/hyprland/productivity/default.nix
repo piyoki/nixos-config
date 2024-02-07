@@ -10,5 +10,6 @@
     wl-screenrec # screen recorder
     xfce.thunar # file manager
     xfce.thunar-archive-plugin
+    libreoffice-fresh # office softwares
   ];
 }
