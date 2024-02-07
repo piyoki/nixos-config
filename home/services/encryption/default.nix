@@ -11,5 +11,4 @@
   ];
 
   home.file.".gnupg/scdaemon.conf".text = builtins.readFile ./scdaemon.conf;
-  home.file.".gnupg/gpg-agent.conf".text = builtins.readFile ./gpg-agent.conf;
 }

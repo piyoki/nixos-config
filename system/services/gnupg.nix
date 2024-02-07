@@ -31,6 +31,11 @@
         enable = true;
         pinentryFlavor = "curses";
         enableSSHSupport = true;
+        settings = {
+          default-cache-ttl = 300;
+          max-cache-ttl = 300;
+          allow-loopback-pinentry = true;
+        };
       };
     };
   };
