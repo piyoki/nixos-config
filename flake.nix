@@ -15,6 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:vaxerski/Hyprland";
+    daeuniverse.url = "github:daeuniverse/flake.nix/sync-upstream";
   };
 
   outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs:
@@ -28,7 +29,7 @@
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
-          inherit system;
+          specialArgs = { inherit inputs system; };
           modules = [
             ./profiles/thinkpad-x1-carbon/configuration.nix
             home-manager.nixosModules.home-manager {

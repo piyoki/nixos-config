@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, system, ... }:
 
 {
   networking = {
@@ -15,4 +15,8 @@
     #   noProxy = "127.0.0.1,localhost,internal.domain";
     # };
   };
+
+  # sd-wan gateway
+  environment.systemPackages =
+    with inputs.daeuniverse.packages.${system}; [ dae ];
 }
