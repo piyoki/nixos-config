@@ -1,14 +1,24 @@
-{ inputs, system, user, ... }:
+{ inputs, user, pkgs, ... }:
 
-
-let
-  homeProfile = ./home.nix;
-in
 {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
+    ./hardware
+    ./packages
+    ./services
+    ./themes
+    ./apps.nix
   ];
 
+  # home-manager settings
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
+  home.stateVersion = "23.11";
+
+  programs.home-manager.enable = true;
+  programs.go.enable = true;
+
+  # sops-nix
   sops.secrets.foo = {
     sopsFile = ./foo.enc.yml;
     format = "yaml";
@@ -16,15 +26,4 @@ in
   sops.gnupg.home = "/var/lib/sops";
   # disable importing host ssh keys
   sops.gnupg.sshKeyPaths = [];
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.${user} = {
-      imports = [
-        homeProfile
-      ];
-    };
-    extraSpecialArgs = { inherit inputs system user; };
-  };
 }

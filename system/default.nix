@@ -2,9 +2,10 @@
 
 {
   imports = [
+    ./hardware
+    ./networking
     ./packages
     ./services
-    ./networking
-    ./hardware
+    ./users
   ];
 }

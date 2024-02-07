@@ -5,9 +5,13 @@
     ./hardware-configuration.nix
     ../../system
     ../../themes
-    ../../home/environment.nix
-    ../../home/users.nix
   ];
+
+  # Environment vars
+  environment.sessionVariables = {
+    # Wayland specific
+    NIXOS_OZONE_WL = "1";
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -22,7 +26,7 @@
 
   # Select internationalisation properties
   time.timeZone = "Asia/Hong_Kong";
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = (import ../../vars.nix).defaultLocale;
   i18n.inputMethod = {
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [

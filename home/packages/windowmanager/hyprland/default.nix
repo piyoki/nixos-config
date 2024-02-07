@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -13,5 +13,9 @@
     ./screenshot
     ./system
     ./terminal
+  ];
+
+  home.packages = with pkgs; [
+    inputs.hyprland.packages."${pkgs.system}".hyprland
   ];
 }

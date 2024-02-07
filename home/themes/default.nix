@@ -1,29 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
-let
-  user = (import ./vars.nix).user;
-in
 {
   imports = [
-    ./apps.nix
-    ./hardware
-    ./packages
-    ./services
+    ./fonts.nix
   ];
 
-  programs.home-manager.enable = true;
-  programs.go.enable = true;
-
-  home.username = user;
-  home.homeDirectory = "/home/${user}";
-  home.stateVersion = "23.11";
-
-  # fonts
-  fonts.fontconfig.enable = true;
-
-  home.packages = with pkgs; [];
-
-  # themes
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.bibata-cursors;
@@ -49,3 +30,4 @@ in
     };
   };
 }
+
