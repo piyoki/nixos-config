@@ -12,6 +12,7 @@ in
       openssh.authorizedKeys.keys = [];
       packages = with pkgs; [];
     };
+
     users.root = {
       shell = pkgs.bash;
     };

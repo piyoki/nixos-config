@@ -26,7 +26,6 @@
   programs = {
     fish.enable = true;
     hyprland.enable = true;
-    dconf.enable = true;
   };
 
   zramSwap.enable = true;
