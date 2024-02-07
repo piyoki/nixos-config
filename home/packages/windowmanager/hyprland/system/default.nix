@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
     neofetch
-    waybar # wayland-based bar/dock
-    swww # wallpaper manager
+    inputs.nixpkgs-wayland.packages.${system}.waybar # wayland-based bar/dock
+    inputs.nixpkgs-wayland.packages.${system}.waybar # Efficient animated wallpaper daemon for wayland, controlled at runtime
     polkit # policy daemon
     cliphist # clipboard manager
     ffmpeg

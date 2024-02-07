@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,7 +7,7 @@
     lf # terminal file manager
     minio-client # minio client
     rofi-wayland # app launcher
-    wl-screenrec # screen recorder
+    inputs.nixpkgs-wayland.packages.${system}.wl-screenrec # screen recorder
     xfce.thunar # file manager
     xfce.thunar-archive-plugin
     libreoffice-fresh # office softwares

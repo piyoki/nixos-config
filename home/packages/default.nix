@@ -11,5 +11,6 @@
     ./networking
     ./peripherals
     ./windowmanager/hyprland
+    ./xdg
   ];
 }
