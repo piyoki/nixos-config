@@ -27,6 +27,7 @@ This repo contains the declarative configuration of a few NixOS systems, with ~1
 - [Nix Language](https://nixos.org/manual/nix/stable/language/)
 - [NixOS & Flakes Book](https://nixos-and-flakes.thiscute.world/)
 - [Nix Dev](https://nix.dev/)
+- [MyNixOS](https://mynixos.com/)
 
 ## Community
 
