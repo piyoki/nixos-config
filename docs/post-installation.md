@@ -15,5 +15,6 @@ Ref: https://old.reddit.com/r/NixOS/comments/13bo4fw/how_to_set_flags_for_applic
 Copy the .desktop file to $HOME/.local/share/applications
 
 ```sh
+ls -ltrh /etc/profiles/per-user/kev/share/applications/ | grep <application>
 # $HOME/.local/share/<application>.desktop
 ```
