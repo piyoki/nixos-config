@@ -11,9 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-wayland = {
-      url = "github:nix-community/nixpkgs-wayland";
+      url = github:nix-community/nixpkgs-wayland;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helix.url = github:helix-editor/helix/master;
   };
 
   outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs:
