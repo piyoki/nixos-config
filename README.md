@@ -24,6 +24,8 @@ This repo contains the declarative configuration of a few NixOS systems, with ~1
 - [Nix Pills](https://nixos.org/guides/nix-pills/index.html)
 - [Nix Flakes](https://nixos.wiki/wiki/Flakes)
 - [NixOS Config Example (@librephoenix/nixos-config)](https://github.com/librephoenix/nixos-config)
+- [Nix Language](https://nixos.org/manual/nix/stable/language/)
+- [NixOS & Flakes Book](https://nixos-and-flakes.thiscute.world/)
 
 ## Community
 
