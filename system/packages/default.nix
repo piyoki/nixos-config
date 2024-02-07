@@ -9,6 +9,7 @@
     tree
     vim
     wget
+    lm_sensors
 
     # fish-related
     fishPlugins.fzf-fish
