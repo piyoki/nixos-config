@@ -15,6 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:vaxerski/Hyprland";
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
+    flake-utils.url = "github:numtide/flake-utils";
     daeuniverse.url = "github:daeuniverse/flake.nix/sync-upstream";
   };
 
