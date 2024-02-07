@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./cron.nix
     ./gnupg.nix
     ./samba.nix
   ];
@@ -13,13 +14,6 @@
     openssh = {
       enable = true;
       settings.PasswordAuthentication = false; # disable SSH password log in
-    };
-    # cronie
-    cron = {
-      enable = true;
-      systemCronJobs = [
-        "*/6 * * * *      root    date >> /tmp/cron.log"
-      ];
     };
   };
 
