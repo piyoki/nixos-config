@@ -24,7 +24,7 @@
         inherit system;
       };
       lib = nixpkgs.lib;
-      user = (import ./home/vars.nix).user;
+      user = (import ./vars.nix).user;
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {

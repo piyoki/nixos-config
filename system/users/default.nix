@@ -1,7 +1,7 @@
 { pkgs, user, ... }:
 
 let
-  user = (import ./vars.nix).user;
+  user = (import ../../vars.nix).user;
 in
 {
   users = {
@@ -17,3 +17,4 @@ in
     };
   };
 }
+

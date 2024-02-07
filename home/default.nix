@@ -1,16 +1,13 @@
-{ inputs, pkgs, ... }:
+{ inputs, user, pkgs, ... }:
 
-let
-  user = (import ./vars.nix).user;
-in
 {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
-    ./apps.nix
     ./hardware
     ./packages
     ./services
     ./themes
+    ./apps.nix
   ];
 
   # home-manager settings
