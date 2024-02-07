@@ -26,6 +26,7 @@ This repo contains the declarative configuration of a few NixOS systems, with ~1
 - [NixOS Config Example (@librephoenix/nixos-config)](https://github.com/librephoenix/nixos-config)
 - [Nix Language](https://nixos.org/manual/nix/stable/language/)
 - [NixOS & Flakes Book](https://nixos-and-flakes.thiscute.world/)
+- [Nix Dev](https://nix.dev/)
 
 ## Community
 
