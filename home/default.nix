@@ -6,6 +6,7 @@
     ./packages
     ./services
     ./themes
+    ./secrets
     ./apps.nix
   ];
 
