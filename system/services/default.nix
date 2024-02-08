@@ -19,7 +19,6 @@
 
   programs = {
     fish.enable = true;
-    hyprland.enable = true;
   };
 
   zramSwap.enable = true;
