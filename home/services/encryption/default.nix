@@ -17,24 +17,33 @@
   # sops
   home.file.".sops/.sops.yaml".text = builtins.readFile ../../../.sops.yaml;
 
-  # sops-nix configs
+  # sops-nix
   sops = {
-    # sops-nix configs
+    # configs
     age.keyFile = "/var/lib/age/age-yubikey-master.key";
     defaultSopsFormat = "yaml";
 
     # secrets
     secrets = {
-      # "minio/host" = {
-      #   sopsFile = ../secrets/config.enc.yaml;
-      # };
-      # "minio/accessKey" = {
-      #   sopsFile = ../secrets/config.enc.yaml;
-      # };
-      "minio/secretKey" = {
-        sopsFile = ../../../secrets/config.enc.yaml;
+      "gitconfig/general" = {
+        sopsFile = ../../../secrets/gitconfig.enc.yaml;
         mode = "0600";
-        path = "${config.home.homeDirectory}/.mc/config.json";
+        path = "${config.home.homeDirectory}/.gitconfig";
+      };
+      "gitconfig/profile/personal" = {
+        sopsFile = ../../../secrets/gitconfig.enc.yaml;
+        mode = "0600";
+        path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.personal";
+      };
+      "gitconfig/profile/work" = {
+        sopsFile = ../../../secrets/gitconfig.enc.yaml;
+        mode = "0600";
+        path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.work";
+      };
+      "gitconfig/profile/extras" = {
+        sopsFile = ../../../secrets/gitconfig.enc.yaml;
+        mode = "0600";
+        path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.extras";
       };
     };
   };
