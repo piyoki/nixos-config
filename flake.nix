@@ -20,7 +20,7 @@
     daeuniverse.url = "github:daeuniverse/flake.nix/sync-upstream";
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -43,6 +43,7 @@
                 inputs.sops-nix.homeManagerModules.sops
               ];
             }
+            hyprland.nixosModules.default
             sops-nix.nixosModules.sops
           ];
         };
