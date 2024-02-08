@@ -13,5 +13,6 @@
     dunst # notification daemon
     gnome.file-roller # archive manager
     networkmanagerapplet # network manager (gtk GUI)
+    swayidle # idle management daemon
   ];
 }
