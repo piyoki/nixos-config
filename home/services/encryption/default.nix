@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -16,4 +16,10 @@
 
   # sops
   home.file.".sops/.sops.yaml".text = builtins.readFile ../../../.sops.yaml;
+
+  # sops-nix
+  sops = {
+    age.keyFile = "/var/lib/age/age-yubikey-master.key";
+    defaultSopsFormat = "yaml";
+  };
 }

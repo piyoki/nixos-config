@@ -1,8 +1,7 @@
-{ inputs, user, pkgs, ... }:
+{ user, pkgs, ... }:
 
 {
   imports = [
-    inputs.sops-nix.homeManagerModules.sops
     ./hardware
     ./packages
     ./services
@@ -17,13 +16,4 @@
 
   programs.home-manager.enable = true;
   programs.go.enable = true;
-
-  # sops-nix
-  sops.secrets.foo = {
-    sopsFile = ./foo.enc.yml;
-    format = "yaml";
-  };
-  sops.gnupg.home = "/var/lib/sops";
-  # disable importing host ssh keys
-  sops.gnupg.sshKeyPaths = [];
 }

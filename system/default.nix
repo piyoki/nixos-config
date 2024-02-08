@@ -17,6 +17,7 @@
     vim
     wget
     lm_sensors
+    gnutar
 
     # fish-related
     fishPlugins.fzf-fish

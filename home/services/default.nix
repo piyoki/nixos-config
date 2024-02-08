@@ -3,7 +3,7 @@
 {
   imports = [
     ./encryption
-    ./dconf.nix
+    ./dconf
   ];
 }
 

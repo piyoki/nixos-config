@@ -28,7 +28,7 @@ export CLICOLOR=1
 export LS_COLORS=(vivid generate nord)
 export LC_ALL=C.UTF-8
 
-export SOPS_PGP_FP="3668C64226DE44519C6CCB6B27853B1FAB3A06BA"
+# export SOPS_PGP_FP=""
 # export SOPS_AGE_KEY=(age -i $HOME/.age/age-yubikey-identity.txt -d $HOME/.age/age-yubikey-master.enc.key)
 # export SOPS_AGE_RECIPIENTS=(cat $HOME/.age/age-yubikey-master.pub)
 # export SOPS_AGE_KEY_FILE=$HOME/.age/age-yubikey-master.key

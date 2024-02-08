@@ -42,6 +42,9 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs system user; };
               home-manager.users.${user} = import ./home;
+              home-manager.sharedModules = [
+                inputs.sops-nix.homeManagerModules.sops
+              ];
             }
             sops-nix.nixosModules.sops
           ];
