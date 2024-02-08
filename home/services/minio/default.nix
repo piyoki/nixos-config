@@ -2,9 +2,9 @@
 
 {
   # $HOME/.mc/config.json
-  # home.file.".mc/config.json".text = ''
-  #   {
-  #     "host": ${config.sops.secrets."minio/host".path}
-  #   }
-  # '';
+  home.file.".mc/config.json".text = ''
+    {
+      "host": ${builtins.readFile "${secretPath}/minio/host"}
+    }
+  '';
 }

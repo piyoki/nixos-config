@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./encryption
     ./hardware
     ./networking
     ./services
