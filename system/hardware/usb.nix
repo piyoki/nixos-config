@@ -2,7 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
-    usbutils
+    usbutils # lsusb
+    lm_sensors # sensors
+    pciutils # lspci
   ];
 }
 

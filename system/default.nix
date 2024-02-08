@@ -17,8 +17,13 @@
     tree
     vim
     wget
-    lm_sensors
     gnutar
+
+    # system call monitoring
+    strace # system call monitoring
+    bpftrace # powerful tracing tool
+    tcpdump # network sniffer
+    lsof # list open files
 
     # fish-related
     fishPlugins.fzf-fish
