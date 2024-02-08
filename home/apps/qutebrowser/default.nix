@@ -4,8 +4,8 @@ let
   repo = pkgs.fetchFromGitHub {
     owner = "yqlbu";
     repo = "dot-qutebrowser";
-    rev = "5e3eb770f68bb17ee1dcb09dfe8f4d8723b22a6f";
-    sha256 = "0w5cj0piqvxb5lb5x7syfr000lmz88warnrycvbpd07lc7f0m13p";
+    rev = "42d008ab85c0298529a308aae064e6c6e3dd6256";
+    sha256 = "15vv3ipas9jwdkd5pi928rcdpk7ki9wkhz48bncpqmjhsn8acpfj";
   };
   theme = pkgs.fetchFromGitHub {
     owner = "catppuccin";
