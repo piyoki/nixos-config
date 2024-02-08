@@ -31,10 +31,13 @@
         enable = true;
         pinentryFlavor = "curses";
         enableSSHSupport = true;
+        # /etc/gnupg/gpg-agent.conf
         settings = {
-          default-cache-ttl = 300;
-          max-cache-ttl = 300;
-          allow-loopback-pinentry = true;
+          enable-ssh-support = "";
+          ttyname = "$GPG_TTY";
+          default-cache-ttl = 60;
+          max-cache-ttl = 120;
+          allow-loopback-pinentry = "";
         };
       };
     };
