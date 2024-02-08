@@ -10,6 +10,10 @@
     yubioath-flutter # Yubico Authenticator for Desktop
   ];
 
+  # gnupg
   home.file.".gnupg/scdaemon.conf".text = builtins.readFile ./scdaemon.conf;
   home.file.".gnupg/gpg.conf".text = builtins.readFile ./gpg.conf;
+
+  # sops
+  home.file.".sops/.sops.yaml".text = builtins.readFile ../../../.sops.yaml;
 }
