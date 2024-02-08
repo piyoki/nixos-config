@@ -46,7 +46,6 @@
                 inputs.sops-nix.homeManagerModules.sops
               ];
             }
-            sops-nix.nixosModules.sops
           ];
         };
       };
