@@ -44,7 +44,6 @@
               ];
             }
             hyprland.nixosModules.default
-            sops-nix.nixosModules.sops
           ];
         };
       };
