@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     bat
     cmake
+    ctags
     delta
     gcc
     git
