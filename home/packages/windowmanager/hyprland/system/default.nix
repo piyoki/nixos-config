@@ -5,7 +5,6 @@
     neofetch
     inputs.nixpkgs-wayland.packages.${system}.waybar # wayland-based bar/dock
     inputs.nixpkgs-wayland.packages.${system}.swww # Efficient animated wallpaper daemon for wayland, controlled at runtime
-    polkit # policy daemon
     cliphist # clipboard manager
     ffmpeg
     ffmpegthumbs
