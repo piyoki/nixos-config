@@ -25,6 +25,7 @@
 
     # secrets
     secrets = {
+      # git
       "gitconfig/general" = {
         sopsFile = ../../../secrets/gitconfig.enc.yaml;
         mode = "0600";
@@ -44,6 +45,13 @@
         sopsFile = ../../../secrets/gitconfig.enc.yaml;
         mode = "0600";
         path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.extras";
+      };
+
+      # minio
+      "minio/config" = {
+        sopsFile = ../../../secrets/minio.enc.yaml;
+        mode = "0600";
+        path = "${config.home.homeDirectory}/.mc/config";
       };
     };
   };
