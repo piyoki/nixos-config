@@ -3,6 +3,5 @@
 {
   imports = [
     ./qt
-    ./addons
   ];
 }
