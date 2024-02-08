@@ -86,6 +86,7 @@ abbr gcm "git commit -m"
 abbr gca "git commit --amend"
 abbr gpp "git push -u origin"
 abbr gd "git diff"
+abbr gadd "git add ."
 
 # nixos
 abbr rebuild "sudo nixos-rebuild switch --upgrade --flake .#nixos"
