@@ -3,8 +3,7 @@
 {
   imports = [
     ./encryption
-    #./minio
-    ./dconf.nix
+    ./dconf
   ];
 }
 
