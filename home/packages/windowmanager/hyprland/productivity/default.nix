@@ -11,5 +11,6 @@
     xfce.thunar # file manager
     xfce.thunar-archive-plugin
     libreoffice-fresh # office softwares
+    ventoy # bootable usb solution
   ];
 }
