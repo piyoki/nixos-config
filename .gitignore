@@ -1,2 +1,4 @@
 node_modules/
 secrets.yaml
+secrets/*.yaml
+!secrets/*enc..yaml
