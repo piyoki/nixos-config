@@ -1,11 +1,14 @@
-{ ... }:
+{ lib, ... }:
 
 let
   user = (import ../../vars.nix).user;
 in
 {
+  # enable hyprland
+  programs.hyprland.enable = true;
+
+  # enable gdm
   services.xserver = {
-    enable = true;
     displayManager.lightdm.greeters.mini = {
       enable = true;
       user = user;
@@ -18,11 +21,8 @@ in
     };
 
     # set a default session
-    windowManager = {
-      default = "Hyprland";
-    };
-
-    # enable hyprland
-    programs.hyprland.enable = true;
+    # windowManager = {
+    #   default = "hyprland";
+    # };
   };
 }

@@ -3,8 +3,10 @@
 {
   imports = [
     ./cron.nix
+    ./displaymanager.nix
     ./gnupg.nix
     ./samba.nix
+    # ./printer.nix
   ];
 
   services = {
