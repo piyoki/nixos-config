@@ -317,11 +317,11 @@
     "hypr": {
       "flake": false,
       "locked": {
-        "lastModified": 1707372150,
-        "narHash": "sha256-IsdwC7/m3dum3U76flKGamn/aj07OdyWajq3gsaa5dA=",
+        "lastModified": 1707483630,
+        "narHash": "sha256-bECAwZduHJYmPmNsTxrypMbsBioc0F78/t1WUWT5SQA=",
         "owner": "yqlbu",
         "repo": "dot-hypr",
-        "rev": "0fd3a92a69be0816ac2831004edd4b266bd90e27",
+        "rev": "a7b4d9625d95e273f6b768e874a9afe81013ecc0",
         "type": "github"
       },
       "original": {
