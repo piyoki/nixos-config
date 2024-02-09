@@ -830,10 +830,28 @@
         "pre-commit-hooks": "pre-commit-hooks_2",
         "qutebrowser": "qutebrowser",
         "rofi": "rofi",
+        "secrets": "secrets",
         "sops-nix": "sops-nix",
         "swappy": "swappy",
         "tmux": "tmux",
         "waybar": "waybar"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707481366,
+        "narHash": "sha256-NhzaU2DiUodFKyAEGUi9YaE0zsDO2LF9iNQaOLa+ZHs=",
+        "ref": "refs/heads/master",
+        "rev": "ad7abba9d9f08f3469cd7c4b398779e271bfbe7e",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/yqlbu/sops-credentials.git"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/yqlbu/sops-credentials.git"
       }
     },
     "sops-nix": {

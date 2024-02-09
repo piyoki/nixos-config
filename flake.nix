@@ -1,6 +1,6 @@
 {
   # build system
-  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, helloworld, qutebrowser, waybar, nvim, lf, dunst, lazygit, rofi, swappy, tmux, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, helloworld, qutebrowser, waybar, nvim, lf, dunst, lazygit, rofi, swappy, tmux, hypr, secrets, ... }@inputs:
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
@@ -49,6 +49,12 @@
     flake-utils.url = "github:numtide/flake-utils";
     daeuniverse.url = "github:daeuniverse/flake.nix/sync-upstream";
     helloworld.url = "github:yqlbu/helloworld.nix";
+
+    # secrets
+    secrets = {
+      url = "git+ssh://git@github.com/yqlbu/sops-credentials.git?shallow=1";
+      flake = false;
+    };
 
     # personal dotfiles
     qutebrowser = {
