@@ -301,11 +301,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1707175763,
-        "narHash": "sha256-0MKHC6tQ4KEuM5rui6DjKZ/VNiSANB4E+DJ/+wPS1PU=",
+        "lastModified": 1707467182,
+        "narHash": "sha256-/Bw/xgCXfj4nXDd8Xq+r1kaorfsYkkomMf5w5MpsDyA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f99eace7c167b8a6a0871849493b1c613d0f1b80",
+        "rev": "5b9156fa9a8b8beba917b8f9adbfd27bf63e16af",
         "type": "github"
       },
       "original": {
@@ -603,11 +603,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1707473766,
-        "narHash": "sha256-9Tk3EdYhDaCunT+PKUPZoxqOvHjBe/0CeyJcpNA3sSQ=",
+        "lastModified": 1707484563,
+        "narHash": "sha256-oeQAHy0ZB6wJmHIyI3vpDJJRLvQQW1qnrySVodd0zwg=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "af9277b7e33c7ae418dba389564a96ab6ed64336",
+        "rev": "b148da425ddd6a727bbcc03e2ea2bb85a3a6a4cd",
         "type": "github"
       },
       "original": {
@@ -840,18 +840,18 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1707481366,
-        "narHash": "sha256-NhzaU2DiUodFKyAEGUi9YaE0zsDO2LF9iNQaOLa+ZHs=",
+        "lastModified": 1707484254,
+        "narHash": "sha256-5liAjT1phMmUZrS/Pefp/ckc2nlVtEuE39tG/zkokKo=",
         "ref": "refs/heads/master",
-        "rev": "ad7abba9d9f08f3469cd7c4b398779e271bfbe7e",
+        "rev": "4e8578320412334d1f8a64c814a7c620227fa1a4",
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@github.com/yqlbu/sops-credentials.git"
+        "url": "file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@github.com/yqlbu/sops-credentials.git"
+        "url": "file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
