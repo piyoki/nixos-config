@@ -7,5 +7,6 @@
     nvtop # gpu
     bottom # process
     ncdu # disk utilization
+    duf # dis usage analyzer
   ];
 }
