@@ -39,6 +39,23 @@
         "type": "github"
       }
     },
+    "fish": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707501326,
+        "narHash": "sha256-16bRLVBJUpbNAITG1ty4sM6pBAVyMZZJdnqQTzij2ng=",
+        "owner": "yqlbu",
+        "repo": "dot-fish",
+        "rev": "a28181291dbacd913c832d80feff1669d86317ce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yqlbu",
+        "ref": "x1-carbon",
+        "repo": "dot-fish",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -818,6 +835,7 @@
       "inputs": {
         "daeuniverse": "daeuniverse",
         "dunst": "dunst",
+        "fish": "fish",
         "flake-utils": "flake-utils_3",
         "helloworld": "helloworld",
         "home-manager": "home-manager",
@@ -841,10 +859,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1707484254,
-        "narHash": "sha256-5liAjT1phMmUZrS/Pefp/ckc2nlVtEuE39tG/zkokKo=",
+        "lastModified": 1707497872,
+        "narHash": "sha256-3S58QMQbU/9ArdEpoUOVpqBa2mgTpl9BNUdre9f92HA=",
         "ref": "refs/heads/master",
-        "rev": "4e8578320412334d1f8a64c814a7c620227fa1a4",
+        "rev": "285a3c28455b80c72698742f6c4c5a2ab6b96a0d",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/secrets"
