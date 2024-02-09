@@ -12,7 +12,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # nix usage
     nix-prefetch-scripts
+    update-nix-fetchgit
+
+    # basic but essential
     tmux
     tree
     vim
@@ -27,7 +31,8 @@
 
     # fish-related
     fishPlugins.fzf-fish
-    # notification
+
+    # misc
     libnotify
   ];
 }
