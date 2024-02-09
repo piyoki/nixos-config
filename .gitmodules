@@ -1,4 +1,4 @@
 [submodule "secrets"]
-	path = secrets
-	url = git@github.com:yqlbu/sops-credentials.git
-	branch = master
+  path = secrets
+  url = git@github.com:yqlbu/sops-credentials.git
+  branch = master
