@@ -92,6 +92,7 @@ abbr gadd "git add ."
 abbr rebuild "sudo nixos-rebuild switch --upgrade --flake .#nixos"
 abbr prefetch-git "nix-prefetch-git --url 'https://github.com/yqlbu/' --rev 'refs/heads/x1-carbon'"
 abbr clean "sudo nix-collect-garbage -d"
+abbr update-lock "sudo nix flake update"
 
 # flux
 abbr fra "flux reconcile kustomization flux-system --with-source"
