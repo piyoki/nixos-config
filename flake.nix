@@ -1,6 +1,6 @@
 {
   # build system
-  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, helloworld, qutebrowser, waybar, nvim, lf, dunst, lazygit, rofi, swappy, tmux, hypr, secrets, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, ... }@inputs:
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
@@ -19,7 +19,7 @@
               home-manager.extraSpecialArgs = { inherit inputs system user; };
               home-manager.users.${user} = import ./home;
               home-manager.sharedModules = [
-                inputs.sops-nix.homeManagerModules.sops
+                sops-nix.homeManagerModules.sops
               ];
             }
             hyprland.nixosModules.default
