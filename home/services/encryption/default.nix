@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -17,7 +17,7 @@
   home.file.".gnupg/gpg.conf".text = builtins.readFile ./gpg.conf;
 
   # sops
-  home.file.".sops/.sops.yaml".text = builtins.readFile ../../../.sops.yaml;
+  home.file.".sops/.sops.yaml".text = "${inputs.secrets}/.sops.yaml";
 
   # sops-nix
   sops = {

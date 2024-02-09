@@ -784,11 +784,11 @@
     "qutebrowser": {
       "flake": false,
       "locked": {
-        "lastModified": 1707494870,
-        "narHash": "sha256-Mw/hmXVZ++n06YYdkJuiTYi6zWqyuXBsQrTYFa6O0aE=",
+        "lastModified": 1707497562,
+        "narHash": "sha256-l6ZHFjux81EAqjM/BGA66icCZjU58ND8THsStaj03ds=",
         "owner": "yqlbu",
         "repo": "dot-qutebrowser",
-        "rev": "eb1d8792658bcd49bc7a22a679d8167010f2bbab",
+        "rev": "214b9e246fcc50135a960a2bd83018be6cd654e0",
         "type": "github"
       },
       "original": {
@@ -1037,11 +1037,11 @@
     "waybar": {
       "flake": false,
       "locked": {
-        "lastModified": 1707493589,
-        "narHash": "sha256-eRjy2uzK5cHDasQRgc32rbghD2sIjxhVdmqW/S30wqM=",
+        "lastModified": 1707497380,
+        "narHash": "sha256-YZ2HkmRdpSzTFaLbDBj+IMqmGP8dJift2tZChFBIi/U=",
         "owner": "yqlbu",
         "repo": "dot-waybar",
-        "rev": "5b70623f433d0f02c72ea1f9bfc0c644f3570bc6",
+        "rev": "7b5d57f09919f1cd1cdd654ab4fafee1a73e412b",
         "type": "github"
       },
       "original": {

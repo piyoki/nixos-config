@@ -94,6 +94,7 @@ abbr prefetch-git "nix-prefetch-git --url 'https://github.com/yqlbu/' --rev 'ref
 abbr clean "sudo nix-collect-garbage -d"
 abbr update "sudo nix flake update"
 abbr update-input "sudo nix flake lock --update-input"
+abbr sync-secrets "git submodule update --recursive --remote --merge"
 
 # flux
 abbr fra "flux reconcile kustomization flux-system --with-source"
