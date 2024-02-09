@@ -52,7 +52,7 @@
 
     # secrets
     secrets = {
-      url = "git+ssh://git@github.com/yqlbu/sops-credentials.git?shallow=1";
+      url = "git+file:/home/kev/flake/secrets?shallow=1";
       flake = false;
     };
 
