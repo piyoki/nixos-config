@@ -70,7 +70,7 @@
       flake = false;
     };
     dunst = {
-      url = "github:yqlbu/dot-dunst";
+      url = "github:yqlbu/dot-dunst/x1-carbon";
       flake = false;
     };
     lazygit = {

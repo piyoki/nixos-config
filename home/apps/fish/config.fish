@@ -106,7 +106,7 @@ abbr ssh "kitten ssh"
 abbr rgf "rg --files | rg"
 
 # program
-abbr icat "viu"
+abbr icat "imv"
 
 ### Device Control ###
 
@@ -136,7 +136,7 @@ alias snips="ssh snips.sh"
 fzf_configure_bindings --git_status --history=\ch --variables=\cv --directory=\cx --git_log=\cg
 
 # lf history work-dir
-bind \co 'set old_tty (stty -g); stty sane; lfcd; stty $old_tty; commandline -f repaint'
+bind \co 'set old_tty (stty -g); stty sane; lf; stty $old_tty; commandline -f repaint'
 
 # zoxide
 zoxide init fish | source

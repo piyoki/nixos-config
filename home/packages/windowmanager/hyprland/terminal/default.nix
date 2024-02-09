@@ -15,7 +15,6 @@
     ripgrep
     trash-cli
     unzip
-    viu # A command-line application to view images from the terminal written in Rust
     vivid
     yt-dlp # Command-line tool to download videos from YouTube.com and other sites
     zip

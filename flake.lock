@@ -25,15 +25,16 @@
     "dunst": {
       "flake": false,
       "locked": {
-        "lastModified": 1707401524,
-        "narHash": "sha256-GLy4ryVMV1GJGLvCayY1atz266wUJL3UXiwso5LA/OY=",
+        "lastModified": 1707373112,
+        "narHash": "sha256-aDYoyXZZycWvmllq2Im5zX7cX8k+8rPQAS45XbxwCYA=",
         "owner": "yqlbu",
         "repo": "dot-dunst",
-        "rev": "76f781eb23e192028f8f558e234a70b1966bb772",
+        "rev": "aaa666bcf31b2b4530c0ed3fcdc7c0d88d173e14",
         "type": "github"
       },
       "original": {
         "owner": "yqlbu",
+        "ref": "x1-carbon",
         "repo": "dot-dunst",
         "type": "github"
       }
@@ -603,11 +604,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1707484563,
-        "narHash": "sha256-oeQAHy0ZB6wJmHIyI3vpDJJRLvQQW1qnrySVodd0zwg=",
+        "lastModified": 1707491687,
+        "narHash": "sha256-68v00mCk7ajyAm5otn0GyVVmBBRInogaHw2kEwXr6bk=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "b148da425ddd6a727bbcc03e2ea2bb85a3a6a4cd",
+        "rev": "ad2f111e67b120504e1bd21d8ae4f0ce97afa75b",
         "type": "github"
       },
       "original": {
@@ -783,11 +784,11 @@
     "qutebrowser": {
       "flake": false,
       "locked": {
-        "lastModified": 1707408495,
-        "narHash": "sha256-jLy0QZadK1aco7erSKWAIC5MYP0oWpFw7mlPOj+ZznI=",
+        "lastModified": 1707494870,
+        "narHash": "sha256-Mw/hmXVZ++n06YYdkJuiTYi6zWqyuXBsQrTYFa6O0aE=",
         "owner": "yqlbu",
         "repo": "dot-qutebrowser",
-        "rev": "53b394323b099747f9b07481e073a81c8bf53859",
+        "rev": "eb1d8792658bcd49bc7a22a679d8167010f2bbab",
         "type": "github"
       },
       "original": {
@@ -1036,11 +1037,11 @@
     "waybar": {
       "flake": false,
       "locked": {
-        "lastModified": 1707401211,
-        "narHash": "sha256-z53FnfFxKg4VGmsq0LYs9Cv9AK9vDxUrVD5A1CSdy/I=",
+        "lastModified": 1707493589,
+        "narHash": "sha256-eRjy2uzK5cHDasQRgc32rbghD2sIjxhVdmqW/S30wqM=",
         "owner": "yqlbu",
         "repo": "dot-waybar",
-        "rev": "8b4948965f961077a6a2c5199160293e39671cee",
+        "rev": "5b70623f433d0f02c72ea1f9bfc0c644f3570bc6",
         "type": "github"
       },
       "original": {
