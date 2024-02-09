@@ -12,11 +12,13 @@
     <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/yqlbu/nixos-config?logo=history&logoColor=white" alt="lastcommit"/>
 </p>
 
-This repo contains the declarative configuration of a few NixOS systems, with ~100% config Nixfied.
+This repo contains the declarative configuration of a few NixOS systems, with ~100% config nixfied.
 
-## Parts
+## Dependencies
 
 - [home-manager](https://github.com/nix-community/home-manager) configurations as flake module.
+- [sops-nix](https://github.com/Mic92/sops-nix) to decrypt in-flight secrets from remote
+- [nixpkgs-wayland](https://github.com/nix-community/nixpkgs-wayland) to fetch up-to-date wayland packages for daily usage
 
 ## References
 
