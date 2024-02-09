@@ -93,6 +93,10 @@
       url = "github:yqlbu/dot-tmux/x1-carbon";
       flake = false;
     };
+    fish = {
+      url = "github:yqlbu/dot-fish/x1-carbon";
+      flake = false;
+    };
     hypr = {
       url = "github:yqlbu/dot-hypr/x1-carbon";
       flake = false;
