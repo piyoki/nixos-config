@@ -8,7 +8,8 @@
     age-plugin-yubikey # YubiKey plugin for age
     yubikey-manager # Command line tool for configuring any YubiKey over all USB transports
     yubioath-flutter # Yubico Authenticator for Desktop
-    bitwarden-cli # A secure and free password manager for all of your devices
+    bitwarden-cli # A secure and free password manager for all of your devices (CLI)
+    bitwarden # A secure and free password manager for all of your devices (UI)
   ];
 
   # gnupg
