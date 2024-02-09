@@ -69,10 +69,6 @@
       url = "github:yqlbu/dot-lf";
       flake = false;
     };
-    dunst = {
-      url = "github:yqlbu/dot-dunst/x1-carbon";
-      flake = false;
-    };
     lazygit = {
       url = "github:yqlbu/dot-lazygit";
       flake = false;
@@ -99,6 +95,10 @@
     };
     hypr = {
       url = "github:yqlbu/dot-hypr/x1-carbon";
+      flake = false;
+    };
+    dunst = {
+      url = "github:yqlbu/dot-dunst/x1-carbon";
       flake = false;
     };
   };
