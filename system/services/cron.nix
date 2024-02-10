@@ -6,8 +6,8 @@
   systemd.timers."restart-scdaemon" = {
     wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnBootSec = "5m";
-        OnUnitActiveSec = "5m";
+        OnBootSec = "1h";
+        OnUnitActiveSec = "1h";
         Unit = "restart-scdaemon.service";
       };
   };
