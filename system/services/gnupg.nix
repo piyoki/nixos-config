@@ -37,7 +37,6 @@
           ttyname = "$GPG_TTY";
           default-cache-ttl = 60;
           max-cache-ttl = 120;
-          allow-loopback-pinentry = "";
         };
       };
     };
