@@ -360,11 +360,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1707431350,
-        "narHash": "sha256-fCt2EOgBdpS4DslBsFJBhmQCvkV97tFxS6KWFaAd7SQ=",
+        "lastModified": 1707522420,
+        "narHash": "sha256-B7ofcGLTHssAZqZcyVydLXXDvyVUUE5mcCDRJxt5gnk=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "289d4241bea72ebd891e037996ec4ffd356aadc8",
+        "rev": "334a0f03ee2f80118418c16cc06005a1fe8cfd60",
         "type": "github"
       },
       "original": {
@@ -621,11 +621,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1707491687,
-        "narHash": "sha256-68v00mCk7ajyAm5otn0GyVVmBBRInogaHw2kEwXr6bk=",
+        "lastModified": 1707526901,
+        "narHash": "sha256-acy1/921ZupvzBkY7TTG30RJXw+ZXE3KTjgn2zgF3t4=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "ad2f111e67b120504e1bd21d8ae4f0ce97afa75b",
+        "rev": "454a1957a66e7aac5e4618d917eee6b83b02a658",
         "type": "github"
       },
       "original": {
@@ -859,10 +859,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1707497872,
-        "narHash": "sha256-3S58QMQbU/9ArdEpoUOVpqBa2mgTpl9BNUdre9f92HA=",
+        "lastModified": 1707529475,
+        "narHash": "sha256-/bnZFVN95y4tnVLMgrNrtmcoqLbnzYRt8YHU1xr9alI=",
         "ref": "refs/heads/master",
-        "rev": "285a3c28455b80c72698742f6c4c5a2ab6b96a0d",
+        "rev": "88e183e97a6c23cd9015aa8d07fe2ee29308ffd0",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/secrets"
