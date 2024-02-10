@@ -4,15 +4,9 @@
 </p>
 <p align="center">
   <img src="https://custom-icon-badges.herokuapp.com/github/license/yqlbu/nixos-config?style=flat&logo=law&colorA=24273A&color=blue" alt="License"/>
-  <a href="https://hyprland.org/">
-    <img src="https://img.shields.io/static/v1?label=Hyprland&message=latest&style=flat&logo=hyprland&colorA=24273A&colorB=6CC5D9&logoColor=CAD3F5"/>
-  </a>
-  <a href="https://nixos.wiki/wiki/Flakes">
-    <img src="https://img.shields.io/static/v1?label=Nix Flake&message=check&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5">
-  </a>
-  <a href="https://nixos.org/">
-    <img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4">
-  </a>
+  <img src="https://img.shields.io/static/v1?label=Hyprland&message=latest&style=flat&logo=hyprland&colorA=24273A&colorB=6CC5D9&logoColor=CAD3F5"/>
+  <img src="https://img.shields.io/static/v1?label=Nix Flake&message=check&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5">
+  <img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4">
   <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/yqlbu/nixos-config?style=flat&logo=history&colorA=24273A&colorB=C4EEF2&logoColor=white" alt="lastcommit"/>
 </p>
 
