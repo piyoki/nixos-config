@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, user, ... }:
 
-let
-  user = (import ../../vars.nix).user;
-in
 {
   users = {
     users.${user} = {

@@ -1,4 +1,4 @@
-{ ... }:
+{ user, ... }:
 
 # Reference: https://nixos.wiki/wiki/Systemd/Timers
 {
@@ -19,7 +19,7 @@
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "root";
+      User = user;
     };
   };
 
