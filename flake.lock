@@ -801,11 +801,11 @@
     "qutebrowser": {
       "flake": false,
       "locked": {
-        "lastModified": 1707559205,
-        "narHash": "sha256-uKD2VIX93YOIq+SVeBQ0gRuuLV3VQmtCc/CvWNOi0M0=",
+        "lastModified": 1707581436,
+        "narHash": "sha256-Zp29vWRfXVg9ptWfACbPwsVAESnknMhOR3DPrXgbZJg=",
         "owner": "yqlbu",
         "repo": "dot-qutebrowser",
-        "rev": "a5c14fb3777def5971555e7f76b0416db6f0c595",
+        "rev": "add6db98c93e213d6bee853c66794bc15862cc61",
         "type": "github"
       },
       "original": {
