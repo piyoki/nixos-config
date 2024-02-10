@@ -859,10 +859,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1707529475,
-        "narHash": "sha256-/bnZFVN95y4tnVLMgrNrtmcoqLbnzYRt8YHU1xr9alI=",
+        "lastModified": 1707571735,
+        "narHash": "sha256-k9Sf4qmBT2WI7+r+Xza9naW2rWmluq2KVqm6bp694VY=",
         "ref": "refs/heads/master",
-        "rev": "88e183e97a6c23cd9015aa8d07fe2ee29308ffd0",
+        "rev": "30e4af4a113235d5cf7c8573297cbcb6f450db8e",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/secrets"
