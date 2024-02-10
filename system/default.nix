@@ -17,6 +17,7 @@
     update-nix-fetchgit
 
     # basic but essential
+    neofetch
     tmux
     tree
     vim
