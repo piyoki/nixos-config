@@ -10,7 +10,7 @@
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
-          specialArgs = { inherit inputs system; };
+          specialArgs = { inherit inputs system user; };
           modules = [
             ./profiles/thinkpad-x1-carbon/configuration.nix
             home-manager.nixosModules.home-manager {

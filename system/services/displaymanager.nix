@@ -1,8 +1,5 @@
-{ ... }:
+{ user, ... }:
 
-let
-  user = (import ../../vars.nix).user;
-in
 {
   # enable hyprland
   programs.hyprland.enable = true;
