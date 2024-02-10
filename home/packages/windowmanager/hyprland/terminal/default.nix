@@ -11,6 +11,7 @@
     gzip
     imagemagick
     imv # A command line image viewer for tiling window managers
+    jp2a # A small utility that converts JPG images to ASCII
     kitty
     ripgrep
     trash-cli
