@@ -86,7 +86,7 @@
       flake = false;
     };
     tmux = {
-      url = "github:yqlbu/dot-tmux/x1-carbon";
+      url = "github:yqlbu/dot-tmux/x1-carbon?submodules=1";
       flake = false;
     };
     fish = {

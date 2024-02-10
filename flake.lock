@@ -42,11 +42,11 @@
     "fish": {
       "flake": false,
       "locked": {
-        "lastModified": 1707501326,
-        "narHash": "sha256-16bRLVBJUpbNAITG1ty4sM6pBAVyMZZJdnqQTzij2ng=",
+        "lastModified": 1707554814,
+        "narHash": "sha256-9/Tg/mzxOAAREpWJODBESZjgkYmE6zDJu3QLaP3Yzfk=",
         "owner": "yqlbu",
         "repo": "dot-fish",
-        "rev": "a28181291dbacd913c832d80feff1669d86317ce",
+        "rev": "6c090cce570bb6b29a3385c7d1bf4928384b7e8a",
         "type": "github"
       },
       "original": {
@@ -1016,11 +1016,11 @@
     "tmux": {
       "flake": false,
       "locked": {
-        "lastModified": 1707403009,
-        "narHash": "sha256-1Yp5JwTgKJkbYh5hJQRlhBBWSI1mvuEDqR9hn4t2B6k=",
+        "lastModified": 1707554426,
+        "narHash": "sha256-vDWWXPm2lF3OOGusiNRsvB8Ro49MTG47c6bJN2hLB5s=",
         "owner": "yqlbu",
         "repo": "dot-tmux",
-        "rev": "1157509ddfeea150b633cd0e48c7f05dc16a80b4",
+        "rev": "ac4aaa6c666e0c8dca93c3501376f36b5e5fa38d",
         "type": "github"
       },
       "original": {
