@@ -14,6 +14,6 @@
     networkmanagerapplet # network manager (gtk GUI)
     swayidle # idle management daemon
     xfce.tumbler # thumbnailer service
-    swaylock # screen locker
+    inputs.nixpkgs-wayland.packages.${system}.swaylock-effects # screenlock daemon
   ];
 }
