@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
+# Reference: https://nixos.wiki/wiki/Yubikey
 {
-  # Reference: https://nixos.wiki/wiki/Yubikey
   environment.systemPackages = with pkgs; [
     ccid # ccid drivers for pcsclite
     gnupg
@@ -20,6 +20,9 @@
     libu2f-host
     yubikey-personalization
   ];
+
+  # disable ssh-agent
+  programs.ssh.startAgent = false;
 
   # enable pcscd
   services.pcscd.enable = true;

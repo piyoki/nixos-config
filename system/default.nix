@@ -18,12 +18,13 @@
     update-nix-fetchgit # A program to update fetchgit values in Nix expressions
 
     # basic but essential
+    gnutar
+    killall
     neofetch
     tmux
     tree
     vim
     wget
-    gnutar
 
     # system call monitoring
     strace # system call monitoring

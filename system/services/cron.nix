@@ -15,6 +15,7 @@
   systemd.services."restart-scdaemon" = {
     script = ''
       set -eu
+      /run/current-system/sw/bin/killall gpg-agent
       /run/current-system/sw/bin/gpgconf --reload scdaemon
     '';
     serviceConfig = {
