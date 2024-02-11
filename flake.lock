@@ -912,11 +912,11 @@
     "swaylock": {
       "flake": false,
       "locked": {
-        "lastModified": 1707667173,
-        "narHash": "sha256-MHTB0B2kX3ybbsMf1vpzHw3kyzUjZM7Bb2Tnai5KY+Q=",
+        "lastModified": 1707669733,
+        "narHash": "sha256-csna5RWXqCK+JZYBLD6OA6Nv5OYxjU6blTeGeeM7P6M=",
         "owner": "yqlbu",
         "repo": "dot-swaylock",
-        "rev": "e84921b1b6b63dcb093b1e17826984267f5f3779",
+        "rev": "b47b8a36a20ed8071f100792b1d62341d0a7db2f",
         "type": "github"
       },
       "original": {
