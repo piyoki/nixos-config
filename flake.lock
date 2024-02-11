@@ -852,6 +852,7 @@
         "secrets": "secrets",
         "sops-nix": "sops-nix",
         "swappy": "swappy",
+        "swaylock": "swaylock",
         "tmux": "tmux",
         "waybar": "waybar"
       }
@@ -905,6 +906,23 @@
       "original": {
         "owner": "yqlbu",
         "repo": "dot-swappy",
+        "type": "github"
+      }
+    },
+    "swaylock": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707671054,
+        "narHash": "sha256-aoQfSSM9dIglILCI2uIoel7jweqE9OS0j+18P+mqRRA=",
+        "owner": "yqlbu",
+        "repo": "dot-swaylock",
+        "rev": "d8791aca26c6468ef5f46b442c739ba4ae4d9fa1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yqlbu",
+        "ref": "x1-carbon",
+        "repo": "dot-swaylock",
         "type": "github"
       }
     },

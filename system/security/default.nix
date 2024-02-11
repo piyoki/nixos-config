@@ -8,4 +8,7 @@
 
   security.polkit.enable = true;
   security.polkit.debug = true;
+
+  # make swaylock unlocks with correct password
+  security.pam.services.swaylock = {};
 }

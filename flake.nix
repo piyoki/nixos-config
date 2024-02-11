@@ -83,12 +83,16 @@
       url = "github:yqlbu/dot-rofi/x1-carbon";
       flake = false;
     };
+    swaylock = {
+      url = "github:yqlbu/dot-swaylock/x1-carbon";
+      flake = false;
+    };
     waybar = {
       url = "github:yqlbu/dot-waybar/x1-carbon";
       flake = false;
     };
     tmux = {
-      url = "github:yqlbu/dot-tmux/x1-carbon?submodules=1";
+      url = "github:yqlbu/dot-tmux/x1-carbon";
       flake = false;
     };
     fish = {

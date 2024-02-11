@@ -29,7 +29,7 @@
 
   # reset gpg-agent
   environment.shellInit = ''
-    gpg-connect-agent /bye
+    /run/current-system/sw/bin/gpg-connect-agent /bye
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   '';
 
