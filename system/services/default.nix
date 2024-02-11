@@ -6,7 +6,7 @@
     ./displaymanager.nix
     ./gnupg.nix
     ./samba.nix
-    ./power.nix
+    ./powermanagement.nix
     # ./printer.nix
   ];
 
