@@ -7,13 +7,15 @@
       pkgs = (import nixpkgs) { inherit system; };
       lib = nixpkgs.lib;
       user = (import ./vars.nix).user;
-    in {
+    in
+    {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           specialArgs = { inherit inputs system user; };
           modules = [
             ./profiles/thinkpad-x1-carbon/configuration.nix
-            home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs system user; };
@@ -26,7 +28,7 @@
           ];
         };
       };
-  };
+    };
 
   # define channels
   inputs = {

@@ -13,6 +13,6 @@
     mpd # music daemon
     networkmanagerapplet # network manager (gtk GUI)
     swayidle # idle management daemon
-    xfce.tumbler  # thumbnailer service
+    xfce.tumbler # thumbnailer service
   ];
 }

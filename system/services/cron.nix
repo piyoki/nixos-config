@@ -5,11 +5,11 @@
   # systemd timer
   systemd.timers."restart-scdaemon" = {
     wantedBy = [ "timers.target" ];
-      timerConfig = {
-        OnBootSec = "1h";
-        OnUnitActiveSec = "1h";
-        Unit = "restart-scdaemon.service";
-      };
+    timerConfig = {
+      OnBootSec = "1h";
+      OnUnitActiveSec = "1h";
+      Unit = "restart-scdaemon.service";
+    };
   };
 
   systemd.services."restart-scdaemon" = {

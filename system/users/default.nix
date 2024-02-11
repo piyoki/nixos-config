@@ -9,7 +9,7 @@
       openssh.authorizedKeys.keyFiles = [
         "${inputs.secrets}/authorized_keys"
       ];
-      packages = with pkgs; [];
+      packages = with pkgs; [ ];
     };
 
     users.root = {
