@@ -14,6 +14,10 @@
       noto-fonts-emoji
       source-code-pro
     ];
+    fontconfig.defaultFonts = {
+        serif = [ "Noto Serif" "Source Han Serif" ];
+        sansSerif = [ "Noto Sans" "Source Han Sans" ];
+    };
   };
 }
 

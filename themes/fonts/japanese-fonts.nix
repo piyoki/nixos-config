@@ -4,8 +4,8 @@
   # Enable fonts
   fonts = {
     packages = with pkgs; [
-      font-awesome
-      material-design-icons
+      source-han-sans-japanese
+      source-han-serif-japanese
     ];
   };
 }
