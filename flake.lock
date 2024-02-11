@@ -1016,11 +1016,11 @@
     "tmux": {
       "flake": false,
       "locked": {
-        "lastModified": 1707554426,
-        "narHash": "sha256-vDWWXPm2lF3OOGusiNRsvB8Ro49MTG47c6bJN2hLB5s=",
+        "lastModified": 1707655995,
+        "narHash": "sha256-kdoA7Sl6+5b12p0SyLbbpw+04eqxojz+1eEYBe7Xh2E=",
         "owner": "yqlbu",
         "repo": "dot-tmux",
-        "rev": "ac4aaa6c666e0c8dca93c3501376f36b5e5fa38d",
+        "rev": "b516fd59660db84b4837e2a62c1dce8dbcc0f74e",
         "type": "github"
       },
       "original": {

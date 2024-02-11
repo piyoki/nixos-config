@@ -24,6 +24,12 @@
   # enable pcscd
   services.pcscd.enable = true;
 
+  # reset gpg-agent
+  environment.shellInit = ''
+    gpg-connect-agent /bye
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+  '';
+
   programs = {
     # gnupg-agent
     gnupg = {
