@@ -13,8 +13,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # nix usage
-    nix-prefetch-scripts
-    update-nix-fetchgit
+    nixpkgs-fmt # Nix code formatter for nixpkgs
+    nix-prefetch-scripts # Collection of all the nix-prefetch-* scripts which may be used to obtain source hashes
+    update-nix-fetchgit # A program to update fetchgit values in Nix expressions
 
     # basic but essential
     neofetch
