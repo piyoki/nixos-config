@@ -7,6 +7,7 @@
     ./gnupg.nix
     ./samba.nix
     ./powermanagement.nix
+    ./xdg-portal.nix
     # ./printer.nix
   ];
 

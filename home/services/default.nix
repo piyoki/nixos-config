@@ -4,6 +4,7 @@
   imports = [
     ./encryption
     ./dconf
+    ./xdg
   ];
 }
 
