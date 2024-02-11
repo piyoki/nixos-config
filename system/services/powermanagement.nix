@@ -1,13 +1,15 @@
-{ ... }:
+{ user, ... }:
 
 # References:
 # https://nixos.wiki/wiki/Laptop
 # https://nixos.wiki/wiki/Power_Management
 {
+  # enable default power management
   powerManagement.enable = true;
 
   # prevents overheating on Intel CPUs
   services.thermald.enable = true;
+
   # power-saving setttings
   services.tlp = {
     enable = true;
@@ -28,6 +30,7 @@
       STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
     };
   };
+
   # auto-cpufreq settings
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
@@ -38,6 +41,21 @@
     charger = {
       governor = "performance";
       turbo = "auto";
+    };
+  };
+
+  # power resume hooks
+  systemd.services.waybars = {
+    description = "relaunch waybars when power resumes";
+    wantedBy = [ "post-resume.target" ];
+    after = [ "post-resume.target" ];
+    script = ''
+      set -eux
+      /run/current-system/sw/bin/pkill .waybar-wrapped
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = user;
     };
   };
 }
