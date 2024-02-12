@@ -52,7 +52,7 @@
     daeuniverse.url = "github:daeuniverse/flake.nix/sync-upstream";
     helloworld.url = "github:yqlbu/helloworld.nix";
 
-    # secrets
+    # private repos
     secrets = {
       url = "git+file:./secrets?shallow=1";
       flake = false;

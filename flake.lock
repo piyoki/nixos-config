@@ -878,10 +878,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1707723286,
-        "narHash": "sha256-EMyujq76RQn9ct/17uNTuUQhsYkBY7kF1E9dVf51dnw=",
+        "lastModified": 1707744799,
+        "narHash": "sha256-AVPeAozDCynxEAEut+y+uIzGijj+16wqapjldUgrlnE=",
         "ref": "refs/heads/master",
-        "rev": "0d8aba7ddcf8c4c8923340edf0e85ee086886d1d",
+        "rev": "6bdad2929997abf2ff610fc234692ced28351b7f",
         "shallow": true,
         "type": "git",
         "url": "file:./secrets"

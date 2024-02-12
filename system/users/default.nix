@@ -7,7 +7,7 @@
       extraGroups = [ "networkmanager" "wheel" "docker" ];
       shell = pkgs.fish;
       openssh.authorizedKeys.keyFiles = [
-        "${inputs.secrets}/authorized_keys"
+        "${inputs.home-estate}/authorized_keys"
       ];
       packages = with pkgs; [ ];
     };
