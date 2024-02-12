@@ -315,10 +315,10 @@
     "home-estate": {
       "flake": false,
       "locked": {
-        "lastModified": 1707729318,
+        "lastModified": 1707730937,
         "narHash": "sha256-H9KHDWWRETHNy/WTwZGwo3b9e2AgMGwAyiA8L16E+AM=",
         "ref": "refs/heads/master",
-        "rev": "d424718f4d2a817a84f2fca4bd003d9e7143a2e4",
+        "rev": "e4dbaa58e62881d4522f8abbab4845dc190f51af",
         "shallow": true,
         "type": "git",
         "url": "file:./home-estate"
