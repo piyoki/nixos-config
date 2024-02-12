@@ -16,11 +16,10 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - uses: DeterminateSystems/flake-checker-action@main
 
-      - name: update dae package
+      - name: update flake upstream inputs
         shell: bash
         run: |
-          git checkout HEAD^
-          sudo nix flake update
+          nix flake update
           git add .
           git status
           # git push -u origin master
