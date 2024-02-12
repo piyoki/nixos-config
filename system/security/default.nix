@@ -6,9 +6,11 @@
     polkit-kde-agent
   ];
 
-  security.polkit.enable = true;
-  security.polkit.debug = true;
+  security = {
+    polkit.enable = true;
+    polkit.debug = true;
 
-  # make swaylock unlocks with correct password
-  security.pam.services.swaylock = { };
+    # make swaylock unlocks with correct password
+    pam.services.swaylock = { };
+  };
 }

@@ -1,5 +1,5 @@
 { inputs, ... }:
 
 {
-  xdg.configFile."nvim".source = (inputs.nvim + "/");
+  xdg.configFile."nvim".source = inputs.nvim + "/";
 }

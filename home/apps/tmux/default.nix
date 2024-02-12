@@ -45,12 +45,12 @@ let
   };
 in
 {
-  home.file.".tmux.conf".source = (inputs.tmux + "/.tmux.conf");
-  home.file.".tmux/plugins/tpm".source = (tpm + "/");
-  home.file.".tmux/plugins/tmux-sensible".source = (tmux-sensible + "/");
-  home.file.".tmux/plugins/tmux-continuum".source = (tmux-continuum + "/");
-  home.file.".tmux/plugins/tmux-resurrect".source = (tmux-resurrect + "/");
-  home.file.".tmux/plugins/tmux-yank".source = (tmux-yank + "/");
-  home.file.".tmux/plugins/t-smart-tmux-session-manager".source = (t-smart-tmux-session-manager + "/");
-  home.file.".tmux/plugins/minimal-tmux-status".source = (minimal-tmux-status + "/");
+  home.file.".tmux.conf".source = inputs.tmux + "/.tmux.conf";
+  home.file.".tmux/plugins/tpm".source = tpm + "/";
+  home.file.".tmux/plugins/tmux-sensible".source = tmux-sensible + "/";
+  home.file.".tmux/plugins/tmux-continuum".source = tmux-continuum + "/";
+  home.file.".tmux/plugins/tmux-resurrect".source = tmux-resurrect + "/";
+  home.file.".tmux/plugins/tmux-yank".source = tmux-yank + "/";
+  home.file.".tmux/plugins/t-smart-tmux-session-manager".source = t-smart-tmux-session-manager + "/";
+  home.file.".tmux/plugins/minimal-tmux-status".source = minimal-tmux-status + "/";
 }

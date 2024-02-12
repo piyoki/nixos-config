@@ -14,10 +14,12 @@
   };
 
   # Use the systemd-boot EFI boot loader.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.supportedFilesystems = [ "btrfs" ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    supportedFilesystems = [ "btrfs" ];
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+  };
 
   hardware.enableAllFirmware = true;
 
@@ -60,6 +62,7 @@
       # set max-jobs
       max-jobs = lib.mkDefault 8;
     };
+
     # garbage collection
     gc = {
       automatic = true;

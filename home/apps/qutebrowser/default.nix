@@ -15,6 +15,6 @@ let
   };
 in
 {
-  xdg.configFile."qutebrowser/config.py".source = (inputs.qutebrowser + "/config.py");
-  xdg.configFile."qutebrowser/catppuccin".source = (theme + "/");
+  xdg.configFile."qutebrowser/config.py".source = inputs.qutebrowser + "/config.py";
+  xdg.configFile."qutebrowser/catppuccin".source = theme + "/";
 }

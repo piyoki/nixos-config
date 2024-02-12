@@ -1,5 +1,5 @@
 { inputs, ... }:
 
 {
-  xdg.configFile."dunst".source = (inputs.dunst + "/");
+  xdg.configFile."dunst".source = inputs.dunst + "/";
 }

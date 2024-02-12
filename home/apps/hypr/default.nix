@@ -1,5 +1,5 @@
 { inputs, ... }:
 
 {
-  xdg.configFile."hypr".source = (inputs.hypr + "/");
+  xdg.configFile."hypr".source = inputs.hypr + "/";
 }

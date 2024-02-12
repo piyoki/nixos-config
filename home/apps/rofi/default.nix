@@ -1,5 +1,5 @@
 { inputs, ... }:
 
 {
-  xdg.configFile."rofi".source = (inputs.rofi + "/");
+  xdg.configFile."rofi".source = inputs.rofi + "/";
 }

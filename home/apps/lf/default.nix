@@ -1,6 +1,6 @@
 { inputs, ... }:
 
 {
-  xdg.configFile."lf".source = (inputs.lf + "/");
+  xdg.configFile."lf".source = inputs.lf + "/";
 }
 
