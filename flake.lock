@@ -437,6 +437,23 @@
         "type": "github"
       }
     },
+    "kitty": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707746947,
+        "narHash": "sha256-rQo/+JrWo96Q8tZtmS3BMyHOhgifeoQBlnaXrdI7YbQ=",
+        "owner": "yqlbu",
+        "repo": "dot-kitty",
+        "rev": "cd461402c7df421fb6ec4bc73721be96b3c3c719",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yqlbu",
+        "ref": "x1-carbon",
+        "repo": "dot-kitty",
+        "type": "github"
+      }
+    },
     "lazygit": {
       "flake": false,
       "locked": {
@@ -859,6 +876,7 @@
         "home-manager": "home-manager",
         "hypr": "hypr",
         "hyprland": "hyprland",
+        "kitty": "kitty",
         "lazygit": "lazygit",
         "lf": "lf",
         "nixpkgs": "nixpkgs_3",

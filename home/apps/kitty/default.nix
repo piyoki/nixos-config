@@ -1,6 +1,5 @@
-{ pkgs, ... }:
+{ inputs, ... }:
 
 {
-  home.packages = [ pkgs.kitty ];
-  xdg.configFile."kitty/kitty.conf".text = builtins.readFile ./kitty.conf;
+  xdg.configFile."kitty/kitty.conf".source = inputs.kitty + "/kitty.conf";
 }

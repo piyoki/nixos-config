@@ -111,5 +111,9 @@
       url = "github:yqlbu/dot-dunst/x1-carbon";
       flake = false;
     };
+    kitty = {
+      url = "github:yqlbu/dot-kitty/x1-carbon";
+      flake = false;
+    };
   };
 }
