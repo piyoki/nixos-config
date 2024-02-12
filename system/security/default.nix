@@ -10,5 +10,5 @@
   security.polkit.debug = true;
 
   # make swaylock unlocks with correct password
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 }
