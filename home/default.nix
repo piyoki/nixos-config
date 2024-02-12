@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./hardware
     ./packages
     ./services
     ./themes
