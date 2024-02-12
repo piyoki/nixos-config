@@ -2,3 +2,7 @@
 	path = secrets
 	url = git@github.com:yqlbu/sops-credentials.git
 	branch = master
+[submodule "home-estate"]
+	path = home-estate
+	url = git@github.com:yqlbu/home-estate.git
+	branch = master

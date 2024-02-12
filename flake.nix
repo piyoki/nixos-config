@@ -57,6 +57,10 @@
       url = "git+file:/home/kev/flake/secrets?shallow=1";
       flake = false;
     };
+    home-estate = {
+      url = "git+file:/home/kev/flake/home-estate?shallow=1";
+      flake = false;
+    };
 
     # personal dotfiles
     qutebrowser = {

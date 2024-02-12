@@ -312,6 +312,23 @@
         "type": "github"
       }
     },
+    "home-estate": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707705499,
+        "narHash": "sha256-sqFJW4QsZleCnpzdUyYJNN7VgLyX/pPiqdmCJ2JFK/w=",
+        "ref": "refs/heads/master",
+        "rev": "3c7b9b2f61d528975a3cdc19e3eb49d6870915ad",
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/home-estate"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/home-estate"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -838,6 +855,7 @@
         "fish": "fish",
         "flake-utils": "flake-utils_3",
         "helloworld": "helloworld",
+        "home-estate": "home-estate",
         "home-manager": "home-manager",
         "hypr": "hypr",
         "hyprland": "hyprland",
