@@ -5,8 +5,8 @@
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
       pkgs = (import nixpkgs) { inherit system; };
-      lib = nixpkgs.lib;
-      user = (import ./vars.nix).user;
+      inherit (nixpkgs) lib;
+      inherit (import ./vars.nix) user;
     in
     {
       nixosConfigurations = {
@@ -16,13 +16,15 @@
             ./profiles/thinkpad-x1-carbon/configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs system user; };
-              home-manager.users.${user} = import ./home;
-              home-manager.sharedModules = [
-                sops-nix.homeManagerModules.sops
-              ];
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs system user; };
+                users.${user} = import ./home;
+                sharedModules = [
+                  sops-nix.homeManagerModules.sops
+                ];
+              };
             }
             hyprland.nixosModules.default
           ];

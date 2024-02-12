@@ -835,11 +835,11 @@
     "qutebrowser": {
       "flake": false,
       "locked": {
-        "lastModified": 1707581436,
-        "narHash": "sha256-Zp29vWRfXVg9ptWfACbPwsVAESnknMhOR3DPrXgbZJg=",
+        "lastModified": 1707750891,
+        "narHash": "sha256-4G4qUHFzZ6TSHW3ZCJNPT7zqM1Dg0pumguzlIou+zGo=",
         "owner": "yqlbu",
         "repo": "dot-qutebrowser",
-        "rev": "add6db98c93e213d6bee853c66794bc15862cc61",
+        "rev": "0e9453124c93ba0db8aaa22aa045e1cc68d4f39f",
         "type": "github"
       },
       "original": {
