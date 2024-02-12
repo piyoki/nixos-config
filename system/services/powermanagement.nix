@@ -1,11 +1,14 @@
-{ user, ... }:
+{ lib, user, ... }:
 
 # References:
 # https://nixos.wiki/wiki/Laptop
 # https://nixos.wiki/wiki/Power_Management
 {
-  # enable default power management
-  powerManagement.enable = true;
+  # default power management settings
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = lib.mkDefault "powersave";
+  };
 
   services = {
     # prevents overheating on Intel CPUs
@@ -29,6 +32,10 @@
         # (optional) helps save long term battery health
         START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
         STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+
+        # x1-carbon specific settings
+        # Reference: https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_10)#Powersaving
+        RUNTIME_PM_DENYLIST="08:00.0";
       };
     };
 
