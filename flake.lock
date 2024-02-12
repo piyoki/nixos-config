@@ -315,18 +315,18 @@
     "home-estate": {
       "flake": false,
       "locked": {
-        "lastModified": 1707705499,
-        "narHash": "sha256-sqFJW4QsZleCnpzdUyYJNN7VgLyX/pPiqdmCJ2JFK/w=",
+        "lastModified": 1707730937,
+        "narHash": "sha256-H9KHDWWRETHNy/WTwZGwo3b9e2AgMGwAyiA8L16E+AM=",
         "ref": "refs/heads/master",
-        "rev": "3c7b9b2f61d528975a3cdc19e3eb49d6870915ad",
+        "rev": "e4dbaa58e62881d4522f8abbab4845dc190f51af",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file:./home-estate"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file:./home-estate"
       }
     },
     "home-manager": {
@@ -884,12 +884,12 @@
         "rev": "0d8aba7ddcf8c4c8923340edf0e85ee086886d1d",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file:./secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file:./secrets"
       }
     },
     "sops-nix": {
