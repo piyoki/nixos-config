@@ -1,0 +1,25 @@
+name: Synchronize Upstream
+on:
+  workflow_dispatch:
+
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          submodules: true
+
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: DeterminateSystems/flake-checker-action@main
+
+      - name: update dae package
+        shell: bash
+        run: |
+          git checkout HEAD^
+          sudo nix flake update
+          git add .
+          git status
+          # git push -u origin master
