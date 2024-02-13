@@ -16,5 +16,6 @@
     xfce.tumbler # thumbnailer service
     inputs.nixpkgs-wayland.packages.${system}.swaylock-effects # screenlock daemon
     blueberry # bluetooth configuration tool
+    rclone
   ];
 }
