@@ -52,11 +52,20 @@
 
 ### Commands
 
+<details><summary>Add unstable channel</summary>
+</br>
+
+```bash
+sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+```
+
+</details>
+
 <details><summary>Update channel</summary>
 </br>
 
 ```bash
-nix-channel --update
+sudo nix-channel --update
 ```
 
 </details>
@@ -183,11 +192,11 @@ Add the home-manager channel
 
 ```bash
 # add
-sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
 # list
 sudo nix-channel --list
 # remove
-sudo nix-channel --remove release-23.05.tar.gz
+sudo nix-channel --remove release-23.11.tar.gz
 # update
 sudo nix-channel --update
 ```
