@@ -11,9 +11,10 @@
       WantedBy = [ "multi-user.target" ];
     };
     Service = {
+      ExecStartPre = "/run/current-system/sw/bin/mkdir -p $CACHE_DIR";
       ExecStart = "${pkgs.writeShellScript "rclone" ''
         set -eux
-        ${pkgs.waybar}/bin/rclone mount pikpak:/ $PIKPAK_DIR \
+        ${pkgs.rclone}/bin/rclone mount pikpak:/ $PIKPAK_DIR \
           --use-mmap \
           --umask 000 \
           --allow-non-empty \
@@ -25,12 +26,14 @@
           --pikpak-use-trash=false \
           --log-level INFO
       ''}";
-      Type = "oneshot";
+      Type = "notify";
+      Restart = "on-abort";
+      ExecStop = "/run/wrappers/bin/umount $PIKPAK_DIR";
       Environment = [
         "PIKPAK_DIR=${config.home.homeDirectory}/Pikpak"
         "CACHE_DIR=${config.home.homeDirectory}/.cache/rclone"
+        "PATH=$PATH:/run/wrappers/bin"
       ];
-      Restart = "on-abort";
     };
   };
 }
