@@ -33,10 +33,8 @@
     tcpdump # network sniffer
     lsof # list open files
 
-    # fish-related
-    fishPlugins.fzf-fish
-
     # misc
     libnotify
+    cifs-utils
   ];
 }

@@ -9,7 +9,10 @@
       openssh.authorizedKeys.keyFiles = [
         "${inputs.home-estate}/authorized_keys"
       ];
-      packages = with pkgs; [ ];
+      packages = with pkgs; [
+        # fish-related
+        fishPlugins.fzf-fish
+      ];
     };
 
     users.root = {
