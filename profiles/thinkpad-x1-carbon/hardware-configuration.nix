@@ -21,9 +21,11 @@
       luks.devices."root".device = "/dev/disk/by-uuid/79869bdd-49a1-44d5-b57c-0ca9fa89c4c9";
     };
     kernelModules = [ "kvm-intel" ];
+    kernelParams = [ ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''
       options snd_intel_dspcfg dsp_driver=1
+      options i915 enable_guc=3 enable_fbc=1 force_probe=7d55
     '';
   };
 
@@ -84,10 +86,11 @@
     opengl = {
       enable = true;
       extraPackages = with pkgs; [
-        intel-media-driver # LIBVA_DRIVER_NAME=iHD
-        vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-        vaapiVdpau
-        libvdpau-va-gl
+        intel-media-driver # Intel Media Driver for VAAPI
+        intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family
+        # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+        vaapiVdpau # VDPAU driver for the VAAPI library
+        libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
       ];
     };
 
