@@ -35,7 +35,7 @@
 
         # x1-carbon specific settings
         # Reference: https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_10)#Powersaving
-        RUNTIME_PM_DENYLIST="08:00.0";
+        RUNTIME_PM_DENYLIST = "08:00.0";
       };
     };
 
@@ -54,20 +54,4 @@
       };
     };
   };
-
-  # power resume hooks
-  systemd.services.waybars = {
-    description = "relaunch waybars when power resumes";
-    wantedBy = [ "post-resume.target" ];
-    after = [ "post-resume.target" ];
-    script = ''
-      set -eux
-      /run/current-system/sw/bin/pkill .waybar-wrapped
-    '';
-    serviceConfig = {
-      Type = "oneshot";
-      User = user;
-    };
-  };
 }
-

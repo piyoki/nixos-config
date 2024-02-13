@@ -16,16 +16,15 @@
     yubikey-personalization # A library and command line tool to personalize YubiKeys
   ];
 
-  services.udev.packages = with pkgs; [
-    libu2f-host
-    yubikey-personalization
-  ];
-
-  # disable ssh-agent
-  programs.ssh.startAgent = false;
-
-  # enable pcscd
-  services.pcscd.enable = true;
+  services = {
+    # install necessary udev packages
+    udev.packages = with pkgs; [
+      libu2f-host
+      yubikey-personalization
+    ];
+    # enable pcscd
+    pcscd.enable = true;
+  };
 
   # reset gpg-agent
   environment.shellInit = ''
@@ -34,6 +33,9 @@
   '';
 
   programs = {
+    # disable ssh-agent
+    ssh.startAgent = false;
+
     # gnupg-agent
     gnupg = {
       agent = {
