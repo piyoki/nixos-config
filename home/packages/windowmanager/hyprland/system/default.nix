@@ -16,6 +16,7 @@
     xfce.tumbler # thumbnailer service
     inputs.nixpkgs-wayland.packages.${system}.swaylock-effects # screenlock daemon
     blueberry # bluetooth configuration tool
-    rclone
+    rclone # Command line program to sync files and directories to and from major cloud storage
+    fuse3 # Library that allows filesystems to be implemented in user space
   ];
 }
