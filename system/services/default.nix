@@ -4,7 +4,6 @@
   imports = [
     ./displaymanager.nix
     ./gnupg.nix
-    ./samba.nix
     ./powermanagement.nix
     ./xdg-portal.nix
     # ./printer.nix
