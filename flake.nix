@@ -19,7 +19,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { inherit inputs system user; };
+                extraSpecialArgs = { inherit pkgs inputs system user; };
                 users.${user} = import ./home;
                 sharedModules = [
                   sops-nix.homeManagerModules.sops

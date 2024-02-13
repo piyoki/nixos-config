@@ -932,11 +932,11 @@
     "nvim_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1707749435,
-        "narHash": "sha256-KgHaY1Rr+/Kq41F9b9FWl21+G7gRc22aENmK55UC0ZI=",
+        "lastModified": 1707838987,
+        "narHash": "sha256-7LX40Bo+yDJXcJqk33Rd66jY/d1lkURQjjGPr/0kSTg=",
         "owner": "yqlbu",
         "repo": "dot-nvim",
-        "rev": "0566c292ba3cf91b325ed2543cc763e15eff43c4",
+        "rev": "ddee0ccd34123318ad87515d52d3d59b45d26a3a",
         "type": "github"
       },
       "original": {
