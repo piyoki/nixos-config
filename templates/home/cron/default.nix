@@ -1,6 +1,7 @@
 { pkgs, user, ... }:
 
 # References:
+# https://wiki.archlinux.org/title/systemd/User
 # https://wiki.archlinux.org/title/Systemd/Timers
 # https://man.archlinux.org/man/systemd.timer.5
 # https://haseebmajid.dev/posts/2023-10-08-how-to-create-systemd-services-in-nix-home-manager/

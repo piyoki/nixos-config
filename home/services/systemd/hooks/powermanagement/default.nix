@@ -1,5 +1,6 @@
 { config, pkgs, user, ... }:
 
+# $HOME/.config/systemd/user/<name>.service
 {
   # power resume hooks
   # relaunch waybars
@@ -23,8 +24,4 @@
       Environment = "CONFIG_DIR=${config.home.homeDirectory}/.config/waybar";
     };
   };
-
-  # Usage
-  # manually run a service once for testing purposes:
-  # $ systemctl start --user <service>
 }

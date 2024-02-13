@@ -1,11 +1,5 @@
 { pkgs, user, ... }:
 
-# References:
-# https://wiki.archlinux.org/title/Systemd/Timers
-# https://man.archlinux.org/man/systemd.timer.5
-# https://haseebmajid.dev/posts/2023-10-08-how-to-create-systemd-services-in-nix-home-manager/
-# https://gist.github.com/oprypin/0f0c3479ab53e00988b52919e5d7c144/
-
 # $HOME/.config/systemd/user/<name>.{time,service}
 {
   # systemd timer
@@ -16,10 +10,9 @@
     Install = {
       WantedBy = [ "timers.target" ];
     };
-    timerConfig = {
+    Timer = {
       OnBootSec = "1h";
       OnUnitActiveSec = "1h";
-      Unit = "restart-scdaemon.service";
     };
   };
 
@@ -27,9 +20,6 @@
   systemd.user.services."restart-scdaemon" = {
     Unit = {
       Description = "Restart gnupg scdaemon";
-    };
-    Install = {
-      WantedBy = [ "default.target" ];
     };
     Service = {
       ExecStart = "${pkgs.writeShellScript "restart-scdaemon" ''
@@ -40,11 +30,5 @@
       Type = "oneshot";
     };
   };
-
-  # Usage
-  # list active timers and their current state:
-  # $ systemctl --user list-timers
-  # manually run a service once for testing purposes:
-  # $ systemctl start --user <service>
 }
 
