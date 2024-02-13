@@ -1,8 +1,0 @@
-_:
-
-{
-  imports = [
-    ./rclone.nix
-  ];
-}
-

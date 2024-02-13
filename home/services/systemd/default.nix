@@ -4,7 +4,7 @@ _:
   imports = [
     ./cron
     ./hooks
-    ./storage
+    ./rclone.nix
   ];
 }
 
