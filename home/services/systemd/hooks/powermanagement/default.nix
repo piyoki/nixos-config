@@ -1,4 +1,4 @@
-{ config, pkgs, user, ... }:
+{ config, pkgs, ... }:
 
 # $HOME/.config/systemd/user/<name>.service
 {
@@ -17,8 +17,6 @@
         set -eux
         /run/current-system/sw/bin/killall .waybar-wrapped
         /run/current-system/sw/bin/sleep 2
-        # FIXME LATER
-        # ${pkgs.waybar}/bin/waybar -c $CONFIG_DIR/config.json -s $CONFIG_DIR/style.css &
       ''}";
       Type = "oneshot";
       Environment = "CONFIG_DIR=${config.home.homeDirectory}/.config/waybar";

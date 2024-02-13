@@ -4,7 +4,7 @@
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
-      pkgs = (import nixpkgs) { inherit system; };
+      # pkgs = (import nixpkgs) { inherit system; };
       inherit (nixpkgs) lib;
       inherit (import ./vars.nix) user;
     in
@@ -19,7 +19,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { inherit pkgs inputs system user; };
+                extraSpecialArgs = { inherit inputs system user; };
                 users.${user} = import ./home;
                 sharedModules = [
                   sops-nix.homeManagerModules.sops
@@ -118,5 +118,6 @@
       url = "github:yqlbu/dot-kitty/x1-carbon";
       flake = false;
     };
+
   };
 }

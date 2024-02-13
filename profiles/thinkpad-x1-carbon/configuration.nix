@@ -1,4 +1,4 @@
-{ config, lib, pkgs, system, ... }:
+{ lib, pkgs, system, ... }:
 
 {
   imports = [
@@ -71,4 +71,3 @@
     };
   };
 }
-
