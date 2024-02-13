@@ -3,9 +3,11 @@
 {
   home.packages = [ pkgs.fish ];
 
-  xdg.configFile."fish/config.fish".source = "${inputs.fish}/config.fish";
-  xdg.configFile."fish/config.d".source = "${inputs.fish}/config.d";
-  xdg.configFile."fish/functions".source = "${inputs.fish}/functions";
-  xdg.configFile."fish/completions".source = "${inputs.fish}/completions";
-  xdg.configFile."fish/themes".source = "${inputs.fish}/themes";
+  xdg.configFile = {
+    "fish/config.fish".source = "${inputs.fish}/config.fish";
+    "fish/config.d".source = "${inputs.fish}/config.d";
+    "fish/functions".source = "${inputs.fish}/functions";
+    "fish/completions".source = "${inputs.fish}/completions";
+    "fish/themes".source = "${inputs.fish}/themes";
+  };
 }

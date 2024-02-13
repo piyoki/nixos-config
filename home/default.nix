@@ -1,4 +1,4 @@
-{ user, pkgs, ... }:
+{ user, ... }:
 
 {
   imports = [
@@ -11,9 +11,11 @@
   ];
 
   # home-manager settings
-  home.username = user;
-  home.homeDirectory = "/home/${user}";
-  home.stateVersion = "24.05";
+  home = {
+    username = user;
+    homeDirectory = "/home/${user}";
+    stateVersion = "24.05";
+  };
 
   programs.home-manager.enable = true;
   programs.go.enable = true;
