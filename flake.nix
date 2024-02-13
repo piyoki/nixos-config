@@ -65,6 +65,7 @@
     };
 
     # personal dotfiles
+    dotfiles.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
     qutebrowser = {
       url = "github:yqlbu/dot-qutebrowser";
       flake = false;

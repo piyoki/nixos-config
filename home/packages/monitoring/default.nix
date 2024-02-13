@@ -4,9 +4,9 @@
   home.packages = with pkgs; [
     btop
     htop
-    nvtop # gpu
+    nvtop-intel # gpu
     bottom # process
     ncdu # disk utilization
-    duf # dis usage analyzer
+    duf # disk usage analyzer
   ];
 }
