@@ -32,9 +32,9 @@
   fileSystems = {
     "/" =
       {
-          device = "/dev/disk/by-uuid/54b6c0e4-9b42-4549-be1d-49d43aff9263";
-          fsType = "btrfs";
-          options = [ "noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@" ];
+        device = "/dev/disk/by-uuid/54b6c0e4-9b42-4549-be1d-49d43aff9263";
+        fsType = "btrfs";
+        options = [ "noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@" ];
       };
 
     "/home" =

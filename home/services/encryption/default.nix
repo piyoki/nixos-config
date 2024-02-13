@@ -12,12 +12,13 @@
     bitwarden # A secure and free password manager for all of your devices (UI)
   ];
 
-  # gnupg
-  home.file.".gnupg/scdaemon.conf".text = builtins.readFile ./scdaemon.conf;
-  home.file.".gnupg/gpg.conf".text = builtins.readFile ./gpg.conf;
-
-  # sops
-  home.file.".sops/.sops.yaml".text = "${inputs.secrets}/.sops.yaml";
+  home.file = {
+    # gnupg
+    ".gnupg/scdaemon.conf".text = builtins.readFile ./scdaemon.conf;
+    ".gnupg/gpg.conf".text = builtins.readFile ./gpg.conf;
+    # sops
+    ".sops/.sops.yaml".text = "${inputs.secrets}/.sops.yaml";
+  };
 
   # sops-nix
   sops = {
