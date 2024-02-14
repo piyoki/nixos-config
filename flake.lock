@@ -1112,10 +1112,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1707906020,
-        "narHash": "sha256-TejFuoqrjDgYx0ZfsvVZ//3O4UM/fB5bORryX1jno84=",
+        "lastModified": 1707908422,
+        "narHash": "sha256-jkblf8cfWx4Oqker6Oj0rxfE2IOBG5mAUOnTiJW4QLo=",
         "ref": "refs/heads/master",
-        "rev": "cc609c161718f1f2519fa2e16fceb80b4f8ab1dd",
+        "rev": "fe1e8cf60621b61807f8ed71ced09ecbc17542ff",
         "shallow": true,
         "type": "git",
         "url": "file:./secrets"
