@@ -1,6 +1,10 @@
-{ inputs, system, pkgs, ... }:
+{ pkgs, ... }:
 
 {
+  imports = [
+    ./sdwan.nix
+  ];
+
   networking = {
     nftables.enable = true;
     networkmanager.enable = true;
@@ -22,8 +26,8 @@
     # };
   };
 
+  # mesh network
   environment.systemPackages = with pkgs; [
-    inputs.daeuniverse.packages.${system}.dae
     tailscale
   ];
 
