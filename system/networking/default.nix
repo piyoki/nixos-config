@@ -2,6 +2,7 @@
 
 {
   networking = {
+    nftables.enable = true;
     networkmanager.enable = true;
     firewall = {
       # Open ports in the firewall
@@ -22,7 +23,6 @@
   ];
 
   services = {
-    # enable tailscaled
     tailscale.enable = true;
   };
 }
