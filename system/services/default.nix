@@ -7,12 +7,11 @@ _:
     ./powermanagement.nix
     ./xdg-portal.nix
     ./flatpak.nix
+    ./thunar.nix
     # ./printer.nix
   ];
 
   services = {
-    # gvfs
-    gvfs.enable = true;
     # openssh daemon
     openssh = {
       enable = true;
