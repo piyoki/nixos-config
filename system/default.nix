@@ -36,5 +36,6 @@
     # misc
     libnotify
     cifs-utils
+    dmidecode
   ];
 }
