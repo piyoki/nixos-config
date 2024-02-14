@@ -1,6 +1,6 @@
 {
   # build system
-  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, daeuniverse, ... }@inputs:
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
@@ -28,6 +28,7 @@
             }
             hyprland.nixosModules.default
             sops-nix.nixosModules.sops
+            daeuniverse.nixosModules.dae
           ];
         };
       };
