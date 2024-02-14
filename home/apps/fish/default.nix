@@ -1,8 +1,6 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 
 {
-  home.packages = [ pkgs.fish ];
-
   xdg.configFile = {
     "fish/config.fish".source = "${inputs.fish}/config.fish";
     "fish/config.d".source = "${inputs.fish}/config.d";
