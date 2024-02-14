@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+_:
 
 {
   imports = [
@@ -6,6 +6,7 @@
     ./gnupg.nix
     ./powermanagement.nix
     ./xdg-portal.nix
+    ./flatpak.nix
     # ./printer.nix
   ];
 

@@ -1,4 +1,4 @@
-{ pkgs, user, ... }:
+{ pkgs, ... }:
 
 # $HOME/.config/systemd/user/<name>.{time,service}
 {
@@ -31,4 +31,3 @@
     };
   };
 }
-
