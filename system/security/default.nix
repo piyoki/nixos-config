@@ -9,6 +9,8 @@
   security = {
     polkit.enable = true;
     polkit.debug = true;
+    # required by pulseaudio
+    rtkit.enable = true;
 
     # make swaylock unlocks with correct password
     pam.services.swaylock = { };

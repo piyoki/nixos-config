@@ -118,6 +118,5 @@
       url = "github:yqlbu/dot-kitty/x1-carbon";
       flake = false;
     };
-
   };
 }
