@@ -5,10 +5,15 @@
     nftables.enable = true;
     networkmanager.enable = true;
     firewall = {
+      enable = true;
       # Open ports in the firewall
-      allowedTCPPorts = [ 22 ];
-      # allowedUDPPorts = [ ... ];
-      # enable = false; # disable the firewall
+      allowedTCPPorts = [
+        22 # ssh
+        53317 # localsend
+      ];
+      allowedUDPPorts = [
+        53317 # localsend
+      ];
     };
     # Configure network proxy if necessary
     # proxy = {
