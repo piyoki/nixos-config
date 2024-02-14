@@ -1,4 +1,4 @@
-{ inputs, system, ... }:
+{ inputs, system, pkgs, ... }:
 
 {
   networking = {
@@ -16,7 +16,13 @@
     # };
   };
 
-  # sd-wan gateway
-  environment.systemPackages =
-    with inputs.daeuniverse.packages.${system}; [ dae ];
+  environment.systemPackages = with pkgs; [
+    inputs.daeuniverse.packages.${system}.dae
+    tailscale
+  ];
+
+  services = {
+    # enable tailscaled
+    tailscale.enable = true;
+  };
 }
