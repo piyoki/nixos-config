@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -25,4 +25,7 @@
     age.keyFile = "/var/lib/age/age-yubikey-master.key";
     defaultSopsFormat = "yaml";
   };
+  home.activation.setupEtc = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    run /run/current-system/sw/bin/systemctl start --user sops-nix
+  '';
 }
