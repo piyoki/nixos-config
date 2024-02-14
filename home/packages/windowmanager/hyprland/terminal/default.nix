@@ -20,5 +20,6 @@
     yt-dlp # Command-line tool to download videos from YouTube.com and other sites
     zip
     zoxide
+    tailspin # A log file highlighter
   ];
 }
