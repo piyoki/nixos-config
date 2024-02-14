@@ -6,6 +6,7 @@
     ./networking
     ./security
     ./services
+    ./secrets
     ./users
   ];
 

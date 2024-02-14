@@ -8,4 +8,3 @@
     ./rclone.nix
   ];
 }
-
