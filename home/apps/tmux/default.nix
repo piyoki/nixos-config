@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 let
   tpm = pkgs.fetchFromGitHub {
@@ -46,7 +46,7 @@ let
 in
 {
   home.file = {
-    ".tmux.conf".source = inputs.tmux + "/.tmux.conf";
+    ".tmux.conf".source = inputs.dotfiles.packages.${system}.tmux + "/.tmux.conf";
     ".tmux/plugins/tpm".source = tpm + "/";
     ".tmux/plugins/tmux-sensible".source = tmux-sensible + "/";
     ".tmux/plugins/tmux-continuum".source = tmux-continuum + "/";

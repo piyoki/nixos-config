@@ -1,5 +1,5 @@
-{ inputs, ... }:
+{ inputs, system, ... }:
 
 {
-  xdg.configFile."waybar".source = inputs.waybar + "/";
+  xdg.configFile."waybar".source = inputs.dotfiles.packages.${system}.waybar + "/";
 }

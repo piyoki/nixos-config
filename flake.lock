@@ -41,11 +41,11 @@
         "waybar": "waybar"
       },
       "locked": {
-        "lastModified": 1707792651,
-        "narHash": "sha256-foPSUyk2D4UcCWtxnhD3e6Hlp0DBI6oNmSOuV5ydyl4=",
+        "lastModified": 1707965618,
+        "narHash": "sha256-tSHcLZEJkieRaQMRRo18auyDkkiw0CfD7oWdOflmRmI=",
         "ref": "master",
-        "rev": "c0ba74225661fc58c9a592bdded1f1db0be60398",
-        "revCount": 3,
+        "rev": "d615cb6083754d70e1a7c6ba9baf07728f3384b6",
+        "revCount": 7,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
@@ -72,23 +72,6 @@
         "type": "github"
       }
     },
-    "dunst_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707373112,
-        "narHash": "sha256-aDYoyXZZycWvmllq2Im5zX7cX8k+8rPQAS45XbxwCYA=",
-        "owner": "yqlbu",
-        "repo": "dot-dunst",
-        "rev": "aaa666bcf31b2b4530c0ed3fcdc7c0d88d173e14",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "ref": "x1-carbon",
-        "repo": "dot-dunst",
-        "type": "github"
-      }
-    },
     "fish": {
       "flake": false,
       "locked": {
@@ -97,23 +80,6 @@
         "owner": "yqlbu",
         "repo": "dot-fish",
         "rev": "f0d6fba8d612783de16b242eb5699da827409d96",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "ref": "x1-carbon",
-        "repo": "dot-fish",
-        "type": "github"
-      }
-    },
-    "fish_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707903870,
-        "narHash": "sha256-odZ2+OT8XPdfe829lME+M2M4tpC4/8RYhDjFRZrhfG4=",
-        "owner": "yqlbu",
-        "repo": "dot-fish",
-        "rev": "0b7eb1a144dffe5ed9b725b60ff91ca14f285d3b",
         "type": "github"
       },
       "original": {
@@ -451,23 +417,6 @@
         "type": "github"
       }
     },
-    "hypr_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707900486,
-        "narHash": "sha256-7SCrilsnZC6wlllUNdi6tnr80cW14vcjVZgKyY4hJPg=",
-        "owner": "yqlbu",
-        "repo": "dot-hypr",
-        "rev": "c4d614b0e4feb40feb108650aa638d60abb96c07",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "ref": "x1-carbon",
-        "repo": "dot-hypr",
-        "type": "github"
-      }
-    },
     "hyprland": {
       "inputs": {
         "hyprland-protocols": "hyprland-protocols",
@@ -556,23 +505,6 @@
         "type": "github"
       }
     },
-    "kitty_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707746947,
-        "narHash": "sha256-rQo/+JrWo96Q8tZtmS3BMyHOhgifeoQBlnaXrdI7YbQ=",
-        "owner": "yqlbu",
-        "repo": "dot-kitty",
-        "rev": "cd461402c7df421fb6ec4bc73721be96b3c3c719",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "ref": "x1-carbon",
-        "repo": "dot-kitty",
-        "type": "github"
-      }
-    },
     "lazygit": {
       "flake": false,
       "locked": {
@@ -589,39 +521,7 @@
         "type": "github"
       }
     },
-    "lazygit_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707402259,
-        "narHash": "sha256-rvUHwQoI2lVYxaAMszOIx0IfhZ8CXUGESjcyxha0J6o=",
-        "owner": "yqlbu",
-        "repo": "dot-lazygit",
-        "rev": "067cc94d41624e32ea52632d8eaad91be64f1c25",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "repo": "dot-lazygit",
-        "type": "github"
-      }
-    },
     "lf": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707401707,
-        "narHash": "sha256-9zU6WCYUb3m4C+YPCQkQB67Va8gT/1gpzZWAsQnOKHE=",
-        "owner": "yqlbu",
-        "repo": "dot-lf",
-        "rev": "54992b2cc08dc753a4aebce80c57483fef315f21",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "repo": "dot-lf",
-        "type": "github"
-      }
-    },
-    "lf_2": {
       "flake": false,
       "locked": {
         "lastModified": 1707401707,
@@ -929,22 +829,6 @@
         "type": "github"
       }
     },
-    "nvim_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707838987,
-        "narHash": "sha256-7LX40Bo+yDJXcJqk33Rd66jY/d1lkURQjjGPr/0kSTg=",
-        "owner": "yqlbu",
-        "repo": "dot-nvim",
-        "rev": "ddee0ccd34123318ad87515d52d3d59b45d26a3a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "repo": "dot-nvim",
-        "type": "github"
-      }
-    },
     "pnpm2nix": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -1030,40 +914,7 @@
         "type": "github"
       }
     },
-    "qutebrowser_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707750891,
-        "narHash": "sha256-4G4qUHFzZ6TSHW3ZCJNPT7zqM1Dg0pumguzlIou+zGo=",
-        "owner": "yqlbu",
-        "repo": "dot-qutebrowser",
-        "rev": "0e9453124c93ba0db8aaa22aa045e1cc68d4f39f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "repo": "dot-qutebrowser",
-        "type": "github"
-      }
-    },
     "rofi": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707038378,
-        "narHash": "sha256-DOzgQ2e710/IKCpJKE4L1N5DX5JZNt8raW8MmF/8GQw=",
-        "owner": "yqlbu",
-        "repo": "dot-rofi",
-        "rev": "caf2c90fdd081479692a5bf48d669d5d2d2ec0be",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "ref": "x1-carbon",
-        "repo": "dot-rofi",
-        "type": "github"
-      }
-    },
-    "rofi_2": {
       "flake": false,
       "locked": {
         "lastModified": 1707038378,
@@ -1084,29 +935,16 @@
       "inputs": {
         "daeuniverse": "daeuniverse",
         "dotfiles": "dotfiles",
-        "dunst": "dunst_2",
-        "fish": "fish_2",
         "flake-utils": "flake-utils_4",
         "helloworld": "helloworld",
         "home-estate": "home-estate",
         "home-manager": "home-manager",
-        "hypr": "hypr_2",
         "hyprland": "hyprland",
-        "kitty": "kitty_2",
-        "lazygit": "lazygit_2",
-        "lf": "lf_2",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-wayland": "nixpkgs-wayland",
-        "nvim": "nvim_2",
         "pre-commit-hooks": "pre-commit-hooks_2",
-        "qutebrowser": "qutebrowser_2",
-        "rofi": "rofi_2",
         "secrets": "secrets",
-        "sops-nix": "sops-nix",
-        "swappy": "swappy_2",
-        "swaylock": "swaylock_2",
-        "tmux": "tmux_2",
-        "waybar": "waybar_2"
+        "sops-nix": "sops-nix"
       }
     },
     "secrets": {
@@ -1157,44 +995,12 @@
       },
       "original": {
         "owner": "yqlbu",
-        "repo": "dot-swappy",
-        "type": "github"
-      }
-    },
-    "swappy_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1706799207,
-        "narHash": "sha256-KayKkcdDgO6tSSEFM5JxNN+vRvVKKcC/mf1Ei929iwk=",
-        "owner": "yqlbu",
-        "repo": "dot-swappy",
-        "rev": "88ec6525f8ef873320f10a4d4f5e77616f8c86fb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
+        "ref": "master",
         "repo": "dot-swappy",
         "type": "github"
       }
     },
     "swaylock": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707671054,
-        "narHash": "sha256-aoQfSSM9dIglILCI2uIoel7jweqE9OS0j+18P+mqRRA=",
-        "owner": "yqlbu",
-        "repo": "dot-swaylock",
-        "rev": "d8791aca26c6468ef5f46b442c739ba4ae4d9fa1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "ref": "x1-carbon",
-        "repo": "dot-swaylock",
-        "type": "github"
-      }
-    },
-    "swaylock_2": {
       "flake": false,
       "locked": {
         "lastModified": 1707671054,
@@ -1348,23 +1154,6 @@
         "type": "github"
       }
     },
-    "tmux_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707655995,
-        "narHash": "sha256-kdoA7Sl6+5b12p0SyLbbpw+04eqxojz+1eEYBe7Xh2E=",
-        "owner": "yqlbu",
-        "repo": "dot-tmux",
-        "rev": "b516fd59660db84b4837e2a62c1dce8dbcc0f74e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "ref": "x1-carbon",
-        "repo": "dot-tmux",
-        "type": "github"
-      }
-    },
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
@@ -1388,23 +1177,6 @@
       }
     },
     "waybar": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707580727,
-        "narHash": "sha256-fR4fZCMdGz/t5tjbCtyI/+WNb1eYypmfapqfzIAmjE4=",
-        "owner": "yqlbu",
-        "repo": "dot-waybar",
-        "rev": "df44c3eff65253eb33921856ea0fc5ef81d5e508",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yqlbu",
-        "ref": "x1-carbon",
-        "repo": "dot-waybar",
-        "type": "github"
-      }
-    },
-    "waybar_2": {
       "flake": false,
       "locked": {
         "lastModified": 1707580727,

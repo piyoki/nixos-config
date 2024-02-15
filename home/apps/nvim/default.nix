@@ -1,5 +1,5 @@
-{ inputs, ... }:
+{ inputs, system, ... }:
 
 {
-  xdg.configFile."nvim".source = inputs.nvim + "/";
+  xdg.configFile."nvim".source = inputs.dotfiles.packages.${system}.nvim + "/";
 }
