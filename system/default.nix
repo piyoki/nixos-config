@@ -39,4 +39,7 @@
     cifs-utils
     dmidecode
   ];
+
+  # set vim as the default editor
+  environment.variables.EDITOR = "vim";
 }
