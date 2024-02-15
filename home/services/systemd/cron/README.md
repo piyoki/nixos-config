@@ -12,7 +12,7 @@
 list active timers and their current state
 
 ```bash
-systemctl list-timers --all
+systemctl list-timers --user --all
 ```
 
 manually run a service once for testing purposes
