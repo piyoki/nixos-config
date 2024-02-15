@@ -1,0 +1,38 @@
+---
+name: Synchronize upstream inputs
+on:
+  workflow_dispatch:
+    inputs:
+      input:
+        type: string
+        description: flake input to be synced
+        options:
+          - home-estate
+          - secrets
+          - dotfiles
+        required: true
+
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+        #   ref: master
+        #   submodules: true
+          token: "${{ secrets.ACCESS_TOKEN }}"
+
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: DeterminateSystems/flake-checker-action@main
+
+      - name: update flake upstream input
+        shell: bash
+        run: |
+          nix flake lock --update-input ${{ inputs.input }}
+
+      - uses: EndBug/add-and-commit@main
+        with:
+          add: flake.lock
+          commit: --signoff
+          message: "chore(flake): update flake.lock to sync input.${{ inputs.input }}"
