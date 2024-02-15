@@ -1,4 +1,4 @@
-{ user, ... }:
+_:
 
 {
   # dconf configuration options
@@ -8,5 +8,4 @@
     settings."org/gnome/desktop/interface".default-web-browser = "org.qutebrowser.qutebrowser.desktop";
   };
 }
-
 

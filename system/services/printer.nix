@@ -1,4 +1,4 @@
-{ _ }:
+_:
 
 {
   # Enable CUPS to print documents

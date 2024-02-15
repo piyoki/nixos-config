@@ -1,4 +1,4 @@
-{ lib, user, ... }:
+{ lib, ... }:
 
 # References:
 # https://nixos.wiki/wiki/Laptop
