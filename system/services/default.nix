@@ -8,6 +8,7 @@ _:
     ./xdg-portal.nix
     ./flatpak.nix
     ./thunar.nix
+    ./virtualization.nix
     # ./printer.nix
   ];
 
@@ -19,10 +20,9 @@ _:
     };
   };
 
-  programs = {
-    fish.enable = true;
-  };
+  # fish
+  programs.fish.enable = true;
 
+  # zramd
   zramSwap.enable = true;
-  virtualisation.docker.enable = true;
 }
