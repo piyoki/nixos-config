@@ -13,13 +13,17 @@
       noto-fonts-cjk
       noto-fonts-emoji
       source-code-pro
+
+      # overrides
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
-    fontconfig.defaultFonts = {
-      serif = [ "Noto Serif" "Source Han Serif" ];
-      sansSerif = [ "Noto Sans" "Source Han Sans" ];
+
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Noto Serif" "Source Han Serif" ];
+        sansSerif = [ "Noto Sans" "Source Han Sans" ];
+      };
     };
   };
 }
-
-
-
