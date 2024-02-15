@@ -68,57 +68,5 @@
 
     # personal dotfiles
     dotfiles.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
-    qutebrowser = {
-      url = "github:yqlbu/dot-qutebrowser";
-      flake = false;
-    };
-    nvim = {
-      url = "github:yqlbu/dot-nvim";
-      flake = false;
-    };
-    lf = {
-      url = "github:yqlbu/dot-lf";
-      flake = false;
-    };
-    lazygit = {
-      url = "github:yqlbu/dot-lazygit";
-      flake = false;
-    };
-    swappy = {
-      url = "github:yqlbu/dot-swappy";
-      flake = false;
-    };
-    rofi = {
-      url = "github:yqlbu/dot-rofi/x1-carbon";
-      flake = false;
-    };
-    swaylock = {
-      url = "github:yqlbu/dot-swaylock/x1-carbon";
-      flake = false;
-    };
-    waybar = {
-      url = "github:yqlbu/dot-waybar/x1-carbon";
-      flake = false;
-    };
-    tmux = {
-      url = "github:yqlbu/dot-tmux/x1-carbon";
-      flake = false;
-    };
-    fish = {
-      url = "github:yqlbu/dot-fish/x1-carbon";
-      flake = false;
-    };
-    hypr = {
-      url = "github:yqlbu/dot-hypr/x1-carbon";
-      flake = false;
-    };
-    dunst = {
-      url = "github:yqlbu/dot-dunst/x1-carbon";
-      flake = false;
-    };
-    kitty = {
-      url = "github:yqlbu/dot-kitty/x1-carbon";
-      flake = false;
-    };
   };
 }

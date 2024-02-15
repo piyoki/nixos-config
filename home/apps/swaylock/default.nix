@@ -1,5 +1,5 @@
-{ inputs, ... }:
+{ inputs, system, ... }:
 
 {
-  xdg.configFile."swaylock/config".source = inputs.swaylock + "/config";
+  xdg.configFile."swaylock/config".source = inputs.dotfiles.packages.${system}.swaylock + "/config";
 }
