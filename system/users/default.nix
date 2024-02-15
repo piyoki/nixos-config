@@ -4,7 +4,7 @@
   users = {
     users.${user} = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "docker" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
       shell = pkgs.fish;
       openssh.authorizedKeys.keyFiles = [
         "${inputs.home-estate}/authorized_keys"
@@ -15,5 +15,7 @@
     users.root = {
       shell = pkgs.bash;
     };
+
+    extraGroups.docker.members = [ user ];
   };
 }
