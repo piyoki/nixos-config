@@ -8,5 +8,6 @@
     bottom # process
     ncdu # disk utilization
     duf # disk usage analyzer
+    powertop # power consumption
   ];
 }
