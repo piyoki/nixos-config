@@ -555,12 +555,12 @@
         "rev": "983371da442b56816ce3891cd2171a631a0b46cb",
         "shallow": true,
         "type": "git",
-        "url": "file://file:./home-estate"
+        "url": "file:./home-estate"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file://file:./home-estate"
+        "url": "file:./home-estate"
       }
     },
     "home-manager": {
@@ -823,11 +823,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1707963685,
-        "narHash": "sha256-kubb4MLFTsfqa0AccZqN+Nj2NAM9nQTbywV3cyqU6nk=",
+        "lastModified": 1708089417,
+        "narHash": "sha256-Tb5XuJvix/jFgyu9HM7EftZqsAqUjTRj74mAbr8p34g=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "26dbbd2f0a00314d255143e3e8d32a68d76a8b62",
+        "rev": "08f1a17258cc92c4c0342f6b8ebbb53c086aaa0c",
         "type": "github"
       },
       "original": {
@@ -1024,12 +1024,12 @@
         "rev": "9806aee12bc921ecd62e6cbd83768f5467b094bc",
         "shallow": true,
         "type": "git",
-        "url": "file://file:./secrets"
+        "url": "file:./secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file://file:./secrets"
+        "url": "file:./secrets"
       }
     },
     "sops-nix": {
