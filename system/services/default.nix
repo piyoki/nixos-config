@@ -2,13 +2,15 @@ _:
 
 {
   imports = [
-    ./displaymanager.nix
+    ./dconf.nix
+    ./windowmanager.nix
     ./gnupg.nix
     ./powermanagement.nix
     ./xdg-portal.nix
     ./flatpak.nix
     ./thunar.nix
     ./virtualization.nix
+    # ./displaymanager.nix
     # ./printer.nix
   ];
 
