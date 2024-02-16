@@ -5,13 +5,15 @@ _:
 # https://nixos.wiki/wiki/Docker
 {
   # enable virtmanager
-  virtualisation.libvirtd.enable = false;
-  programs.virt-manager.enable = false;
+  # virtualisation.libvirtd.enable = true;
+  # programs.virt-manager.enable = true;
 
   # enable docker
-  virtualisation.docker.enable = false;
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
+  # virtualisation.docker = {
+  #   enable = true;
+  #   rootless = {
+  #     enable = true;
+  #     setSocketVariable = true;
+  #   };
+  # };
 }
