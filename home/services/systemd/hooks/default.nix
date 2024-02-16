@@ -2,6 +2,6 @@ _:
 
 {
   imports = [
-    # ./powermanagement
+    ./powermanagement
   ];
 }
