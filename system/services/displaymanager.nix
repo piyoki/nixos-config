@@ -1,16 +1,13 @@
 { user, ... }:
 
 {
-  # enable hyprland
-  programs.hyprland.enable = true;
-
-  # enable sddm
+  # sddm settings
   services.xserver = {
-    enable = true;
+    enable = false;
     displayManager = {
       defaultSession = "hyprland";
       sddm = {
-        enable = true;
+        enable = false;
         enableHidpi = true;
         wayland.enable = true;
         settings = {
