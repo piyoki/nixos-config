@@ -2,6 +2,7 @@ _:
 
 {
   imports = [
+    ./samba.nix
     ./sdwan.nix
   ];
 

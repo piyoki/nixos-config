@@ -9,6 +9,12 @@
 
 ## Usage
 
+list units
+
+```bash
+systemctl --user list-units
+```
+
 manually run a service once for testing purposes
 
 ```bash
