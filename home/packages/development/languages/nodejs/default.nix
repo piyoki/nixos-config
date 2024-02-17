@@ -2,10 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    nodePackages.prettier
     nodejs_latest
     yarn
+
+    nodePackages.prettier
+    nodePackages.vercel
   ];
 }
-
-
