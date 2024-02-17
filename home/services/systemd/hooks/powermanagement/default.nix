@@ -2,7 +2,8 @@ _:
 
 {
   imports = [
-    ./lock.nix
+    ./lockscreen.nix
+    ./swayidle.nix
     # ./waybars.nix
   ];
 }

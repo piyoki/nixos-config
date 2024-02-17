@@ -555,12 +555,12 @@
         "rev": "983371da442b56816ce3891cd2171a631a0b46cb",
         "shallow": true,
         "type": "git",
-        "url": "file://file:./home-estate"
+        "url": "file:./home-estate"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file://file:./home-estate"
+        "url": "file:./home-estate"
       }
     },
     "home-manager": {
@@ -1024,12 +1024,12 @@
         "rev": "2c454e9198e7bbb4283b5889235c4ee1dc662564",
         "shallow": true,
         "type": "git",
-        "url": "file://file:./secrets"
+        "url": "file:./secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file://file:./secrets"
+        "url": "file:./secrets"
       }
     },
     "sops-nix": {
