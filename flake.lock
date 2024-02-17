@@ -59,11 +59,11 @@
     "dot-hypr": {
       "flake": false,
       "locked": {
-        "lastModified": 1707985881,
-        "narHash": "sha256-0mjqe6jHIyTeIalC3J3JA7MwUFwetj9jYwXrFyvDee8=",
+        "lastModified": 1708170372,
+        "narHash": "sha256-BcTP4QjV/lGKieb+74AecbVmQ3ghhJ/Mq2e/OoW/J4Q=",
         "owner": "yqlbu",
         "repo": "dot-hypr",
-        "rev": "02000453a63130a16e087eeaac1cd3dfd03169a8",
+        "rev": "a6fb446cfd9d3f807e6d319c1d37a7b1f8e65a4e",
         "type": "github"
       },
       "original": {
@@ -258,11 +258,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1708093939,
-        "narHash": "sha256-ulJXOdFjf9OEBiAmOql4yguiZJynzMN//ZmbtpJlniA=",
+        "lastModified": 1708170399,
+        "narHash": "sha256-qb/8i7vzeeAD+mweUwQU79sG7NY6jhT2dMyA+jQF5MU=",
         "ref": "master",
-        "rev": "2f522488593357c2a4d748b03b14175b1079e4bc",
-        "revCount": 28,
+        "rev": "ead371973410e6b54290c166aa7bd6168c892886",
+        "revCount": 29,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
@@ -555,12 +555,12 @@
         "rev": "983371da442b56816ce3891cd2171a631a0b46cb",
         "shallow": true,
         "type": "git",
-        "url": "file:./home-estate"
+        "url": "file://file:./home-estate"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:./home-estate"
+        "url": "file://file:./home-estate"
       }
     },
     "home-manager": {
@@ -1024,12 +1024,12 @@
         "rev": "9806aee12bc921ecd62e6cbd83768f5467b094bc",
         "shallow": true,
         "type": "git",
-        "url": "file:./secrets"
+        "url": "file://file:./secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:./secrets"
+        "url": "file://file:./secrets"
       }
     },
     "sops-nix": {
