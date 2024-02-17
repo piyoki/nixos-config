@@ -1,4 +1,4 @@
-{ config, pkgs, user, ... }:
+{ config, pkgs, ... }:
 
 # $HOME/.config/systemd/user/rclone.service
 {
@@ -8,7 +8,7 @@
       Description = "Mount pikpak webdav drive (Rclone)";
     };
     Install = {
-      WantedBy = [ "multi-user.target" ];
+      WantedBy = [ "default.target" ];
     };
     Service = {
       ExecStartPre = "/run/current-system/sw/bin/mkdir -p $CACHE_DIR";
@@ -26,8 +26,7 @@
           --pikpak-use-trash=false \
           --log-level INFO
       ''}";
-      Type = "notify";
-      Restart = "on-abort";
+      Type = "oneshot";
       ExecStop = "/run/wrappers/bin/umount $PIKPAK_DIR";
       Environment = [
         "PIKPAK_DIR=${config.home.homeDirectory}/Pikpak"
