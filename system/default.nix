@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware
+    ./environment
     ./networking
     ./security
     ./services

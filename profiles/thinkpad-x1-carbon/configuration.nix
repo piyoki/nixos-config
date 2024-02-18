@@ -7,12 +7,6 @@
     ../../themes
   ];
 
-  # Environment vars
-  environment.sessionVariables = {
-    # Wayland specific
-    NIXOS_OZONE_WL = "1";
-  };
-
   # Use the systemd-boot EFI boot loader.
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
