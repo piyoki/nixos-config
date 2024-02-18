@@ -141,11 +141,11 @@
     "dot-qutebrowser": {
       "flake": false,
       "locked": {
-        "lastModified": 1708187700,
-        "narHash": "sha256-EQz8xl4EuVxritfsHkvTIkr+ApegXnbFumxJi4qUez4=",
+        "lastModified": 1708273169,
+        "narHash": "sha256-fh/CCN9BjyVKYOA/leyosum/W3aKVzedqPtexBbfF40=",
         "owner": "yqlbu",
         "repo": "dot-qutebrowser",
-        "rev": "52e11c3a1e5e100f9bf2cc4b9e740d79b9488f81",
+        "rev": "3a745823d5c83163139f6884b29d88df26bd5762",
         "type": "github"
       },
       "original": {
@@ -276,11 +276,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1708269567,
-        "narHash": "sha256-va/VnR+R18LmIjDTPznqngpQA6/MmqepSkkTNNNEv0o=",
+        "lastModified": 1708273198,
+        "narHash": "sha256-eqWM3KTtdVbdZOaIzpz5mnZlnBWXwAkAZ4N481LNl4E=",
         "ref": "master",
-        "rev": "cd425044975a37aa8fa6ae22f95933eebea5ebdd",
-        "revCount": 56,
+        "rev": "57d233842773436d7671757be694e104ce3b7d01",
+        "revCount": 57,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
