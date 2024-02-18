@@ -3,11 +3,18 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Usage](#usage)
+* [Disable a service at startup](#disable-a-service-at-startup)
 * [References](#references)
 
 <!-- vim-markdown-toc -->
 
 ## Usage
+
+list targets
+
+```bash
+systemctl --user --type=target
+```
 
 list units
 
@@ -26,6 +33,16 @@ inspect journal logs
 ```bash
 journalctl --user -xeu relaunch-waybars.service | less
 ```
+
+## Disable a service at startup
+
+Ref: https://discourse.nixos.org/t/disable-a-systemd-service-while-having-it-in-nixoss-conf/12732
+
+```nix
+systemd.services."<service>".wantedBy = lib.mkForce [];
+```
+
+It will creates an override conf in `/etc/systemd/system/<service>.d/override.conf`
 
 ## References
 

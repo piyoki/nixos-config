@@ -26,7 +26,7 @@ in
         ${swBin}/pkill swayidle
         ${swBin}/pkill swaylock
       ''}";
-
+      RemainAfterExit = "yes";
       Type = "oneshot";
       Environment = [
         "PATH=$PATH:/run/current-system/sw/bin"
