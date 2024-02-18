@@ -6,9 +6,11 @@
   systemd.user.services."rclone" = {
     Unit = {
       Description = "Mount pikpak webdav drive (Rclone)";
+      Wants = [ "network-pre.target" ];
+      After = [ "network-pre.target NetworkManager.service systemd-resolved.service" ];
     };
     Install = {
-      WantedBy = [ "default.target" ];
+      WantedBy = [ "multi-user.target" ];
     };
     Service = {
       ExecStartPre = "/run/current-system/sw/bin/mkdir -p $CACHE_DIR";
@@ -26,7 +28,7 @@
           --pikpak-use-trash=false \
           --log-level INFO
       ''}";
-      Type = "oneshot";
+      Type = "notify";
       ExecStop = "/run/wrappers/bin/umount $PIKPAK_DIR";
       Environment = [
         "PIKPAK_DIR=${config.home.homeDirectory}/Pikpak"
