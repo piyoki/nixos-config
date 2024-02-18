@@ -6,6 +6,7 @@
     inputs.nixpkgs-wayland.packages.${system}.swww # Efficient animated wallpaper daemon for wayland, controlled at runtime
     cliphist # clipboard manager
     dunst # notification daemon
+    # swaynotificationcenter # notification daemon
     ffmpeg
     ffmpegthumbs
     gnome.file-roller # archive manager
