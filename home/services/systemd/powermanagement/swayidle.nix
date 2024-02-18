@@ -11,9 +11,6 @@ in
     Unit = {
       Description = "Idle manager for Wayland";
     };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
     Service = {
       ExecStart = "${pkgs.writeShellScript "lockscreen" ''
         set -eux
@@ -29,7 +26,7 @@ in
         ${swBin}/pkill swayidle
         ${swBin}/pkill swaylock
       ''}";
-
+      RemainAfterExit = "yes";
       Type = "oneshot";
       Environment = [
         "PATH=$PATH:/run/current-system/sw/bin"

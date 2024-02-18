@@ -3,8 +3,8 @@ _:
 {
   imports = [
     ./cron
-    ./hooks
+    # ./hooks
+    ./powermanagement
     ./rclone.nix
   ];
 }
-
