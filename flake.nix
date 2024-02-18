@@ -58,11 +58,11 @@
 
     # private repos
     secrets = {
-      url = "git+file:./secrets";
+      url = "path:/home/kev/flake/secrets";
       flake = false;
     };
     home-estate = {
-      url = "git+file:./home-estate";
+      url = "path:/home/kev/flake/home-estate";
       flake = false;
     };
 

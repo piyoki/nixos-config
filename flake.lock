@@ -567,17 +567,14 @@
     "home-estate": {
       "flake": false,
       "locked": {
-        "lastModified": 1708178311,
-        "narHash": "sha256-JDzOl3sQa9s04bL1oQ+Z6uXQqd9aNvVGllfYllujE5g=",
-        "ref": "refs/heads/master",
-        "rev": "29220aa064e294767cc35b6e780fcf71f64760d0",
-        "revCount": 21,
-        "type": "git",
-        "url": "file://file:./home-estate"
+        "lastModified": 1708178267,
+        "narHash": "sha256-HlvrJMO04A9KraEJXF8J14jF7KWhUC+akxOi7su4UX4=",
+        "path": "/home/kev/flake/home-estate",
+        "type": "path"
       },
       "original": {
-        "type": "git",
-        "url": "file://file:./home-estate"
+        "path": "/home/kev/flake/home-estate",
+        "type": "path"
       }
     },
     "home-manager": {
@@ -1035,17 +1032,14 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1708105114,
-        "narHash": "sha256-rZl0x37llLNzyYe/8vl4cbiFQYX7xuCx2qdiYpZyYMk=",
-        "ref": "refs/heads/master",
-        "rev": "2c454e9198e7bbb4283b5889235c4ee1dc662564",
-        "revCount": 22,
-        "type": "git",
-        "url": "file://file:./secrets"
+        "lastModified": 1708105112,
+        "narHash": "sha256-a5P89L7rlZ6Xi/X49+R7CCD7IpzWAdAb1e2hMZHI1Gs=",
+        "path": "/home/kev/flake/secrets",
+        "type": "path"
       },
       "original": {
-        "type": "git",
-        "url": "file://file:./secrets"
+        "path": "/home/kev/flake/secrets",
+        "type": "path"
       }
     },
     "sops-nix": {
