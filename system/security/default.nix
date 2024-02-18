@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
+let
+  wrapperBin = "/run/wrappers/bin";
+  swBin = "/run/current-system/sw/bin";
+in
 {
   environment.systemPackages = with pkgs; [
     polkit # policy daemon
@@ -21,16 +25,22 @@
       enable = true;
       extraRules = [{
         commands = [
+          # mount related actions
           {
-            command = "/run/wrappers/bin/umount";
+            command = "${wrapperBin}/umount";
             options = [ "NOPASSWD" ];
           }
           {
-            command = "/run/wrappers/bin/mount";
+            command = "${wrapperBin}/mount";
             options = [ "NOPASSWD" ];
           }
           {
             command = "${pkgs.cifs-utils}/bin/mount.cifs";
+            options = [ "NOPASSWD" ];
+          }
+          # system related
+          {
+            command = "${swBin}/tee";
             options = [ "NOPASSWD" ];
           }
         ];

@@ -555,11 +555,11 @@
         "rev": "29220aa064e294767cc35b6e780fcf71f64760d0",
         "revCount": 21,
         "type": "git",
-        "url": "file://file:./home-estate"
+        "url": "file:./home-estate"
       },
       "original": {
         "type": "git",
-        "url": "file://file:./home-estate"
+        "url": "file:./home-estate"
       }
     },
     "home-manager": {
@@ -1023,11 +1023,11 @@
         "rev": "2c454e9198e7bbb4283b5889235c4ee1dc662564",
         "revCount": 22,
         "type": "git",
-        "url": "file://file:./secrets"
+        "url": "file:./secrets"
       },
       "original": {
         "type": "git",
-        "url": "file://file:./secrets"
+        "url": "file:./secrets"
       }
     },
     "sops-nix": {
