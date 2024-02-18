@@ -11,9 +11,6 @@ in
     Unit = {
       Description = "Idle manager for Wayland";
     };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
     Service = {
       ExecStart = "${pkgs.writeShellScript "lockscreen" ''
         set -eux
