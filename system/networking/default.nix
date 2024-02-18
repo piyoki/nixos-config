@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+_:
 
 {
   imports = [
     ./sdwan.nix
+    ./tailscale.nix
   ];
 
   networking = {
@@ -26,12 +27,4 @@
     # };
   };
 
-  # mesh network
-  environment.systemPackages = with pkgs; [
-    tailscale
-  ];
-
-  services = {
-    tailscale.enable = true;
-  };
 }
