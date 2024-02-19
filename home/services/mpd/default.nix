@@ -1,5 +1,9 @@
 { config, ... }:
 
+# References:
+# https://nixos.wiki/wiki/MPD
+# https://nixos.wiki/wiki/MPD
+# https://wiki.archlinux.org/index.php/Mpd
 let
   homeDir = config.home.homeDirectory;
   dataDir = "${homeDir}/.local/share/mpd";
