@@ -2,7 +2,7 @@ _:
 
 {
   imports = [
-    ./cifs-mount.nix
+    # ./cifs-mount.nix
     ./dconf.nix
     ./windowmanager.nix
     ./gnupg.nix
