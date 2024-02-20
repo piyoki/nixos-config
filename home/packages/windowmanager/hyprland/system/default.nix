@@ -15,6 +15,7 @@
     mpd # music daemon
     mpdris2 # MPRIS 2 support for mpd
     mpdevil # A simple music browser for MPD
+    quodlibet # GTK-based audio player written in Python
     networkmanagerapplet # network manager (gtk GUI)
     xfce.tumbler # thumbnailer service
     blueberry # bluetooth configuration tool
