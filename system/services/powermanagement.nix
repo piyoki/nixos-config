@@ -61,21 +61,23 @@ in
   };
 
   # systemd unit
-  # set battery charge max and min threshold
-  systemd.services."battery_charge_threshold" = {
-    wantedBy = [ "multi-user.target" ];
-    after = [ "multi-user.target" ];
-    description = "Set the battery charge threshold";
-    serviceConfig = {
-      ExecStart = "${pkgs.writeShellScript "lockscreen" ''
+  systemd.services = {
+    # set battery charge max and min threshold
+    "battery_charge_threshold" = {
+      wantedBy = [ "multi-user.target" ];
+      after = [ "multi-user.target" ];
+      description = "Set the battery charge threshold";
+      serviceConfig = {
+        ExecStart = "${pkgs.writeShellScript "lockscreen" ''
         set -eux
         ${swBin}/echo 0 > /sys/class/power_supply/BAT0/charge_control_start_threshold
         ${swBin}/echo 80 > /sys/class/power_supply/BAT0/charge_control_end_threshold
       ''}";
-      Type = "oneshot";
-      Environment = [
-        "PATH=$PATH:${swBin}"
-      ];
+        Type = "oneshot";
+        Environment = [
+          "PATH=$PATH:${swBin}"
+        ];
+      };
     };
   };
 
