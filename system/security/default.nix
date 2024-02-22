@@ -28,7 +28,6 @@ in
       login.enableGnomeKeyring = true;
     };
 
-    services.gnome.gnome-keyring.enable = true;
 
     # sudo
     # Reference: https://nixos.wiki/wiki/Sudo

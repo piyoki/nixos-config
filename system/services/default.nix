@@ -12,6 +12,7 @@ _:
     ./virtualization.nix
     # ./displaymanager.nix
     # ./printer.nix
+    ./gnome-keyring.nix
   ];
 
   services = {
