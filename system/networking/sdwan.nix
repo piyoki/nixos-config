@@ -1,4 +1,4 @@
-{ inputs, system, ... }:
+{ inputs, lib, system, ... }:
 
 let
   configDir = "/etc/dae";
@@ -8,7 +8,7 @@ in
   environment.systemPackages = with inputs.daeuniverse.packages.${system}; [ dae ];
 
   services.dae = {
-    enable = false;
+    enable = true;
     disableTxChecksumIpGeneric = false;
     configFile = "${configDir}/config.dae";
     assetsPath = configDir;
@@ -17,4 +17,7 @@ in
       port = 12345; # tproxy
     };
   };
+
+  # do not enable the service at startup
+  systemd.services.dae.wantedBy = lib.mkForce [ ];
 }

@@ -3,7 +3,7 @@ _:
 {
   imports = [
     ./samba.nix
-    ./sdwan.nix
+    # ./sdwan.nix
   ];
 
   # sops-nix
