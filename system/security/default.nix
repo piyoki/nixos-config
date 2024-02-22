@@ -17,7 +17,17 @@ in
     rtkit.enable = true;
 
     # make swaylock unlocks with correct password
-    pam.services.swaylock = { };
+    pam.services = {
+      swaylock = {
+        text = ''
+          auth include login
+        '';
+      };
+
+      # enable gnome keyring
+      login.enableGnomeKeyring = true;
+    };
+
 
     # sudo
     # Reference: https://nixos.wiki/wiki/Sudo

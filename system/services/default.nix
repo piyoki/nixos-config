@@ -3,7 +3,6 @@ _:
 {
   imports = [
     # ./cifs-mount.nix
-    ./dconf.nix
     ./windowmanager.nix
     ./gnupg.nix
     ./powermanagement.nix
@@ -13,6 +12,7 @@ _:
     ./virtualization.nix
     # ./displaymanager.nix
     # ./printer.nix
+    ./gnome-keyring.nix
   ];
 
   services = {
