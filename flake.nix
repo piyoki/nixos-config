@@ -1,6 +1,6 @@
 {
   # build system
-  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, daeuniverse, ... }@inputs:
+  outputs = { self, nixpkgs, pre-commit-hooks, home-manager, hyprland, sops-nix, daeuniverse, ... }@inputs:
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
@@ -9,6 +9,16 @@
       inherit (import ./vars.nix) user;
     in
     {
+      checks = {
+        pre-commit-check = pre-commit-hooks.lib.${system}.run {
+          src = ./.;
+          hooks = {
+            nixpkgs-fmt.enable = true; # formatter
+            statix.enable = true; # linter
+          };
+        };
+      };
+
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           specialArgs = { inherit inputs system user; };
@@ -52,7 +62,6 @@
     };
     sops-nix.url = "github:Mic92/sops-nix";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
-    flake-utils.url = "github:numtide/flake-utils";
     daeuniverse.url = "github:daeuniverse/flake.nix/exp";
     helloworld.url = "github:yqlbu/helloworld.nix";
 
