@@ -36,9 +36,10 @@
     lsof # list open files
 
     # misc
-    libnotify
+    brightnessctl
     cifs-utils
     dmidecode
+    libnotify
   ];
 
   # set vim as the default editor

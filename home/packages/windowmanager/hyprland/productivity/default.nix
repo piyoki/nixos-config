@@ -13,6 +13,7 @@
     remmina # Remote desktop client written in GTK
     # localsend # An open source cross-platform alternative to AirDrop
     android-file-transfer # Reliable MTP client with minimalistic UI
+    goofys # A high-performance, POSIX-ish Amazon S3 file system written in Go
 
     # fish plugins
     fishPlugins.fzf-fish

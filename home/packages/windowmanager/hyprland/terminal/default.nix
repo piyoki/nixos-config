@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    brightnessctl
+    cava
     fd
     figlet
     fzf
