@@ -1,6 +1,6 @@
 {
   # build system
-  outputs = { self, nixpkgs, pre-commit-hooks, home-manager, hyprland, sops-nix, daeuniverse, ... }@inputs:
+  outputs = { nixpkgs, pre-commit-hooks, home-manager, hyprland, sops-nix, daeuniverse, ... }@inputs:
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs

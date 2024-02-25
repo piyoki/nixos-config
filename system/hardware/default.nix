@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+_:
 
 {
   imports = [
@@ -9,4 +9,3 @@
     ./fringerprint.nix
   ];
 }
-

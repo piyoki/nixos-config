@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+_:
 
 {
   # $HOME/.config/
@@ -8,4 +8,3 @@
   # $HOME
   home.file."path/dir".source = ./dir;
 }
-
