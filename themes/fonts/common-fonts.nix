@@ -10,7 +10,6 @@
       jetbrains-mono
       nerdfonts
       noto-fonts
-      noto-fonts-cjk
       noto-fonts-emoji
       source-code-pro
 
@@ -21,8 +20,19 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif" "Source Han Serif" ];
-        sansSerif = [ "Noto Sans" "Source Han Sans" ];
+        emoji = [
+          "Noto Color Emoji"
+        ];
+        serif = [
+          "Sarasa Mono TC"
+          "Noto Serif CJK TC"
+          "Source Han Serif TC"
+        ];
+        sansSerif = [
+          "Sarasa Mono TC"
+          "Noto Sans CJK TC"
+          "Source Han Sans TC"
+        ];
       };
     };
   };
