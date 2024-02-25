@@ -6,5 +6,6 @@
     ./nodejs
     ./rust
     ./golang
+    ./java
   ];
 }
