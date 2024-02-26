@@ -586,8 +586,8 @@
     "home-estate": {
       "flake": false,
       "locked": {
-        "lastModified": 1708941368,
-        "narHash": "sha256-P6riN7QNijBEpC4X5o+iEuqx0scfg/gTDxOA7wkf5CM=",
+        "lastModified": 1708952287,
+        "narHash": "sha256-dJqS/l3urQ5SXJOVqf5eXOpJl08vQdqYsAnBCbCiNi8=",
         "path": "/home/kev/flake/home-estate",
         "type": "path"
       },
