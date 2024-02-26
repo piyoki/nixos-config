@@ -24,12 +24,14 @@
           "Noto Color Emoji"
         ];
         serif = [
-          "Sarasa Mono TC"
+          "GenSekiGothic TW B"
+          "Sarasa Gothic TC"
           "Noto Serif CJK TC"
           "Source Han Serif TC"
         ];
         sansSerif = [
-          "Sarasa Mono TC"
+          "GenSekiGothic TW B"
+          "Sarasa Gothic TC"
           "Noto Sans CJK TC"
           "Source Han Sans TC"
         ];
