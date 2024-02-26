@@ -25,7 +25,8 @@
     extraModulePackages = [ ];
     extraModprobeConfig = ''
       options snd_intel_dspcfg dsp_driver=1
-      options i915 enable_guc=3 enable_fbc=1 enable_psr=2 force_probe=7d55
+      options snd_hda_intel power_save=1 power_save_controller=Y
+      options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
   };
 
