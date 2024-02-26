@@ -42,11 +42,11 @@
     "dot-fish": {
       "flake": false,
       "locked": {
-        "lastModified": 1708225839,
-        "narHash": "sha256-iBWhnp4Ykx0UWvQQBigY0qOv/3lv56o2fIlF35ZQkN8=",
+        "lastModified": 1708935870,
+        "narHash": "sha256-jPjk73nFLiBXvc8Qc5OnpvGPTecLxT0H34kTL3WOQJU=",
         "owner": "yqlbu",
         "repo": "dot-fish",
-        "rev": "83e3256da123abaaecd8f15e47a6d0892e32003f",
+        "rev": "13e3fc39b5c53cb4b7c410574b6552a17d0a0cf1",
         "type": "github"
       },
       "original": {
@@ -276,11 +276,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1708935177,
-        "narHash": "sha256-ASYBJaoCPx0WdGy7k77bRbR32W+SpH+B3w9/iOZNwcg=",
+        "lastModified": 1708935899,
+        "narHash": "sha256-32REYs3nh7enPA1ec0ND5w6h6lJ05wG4rRY80TGuyjY=",
         "ref": "master",
-        "rev": "a3d518b4ac2c1a0eba0ace43597342a9178d5602",
-        "revCount": 71,
+        "rev": "31faddbd7050b59a182181dbe7f483f383d5f1c6",
+        "revCount": 72,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
