@@ -157,11 +157,11 @@
     "dot-rofi": {
       "flake": false,
       "locked": {
-        "lastModified": 1708952639,
-        "narHash": "sha256-oF32iLVz46DyqXGl35RZcnl6OYv4xhajmcM6A+qZHL4=",
+        "lastModified": 1708952849,
+        "narHash": "sha256-q7zwvslSDRIkSmpj/FqDczaIMod/e8KhXH3oqeWYNDs=",
         "owner": "yqlbu",
         "repo": "dot-rofi",
-        "rev": "08f16ddc4d8fe6f9dd90e0e41b54fc5e0a8115d8",
+        "rev": "fa47e9c58e30354af2275cc3f3643cc61e79eedc",
         "type": "github"
       },
       "original": {
@@ -276,11 +276,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1708952668,
-        "narHash": "sha256-VEBaXWIT/Gu5n+05d3OOzgmJ4bJn3n1CTrnWU5dBOD0=",
+        "lastModified": 1708952881,
+        "narHash": "sha256-qaplUmx8XrsYWlTM/eEJqOLWbjv1fbtoxF+R3N46GaM=",
         "ref": "master",
-        "rev": "90306c84205c41c9158d191e46e8ed17ab9df0cb",
-        "revCount": 74,
+        "rev": "10154a71328bc4627c422b1dea86d10dc1c11799",
+        "revCount": 75,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
