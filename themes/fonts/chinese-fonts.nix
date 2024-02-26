@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   # Enable fonts
@@ -8,6 +8,7 @@
       sarasa-gothic
       source-han-sans
       source-han-serif
+      inputs.genseki-gothic.packages.${system}.genseki-gothic
     ];
   };
 }

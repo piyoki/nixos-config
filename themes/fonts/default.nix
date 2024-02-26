@@ -1,5 +1,6 @@
 _:
 
+# References: https://nixos.wiki/wiki/Fonts
 {
   imports = [
     ./chinese-fonts.nix

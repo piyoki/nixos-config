@@ -64,6 +64,7 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     daeuniverse.url = "github:daeuniverse/flake.nix/exp";
     helloworld.url = "github:yqlbu/helloworld.nix";
+    genseki-gothic.url = "github:yqlbu/genseki-font";
 
     # private repos
     secrets = {
