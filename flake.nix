@@ -63,8 +63,9 @@
     sops-nix.url = "github:Mic92/sops-nix";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     daeuniverse.url = "github:daeuniverse/flake.nix/exp";
-    helloworld.url = "github:yqlbu/helloworld.nix";
-    genseki-gothic.url = "github:yqlbu/genseki-font";
+
+    # personal nur
+    nur.url = "github:yqlbu/nur-packages";
 
     # private repos
     secrets = {

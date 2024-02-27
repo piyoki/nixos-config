@@ -2,8 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    inputs.helloworld.packages.${system}.helloworld
+    inputs.nur.packages.${system}.helloworld
   ];
-
-  xdg.configFile."helloworld".source = inputs.helloworld;
 }
