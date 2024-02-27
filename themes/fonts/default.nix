@@ -5,6 +5,7 @@ _:
   imports = [
     ./chinese-fonts.nix
     ./common-fonts.nix
+    ./custom-fonts.nix
     ./japanese-fonts.nix
     ./icons.nix
   ];
