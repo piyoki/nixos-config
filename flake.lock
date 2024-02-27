@@ -8,11 +8,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1708589069,
-        "narHash": "sha256-3lBwl5Ddhn3L1BXnVFCq6sI4dUpiuDusfT4kCP2Flrs=",
+        "lastModified": 1709050542,
+        "narHash": "sha256-OXijNmASRyYzgBpgKSIKiIURuhIbqkOP9ACV6AeY9HU=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "884b1462ef686ef3bf97b0133938937f0f58b5b5",
+        "rev": "e418690bf8186fbdf018eb677c3abbe3b5b983a1",
         "type": "github"
       },
       "original": {
@@ -531,7 +531,7 @@
       "flake": false,
       "locked": {
         "lastModified": 0,
-        "narHash": "sha256-c1svoQV44e/6t4ksulmZmiXkFVB1bbv7cwS6wZSQTzs=",
+        "narHash": "sha256-jG/ADXYvEyZE0wIceZr1D5SBRrTsMdgxLq45TNvUa7w=",
         "path": "/home/kev/flake/home-estate",
         "type": "path"
       },
