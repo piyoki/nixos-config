@@ -7,11 +7,13 @@
       cantarell-fonts
       fira-code
       fira-code-symbols
+      maple-mono
+      maple-mono-NF
       jetbrains-mono
-      nerdfonts
       noto-fonts
       noto-fonts-emoji
       source-code-pro
+      nerdfonts
 
       # overrides
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
