@@ -47,8 +47,13 @@ in
           governor = "powersave";
           energy_performance_preference = "power";
           turbo = "never";
+
           scaling_min_freq = "400000"; # 400 MHz
-          scaling_max_freq = "1200000"; # 1200 MHz, or 1.2 GHz
+          scaling_max_freq = "1000000"; # 1000 MHz, or 1.0 GHz
+
+          enable_thresholds = true;
+          start_threshold = 0;
+          stop_threshold = 80;
         };
         charger = {
           governor = "performance";
