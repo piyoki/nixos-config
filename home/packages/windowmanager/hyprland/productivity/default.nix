@@ -5,6 +5,7 @@
     handbrake # video editor
     hyprpicker # color picker
     lf # terminal file manager
+    pistol # file previewer
     minio-client # minio client
     rofi-wayland # app launcher
     inputs.nixpkgs-wayland.packages.${system}.wl-screenrec # screen recorder
