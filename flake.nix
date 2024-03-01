@@ -1,4 +1,5 @@
 {
+  # NixOS configuration (with HomeManager)
   # build system
   outputs = { nixpkgs, pre-commit-hooks, home-manager, hyprland, sops-nix, daeuniverse, ... }@inputs:
     let
@@ -7,6 +8,22 @@
       # pkgs = (import nixpkgs) { inherit system; };
       inherit (nixpkgs) lib;
       inherit (import ./vars.nix) user;
+      specialArgs = { inherit inputs system user; };
+      homeManagerModuleAttrs =
+        {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = specialArgs;
+          users.${user} = import ./home;
+          sharedModules = [
+            sops-nix.homeManagerModules.sops
+          ];
+        };
+      extraModules = [
+        hyprland.nixosModules.default
+        sops-nix.nixosModules.sops
+        daeuniverse.nixosModules.dae
+      ];
     in
     {
       checks = {
@@ -20,27 +37,15 @@
       };
 
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          specialArgs = { inherit inputs system user; };
+        laptop = lib.nixosSystem {
+          inherit specialArgs;
           modules = [
-            ./profiles/thinkpad-x1-carbon/configuration.nix
             home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit inputs system user; };
-                users.${user} = import ./home;
-                sharedModules = [
-                  sops-nix.homeManagerModules.sops
-                ];
-              };
-            }
-            hyprland.nixosModules.default
-            sops-nix.nixosModules.sops
-            daeuniverse.nixosModules.dae
-          ];
+            { home-manager = homeManagerModuleAttrs; }
+          ] ++ extraModules ++ [ ./profiles/thinkpad-x1-carbon/configuration.nix ];
         };
+
+        desktop = { };
       };
     };
 

@@ -15,6 +15,12 @@
     ];
 
   boot = {
+    # Use the systemd-boot EFI boot loader.
+    kernelPackages = pkgs.linuxPackages_latest;
+    supportedFilesystems = [ "btrfs" ];
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+
     initrd = {
       availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
       kernelModules = [ "i2c-dev" ];
@@ -83,6 +89,9 @@
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
   hardware = {
+    # linux-firmware
+    enableAllFirmware = true;
+
     # GPU
     opengl = {
       enable = true;
