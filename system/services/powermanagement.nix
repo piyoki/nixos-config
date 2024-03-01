@@ -49,7 +49,7 @@ in
           turbo = "never";
 
           scaling_min_freq = "400000"; # 400 MHz
-          scaling_max_freq = "1000000"; # 1000 MHz, or 1.0 GHz
+          scaling_max_freq = "1400000"; # 1400 MHz, or 1.4 GHz
 
           enable_thresholds = true;
           start_threshold = 0;
