@@ -88,6 +88,7 @@
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
+
   hardware = {
     # linux-firmware
     enableAllFirmware = true;
