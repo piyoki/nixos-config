@@ -31,7 +31,11 @@
         sops-nix.nixosModules.sops
         daeuniverse.nixosModules.dae
       ];
-      modules = homeManageModule ++ extraModules;
+      # function to generate nixosSystem
+      genSystem = hostModules: lib.nixosSystem {
+        inherit specialArgs;
+        modules = homeManageModule ++ extraModules ++ hostModules;
+      };
     in
     {
       checks = {
@@ -45,11 +49,7 @@
       };
 
       nixosConfigurations = {
-        laptop = lib.nixosSystem {
-          inherit specialArgs;
-          modules = modules ++ [ ./profiles/thinkpad-x1-carbon/configuration.nix ];
-        };
-
+        laptop = genSystem ([ ./profiles/thinkpad-x1-carbon/configuration.nix ]);
         desktop = { };
       };
     };
