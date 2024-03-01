@@ -13,14 +13,11 @@
     ffmpeg
     ffmpegthumbs
     ark # kde file archiver
-    mpd # music daemon
-    mpdris2 # MPRIS 2 support for mpd
-    mpdevil # A simple music browser for MPD
-    quodlibet # GTK-based audio player written in Python
-    networkmanagerapplet # network manager (gtk GUI)
     xfce.tumbler # thumbnailer service
-    blueberry # bluetooth configuration tool
     rclone # Command line program to sync files and directories to and from major cloud storage
     fuse3 # Library that allows filesystems to be implemented in user space
+    zip
+    trash-cli
+    unzip
   ];
 }

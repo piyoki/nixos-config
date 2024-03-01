@@ -2,11 +2,20 @@ _:
 
 {
   # Environment vars
-  environment.sessionVariables = {
-    # Wayland specific
-    NIXOS_OZONE_WL = "1";
+  environment = {
+    # system-level variables
+    variables = {
+      # set vim as the default editor
+      EDITOR = "vim";
+    };
 
-    # Default applications
-    BROWSER = "qutebrowser";
+    # session-specfic variables
+    sessionVariables = {
+      # Wayland specific
+      NIXOS_OZONE_WL = "1";
+
+      # Default applications
+      BROWSER = "qutebrowser";
+    };
   };
 }
