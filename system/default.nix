@@ -1,48 +1,14 @@
-{ pkgs, ... }:
+_:
 
 {
   imports = [
     ./hardware
-    ./environment
     ./networking
     ./security
     ./services
     ./secrets
     ./users
+    ./environment
   ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # nix usage
-    nixpkgs-fmt # Nix code formatter for nixpkgs
-    nix-prefetch-scripts # Collection of all the nix-prefetch-* scripts which may be used to obtain source hashes
-    update-nix-fetchgit # A program to update fetchgit values in Nix expressions
-    statix # Lints and suggestions for the Nix programming language
-    deadnix # Find and remove unused code in .nix source files
-
-    # basic but essential
-    gnutar
-    killall
-    neofetch
-    tmux
-    tree
-    vim
-    wget
-
-    # system call monitoring
-    strace # system call monitoring
-    bpftrace # powerful tracing tool
-    tcpdump # network sniffer
-    lsof # list open files
-
-    # misc
-    brightnessctl
-    cifs-utils
-    dmidecode
-    libnotify
-  ];
-
-  # set vim as the default editor
-  environment.variables.EDITOR = "vim";
 }

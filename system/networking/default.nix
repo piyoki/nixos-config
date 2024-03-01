@@ -1,9 +1,14 @@
-_:
+{ pkgs, ... }:
 
 {
   imports = [
     ./sdwan.nix
     ./tailscale.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet # network manager (gtk GUI)
+    dnsutils
   ];
 
   networking = {
@@ -20,11 +25,5 @@ _:
         53317 # localsend
       ];
     };
-    # Configure network proxy if necessary
-    # proxy = {
-    #   default = "http://user:password@proxy:port/";
-    #   noProxy = "127.0.0.1,localhost,internal.domain";
-    # };
   };
-
 }
