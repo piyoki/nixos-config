@@ -9,6 +9,6 @@ _:
     ./secrets
     ./users
     ./environment
+    ./packages
   ];
-
 }
