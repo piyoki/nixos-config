@@ -918,11 +918,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1709220509,
-        "narHash": "sha256-T6YljMwBHAYKQ9Yw9+aC7qctbwbhtv2nP75QqPYkddM=",
+        "lastModified": 1709270294,
+        "narHash": "sha256-N5QlQTDzCevPzYEn5fTRK1VGqdsJ4byLW7kz/bO47+E=",
         "owner": "yqlbu",
         "repo": "nur-packages",
-        "rev": "9d54c379bc2845f53064e8927fc65365f4ddcacf",
+        "rev": "1d40e4e1e3deea010d363b0af6a37b7c68e24aca",
         "type": "github"
       },
       "original": {
