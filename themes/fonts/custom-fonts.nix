@@ -8,7 +8,6 @@
       inputs.nur.packages.${system}.comic-code
       inputs.nur.packages.${system}.comic-code-ligatures
       inputs.nur.packages.${system}.dank-mono
-      inputs.nur.packages.${system}.dogica
       inputs.nur.packages.${system}.vt323
     ];
   };
