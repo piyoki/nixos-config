@@ -21,10 +21,7 @@
     };
   };
 
-  nixpkgs = {
-    config.allowUnfree = lib.mkDefault true;
-    hostPlatform = lib.mkDefault system;
-  };
+  nixpkgs.hostPlatform = lib.mkDefault system;
 
   nix = {
     # enable flake
