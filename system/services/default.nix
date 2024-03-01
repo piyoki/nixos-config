@@ -6,12 +6,12 @@ _:
     ./windowmanager.nix
     ./gnupg.nix
     ./powermanagement.nix
-    # ./greetd.nix
+    ./greetd.nix
+    # ./displaymanager.nix
     ./xdg-portal.nix
     ./flatpak.nix
     ./thunar.nix
     ./virtualization.nix
-    # ./displaymanager.nix
     # ./printer.nix
     ./gnome-keyring.nix
   ];
