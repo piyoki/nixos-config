@@ -11,5 +11,6 @@
     vim
     wget
     ripgrep
+    just
   ];
 }
