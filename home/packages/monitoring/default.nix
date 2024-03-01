@@ -9,5 +9,6 @@
     ncdu # disk utilization
     duf # disk usage analyzer
     powertop # power consumption
+    bpftop # A dynamic real-time view of running eBPF programs
   ];
 }
