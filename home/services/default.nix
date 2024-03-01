@@ -7,6 +7,7 @@ _:
     ./mpd
     ./systemd
     ./xdg
+    ./wayland-session
   ];
 
   # disable dunst systemd service, controlled it by windowmanager instead

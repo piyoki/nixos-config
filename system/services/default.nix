@@ -6,6 +6,7 @@ _:
     ./windowmanager.nix
     ./gnupg.nix
     ./powermanagement.nix
+    ./greetd.nix
     ./xdg-portal.nix
     ./flatpak.nix
     ./thunar.nix

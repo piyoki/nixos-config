@@ -3,7 +3,7 @@
 {
   # sddm settings
   services.xserver = {
-    enable = false;
+    enable = false; # disable xorg server
     displayManager = {
       defaultSession = "hyprland";
       sddm = {
