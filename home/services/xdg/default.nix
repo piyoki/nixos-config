@@ -83,6 +83,11 @@
         XDG_MEDIA_DIR = "${config.home.homeDirectory}/Media";
         XDG_TANK_DIR = "${config.home.homeDirectory}/Tank";
         XDG_PIKPAK_DIR = "${config.home.homeDirectory}/Pikpak";
+        XDG_WORKSPACE_DIR = "${config.home.homeDirectory}/Workspace";
+        XDG_WORKSPACE_GIT_PERSONAL_DIR = "${config.home.homeDirectory}/Workspace/personal";
+        XDG_WORKSPACE_GIT_WORK_DIR = "${config.home.homeDirectory}/Workspace/work";
+        XDG_WORKSPACE_GIT_EXTRAS_DIR = "${config.home.homeDirectory}/Workspace/extras";
+        XDG_WORKSPACE_GIT_DOT_SUBMODULES_DIR = "${config.home.homeDirectory}/Workspace/personal/dot-submodules";
       };
     };
   };
