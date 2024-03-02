@@ -6,7 +6,7 @@ _:
     ./windowmanager.nix
     ./gnupg.nix
     ./powermanagement.nix
-    ./greetd.nix
+    # ./greetd.nix
     # ./displaymanager.nix
     ./xdg-portal.nix
     ./flatpak.nix
