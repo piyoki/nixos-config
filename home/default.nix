@@ -15,7 +15,7 @@
   home = {
     username = user;
     homeDirectory = "/home/${user}";
-    stateVersion = "24.05";
+    stateVersion = (import ./vars.nix).stateVersion;
   };
 
   programs.home-manager.enable = true;
