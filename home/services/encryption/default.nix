@@ -22,7 +22,6 @@
     file = {
       # gnupg
       ".gnupg/scdaemon.conf".text = builtins.readFile ./scdaemon.conf;
-      ".gnupg/gpg.conf".text = builtins.readFile ./gpg.conf;
       # sops
       ".sops/.sops.yaml".text = "${inputs.secrets}/.sops.yaml";
     };
