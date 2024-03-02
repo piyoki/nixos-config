@@ -12,7 +12,13 @@
       inherit (nixpkgs) lib;
       inherit (import ./vars.nix) user;
       specialArgs = { inherit inputs pkgs system user; };
-      homeManageModule = [
+      extraModules = [
+        hyprland.nixosModules.default
+        sops-nix.nixosModules.sops
+        daeuniverse.nixosModules.dae
+      ];
+      # function to generate homeModule
+      genHomeModule = customHomeModules: [
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -22,19 +28,14 @@
             users.${user} = import ./home;
             sharedModules = [
               sops-nix.homeManagerModules.sops
-            ];
+            ] ++ customHomeModules;
           };
         }
       ];
-      extraModules = [
-        hyprland.nixosModules.default
-        sops-nix.nixosModules.sops
-        daeuniverse.nixosModules.dae
-      ];
       # function to generate nixosSystem
-      genSystem = hostModules: lib.nixosSystem {
+      genSystem = { hostModules, customHomeModules }: lib.nixosSystem {
         inherit specialArgs;
-        modules = homeManageModule ++ extraModules ++ hostModules;
+        modules = (genHomeModule customHomeModules) ++ extraModules ++ hostModules;
       };
     in
     {
@@ -49,8 +50,16 @@
       };
 
       nixosConfigurations = {
-        laptop = genSystem ([ ./profiles/thinkpad-x1-carbon/configuration.nix ]);
-        desktop = { };
+        laptop = genSystem
+          {
+            hostModules = [ ./profiles/thinkpad-x1-carbon/configuration.nix ];
+            customHomeModules = [ ./profiles/thinkpad-x1-carbon/home.nix ];
+          };
+        desktop = genSystem
+          {
+            hostModules = [ ./profiles/nuc-12/configuration.nix ];
+            customHomeModules = [ ./profiles/nuc-12/home.nix ];
+          };
       };
     };
 
@@ -88,6 +97,6 @@
     };
 
     # personal dotfiles
-    dotfiles.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
+    dotfiles.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=nuc-12";
   };
 }
