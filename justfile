@@ -7,15 +7,12 @@ alias b := rebuild
 # set options
 set positional-arguments := true
 
-# define vars
-host := "laptop"
-
 # default recipe to display help information
 default:
   @just --list
 
 # rebuild nixos
-rebuild:
+rebuild host:
   @sudo nixos-rebuild switch --upgrade --flake .#{{ host }}
 
 # update all flake inputs
