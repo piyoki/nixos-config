@@ -1,6 +1,9 @@
-{ inputs, pkgs, system, ... }:
+{ config, lib, pkgs, inputs, system, ... }:
+
+with lib;
 
 let
+  cfg = config.dotfiles.tmux;
   tpm = pkgs.fetchFromGitHub {
     owner = "tmux-plugins";
     repo = "tpm";
@@ -45,14 +48,20 @@ let
   };
 in
 {
-  home.file = {
-    ".tmux.conf".source = inputs.dotfiles.packages.${system}.tmux + "/.tmux.conf";
-    ".tmux/plugins/tpm".source = tpm + "/";
-    ".tmux/plugins/tmux-sensible".source = tmux-sensible + "/";
-    ".tmux/plugins/tmux-continuum".source = tmux-continuum + "/";
-    ".tmux/plugins/tmux-resurrect".source = tmux-resurrect + "/";
-    ".tmux/plugins/tmux-yank".source = tmux-yank + "/";
-    ".tmux/plugins/t-smart-tmux-session-manager".source = t-smart-tmux-session-manager + "/";
-    ".tmux/plugins/minimal-tmux-status".source = minimal-tmux-status + "/";
+  options.dotfiles.tmux = {
+    profile = mkOption config.common.profile;
+  };
+
+  config = {
+    home.file = {
+      ".tmux.conf".source = inputs."dotfiles-${cfg.profile}".packages.${system}.tmux + "/.tmux.conf";
+      ".tmux/plugins/tpm".source = tpm + "/";
+      ".tmux/plugins/tmux-sensible".source = tmux-sensible + "/";
+      ".tmux/plugins/tmux-continuum".source = tmux-continuum + "/";
+      ".tmux/plugins/tmux-resurrect".source = tmux-resurrect + "/";
+      ".tmux/plugins/tmux-yank".source = tmux-yank + "/";
+      ".tmux/plugins/t-smart-tmux-session-manager".source = t-smart-tmux-session-manager + "/";
+      ".tmux/plugins/minimal-tmux-status".source = minimal-tmux-status + "/";
+    };
   };
 }

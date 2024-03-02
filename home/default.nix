@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./common
     ./packages
     ./services
     ./themes

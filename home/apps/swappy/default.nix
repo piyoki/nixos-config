@@ -1,5 +1,16 @@
-{ inputs, system, ... }:
+{ config, lib, inputs, system, ... }:
 
+with lib;
+
+let
+  cfg = config.dotfiles.swappy;
+in
 {
-  xdg.configFile."swappy/config".source = inputs.dotfiles.packages.${system}.swappy + "/config";
+  options.dotfiles.swappy = {
+    profile = mkOption config.common.profile;
+  };
+
+  config = {
+    xdg.configFile."swappy/config".source = inputs."dotfiles-${cfg.profile}".packages.${system}.swappy + "/config";
+  };
 }
