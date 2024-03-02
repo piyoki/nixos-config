@@ -10,6 +10,8 @@
 * [Create sub-volumes](#create-sub-volumes)
 * [Generate Nix configurations](#generate-nix-configurations)
 * [Build the system](#build-the-system)
+* [Flake integration](#flake-integration)
+* [Home-manager integration](#home-manager-integration)
 
 <!-- vim-markdown-toc -->
 
@@ -160,3 +162,105 @@ reboot
 ```
 
 If all goes well, we’ll be prompted for the passphrase for $DISK entered earlier. Switch to another `tty` with `Ctrl+Alt+F1`, login as `root`, passwd <passwd> to set your password. Once you’re logged in, you can continue to tweak your NixOS configuration as you want. However, I generally recommend keeping enabled services at a minimum, and setting up opt-in state first.
+
+## Flake integration
+
+Start with the following barebone configuraton
+
+```nix
+# flake.nix
+{
+  outputs = { nixpkgs, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      # use a system-specific version of nixpkgs
+      pkgs = (import nixpkgs) {
+        inherit system;
+        config.allowUnfree = lib.mkDefault true;
+      };
+      inherit (nixpkgs) lib;
+      inherit (import ./vars.nix) user;
+      specialArgs = { inherit inputs pkgs system user; };
+    in
+    {
+      nixosConfigurations = {
+        nixos = lib.nixosSystem {
+          inherit specialArgs;
+          modules = [
+            ./configuration.nix
+          ];
+        };
+    };
+  }
+
+  inputs = {
+    # public source
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+  }
+}
+```
+
+Rebuild system with flake
+
+```bash
+sudo nixos-rebuild switch --upgrade --flake .#nixos
+```
+
+## Home-manager integration
+
+Start with the following barebone configuraton
+
+```nix
+# flake.nix
+{
+  # NixOS configuration (with HomeManager)
+  # build system
+  outputs = { nixpkgs, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      # use a system-specific version of nixpkgs
+      pkgs = (import nixpkgs) {
+        inherit system;
+        config.allowUnfree = lib.mkDefault true;
+      };
+      inherit (nixpkgs) lib;
+      inherit (import ./vars.nix) user;
+      specialArgs = { inherit inputs pkgs system user; };
+    in
+    {
+      nixosConfigurations = {
+        nixos = lib.nixosSystem {
+          inherit specialArgs;
+          modules = [
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = specialArgs;
+                users.${user} = import ./home;
+                sharedModules = [ ];
+              };
+            }
+            ./configuration.nix
+          ];
+        };
+    }
+  }
+
+  inputs = {
+    # public source
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  }
+}
+```
+
+Rebuild system with flake
+
+```bash
+sudo nixos-rebuild switch --upgrade --flake .#nixos
+```

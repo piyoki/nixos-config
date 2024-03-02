@@ -63,7 +63,6 @@
       };
     };
 
-  # define channels
   inputs = {
     # public source
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
