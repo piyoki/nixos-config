@@ -8,11 +8,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1709183670,
-        "narHash": "sha256-VcixQ0uSUZYYzXeSx+UTy8MfFfgVf67cjg6nOBQjrDg=",
+        "lastModified": 1709381418,
+        "narHash": "sha256-2TXn+W/hVN2DIYGU7hHaipmFzjNgDAb8i5We46urLBg=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "5053aedaae52c54c9bd7fce6799e1062f954cec7",
+        "rev": "655a02dea1720eedc36a09e55b9a764115dbce1c",
         "type": "github"
       },
       "original": {
@@ -858,11 +858,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1709302616,
-        "narHash": "sha256-7X2f87af+vUJMNkiTtKEGHIyVW9tieYMzmADuiz93Es=",
+        "lastModified": 1709344015,
+        "narHash": "sha256-R8ribue2QDmjk3DnLVPIi4MYLkJN/wvBKTXGJAERE8Y=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "555afea73c87f8e2bb374d1112431bb3a6f451dd",
+        "rev": "7ce781e87cf7cf789a54d37af7d78f1c11d66dbc",
         "type": "github"
       },
       "original": {
@@ -1090,11 +1090,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1709212569,
-        "narHash": "sha256-0igtEBEmCuSspTO/HEYqFYzXuJeAy9f9BLftGih9cj4=",
+        "lastModified": 1709382297,
+        "narHash": "sha256-BN13D32lFRKMFVGwTDPo2d5Z8xQkbiXLtsZ3UdQVpeA=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "80c30658b9c38af1fac51eb3fc6f423a1f0ae36d",
+        "rev": "405a09242dfff6a32466411d3e3c9861dd566e59",
         "type": "github"
       },
       "original": {
@@ -1135,16 +1135,16 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1709271102,
-        "narHash": "sha256-Z2sBL/HRRTNABsU8E5XsP+FXBEyBoi6oMwm5bV7lSFw=",
+        "lastModified": 1709237383,
+        "narHash": "sha256-cy6ArO4k5qTx+l5o+0mL9f5fa86tYUX3ozE1S+Txlds=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "09c1497ce5d4ed4a0edfdd44450d3048074cb300",
+        "rev": "1536926ef5621b09bba54035ae2bb6d806d72ac8",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-unstable-small",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1320,7 +1320,7 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1709376389,
+        "lastModified": 1709376342,
         "narHash": "sha256-3JkWhFfE44eKbICQpzmWRK2nesoC45CPF4zDw4Y9otU=",
         "path": "/home/kev/flake/secrets",
         "type": "path"
