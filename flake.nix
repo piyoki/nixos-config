@@ -97,6 +97,7 @@
 
     # personal dotfiles
     dotfiles.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
+    dotfiles-laptop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=x1-carbon";
     dotfiles-desktop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=nuc-12";
   };
 }
