@@ -1,5 +1,20 @@
-{ inputs, system, ... }:
+{ config, lib, inputs, system, ... }:
 
+with lib;
+
+let
+  cfg = config.dotfiles.waybar;
+in
 {
-  xdg.configFile."waybar".source = inputs.dotfiles.packages.${system}.waybar + "/";
+  options.dotfiles.waybar = {
+    profile = mkOption {
+      type = types.str;
+      default = "laptop";
+      description = "host profile";
+    };
+  };
+
+  config = {
+    xdg.configFile."waybar".source = inputs."dotfiles-${cfg.profile}".packages.${system}.waybar + "/";
+  };
 }

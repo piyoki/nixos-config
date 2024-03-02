@@ -32,6 +32,8 @@
       auto-optimise-store = true;
       # set max-jobs
       max-jobs = lib.mkDefault 8;
+      # enable ccache (local compilation)
+      # extra-sandbox-paths = [ config.programs.ccache.cacheDir ];
     };
 
     # garbage collection
