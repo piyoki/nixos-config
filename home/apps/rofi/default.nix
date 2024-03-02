@@ -1,5 +1,16 @@
-{ inputs, system, ... }:
+{ config, lib, inputs, system, ... }:
 
+with lib;
+
+let
+  cfg = config.dotfiles.rofi;
+in
 {
-  xdg.configFile."rofi".source = inputs.dotfiles.packages.${system}.rofi + "/";
+  options.dotfiles.rofi = {
+    profile = mkOption config.common.profile;
+  };
+
+  config = {
+    xdg.configFile."rofi".source = inputs."dotfiles-${cfg.profile}".packages.${system}.rofi + "/";
+  };
 }

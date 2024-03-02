@@ -1,11 +1,22 @@
-{ inputs, system, ... }:
+{ config, lib, inputs, system, ... }:
 
+with lib;
+
+let
+  cfg = config.dotfiles.fish;
+in
 {
-  xdg.configFile = {
-    "fish/config.fish".source = inputs.dotfiles.packages.${system}.fish + "/config.fish";
-    "fish/config.d".source = inputs.dotfiles.packages.${system}.fish + "/config.d";
-    "fish/functions".source = inputs.dotfiles.packages.${system}.fish + "/functions";
-    "fish/completions".source = inputs.dotfiles.packages.${system}.fish + "/completions";
-    "fish/themes".source = inputs.dotfiles.packages.${system}.fish + "/themes";
+  options.dotfiles.fish = {
+    profile = mkOption config.common.profile;
+  };
+
+  config = {
+    xdg.configFile = {
+      "fish/config.fish".source = inputs."dotfiles-${cfg.profile}".packages.${system}.fish + "/config.fish";
+      "fish/config.d".source = inputs."dotfiles-${cfg.profile}".packages.${system}.fish + "/config.d";
+      "fish/functions".source = inputs."dotfiles-${cfg.profile}".packages.${system}.fish + "/functions";
+      "fish/completions".source = inputs."dotfiles-${cfg.profile}".packages.${system}.fish + "/completions";
+      "fish/themes".source = inputs."dotfiles-${cfg.profile}".packages.${system}.fish + "/themes";
+    };
   };
 }

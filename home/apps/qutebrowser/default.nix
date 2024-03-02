@@ -1,6 +1,9 @@
-{ inputs, pkgs, system, ... }:
+{ pkgs, config, lib, inputs, system, ... }:
+
+with lib;
 
 let
+  cfg = config.dotfiles.qutebrowser;
   theme = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "qutebrowser";
@@ -9,6 +12,12 @@ let
   };
 in
 {
-  xdg.configFile."qutebrowser/config.py".source = inputs.dotfiles.packages.${system}.qutebrowser + "/config.py";
-  xdg.configFile."qutebrowser/catppuccin".source = theme + "/";
+  options.dotfiles.qutebrowser = {
+    profile = mkOption config.common.profile;
+  };
+
+  config = {
+    xdg.configFile."qutebrowser/config.py".source = inputs."dotfiles-${cfg.profile}".packages.${system}.qutebrowser + "/config.py";
+    xdg.configFile."qutebrowser/catppuccin".source = theme + "/";
+  };
 }

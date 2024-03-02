@@ -7,11 +7,7 @@ let
 in
 {
   options.dotfiles.hypr = {
-    profile = mkOption {
-      type = types.str;
-      default = "laptop";
-      description = "host profile";
-    };
+    profile = mkOption config.common.profile;
   };
 
   config = {
