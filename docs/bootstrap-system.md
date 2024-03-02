@@ -51,6 +51,8 @@ mount /dev/mapper/root /mnt
 cd /mnt
 btrfs subvolume create @
 btrfs subvolume create @home
+btrfs subvolume create @nix
+btrfs subvolume create @snapshots
 cd
 umount /mnt
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/mapper/root /mnt
@@ -137,7 +139,7 @@ blkid /dev/mapper/root
 
   # List packages installed in system profile. To search, run:
   # $ nix search <pkg>
-  environment.systemPackages = with pkgs; [ vim, wget ];
+  environment.systemPackages = with pkgs; [ vim git wget ];
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 ];
