@@ -1,8 +1,9 @@
-_:
+{ inputs, system, lib, pkgs, ... }:
 
 {
   imports = [
     ./modules/secrets.nix
+    ./modules/dotfiles.nix
   ];
 
   home = {
