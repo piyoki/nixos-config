@@ -59,16 +59,16 @@
     "dot-hypr": {
       "flake": false,
       "locked": {
-        "lastModified": 1709283415,
-        "narHash": "sha256-ZHfKh2V/7oEMaUQahfKW8cKGsqj8lD5HNOp6Zz3B6Zk=",
+        "lastModified": 1709364997,
+        "narHash": "sha256-USaPIC/dYMaYB0y1pIiu+PyehZ59x0yuE5j9mnQftyg=",
         "owner": "yqlbu",
         "repo": "dot-hypr",
-        "rev": "4134d97034fcc8e0894143d791001b3dcd88a86d",
+        "rev": "ff64715a8767c12f5c91a04ab970c9fd5bab295f",
         "type": "github"
       },
       "original": {
         "owner": "yqlbu",
-        "ref": "x1-carbon",
+        "ref": "nuc-12",
         "repo": "dot-hypr",
         "type": "github"
       }
@@ -242,16 +242,16 @@
     "dot-waybar": {
       "flake": false,
       "locked": {
-        "lastModified": 1708995557,
-        "narHash": "sha256-YjejBcBtWL0qF4IBvnR+kW3umxmlgAwiuYzBYlGnRV8=",
+        "lastModified": 1709364640,
+        "narHash": "sha256-Qc91TZogUVYWezFMspIcryf3GCdrP5vMuOFGpZI+zG4=",
         "owner": "yqlbu",
         "repo": "dot-waybar",
-        "rev": "24c1a9b17643db324cd94c65a3e4a46d815a586a",
+        "rev": "6284a8e06820043a38c44670bd11d135233406a1",
         "type": "github"
       },
       "original": {
         "owner": "yqlbu",
-        "ref": "x1-carbon",
+        "ref": "nuc-12",
         "repo": "dot-waybar",
         "type": "github"
       }
@@ -276,16 +276,16 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1709304002,
-        "narHash": "sha256-DjzZb7vr5zZpKIUxYrxMV38cYi4Xd/fsKrGWza5f7PM=",
-        "ref": "master",
-        "rev": "66b046acc9212b133d1d2d8b5c44e3702e3c1349",
-        "revCount": 101,
+        "lastModified": 1709365046,
+        "narHash": "sha256-BIQSEM50Y2IL/Xn+WBgPF3iX1tC/epVMlqujwO8hVJk=",
+        "ref": "nuc-12",
+        "rev": "c59ee4d16d9fbc314ed353905d2d3673df6adffc",
+        "revCount": 105,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
       "original": {
-        "ref": "master",
+        "ref": "nuc-12",
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       }
@@ -1018,8 +1018,8 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1708599993,
-        "narHash": "sha256-a5P89L7rlZ6Xi/X49+R7CCD7IpzWAdAb1e2hMZHI1Gs=",
+        "lastModified": 1709369039,
+        "narHash": "sha256-a0m8GqhfgrAVkkwDAADbdCDbFIFJS4FZlgNDPJ9VbWU=",
         "path": "/home/kev/flake/secrets",
         "type": "path"
       },

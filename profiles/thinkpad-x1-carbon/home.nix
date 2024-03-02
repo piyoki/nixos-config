@@ -1,6 +1,10 @@
 _:
 
 {
+  imports = [
+    ./modules/secrets.nix
+  ];
+
   home = {
     file = {
       # gnupg
