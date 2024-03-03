@@ -16,7 +16,7 @@ in
   options.common = {
     profile = genOption {
       type = types.str;
-      default = "laptop";
+      default = "desktop";
       description = "host profile";
     };
   };
