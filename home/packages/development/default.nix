@@ -11,7 +11,6 @@
     ctags
     delta
     gcc
-    git
     github-cli
     gnumake
     httpie
