@@ -2,13 +2,16 @@ _:
 
 {
   imports = [
-    ./common
     ./packages
     ./services
     ./themes
     ./secrets
     ./maintenance
     ./apps.nix
+
+    # shared modules
+    ../shared/options.nix
+    ../shared/home.nix
   ];
 
   programs.go.enable = true;

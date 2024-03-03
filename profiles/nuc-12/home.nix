@@ -5,8 +5,10 @@ _:
     # default home modules
     ../../home
 
-    # custom home modules
+    # host specific modules
     ./modules/secrets.nix
     ./modules/gnupg.nix
+
+    # shared modules
   ];
 }
