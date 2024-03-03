@@ -4,10 +4,10 @@
 </p>
 <p align="center">
   <img src="https://custom-icon-badges.herokuapp.com/github/license/yqlbu/nixos-config?style=flat&logo=law&colorA=24273A&color=blue" alt="License"/>
-  <img src="https://img.shields.io/static/v1?label=Hyprland&message=latest&style=flat&logo=hyprland&colorA=24273A&colorB=6CC5D9&logoColor=CAD3F5"/>
+  <img src="https://custom-icon-badges.herokuapp.com/badge/Hyprland-latest-000.svg?style=flat&logo=hypr&colorA=24273A&colorB=6CC5D9&logoColor=CAD3F5"/>
   <img src="https://img.shields.io/static/v1?label=Nix Flake&message=check&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5">
   <img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4">
-  <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/yqlbu/nixos-config?style=flat&logo=history&colorA=24273A&colorB=C4EEF2&logoColor=white" alt="lastcommit"/>
+  <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/yqlbu/nixos-config?style=flat&logo=history&colorA=24273A&colorB=C4EEF2" alt="lastcommit"/>
 </p>
 
 ![image](https://github.com/yqlbu/nixos-config/assets/31861128/5f470721-507d-4cbc-9754-4fef671ed8a4)
