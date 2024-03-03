@@ -7,8 +7,6 @@ on:
         type: string
         description: flake input to be synced
         options:
-          - home-estate
-          - secrets
           - dotfiles
         required: true
 
@@ -29,7 +27,8 @@ jobs:
       - name: update flake upstream input
         shell: bash
         run: |
-          nix flake lock --update-input ${{ inputs.input }}
+          nix flake lock --update-input ${{ inputs.input }}-laptop
+          nix flake lock --update-input ${{ inputs.input }}-desktop
 
       - uses: EndBug/add-and-commit@main
         with:
