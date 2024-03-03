@@ -1,4 +1,4 @@
-{ user, ... }:
+_:
 
 {
   imports = [
@@ -11,13 +11,5 @@
     ./apps.nix
   ];
 
-  # home-manager settings
-  home = {
-    username = user;
-    homeDirectory = "/home/${user}";
-    inherit (import ./vars.nix) stateVersion;
-  };
-
-  programs.home-manager.enable = true;
   programs.go.enable = true;
 }
