@@ -6,12 +6,10 @@ _:
     ../../home
 
     # host specific modules
-    ./modules/secrets.nix
-    ./modules/gnupg.nix
     ./modules/dotfiles.nix
-    # ../../shared/modules/home/gnupg.nix
-    # { source = ./conf/gpg.conf; }
+    ./modules/secrets.nix
 
     # shared modules
+    (import ../../shared/modules/home/gnupg.nix ./conf/gpg.conf)
   ];
 }
