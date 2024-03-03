@@ -34,3 +34,7 @@ prefetch-git repo rev:
 # nix-collect-garbage
 cleanup:
   @sudo nix-collect-garbage -d
+
+# stage all files
+add:
+  @git add .
