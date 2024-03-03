@@ -26,6 +26,7 @@
       kernelModules = [ "i2c-dev" ];
       luks.devices."root".device = "/dev/disk/by-uuid/79869bdd-49a1-44d5-b57c-0ca9fa89c4c9";
     };
+
     kernelModules = [ "kvm-intel" ];
     kernelParams = [ ];
     extraModulePackages = [ ];

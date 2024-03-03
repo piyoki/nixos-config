@@ -21,6 +21,7 @@
       kernelModules = [ "i2c-dev" ];
       luks.devices."root".device = "/dev/disk/by-uuid/6cf8230d-0ddf-44b2-9be0-c24ce47072e3";
     };
+
     kernelModules = [ "kvm-intel" ];
     kernelParams = [ ];
     extraModulePackages = [ ];
@@ -30,39 +31,40 @@
     '';
   };
 
-  fileSystems."/" =
-    {
+  fileSystems = {
+    "/" = {
       device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
-  fileSystems."/home" =
-    {
-      device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
-      fsType = "btrfs";
-      options = [ "subvol=@home" ];
-    };
+    "/home" =
+      {
+        device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
+        fsType = "btrfs";
+        options = [ "subvol=@home" ];
+      };
 
-  fileSystems."/nix" =
-    {
-      device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" ];
-    };
+    "/nix" =
+      {
+        device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
+        fsType = "btrfs";
+        options = [ "subvol=@nix" ];
+      };
 
-  fileSystems."/snapshots" =
-    {
-      device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
-      fsType = "btrfs";
-      options = [ "subvol=@snapshots" ];
-    };
+    "/snapshots" =
+      {
+        device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
+        fsType = "btrfs";
+        options = [ "subvol=@snapshots" ];
+      };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/A323-8AC7";
-      fsType = "vfat";
-    };
+    "/boot" =
+      {
+        device = "/dev/disk/by-uuid/A323-8AC7";
+        fsType = "vfat";
+      };
+  };
 
   swapDevices = [ ];
 

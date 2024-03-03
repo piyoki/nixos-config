@@ -8,5 +8,6 @@ _:
     ./peripherals
     ./windowmanager/hyprland
     ./xdg
+    ./wayland
   ];
 }

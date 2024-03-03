@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ../../wayland
-    ../../xdg
     ./browser
     ./document
     ./editor
@@ -15,7 +13,7 @@
     ./terminal
   ];
 
-  home.packages = with pkgs; [
+  home.packages = [
     inputs.hyprland.packages."${pkgs.system}".hyprland
   ];
 }

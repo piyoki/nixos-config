@@ -34,9 +34,9 @@
       ];
       # function to generate nixosSystem
       genSystem =
-        { host
-        , hostModules ? [ ./profiles/${host}/configuration.nix ]
-        , customHomeModules ? [ ./profiles/${host}/home.nix ]
+        { profile
+        , hostModules ? [ ./profiles/${profile}/configuration.nix ]
+        , customHomeModules ? [ ./profiles/${profile}/home.nix ]
         }: lib.nixosSystem {
           inherit specialArgs;
           modules = (genHomeModule customHomeModules) ++ extraModules ++ hostModules;
@@ -54,8 +54,8 @@
       };
 
       nixosConfigurations = {
-        laptop = genSystem { host = "thinkpad-x1-carbon"; };
-        desktop = genSystem { host = "nuc-12"; };
+        laptop = genSystem { profile = "thinkpad-x1-carbon"; };
+        desktop = genSystem { profile = "nuc-12"; };
       };
     };
 
