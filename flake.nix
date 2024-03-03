@@ -56,6 +56,7 @@
       nixosConfigurations = {
         laptop = genSystem { profile = "thinkpad-x1-carbon"; };
         desktop = genSystem { profile = "nuc-12"; };
+        mars = genSystem { profile = "mars"; };
       };
     };
 
