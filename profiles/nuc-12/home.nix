@@ -7,8 +7,8 @@ _:
 
     # host specific modules
     ./modules/secrets.nix
-    ./modules/gnupg.nix
 
     # shared modules
+    (import ../../shared/modules/home/gnupg.nix ./conf/gpg.conf)
   ];
 }
