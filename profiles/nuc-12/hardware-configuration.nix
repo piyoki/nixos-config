@@ -35,28 +35,28 @@
     "/" = {
       device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@" ];
     };
 
     "/home" =
       {
         device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
         fsType = "btrfs";
-        options = [ "subvol=@home" ];
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@home" ];
       };
 
     "/nix" =
       {
         device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
         fsType = "btrfs";
-        options = [ "subvol=@nix" ];
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
       };
 
     "/snapshots" =
       {
         device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
         fsType = "btrfs";
-        options = [ "subvol=@snapshots" ];
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
       };
 
     "/boot" =
