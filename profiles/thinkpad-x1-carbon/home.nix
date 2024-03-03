@@ -5,9 +5,11 @@ _:
     # default home modules
     ../../home
 
-    # custom home modules
-    ./modules/secrets.nix
+    # host specific modules
     ./modules/dotfiles.nix
-    ./modules/gnupg.nix
+    ./modules/secrets.nix
+
+    # shared modules
+    (import ../../shared/modules/home/gnupg.nix ./conf/gpg.conf)
   ];
 }
