@@ -1,10 +1,19 @@
-{ user, ...}:
+{ pkgs, ... }:
 
 {
   imports = [
     # default home modules
-    ../../home/common
+    ../../shared/home.nix
 
-    # custom home modules
+    # host specific modules
+
+    # shared modules
+  ];
+
+  home.packages = with pkgs; [
+    bat
+    delta
+    jq
+    lazygit
   ];
 }

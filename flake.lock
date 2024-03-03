@@ -763,6 +763,23 @@
         "type": "github"
       }
     },
+    "home-estate": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709051546,
+        "narHash": "sha256-CZIHVm23th25eCCO4fN1K4R8Ou6Cw0gqhpZWm9cbwC4=",
+        "ref": "refs/heads/master",
+        "rev": "b51d8925b301b728d8276bd7fcdaa08c5b488082",
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/home-estate"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/home-estate"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -1245,13 +1262,32 @@
         "daeuniverse": "daeuniverse",
         "dotfiles-desktop": "dotfiles-desktop",
         "dotfiles-laptop": "dotfiles-laptop",
+        "home-estate": "home-estate",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "nur": "nur",
         "pre-commit-hooks": "pre-commit-hooks_2",
+        "secrets": "secrets",
         "sops-nix": "sops-nix"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709453364,
+        "narHash": "sha256-dIJnD01khlVLgz8h3lUvAD2TyAjaR7aq+7BXU5K9eRY=",
+        "ref": "refs/heads/master",
+        "rev": "269d2f3a6645bf5ce312bade281cfe9d38893aa5",
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/secrets"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
