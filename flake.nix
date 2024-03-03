@@ -50,15 +50,15 @@
       };
 
       nixosConfigurations = {
-        laptop = genSystem
+        laptop = let host = "thinkpad-x1-carbon"; in genSystem
           {
-            hostModules = [ ./profiles/thinkpad-x1-carbon/configuration.nix ];
-            customHomeModules = [ ./profiles/thinkpad-x1-carbon/home.nix ];
+            hostModules = [ ./profiles/${host}/configuration.nix ];
+            customHomeModules = [ ./profiles/${host}/home.nix ];
           };
-        desktop = genSystem
+        desktop = let host = "nuc-12"; in genSystem
           {
-            hostModules = [ ./profiles/nuc-12/configuration.nix ];
-            customHomeModules = [ ./profiles/nuc-12/home.nix ];
+            hostModules = [ ./profiles/${host}/configuration.nix ];
+            customHomeModules = [ ./profiles/${host}/home.nix ];
           };
       };
     };
