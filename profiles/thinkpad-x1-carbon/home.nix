@@ -2,20 +2,12 @@ _:
 
 {
   imports = [
+    # default home modules
+    ../../home
+
+    # custom home modules
     ./modules/secrets.nix
+    ./modules/dotfiles.nix
+    ./modules/gnupg.nix
   ];
-
-  home = {
-    file = {
-      # gnupg
-      ".gnupg/gpg.conf".text = builtins.readFile ./conf/gpg.conf;
-    };
-  };
-
-  dotfiles = {
-    rofi.profile = "laptop";
-    waybar.profile = "laptop";
-    hypr.profile = "laptop";
-    dunst.profile = "laptop";
-  };
 }

@@ -18,17 +18,17 @@
         daeuniverse.nixosModules.dae
       ];
       # function to generate homeModule
-      genHomeModule = customHomeModules: [
+      genHomeModules = homeModules: [
         home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = specialArgs;
-            users.${user} = import ./home;
+            users.${user} = homeModules;
             sharedModules = [
               sops-nix.homeManagerModules.sops
-            ] ++ customHomeModules;
+            ];
           };
         }
       ];
@@ -36,10 +36,10 @@
       genSystem =
         { profile
         , hostModules ? [ ./profiles/${profile}/configuration.nix ]
-        , customHomeModules ? [ ./profiles/${profile}/home.nix ]
+        , homeModules ? import ./profiles/${profile}/home.nix
         }: lib.nixosSystem {
           inherit specialArgs;
-          modules = (genHomeModule customHomeModules) ++ extraModules ++ hostModules;
+          modules = (genHomeModules homeModules) ++ extraModules ++ hostModules;
         };
     in
     {

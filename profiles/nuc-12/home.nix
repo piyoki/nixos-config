@@ -2,13 +2,11 @@ _:
 
 {
   imports = [
-    ./modules/secrets.nix
-  ];
+    # default home modules
+    ../../home
 
-  home = {
-    file = {
-      # gnupg
-      ".gnupg/gpg.conf".text = builtins.readFile ./conf/gpg.conf;
-    };
-  };
+    # custom home modules
+    ./modules/secrets.nix
+    ./modules/gnupg.nix
+  ];
 }

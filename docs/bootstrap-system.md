@@ -121,10 +121,6 @@ blkid /dev/mapper/root
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "ter-v32b";
-    keyMap = "us";
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kev = {
