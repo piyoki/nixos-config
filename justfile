@@ -16,7 +16,7 @@ rebuild host:
   @sudo nixos-rebuild switch --upgrade --flake .#{{ host }}
 
 # update all flake inputs
-update-all-inputs:
+update:
   @sudo nix flake update
 
 # update a particular flake input

@@ -61,7 +61,7 @@
 
   inputs = {
     # public source
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -83,11 +83,11 @@
 
     # private repos
     secrets = {
-      url = "path:/home/kev/flake/secrets";
+      url = "git+file:/home/kev/flake/secrets?shallow=1";
       flake = false;
     };
     home-estate = {
-      url = "path:/home/kev/flake/home-estate";
+      url = "git+file:/home/kev/flake/home-estate?shallow=1";
       flake = false;
     };
 
