@@ -7,41 +7,59 @@
   imports =
     [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.supportedFilesystems = [ "btrfs" ];
-  boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+
+  boot.loader = {
+    systemd-boot.enable = true;
+    systemd-boot.configurationLimit = lib.mkDefault 10;
+    efi.canTouchEfiVariables = true;
+  };
+
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    supportedFilesystems = [ "btrfs" ];
+    initrd = {
+      availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
+      kernelModules = [ ];
+    };
+    kernelModules = [ "kvm-amd" ];
+    extraModulePackages = [ ];
+  };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+    {
+      device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
       fsType = "btrfs";
       options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@home" ];
-    };
+  fileSystems = {
+    "/home" =
+      {
+        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@home" ];
+      };
 
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
-    };
+    "/nix" =
+      {
+        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
+      };
 
-  fileSystems."/snapshots" =
-    { device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
-    };
+    "/snapshots" =
+      {
+        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
+      };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1E7C-94C1";
-      fsType = "vfat";
-    };
+    "/boot" =
+      {
+        device = "/dev/disk/by-uuid/1E7C-94C1";
+        fsType = "vfat";
+      };
+  };
 
   swapDevices = [ ];
 
