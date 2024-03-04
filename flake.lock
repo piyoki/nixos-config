@@ -1091,11 +1091,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1709357594,
-        "narHash": "sha256-C6BNtZewmFbBuPgqAUa/o3pZ4nYZJkQfFB1nhQbBFEc=",
+        "lastModified": 1709455474,
+        "narHash": "sha256-UzfJcBjXUySRokQiI8QQZp/Xpneiu7A5iaLGU09NiQ0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b8698cd8d62c42cf3e2b3a95224c57173b73e494",
+        "rev": "768bb879887ae70e62d7628c82d825bbbf873b4b",
         "type": "github"
       },
       "original": {
@@ -1276,10 +1276,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1709453364,
-        "narHash": "sha256-dIJnD01khlVLgz8h3lUvAD2TyAjaR7aq+7BXU5K9eRY=",
+        "lastModified": 1709523794,
+        "narHash": "sha256-0EdM/wYFUsDMh2Z4uxlJ93SdGr4ddapMgewwCQc5F0Q=",
         "ref": "refs/heads/master",
-        "rev": "269d2f3a6645bf5ce312bade281cfe9d38893aa5",
+        "rev": "cc5c5421bdfaf28f69ee4b820cbf58fc1db48346",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/secrets"

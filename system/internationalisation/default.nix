@@ -3,7 +3,8 @@ _:
 {
   # Select internationalisation properties
   imports = [
-    ./i18n.nix
+    ./fcitx.nix
+    ./locale.nix
     ./time.nix
   ];
 }
