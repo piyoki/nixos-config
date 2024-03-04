@@ -15,7 +15,5 @@
     users.root = {
       shell = pkgs.bash;
     };
-
-    extraGroups.docker.members = [ user ];
   };
 }

@@ -3,6 +3,7 @@ _:
 {
   imports = [
     # ./cifs-mount.nix
+    ./fish.nix
     ./windowmanager.nix
     ./gnupg.nix
     ./powermanagement.nix
@@ -11,22 +12,11 @@ _:
     ./xdg-portal.nix
     ./flatpak.nix
     ./thunar.nix
-    ./virtualization.nix
+    # ./virtualization.nix
+    # ./docker.nix
     # ./printer.nix
+    ./openssh.nix
     ./gnome-keyring.nix
+    ./zramd.nix
   ];
-
-  services = {
-    # openssh daemon
-    openssh = {
-      enable = true;
-      settings.PasswordAuthentication = false; # disable SSH password log in
-    };
-  };
-
-  # fish
-  programs.fish.enable = true;
-
-  # zramd
-  zramSwap.enable = true;
 }
