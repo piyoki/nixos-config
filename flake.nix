@@ -36,10 +36,10 @@
       genSystem =
         { profile
         , hostModules ? [ ./profiles/${profile}/configuration.nix ]
-        , homeModules ? import ./profiles/${profile}/home.nix
+        , homeModules ? (genHomeModules (import ./profiles/${profile}/home.nix))
         }: lib.nixosSystem {
           inherit specialArgs;
-          modules = (genHomeModules homeModules) ++ extraModules ++ hostModules;
+          modules = hostModules ++ homeModules ++ extraModules;
         };
       # function to generate remote deploy nixosSystem
       genDeploy =
