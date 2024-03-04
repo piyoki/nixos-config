@@ -2,6 +2,7 @@ _:
 
 {
   imports = [
+    ./age-keys.nix
     ./samba.nix
     # ./sdwan.nix
   ];
