@@ -35,7 +35,7 @@ prefetch-git repo rev:
   @nix-prefetch-git --url 'git@github.com:{{ repo }}' --rev '{{ rev }}' --fetch-submodules
 
 # nix-collect-garbage
-cleanup:
+gc:
   @sudo nix-collect-garbage -d
 
 # stage all files
