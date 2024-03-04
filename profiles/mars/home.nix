@@ -1,19 +1,12 @@
-{ pkgs, ... }:
+_:
 
 {
   imports = [
-    # default home modules
-    ../../shared/home.nix
-
     # host specific modules
 
     # shared modules
-  ];
-
-  home.packages = with pkgs; [
-    bat
-    delta
-    jq
-    lazygit
+    ../../shared/options.nix
+    ../../shared/home.nix
+    ../../shared/server/home/base.nix
   ];
 }

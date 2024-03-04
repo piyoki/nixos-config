@@ -9,7 +9,7 @@ in
   users = {
     users.${user} = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" ];
       shell = pkgs.fish;
       # /etc/ssh/authorized_keys.d/${user}
       openssh.authorizedKeys.keyFiles = keyFiles;
@@ -18,6 +18,7 @@ in
 
     users.root = {
       shell = pkgs.bash;
+      openssh.authorizedKeys.keyFiles = keyFiles;
     };
   };
 }

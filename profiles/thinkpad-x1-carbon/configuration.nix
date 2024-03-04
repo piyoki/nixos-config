@@ -8,12 +8,13 @@ _:
     # system modules
     ../../system
     ../../system/services/greetd.nix
+    ../../system/services/powermanagement/laptop.nix
 
     # themes modules
     ../../themes
 
     # shared modules
-    ../../shared/modules/system/powermanagement.nix
+    ../../shared/nixos.nix
   ];
 
   # Set hostname

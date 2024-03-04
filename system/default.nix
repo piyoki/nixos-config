@@ -12,8 +12,5 @@ _:
     ./environment
     ./packages
     ./internationalisation
-
-    # shared modules
-    ../shared/nixos.nix
   ];
 }

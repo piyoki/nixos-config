@@ -1,0 +1,7 @@
+_:
+
+{
+  imports = [
+    ./core.nix
+  ];
+}

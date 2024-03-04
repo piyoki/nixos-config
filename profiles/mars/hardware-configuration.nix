@@ -7,41 +7,60 @@
   imports =
     [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.supportedFilesystems = [ "btrfs" ];
-  boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@" ];
-    };
+  boot.loader = {
+    systemd-boot.enable = true;
+    systemd-boot.configurationLimit = lib.mkDefault 10;
+    efi.canTouchEfiVariables = true;
+  };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@home" ];
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    supportedFilesystems = [ "btrfs" ];
+    initrd = {
+      availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
+      kernelModules = [ ];
     };
+    kernelModules = [ "kvm-amd" ];
+    extraModulePackages = [ ];
+  };
 
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
-    };
 
-  fileSystems."/snapshots" =
-    { device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
-    };
+  fileSystems = {
+    "/" =
+      {
+        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@" ];
+      };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1E7C-94C1";
-      fsType = "vfat";
-    };
+    "/home" =
+      {
+        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@home" ];
+      };
+
+    "/nix" =
+      {
+        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
+      };
+
+    "/snapshots" =
+      {
+        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
+      };
+
+    "/boot" =
+      {
+        device = "/dev/disk/by-uuid/1E7C-94C1";
+        fsType = "vfat";
+      };
+  };
 
   swapDevices = [ ];
 

@@ -5,8 +5,8 @@ _:
     # ./cifs-mount.nix
     ./fish.nix
     ./windowmanager.nix
-    ./gnupg.nix
-    ./powermanagement.nix
+    ./gnupg
+    ./powermanagement
     # ./greetd.nix
     # ./displaymanager.nix
     ./xdg-portal.nix
@@ -15,7 +15,7 @@ _:
     # ./virtualization.nix
     # ./docker.nix
     # ./printer.nix
-    ./openssh.nix
+    ./openssh
     ./gnome-keyring.nix
     ./zramd.nix
   ];

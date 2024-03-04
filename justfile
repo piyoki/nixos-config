@@ -15,6 +15,9 @@ default:
 rebuild host:
   @sudo nixos-rebuild switch --upgrade --flake .#{{ host }}
 
+deploy host:
+  @colmena apply --verbose --on {{ host }}
+
 # update all flake inputs
 update:
   @sudo nix flake update
@@ -32,7 +35,7 @@ prefetch-git repo rev:
   @nix-prefetch-git --url 'git@github.com:{{ repo }}' --rev '{{ rev }}' --fetch-submodules
 
 # nix-collect-garbage
-cleanup:
+gc:
   @sudo nix-collect-garbage -d
 
 # stage all files

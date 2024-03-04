@@ -9,5 +9,6 @@
     statix # Lints and suggestions for the Nix programming language
     deadnix # Find and remove unused code in .nix source files
     nix-output-monitor # Processes output of Nix commands to show helpful and pretty information
+    colmena # A simple, stateless NixOS deployment tool
   ];
 }
