@@ -15,6 +15,9 @@ default:
 rebuild host:
   @sudo nixos-rebuild switch --upgrade --flake .#{{ host }}
 
+deploy host:
+  @colmena apply --verbose --on {{ host }}
+
 # update all flake inputs
 update:
   @sudo nix flake update
