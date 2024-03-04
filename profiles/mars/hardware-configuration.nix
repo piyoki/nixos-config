@@ -25,14 +25,15 @@
     extraModulePackages = [ ];
   };
 
-  fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@" ];
-    };
 
   fileSystems = {
+    "/" =
+      {
+        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@" ];
+      };
+
     "/home" =
       {
         device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
