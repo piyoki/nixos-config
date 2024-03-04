@@ -8,5 +8,8 @@
     lazygit
     vivid
     zoxide
+    trash-cli
+    unzip
+    zip
   ];
 }
