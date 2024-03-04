@@ -1,7 +1,8 @@
-{ pkgs, lib, system, ... }:
+_:
 
 {
   imports = [
+    # system default modules
     ./hardware
     ./networking
     ./security
@@ -11,36 +12,8 @@
     ./environment
     ./packages
     ./internationalisation
+
+    # shared modules
+    ../shared/nixos.nix
   ];
-
-  system = {
-    stateVersion = "24.05";
-    autoUpgrade = {
-      enable = true;
-      channel = "https://nixos.org/channels/nixos-unstable";
-    };
-  };
-
-  nixpkgs.hostPlatform = lib.mkDefault system;
-
-  nix = {
-    # enable flake
-    package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
-    settings = {
-      # enable auto-cleanup
-      auto-optimise-store = true;
-      # set max-jobs
-      max-jobs = lib.mkDefault 8;
-      # enable ccache (local compilation)
-      # extra-sandbox-paths = [ config.programs.ccache.cacheDir ];
-    };
-
-    # garbage collection
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete older-than 3d";
-    };
-  };
 }
