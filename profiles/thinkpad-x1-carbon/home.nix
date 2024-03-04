@@ -6,8 +6,8 @@ _:
     ../../home
 
     # host specific modules
+    ./secrets
     ./modules/dotfiles.nix
-    ./modules/secrets.nix
 
     # shared modules
     (import ../../shared/modules/home/gnupg.nix ./conf/gpg.conf)

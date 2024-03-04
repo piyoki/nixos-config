@@ -1,14 +1,7 @@
-_:
+{ lib, ... }:
 
 {
-  # enable openssh daemon
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "yes"; # enable root login for remote deploy
-      PasswordAuthentication = true; # disable password login
-    };
-  };
+  imports = [ ./default.nix ];
 
-  networking.firewall.allowedTCPPorts = [ 22 5598 ];
+  services.openssh.settings.PermitRootLogin = lib.mkForce "yes"; # enable root login for remote deploy
 }
