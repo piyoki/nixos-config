@@ -6,7 +6,7 @@ _:
     ./fish.nix
     ./windowmanager.nix
     ./gnupg
-    ./powermanagement.nix
+    ./powermanagement
     # ./greetd.nix
     # ./displaymanager.nix
     ./xdg-portal.nix
