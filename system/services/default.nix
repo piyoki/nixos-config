@@ -15,7 +15,7 @@ _:
     # ./virtualization.nix
     # ./docker.nix
     # ./printer.nix
-    ./openssh.nix
+    ./openssh
     ./gnome-keyring.nix
     ./zramd.nix
   ];

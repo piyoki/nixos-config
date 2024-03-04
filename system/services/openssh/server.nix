@@ -5,7 +5,7 @@ _:
   services.openssh = {
     enable = true;
     settings = {
-      PermitRootLogin = "yes"; # enable root login
+      PermitRootLogin = "yes"; # enable root login for remote deploy
       PasswordAuthentication = true; # disable password login
     };
   };
