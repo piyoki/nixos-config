@@ -10,7 +10,7 @@
         config.allowUnfree = lib.mkDefault true;
       };
       inherit (nixpkgs) lib;
-      inherit (import ./vars.nix) user;
+      inherit (import ./shared/vars) user;
       specialArgs = { inherit inputs pkgs system user; };
       extraModules = [
         hyprland.nixosModules.default

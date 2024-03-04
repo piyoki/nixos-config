@@ -1,5 +1,5 @@
 _:
 
 {
-  time.timeZone = (import ../../vars.nix).defaultTimeZone;
+  time.timeZone = (import ../../shared/vars).defaultTimeZone;
 }

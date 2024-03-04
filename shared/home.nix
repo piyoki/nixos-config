@@ -5,7 +5,7 @@
   home = {
     username = user;
     homeDirectory = "/home/${user}";
-    inherit (import ./vars/home.nix) stateVersion;
+    inherit (import ./vars) stateVersion;
   };
 
   programs.home-manager.enable = true;

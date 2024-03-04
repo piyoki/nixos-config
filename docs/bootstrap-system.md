@@ -207,6 +207,16 @@ sudo nixos-rebuild switch --upgrade --flake .#nixos
 Start with the following barebone configuraton
 
 ```nix
+# vars.nix
+{
+  user = "kev";
+  defaultLocale = "en_US.UTF-8";
+  defaultTimeZone = "Asia/Hong_Kong";
+  stateVersion = "24.05";
+}
+```
+
+```nix
 # flake.nix
 {
   # NixOS configuration (with HomeManager)
