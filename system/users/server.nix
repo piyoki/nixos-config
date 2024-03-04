@@ -6,6 +6,7 @@
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "docker" ];
       shell = pkgs.fish;
+      # /etc/ssh/authorized_keys.d/${user}
       openssh.authorizedKeys.keyFiles = [
         "${inputs.home-estate}/authorized_keys"
       ];
