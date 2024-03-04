@@ -18,7 +18,6 @@ in
 
     users.root = {
       shell = pkgs.bash;
-      openssh.authorizedKeys.keyFiles = keyFiles;
     };
   };
 }
