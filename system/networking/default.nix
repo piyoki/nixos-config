@@ -1,9 +1,16 @@
 { pkgs, ... }:
 
+let
+  commonPorts = [
+    22 # ssh
+    53317 # localsend
+  ];
+in
 {
   imports = [
     ./sdwan.nix
     ./tailscale.nix
+    ./networkmanager.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -13,17 +20,11 @@
 
   networking = {
     nftables.enable = true;
-    networkmanager.enable = true;
     firewall = {
       enable = true;
-      # Open ports in the firewall
-      allowedTCPPorts = [
-        22 # ssh
-        53317 # localsend
-      ];
-      allowedUDPPorts = [
-        53317 # localsend
-      ];
+      # open ports in firewall
+      allowedTCPPorts = commonPorts;
+      allowedUDPPorts = commonPorts;
     };
   };
 }

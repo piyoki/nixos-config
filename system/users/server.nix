@@ -1,24 +1,7 @@
-{ inputs, pkgs, user, ... }:
+{ inputs, ... }:
 
-let
-  keyFiles = [
-    "${inputs.home-estate}/authorized_keys"
-  ];
-in
 {
-  users = {
-    users.${user} = {
-      isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "docker" ];
-      shell = pkgs.fish;
-      # /etc/ssh/authorized_keys.d/${user}
-      openssh.authorizedKeys.keyFiles = keyFiles;
-      packages = with pkgs; [ fish ];
-    };
+  imports = [ ./default.nix ];
 
-    users.root = {
-      shell = pkgs.bash;
-      openssh.authorizedKeys.keyFiles = keyFiles;
-    };
-  };
+  users.users.root.openssh.authorizedKeys.keyFiles = [ "${inputs.home-estate}/authorized_keys" ];
 }

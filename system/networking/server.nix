@@ -1,5 +1,5 @@
 _:
 
 {
-  networking.networkmanager.enable = true;
+  imports = [ ./networkmanager.nix ];
 }

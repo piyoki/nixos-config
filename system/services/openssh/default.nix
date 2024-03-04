@@ -1,12 +1,12 @@
-_:
+{ lib, ... }:
 
 {
   # enable openssh daemon
   services.openssh = {
     enable = true;
     settings = {
-      PermitRootLogin = "no"; # disable root login
-      PasswordAuthentication = true; # disable password login
+      PermitRootLogin = lib.mkDefault "no"; # disable root login
+      PasswordAuthentication = lib.mkDefault true; # disable password login
     };
   };
 
