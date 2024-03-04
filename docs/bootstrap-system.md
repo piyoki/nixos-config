@@ -12,6 +12,7 @@
 * [Build the system](#build-the-system)
 * [Flake integration](#flake-integration)
 * [Home-manager integration](#home-manager-integration)
+* [References](#references)
 
 <!-- vim-markdown-toc -->
 
@@ -270,3 +271,8 @@ Rebuild system with flake
 ```bash
 sudo nixos-rebuild switch --upgrade --flake .#nixos
 ```
+
+## References
+
+- [NixOS Installation Guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
+- [NixOS Installation on Virtual Machine Guide - ZH](https://nixos-cn.org/tutorials/installation/VirtualMachine.html)
