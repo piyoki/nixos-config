@@ -41,6 +41,18 @@
           inherit specialArgs;
           modules = (genHomeModules homeModules) ++ extraModules ++ hostModules;
         };
+      # function to generate remote deploy nixosSystem
+      genDeploy =
+        { profile
+        , hostModules ? [ ./profiles/${profile}/configuration.nix ]
+        , homeModules ? (genHomeModules (import ./profiles/${profile}/home.nix))
+        }: {
+          deployment = {
+            targetHost = "nixos-${profile}";
+            inherit (import ./shared/vars) targetPort targetUser;
+          };
+          imports = hostModules ++ homeModules;
+        };
     in
     {
       checks = {
@@ -54,31 +66,22 @@
       };
 
       nixosConfigurations = {
+        # daily-drivers
         laptop = genSystem { profile = "thinkpad-x1-carbon"; };
         desktop = genSystem { profile = "nuc-12"; };
+        # servers
         mars = genSystem { profile = "mars"; };
       };
 
       # remote deploy
       colmena = {
         meta = {
-          nixpkgs = (import nixpkgs) {
-            inherit system;
-            config.allowUnfree = lib.mkDefault true;
-          };
+          nixpkgs = pkgs;
+          inherit specialArgs;
         };
 
-        specialArgs = { inherit inputs pkgs system user; };
-
-        mars = let profile = "mars"; in {
-          deployment = {
-            targetHost = "nixos-${profile}";
-            targetPort = 22;
-            targetUser = "root";
-          };
-
-          imports = [ ] ++ [ ./profiles/${ profile}/configuration.nix ] ++ (genHomeModules (import./profiles/${ profile}/home.nix));
-        };
+        # servers
+        mars = genDeploy ({ profile = "mars"; });
       };
     };
 
