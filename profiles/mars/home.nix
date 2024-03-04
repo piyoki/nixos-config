@@ -17,5 +17,6 @@
     jq
     lazygit
     vivid
+    zoxide
   ];
 }
