@@ -58,11 +58,30 @@
         desktop = genSystem { profile = "nuc-12"; };
         mars = genSystem { profile = "mars"; };
       };
+
+      colmena = {
+        meta = {
+          nixpkgs = (import nixpkgs) {
+            inherit system;
+            config.allowUnfree = lib.mkDefault true;
+          };
+        };
+
+        mars = {
+          deployment = {
+            targetHost = "nixos-mars";
+            targetPort = 22;
+            targetUser = "kev";
+          };
+
+          imports = let profile = "mars"; in [ ] ++ [ ./profiles/${profile}/configuration.nix ] ++ (genHomeModules (import ./profiles/${profile}/home.nix));
+        };
+      };
     };
 
   inputs = {
     # public source
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
