@@ -13,6 +13,7 @@ _:
       ../../themes
 
       # shared modules
+      ../../shared/nixos.nix
     ];
 
   # Set hostname
