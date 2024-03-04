@@ -11,6 +11,7 @@ _:
     ./services/docker.nix
     ./services/openssh.nix
     ./services/zramd.nix
+    ./services/gnupg/server.nix
     ./internationalisation/locale.nix
     ./internationalisation/time.nix
   ];

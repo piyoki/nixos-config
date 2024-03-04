@@ -4,6 +4,7 @@
   imports = [
     # host specific modules
     ../../home/apps/fish
+    ../../home/services/encryption/server.nix
 
     # shared modules
     ../../shared/options.nix
@@ -15,5 +16,6 @@
     delta
     jq
     lazygit
+    vivid
   ];
 }

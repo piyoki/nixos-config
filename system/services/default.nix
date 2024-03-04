@@ -5,7 +5,7 @@ _:
     # ./cifs-mount.nix
     ./fish.nix
     ./windowmanager.nix
-    ./gnupg.nix
+    ./gnupg
     ./powermanagement.nix
     # ./greetd.nix
     # ./displaymanager.nix
