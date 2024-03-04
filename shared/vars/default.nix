@@ -7,4 +7,5 @@
   # remote deploy
   targetPort = 22;
   targetUser = "root";
+  tags = [ "server" ];
 }

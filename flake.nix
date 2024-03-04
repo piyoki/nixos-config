@@ -49,7 +49,7 @@
         }: {
           deployment = {
             targetHost = "nixos-${profile}";
-            inherit (import ./shared/vars) targetPort targetUser;
+            inherit (import ./shared/vars) targetPort targetUser tags;
           };
           imports = hostModules ++ homeModules;
         };
