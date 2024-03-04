@@ -67,6 +67,8 @@
           };
         };
 
+        inherit specialArgs;
+
         mars = {
           deployment = {
             targetHost = "nixos-mars";
