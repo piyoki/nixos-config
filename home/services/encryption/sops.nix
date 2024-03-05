@@ -1,9 +1,16 @@
-{ inputs, config, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
+  home = {
+    packages = with pkgs; [
+      sops # Simple and flexible tool for managing secrets
+      age # Modern encryption tool with small explicit keys
+    ];
+  };
+
   # sops-nix
   sops = {
-    age.keyFile = "/var/lib/age/age-yubikey-master.key";
+    age.keyFile = lib.mkDefault "/var/lib/age/age-yubikey-master.key";
     defaultSopsFormat = "yaml";
   };
 
