@@ -5,7 +5,7 @@
   services.openssh = {
     enable = true;
     settings = {
-      PermitRootLogin = lib.mkDefault "no"; # disable root login
+      PermitRootLogin = lib.mkDefault "prohibit-password"; # disable root login
       PasswordAuthentication = lib.mkDefault false; # disable password login
     };
   };
