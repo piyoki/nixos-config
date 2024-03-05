@@ -1,5 +1,8 @@
 { user, ... }:
 
+let
+  mode = "0700";
+in
 {
   environment = {
     # force to trigger nix daemon; make the above configuration work for root user
@@ -32,18 +35,11 @@
           ".config"
           ".local"
 
-          {
-            directory = ".gnupg";
-            mode = "0700";
-          }
-          {
-            directory = ".ssh";
-            mode = "0700";
-          }
-          {
-            directory = "flake";
-            mode = "0700";
-          }
+          { directory = ".sops"; inherit mode; }
+          { directory = ".gnupg"; inherit mode; }
+          { directory = ".ssh"; inherit mode; }
+          { directory = ".tmux"; inherit mode; }
+          { directory = "flake"; inherit mode; }
         ];
 
         files = [

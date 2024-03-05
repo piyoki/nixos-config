@@ -1,0 +1,6 @@
+[
+  "tmp"
+  ".cache"
+  ".config"
+  ".local"
+]
