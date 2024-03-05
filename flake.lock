@@ -766,18 +766,14 @@
     "home-estate": {
       "flake": false,
       "locked": {
-        "lastModified": 1709051546,
-        "narHash": "sha256-CZIHVm23th25eCCO4fN1K4R8Ou6Cw0gqhpZWm9cbwC4=",
-        "ref": "b51d8925b301b728d8276bd7fcdaa08c5b488082",
-        "rev": "b51d8925b301b728d8276bd7fcdaa08c5b488082",
-        "shallow": true,
-        "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "lastModified": 0,
+        "narHash": "sha256-jG/ADXYvEyZE0wIceZr1D5SBRrTsMdgxLq45TNvUa7w=",
+        "path": "/home/kev/flake/home-estate",
+        "type": "path"
       },
       "original": {
-        "shallow": true,
-        "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "path": "/home/kev/flake/home-estate",
+        "type": "path"
       }
     },
     "home-manager": {
@@ -787,11 +783,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1709485962,
-        "narHash": "sha256-rmFB4uE10+LJbcVE4ePgiuHOBlUIjQOeZt4VQVJTU8M=",
+        "lastModified": 1709578243,
+        "narHash": "sha256-hF96D+c2PBmAFhymMw3z8hou++lqKtZ7IzpFbYeL1/Y=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d579633ff9915a8f4058d5c439281097e92380a8",
+        "rev": "23ff9821bcaec12981e32049e8687f25f11e5ef3",
         "type": "github"
       },
       "original": {
@@ -812,11 +808,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1709548598,
-        "narHash": "sha256-Y0IajUYED04fECuLEy0Ao+VPK3FBN11OQ46eYiXMfM4=",
+        "lastModified": 1709646938,
+        "narHash": "sha256-1QAy6sTtuEkl8WMUR4rim2/SsTekxj0jXrrqJVPs0OM=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "12da0fc84f8b084f7b13702b811cbed7dae9854c",
+        "rev": "bdfa8ab856b889f92240684680cb3fdbdc41fb3d",
         "type": "github"
       },
       "original": {
@@ -1276,18 +1272,14 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1709562771,
-        "narHash": "sha256-UAnbm4Aj/uYfM4z37TIQPBc2RsUXBj6QCinhS6UFxSc=",
-        "ref": "refs/heads/master",
-        "rev": "03c032a122c39e0f13e37eb1f31db428a9b9ed25",
-        "shallow": true,
-        "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "lastModified": 1709565967,
+        "narHash": "sha256-ionHKTwef1u066TpsO6YX6qZvuyqCZtbp6Fo7msFDj8=",
+        "path": "/home/kev/flake/secrets",
+        "type": "path"
       },
       "original": {
-        "shallow": true,
-        "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "path": "/home/kev/flake/secrets",
+        "type": "path"
       }
     },
     "sops-nix": {
