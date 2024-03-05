@@ -112,11 +112,13 @@
 
     # private repos
     secrets = {
-      url = "git+file:/home/kev/flake/secrets?shallow=1";
+      # url = "git+file:/home/kev/flake/secrets?shallow=1";
+      url = "path:/home/kev/flake/secrets";
       flake = false;
     };
     home-estate = {
-      url = "git+file:/home/kev/flake/home-estate?shallow=1";
+      # url = "git+file:/home/kev/flake/home-estate?shallow=1";
+      url = "path:/home/kev/flake/home-estate";
       flake = false;
     };
 
