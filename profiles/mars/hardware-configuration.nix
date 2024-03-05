@@ -34,18 +34,20 @@
         options = [ "relatime" "mode=755" ];
       };
 
-    "/home" =
-      {
-        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@home" ];
-      };
-
     "/nix" =
       {
         device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
         fsType = "btrfs";
         options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@nix" ];
+      };
+
+    "/persistent" =
+      {
+        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
+        # impermance's data is required for booting
+        neededForBoot = true;
       };
 
     "/snapshots" =
