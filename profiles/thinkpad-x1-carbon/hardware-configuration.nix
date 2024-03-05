@@ -22,9 +22,22 @@
     loader.efi.canTouchEfiVariables = true;
 
     initrd = {
-      availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "lz4" ];
       kernelModules = [ "i2c-dev" ];
-      luks.devices."root".device = "/dev/disk/by-uuid/79869bdd-49a1-44d5-b57c-0ca9fa89c4c9";
+      luks.devices."root" = {
+        device = "/dev/disk/by-uuid/79869bdd-49a1-44d5-b57c-0ca9fa89c4c9";
+        # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
+        # if not specified, you will be prompted for a passphrase instead.
+        #keyFile = "/root-part.key";
+
+        # whether to allow TRIM requests to the underlying device.
+        # it's less secure, but faster.
+        allowDiscards = true;
+        # Whether to bypass dm-crypt’s internal read and write workqueues.
+        # Enabling this should improve performance on SSDs;
+        # https://wiki.archlinux.org/index.php/Dm-crypt/Specialties#Disable_workqueue_for_increased_solid_state_drive_(SSD)_performance
+        bypassWorkqueues = true;
+      };
     };
 
     kernelModules = [ "kvm-intel" ];
