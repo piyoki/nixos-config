@@ -16,7 +16,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    supportedFilesystems = [ "btrfs" ];
+    supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
     initrd = {
       availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
       kernelModules = [ ];
@@ -29,30 +29,30 @@
   fileSystems = {
     "/" =
       {
-        device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@" ];
+        device = "tmpfs";
+        fsType = "tmpfs";
+        options = [ "relatime" "mode=755" ];
       };
 
     "/home" =
       {
         device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
         fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@home" ];
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@home" ];
       };
 
     "/nix" =
       {
         device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
         fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@nix" ];
       };
 
     "/snapshots" =
       {
         device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
         fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
       };
 
     "/boot" =
