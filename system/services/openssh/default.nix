@@ -6,7 +6,7 @@
     enable = true;
     settings = {
       PermitRootLogin = lib.mkDefault "no"; # disable root login
-      PasswordAuthentication = lib.mkDefault true; # disable password login
+      PasswordAuthentication = lib.mkDefault false; # disable password login
     };
   };
 

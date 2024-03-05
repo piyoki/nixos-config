@@ -1,23 +1,7 @@
-{ inputs, config, ... }:
+{ lib, ... }:
 
 {
-  # sops-nix
-  sops = {
-    age.keyFile = "/var/lib/age/age-yubikey-master.key";
-    defaultSopsFormat = "yaml";
-  };
+  imports = [ ./sops.nix ];
 
-  home = {
-    file = {
-      # gnupg
-      ".gnupg/scdaemon.conf".text = builtins.readFile ./scdaemon.conf;
-      # sops
-      ".sops/.sops.yaml".text = "${inputs.secrets}/.sops.yaml";
-    };
-
-    # auto reload sops-nix systemd service
-    activation.setupEtc = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-      run /run/current-system/sw/bin/systemctl start --user sops-nix
-    '';
-  };
+  sops.age.keyFile = lib.mkForce "/run/secrets/age-yubikey-master-key";
 }

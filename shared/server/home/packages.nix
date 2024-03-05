@@ -24,5 +24,8 @@
     fd
     fzf
     tailspin # A log file highlighter
+
+    # fish plugins
+    fishPlugins.fzf-fish
   ];
 }
