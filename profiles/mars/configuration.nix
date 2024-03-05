@@ -4,6 +4,7 @@ _:
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./persistent.nix
 
     # host specific modules
 

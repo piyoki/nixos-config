@@ -1,7 +1,7 @@
 {
   # NixOS configuration (with HomeManager)
   # build system
-  outputs = { nixpkgs, pre-commit-hooks, home-manager, hyprland, sops-nix, daeuniverse, ... }@inputs:
+  outputs = { nixpkgs, pre-commit-hooks, home-manager, impermanence, hyprland, sops-nix, daeuniverse, ... }@inputs:
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
@@ -13,6 +13,7 @@
       inherit (import ./shared/vars) user;
       specialArgs = { inherit inputs pkgs system user; };
       extraModules = [
+        impermanence.nixosModules.impermanence
         hyprland.nixosModules.default
         sops-nix.nixosModules.sops
         daeuniverse.nixosModules.dae
@@ -101,6 +102,7 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    impermanence.url = "github:nix-community/impermanence";
     sops-nix.url = "github:Mic92/sops-nix";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     daeuniverse.url = "github:daeuniverse/flake.nix/exp";
