@@ -23,6 +23,8 @@
       extra-trusted-public-keys = [
         # "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
+      # ref: https://github.com/NixOS/nix/issues/4894
+      # workaround to fix ssh signature issues
       require-sigs = false;
     };
 
