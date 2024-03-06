@@ -2,6 +2,9 @@ _:
 
 {
   imports = [
+    # shared secrets
+    ./secrets.nix
+
     # system modules
     ../../../system/users/server.nix
     ../../../system/packages/server.nix

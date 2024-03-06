@@ -10,6 +10,7 @@ in
     users.${user} = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
+      home = "/home/${user}";
       shell = pkgs.fish;
       # /etc/ssh/authorized_keys.d/${user}
       openssh.authorizedKeys.keyFiles = keyFiles;

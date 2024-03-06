@@ -1,7 +1,7 @@
 {
   # NixOS configuration (with HomeManager)
   # build system
-  outputs = { nixpkgs, pre-commit-hooks, home-manager, hyprland, sops-nix, daeuniverse, ... }@inputs:
+  outputs = { nixpkgs, pre-commit-hooks, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
@@ -12,7 +12,8 @@
       inherit (nixpkgs) lib;
       inherit (import ./shared/vars) user;
       specialArgs = { inherit inputs pkgs system user; };
-      extraModules = [
+      extraModules = with inputs; [
+        impermanence.nixosModules.impermanence
         hyprland.nixosModules.default
         sops-nix.nixosModules.sops
         daeuniverse.nixosModules.dae
@@ -26,7 +27,7 @@
             useUserPackages = true;
             extraSpecialArgs = specialArgs;
             users.${user} = homeModules;
-            sharedModules = [
+            sharedModules = with inputs; [
               sops-nix.homeManagerModules.sops
             ];
           };
@@ -50,7 +51,7 @@
           deployment = {
             targetHost = "nixos-${profile}";
             inherit (import ./shared/vars) targetPort targetUser tags;
-            inherit (import ./shared/server/secrets) keys;
+            inherit (import ./shared/server/age-key.nix) keys;
           };
           imports = hostModules ++ homeModules;
         };
@@ -101,6 +102,7 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    impermanence.url = "github:nix-community/impermanence";
     sops-nix.url = "github:Mic92/sops-nix";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     daeuniverse.url = "github:daeuniverse/flake.nix/exp";

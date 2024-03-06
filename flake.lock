@@ -871,6 +871,21 @@
         "type": "github"
       }
     },
+    "impermanence": {
+      "locked": {
+        "lastModified": 1708968331,
+        "narHash": "sha256-VUXLaPusCBvwM3zhGbRIJVeYluh2uWuqtj4WirQ1L9Y=",
+        "owner": "nix-community",
+        "repo": "impermanence",
+        "rev": "a33ef102a02ce77d3e39c25197664b7a636f9c30",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "impermanence",
+        "type": "github"
+      }
+    },
     "lib-aggregate": {
       "inputs": {
         "flake-utils": "flake-utils_5",
@@ -1261,6 +1276,7 @@
         "home-estate": "home-estate",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "impermanence": "impermanence",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "nur": "nur",
@@ -1272,8 +1288,8 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1709565967,
-        "narHash": "sha256-ionHKTwef1u066TpsO6YX6qZvuyqCZtbp6Fo7msFDj8=",
+        "lastModified": 1709693291,
+        "narHash": "sha256-PebE0+pv+D2ujbCjaHkDGeW6rUog85T6T/cKm5XHiAE=",
         "path": "/home/kev/flake/secrets",
         "type": "path"
       },

@@ -2,10 +2,7 @@ _:
 
 {
   imports = [
-    ./age-keys.nix
-    ./samba.nix
-    ./init-pass.nix
-    # ./sdwan.nix
+    ../../../system/secrets/init-pass.nix
   ];
 
   # sops-nix

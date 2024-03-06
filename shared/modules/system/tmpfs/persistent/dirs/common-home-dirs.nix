@@ -1,0 +1,9 @@
+[
+  "tmp"
+  ".cache"
+  ".config"
+  ".local"
+  ".terminfo"
+  ".sops"
+  ".tmux"
+]
