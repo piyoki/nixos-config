@@ -14,5 +14,8 @@ _:
     ../../../system/services/zramd.nix
     ../../../system/internationalisation/locale.nix
     ../../../system/internationalisation/time.nix
+
+    # secrets
+    ../../../system/secrets/init-pass.nix
   ];
 }

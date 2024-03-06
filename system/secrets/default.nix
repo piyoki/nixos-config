@@ -4,6 +4,7 @@ _:
   imports = [
     ./age-keys.nix
     ./samba.nix
+    ./init-pass.nix
     # ./sdwan.nix
   ];
 
