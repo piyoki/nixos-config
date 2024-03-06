@@ -1288,8 +1288,8 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1709693291,
-        "narHash": "sha256-PebE0+pv+D2ujbCjaHkDGeW6rUog85T6T/cKm5XHiAE=",
+        "lastModified": 1709693241,
+        "narHash": "sha256-qJ2izqprBn6Ky/LHINSr8xhdB3jnR02VJIUcfR6YqRc=",
         "path": "/home/kev/flake/secrets",
         "type": "path"
       },

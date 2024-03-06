@@ -23,6 +23,8 @@
     };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
+    # clear /tmp on boot to get a stateless /tmp directory.
+    tmp.cleanOnBoot = true;
   };
 
 
