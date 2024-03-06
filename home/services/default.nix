@@ -5,6 +5,7 @@ _:
     ./encryption
     ./dconf
     ./mpd
+    ./go
     ./systemd
     ./xdg
     ./wayland-session

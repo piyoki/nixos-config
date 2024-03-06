@@ -13,6 +13,4 @@ _:
     ../shared/options.nix
     ../shared/home.nix
   ];
-
-  programs.go.enable = true;
 }
