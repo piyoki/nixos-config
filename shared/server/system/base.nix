@@ -2,6 +2,9 @@ _:
 
 {
   imports = [
+    # shared secrets
+    ./secrets
+
     # system modules
     ../../../system/users/server.nix
     ../../../system/packages/server.nix
@@ -14,8 +17,5 @@ _:
     ../../../system/services/zramd.nix
     ../../../system/internationalisation/locale.nix
     ../../../system/internationalisation/time.nix
-
-    # secrets
-    ../../../system/secrets/init-pass.nix
   ];
 }
