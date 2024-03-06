@@ -2,6 +2,7 @@
 
 let
   mode = "0700";
+  genSpecialDir = directory: { inherit directory mode; };
 in
 {
   imports = [ ./nix-daemon.nix ];
@@ -21,11 +22,9 @@ in
       # home dirs and files to map
       users.${user} = {
         directories = (import ./dirs/common-home-dirs.nix) ++ [
-          { directory = "flake"; inherit mode; }
-          { directory = ".sops"; inherit mode; }
-          { directory = ".gnupg"; inherit mode; }
-          { directory = ".ssh"; inherit mode; }
-          { directory = ".tmux"; inherit mode; }
+          (genSpecialDir "flake")
+          (genSpecialDir ".gnupg")
+          (genSpecialDir ".ssh")
         ];
 
         files = [

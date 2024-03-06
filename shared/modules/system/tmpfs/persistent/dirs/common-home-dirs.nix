@@ -4,4 +4,6 @@
   ".config"
   ".local"
   ".terminfo"
+  ".sops"
+  ".tmux"
 ]
