@@ -1,7 +1,7 @@
 {
   # NixOS configuration (with HomeManager)
   # build system
-  outputs = { nixpkgs, pre-commit-hooks, home-manager, ... }@inputs:
+  outputs = { nixpkgs, pre-commit-hooks, home-manager, ... }@inputs: with inputs;
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
@@ -12,11 +12,8 @@
       inherit (nixpkgs) lib;
       inherit (import ./shared/vars) user;
       specialArgs = { inherit inputs pkgs system user; };
-      extraModules = with inputs; [
-        impermanence.nixosModules.impermanence
-        hyprland.nixosModules.default
+      extraModules = [
         sops-nix.nixosModules.sops
-        daeuniverse.nixosModules.dae
       ];
       # function to generate homeModule
       genHomeModules = homeModules: [
@@ -27,7 +24,7 @@
             useUserPackages = true;
             extraSpecialArgs = specialArgs;
             users.${user} = homeModules;
-            sharedModules = with inputs; [
+            sharedModules = [
               sops-nix.homeManagerModules.sops
             ];
           };
@@ -36,7 +33,11 @@
       # function to generate nixosSystem
       genSystem =
         { profile
-        , hostModules ? [ ./profiles/${profile}/configuration.nix ]
+        , isServer ? false
+        , hostModules ? [
+            ./profiles/${profile}/configuration.nix
+            (if (!isServer) then hyprland.nixosModules.default else { })
+          ]
         , homeModules ? (genHomeModules (import ./profiles/${profile}/home.nix))
         }: lib.nixosSystem {
           inherit specialArgs;
@@ -53,7 +54,7 @@
             inherit (import ./shared/vars) targetPort targetUser tags;
             inherit (import ./shared/server/age-key.nix) keys;
           };
-          imports = hostModules ++ homeModules;
+          imports = hostModules ++ homeModules ++ extraModules;
         };
     in
     {
@@ -72,7 +73,7 @@
         laptop = genSystem { profile = "thinkpad-x1-carbon"; };
         desktop = genSystem { profile = "nuc-12"; };
         # servers
-        mars = genSystem { profile = "mars"; };
+        mars = genSystem { profile = "mars"; isServer = true; };
       };
 
       # remote deploy

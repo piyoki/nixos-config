@@ -1,11 +1,14 @@
-{ user, ... }:
+{ inputs, user, ... }:
 
 let
   mode = "0700";
   genSpecialDir = directory: { inherit directory mode; };
 in
 {
-  imports = [ ./nix-daemon.nix ];
+  imports = [
+    inputs.impermanence.nixosModules.impermanence
+    ./nix-daemon.nix
+  ];
 
   environment = {
     persistence."/persistent" = {

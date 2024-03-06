@@ -4,6 +4,10 @@ let
   configDir = "/etc/dae";
 in
 {
+  imports = [
+    inputs.daeuniverse.nixosModules.dae
+  ];
+
   # sdwan
   environment.systemPackages = with inputs.daeuniverse.packages.${system}; [ dae ];
 
