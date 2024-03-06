@@ -3,4 +3,5 @@
   ".cache"
   ".config"
   ".local"
+  ".terminfo"
 ]
