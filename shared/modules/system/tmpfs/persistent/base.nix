@@ -1,4 +1,4 @@
-{ user, ... }:
+{ inputs, user, ... }:
 
 let
   mode = "0700";
@@ -6,6 +6,7 @@ let
 in
 {
   imports = [
+    inputs.impermanence.nixosModules.impermanence
     ./nix-daemon.nix
   ];
 

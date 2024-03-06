@@ -26,7 +26,6 @@
             users.${user} = homeModules;
             sharedModules = [
               sops-nix.homeManagerModules.sops
-              impermanence.nixosModules.impermanence
             ];
           };
         }
