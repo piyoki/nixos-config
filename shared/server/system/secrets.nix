@@ -2,7 +2,7 @@ _:
 
 {
   imports = [
-    ../../../../system/secrets/init-pass.nix
+    ../../../system/secrets/init-pass.nix
   ];
 
   # sops-nix

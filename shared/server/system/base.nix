@@ -3,7 +3,7 @@ _:
 {
   imports = [
     # shared secrets
-    ./secrets
+    ./secrets.nix
 
     # system modules
     ../../../system/users/server.nix
