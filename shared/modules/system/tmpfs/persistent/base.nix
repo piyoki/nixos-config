@@ -15,7 +15,7 @@ in
       hideMounts = true;
 
       # directories to map
-      directories = (import ./dirs/common-system-dirs.nix) ++ [ ];
+      directories = import ./dirs/common-system-dirs.nix;
 
       # files to map
       files = [
