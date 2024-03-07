@@ -4,7 +4,7 @@ _:
   imports = [
     # common modules
     ./packages.nix
-    (import ../../modules/home/gnupg.nix ../conf/gnupg.conf)
+    # (import ../../modules/home/gnupg.nix ../conf/gnupg.conf)
 
     # home modules
     ../../../home/apps/fish
