@@ -45,3 +45,7 @@ add:
 # count total number of nix-related files
 count:
   @rg '' --glob "!.git" --glob "!home-estate" --glob "!secrets" --files-with-matches | wc -l
+
+# git pull
+pull:
+  @git pull --rebase
