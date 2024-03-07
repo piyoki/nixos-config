@@ -2,6 +2,7 @@ _:
 
 {
   imports = [
+    ./assets
     ./packages
     ./services
     ./themes
