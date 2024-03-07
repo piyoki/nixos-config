@@ -1,4 +1,4 @@
-<h1 align="center">☁️ Nix Flake</h1>
+<h1 align="center">❄️ Nix Flake</h1>
 <p align="center">
     <em>Declare Nix System as Code</em>
 </p>
