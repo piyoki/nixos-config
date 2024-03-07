@@ -1,4 +1,4 @@
-# Bootstrap System
+![image](https://github.com/yqlbu/nixos-config/assets/31861128/053aaaf9-6914-4a7a-baaa-d1c50fb5eaf9)# Bootstrap System
 
 ## Table of Contents
 
@@ -65,7 +65,7 @@ mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@nix /dev
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/mapper/root /mnt/snapshots/
 mount /dev/nvme0n1p1 /mnt/boot
 # verify mount points
-lsblk
+lsblk -o PATH,FSTYPE,MOUNTPOINT /dev/nvme0n1
 ```
 
 ## Generate Nix configurations
