@@ -1,5 +1,5 @@
-{ inputs, ... }:
+{ inputs, system, ... }:
 
 {
-  home.file."Pictures/Wallpapers".source = inputs.home-estate + "/wallpapers";
+  home.file."Pictures/Wallpapers".source = inputs.nur.packages.${system}.wallpapers + "/share/wallpapers";
 }
