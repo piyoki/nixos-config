@@ -12,9 +12,12 @@
   boot = {
     # Use the systemd-boot EFI boot loader.
     kernelPackages = pkgs.linuxPackages_latest;
-    supportedFilesystems = [ "btrfs" ];
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
+
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
 
     initrd = {
       availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" "lz4" ];
