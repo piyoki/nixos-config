@@ -34,11 +34,14 @@
       genSystem =
         { profile
         , isServer ? false
+        , profilePrefix ? (if (!isServer) then ./profiles/${profile} else ./profiles/server/${profile})
+        , systemModule ? profilePrefix + "/configuration.nix"
+        , homeModule ? profilePrefix + "/home.nix"
         , hostModules ? [
-            ./profiles/${profile}/configuration.nix
+            systemModule
             (if (!isServer) then hyprland.nixosModules.default else { })
           ]
-        , homeModules ? (genHomeModules (import ./profiles/${profile}/home.nix))
+        , homeModules ? (genHomeModules (import homeModule))
         }: lib.nixosSystem {
           inherit specialArgs;
           modules = hostModules ++ homeModules ++ extraModules;
