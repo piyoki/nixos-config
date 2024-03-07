@@ -77,6 +77,7 @@
         desktop = genSystem { profile = "nuc-12"; };
         # servers
         mars = genSystem { profile = "mars"; isServer = true; };
+        felix = genSystem { profile = "felix"; isServer = true; };
       };
 
       # remote deploy
@@ -85,6 +86,7 @@
 
         # servers
         mars = genDeploy { profile = "mars"; };
+        felix = genSystem { profile = "felix"; };
       };
     };
 
