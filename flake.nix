@@ -47,9 +47,8 @@
       # function to generate remote deploy nixosSystem
       genDeploy =
         { profile
-        , profilePrefix ? (if (!isServer) then ./profiles/${profile} else ./profiles/server/${profile})
-        , hostModules ? [ (profilePrefix + "/configuration.nix") ]
-        , homeModules ? (genHomeModules (import (profilePrefix + "/home.nix")))
+        , hostModules ? [ ./profiles/server/${profile}/configuration.nix ]
+        , homeModules ? (genHomeModules (import ./profiles/server/${profile}/home.nix))
         }: {
           deployment = {
             targetHost = "nixos-${profile}";
