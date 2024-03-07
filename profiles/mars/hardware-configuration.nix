@@ -8,19 +8,29 @@
     [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    systemd-boot.configurationLimit = lib.mkDefault 10;
-    efi.canTouchEfiVariables = true;
-  };
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
+    # after resize the disk, it will grow partition automatically.
+    growPartition = true;
+    kernelParams = [ "console=ttyS0" ];
+
+    loader = {
+      grub = {
+        device = "/dev/sda";
+        # we do not support EFI, so disable it.
+        efiSupport = false;
+        efiInstallAsRemovable = false;
+      };
+      timeout = lib.mkForce 3; # wait for 3 seconds to select the boot entry
+    };
+
     initrd = {
       availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
       kernelModules = [ ];
     };
+
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
     # clear /tmp on boot to get a stateless /tmp directory.

@@ -1,4 +1,4 @@
-_:
+{ lib, ... }:
 
 {
   imports = [
@@ -14,4 +14,7 @@ _:
   ];
 
   networking.hostName = "nixos-mars";
+
+  # enable qemu-guest-agent
+  services.qemuGuest.enable = lib.mkDefault true;
 }
