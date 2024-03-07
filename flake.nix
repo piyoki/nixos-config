@@ -78,10 +78,7 @@
 
       # remote deploy
       colmena = {
-        meta = {
-          nixpkgs = pkgs;
-          inherit specialArgs;
-        };
+        meta = { nixpkgs = pkgs; inherit specialArgs; };
 
         # servers
         mars = genDeploy { profile = "mars"; };
