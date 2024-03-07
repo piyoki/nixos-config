@@ -766,14 +766,18 @@
     "home-estate": {
       "flake": false,
       "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-jG/ADXYvEyZE0wIceZr1D5SBRrTsMdgxLq45TNvUa7w=",
-        "path": "/home/kev/flake/home-estate",
-        "type": "path"
+        "lastModified": 1709051546,
+        "narHash": "sha256-CZIHVm23th25eCCO4fN1K4R8Ou6Cw0gqhpZWm9cbwC4=",
+        "ref": "b51d8925b301b728d8276bd7fcdaa08c5b488082",
+        "rev": "b51d8925b301b728d8276bd7fcdaa08c5b488082",
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/home-estate"
       },
       "original": {
-        "path": "/home/kev/flake/home-estate",
-        "type": "path"
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -1288,14 +1292,18 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1709740275,
-        "narHash": "sha256-PebE0+pv+D2ujbCjaHkDGeW6rUog85T6T/cKm5XHiAE=",
-        "path": "/home/kev/flake/secrets",
-        "type": "path"
+        "lastModified": 1709693243,
+        "narHash": "sha256-VQZxqWDuQuBMJ3Ry++WQwEaplMebHnKnnEYhKtpGYkY=",
+        "ref": "refs/heads/master",
+        "rev": "688681beb269ef0c7bec74f99bfbf09cf522437a",
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/secrets"
       },
       "original": {
-        "path": "/home/kev/flake/secrets",
-        "type": "path"
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
