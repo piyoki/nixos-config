@@ -1292,10 +1292,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1709693243,
-        "narHash": "sha256-VQZxqWDuQuBMJ3Ry++WQwEaplMebHnKnnEYhKtpGYkY=",
+        "lastModified": 1709832789,
+        "narHash": "sha256-yer+QEN51QQX6rweQLErz7xsKh+vtYagC6eXCYQqVJQ=",
         "ref": "refs/heads/master",
-        "rev": "688681beb269ef0c7bec74f99bfbf09cf522437a",
+        "rev": "71be27a084d5b0d44b24eac55ab052edce2511a5",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/secrets"
