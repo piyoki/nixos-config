@@ -14,15 +14,14 @@
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
     # after resize the disk, it will grow partition automatically.
     growPartition = true;
-    kernelParams = [ "console=ttyS0" ];
+    # kernelParams = [ "console=ttyS0" ];
 
     loader = {
-      grub = {
-        device = "/dev/sda";
-        # we do not support EFI, so disable it.
-        efiSupport = false;
-        efiInstallAsRemovable = false;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = lib.mkDefault 10;
       };
+      efi.canTouchEfiVariables = true;
       timeout = lib.mkForce 3; # wait for 3 seconds to select the boot entry
     };
 
