@@ -1,4 +1,4 @@
-![image](https://github.com/yqlbu/nixos-config/assets/31861128/053aaaf9-6914-4a7a-baaa-d1c50fb5eaf9)# Bootstrap System
+# Bootstrap System
 
 ## Table of Contents
 
