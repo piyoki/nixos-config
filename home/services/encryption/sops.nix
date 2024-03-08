@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, ... }:
+{ inputs, pkgs, lib, ... }:
 
 {
   home = {
@@ -19,10 +19,5 @@
       # sops
       ".sops/.sops.yaml".text = "${inputs.secrets}/.sops.yaml";
     };
-
-    # auto reload sops-nix systemd service
-    activation.setupEtc = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-      run /run/current-system/sw/bin/systemctl start --user sops-nix
-    '';
   };
 }

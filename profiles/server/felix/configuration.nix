@@ -6,11 +6,13 @@
     ./hardware-configuration.nix
 
     # host specific modules
+    ../../../system/services/docker.nix
+    ../../../system/services/gnupg/server.nix
 
     # shared modules
-    ../../../shared/nixos.nix
-    ../../../shared/server/system/base.nix
     # ../../../shared/modules/system/tmpfs/persistent/server.nix
+    ../../../shared/server/system/base.nix
+    # ../../../shared/server/system/secrets.nix
   ];
 
   networking.hostName = "nixos-felix";
