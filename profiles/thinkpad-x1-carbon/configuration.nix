@@ -21,5 +21,5 @@ _:
   networking.hostName = "nixos-x1-carbon";
 
   # Import secrets
-  config.modules.secrets.system.daily-driver.enable = true;
+  config.modules.secrets.daily-driver.system.enable = true;
 }

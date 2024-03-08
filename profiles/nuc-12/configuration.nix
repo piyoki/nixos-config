@@ -20,5 +20,5 @@ _:
   networking.hostName = "nixos-nuc-12";
 
   # Import secrets
-  modules.secrets.system.daily-driver.enable = true;
+  modules.secrets.daily-driver.system.enable = true;
 }

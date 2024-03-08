@@ -14,5 +14,6 @@ _:
     (import ../../shared/modules/home/gnupg.nix ./conf/gpg.conf)
   ];
 
-  config.modules.secrets.daily-driver.enable = true;
+  # Import secrets
+  config.modules.secrets.daily-driver.home.enable = true;
 }
