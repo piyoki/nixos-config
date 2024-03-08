@@ -1,10 +1,10 @@
-_:
+{ lib, ... }:
 
 {
   imports = [
     # host specific modules
     ../../../home/apps/lazygit
-    ../../../home/services/encryption/server.nix
+    (import ../../../home/services/encryption/server.nix { restart = false; inherit lib; })
     (import ../../../shared/modules/home/gnupg.nix ../../../shared/server/conf/gnupg.conf)
 
     # shared modules

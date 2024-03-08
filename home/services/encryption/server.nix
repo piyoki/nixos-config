@@ -1,11 +1,10 @@
-{ lib, ... }:
+{ lib, restart, ... }:
 
 {
   imports = [
     ./sops.nix
-    # TODO:
-    # ./systemd-restart.nix
-  ];
+  ]
+  ++ (lib.optionals (restart) [ ./systemd-restart ]);
 
   sops.age.keyFile = lib.mkForce "/run/secrets/age-yubikey-master-key";
 }
