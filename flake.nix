@@ -84,7 +84,7 @@
 
         # servers
         mars = genDeploy { profile = "mars"; };
-        felix = genSystem { profile = "felix"; };
+        felix = genDeploy { profile = "felix"; };
       };
     };
 

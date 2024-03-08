@@ -61,8 +61,8 @@ in
         # sops-nix keys configs
         {
           sops = {
-            age.keyFile = "/var/lib/age/age-yubikey-master.key";
-            defaultSopsFormat = "yaml";
+            age.keyFile = mkDefault "/var/lib/age/age-yubikey-master.key";
+            defaultSopsFormat = mkDefault "yaml";
           };
         }
 

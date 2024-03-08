@@ -1,4 +1,4 @@
-_:
+{ lib, ... }:
 
 {
   imports = [
@@ -13,4 +13,6 @@ _:
     ../../../system/internationalisation/locale.nix
     ../../../system/internationalisation/time.nix
   ];
+
+  sops.age.keyFile = lib.mkForce "/run/keys/age-yubikey-master-key";
 }
