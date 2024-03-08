@@ -20,6 +20,15 @@ let
   defaultAccess = { mode = "0600"; }; # user only
   rootOnlyAccess = { mode = "0600"; owner = "root"; }; # root only
   noAccess = { mode = "0000"; };
+
+  # common secrets
+  initialLoginPass = {
+    sops.secrets = {
+      "login/initialHashedPassword" = {
+        sopsFile = "${inputs.secrets}/login.enc.yaml";
+      } // rootOnlyAccess;
+    };
+  };
 in
 {
   imports = [ ];
@@ -38,7 +47,7 @@ in
       # system.operation.enable = mkEnableOption "Secrets for operation servers (backup, monitoring, etc)";
     };
 
-    # impermanence.enable = mkEnableOption "Wether use impermanence and ephemeral root file sytem";
+    # impermanence.enable = mkEnableOption "Wether use impermanence and ephemeral root file system";
   };
 
   config = mkIf
@@ -75,33 +84,20 @@ in
           };
         })
 
-        (mkIf (cfg.daily-driver.system.enable) {
+        (mkIf (cfg.daily-driver.system.enable) initialLoginPass // {
           sops.secrets = {
             "age/yubikey-master-key" = {
               sopsFile = "${inputs.secrets}/age-keys.enc.yaml";
             } // noAccess;
-          };
-          sops.secrets = {
             "samba/qnap" = {
               sopsFile = "${inputs.secrets}/samba.enc.yaml";
               path = "/etc/.smbcredentials";
             } // rootOnlyAccess;
           };
-          sops.secrets = {
-            "login/initialHashedPassword" = {
-              sopsFile = "${inputs.secrets}/login.enc.yaml";
-            } // rootOnlyAccess;
-          };
         })
 
         # server specific secrets
-        (mkIf (cfg.server.system.base.enable) {
-          sops.secrets = {
-            "login/initialHashedPassword" = {
-              sopsFile = "${inputs.secrets}/login.enc.yaml";
-            } // rootOnlyAccess;
-          };
-        })
+        (mkIf (cfg.server.system.base.enable) initialLoginPass)
       ]
     );
 }
