@@ -14,9 +14,12 @@ _:
     ../../themes
 
     # shared modules
-    ../../shared/nixos.nix
+    ../../shared/modules/secrets
   ];
 
   # Set hostname
   networking.hostName = "nixos-x1-carbon";
+
+  # Import secrets
+  config.modules.secrets.system.daily-driver.enable = true;
 }
