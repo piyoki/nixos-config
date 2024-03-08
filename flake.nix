@@ -34,11 +34,12 @@
       genSystem =
         { profile
         , isServer ? false
+        , profilePrefix ? (if (!isServer) then ./profiles/${profile} else ./profiles/server/${profile})
         , hostModules ? [
-            ./profiles/${profile}/configuration.nix
+            (profilePrefix + "/configuration.nix")
             (if (!isServer) then hyprland.nixosModules.default else { })
           ]
-        , homeModules ? (genHomeModules (import ./profiles/${profile}/home.nix))
+        , homeModules ? (genHomeModules (import (profilePrefix + "/home.nix")))
         }: lib.nixosSystem {
           inherit specialArgs;
           modules = hostModules ++ homeModules ++ extraModules;
@@ -46,8 +47,8 @@
       # function to generate remote deploy nixosSystem
       genDeploy =
         { profile
-        , hostModules ? [ ./profiles/${profile}/configuration.nix ]
-        , homeModules ? (genHomeModules (import ./profiles/${profile}/home.nix))
+        , hostModules ? [ ./profiles/server/${profile}/configuration.nix ]
+        , homeModules ? (genHomeModules (import ./profiles/server/${profile}/home.nix))
         }: {
           deployment = {
             targetHost = "nixos-${profile}";
@@ -74,6 +75,7 @@
         desktop = genSystem { profile = "nuc-12"; };
         # servers
         mars = genSystem { profile = "mars"; isServer = true; };
+        felix = genSystem { profile = "felix"; isServer = true; };
       };
 
       # remote deploy
@@ -82,6 +84,7 @@
 
         # servers
         mars = genDeploy { profile = "mars"; };
+        felix = genSystem { profile = "felix"; };
       };
     };
 

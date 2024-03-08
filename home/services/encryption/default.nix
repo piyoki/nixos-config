@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./sops.nix ];
+  imports = [
+    ./sops.nix
+    ./systemd-restart.nix
+  ];
 
   home = {
     packages = with pkgs; [

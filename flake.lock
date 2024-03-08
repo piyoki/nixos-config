@@ -766,10 +766,10 @@
     "home-estate": {
       "flake": false,
       "locked": {
-        "lastModified": 1709784570,
-        "narHash": "sha256-wkjF6fCDpYcqEnAj6thtUoo3MYqxz3ewfafwE1p161A=",
+        "lastModified": 1709832312,
+        "narHash": "sha256-ScdypL2AnjuJpYIObRKOlvmSuFxkN7owdxppiQv17Do=",
         "ref": "refs/heads/master",
-        "rev": "e359a21f251684c478ffe3226c0406b645fcf0a3",
+        "rev": "d3a4bece08451c4c3a6faaf68d1a5c2cb6b7b48e",
         "shallow": true,
         "type": "git",
         "url": "file://file:/home/kev/flake/home-estate"
@@ -1292,10 +1292,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1709693243,
-        "narHash": "sha256-VQZxqWDuQuBMJ3Ry++WQwEaplMebHnKnnEYhKtpGYkY=",
+        "lastModified": 1709832789,
+        "narHash": "sha256-yer+QEN51QQX6rweQLErz7xsKh+vtYagC6eXCYQqVJQ=",
         "ref": "refs/heads/master",
-        "rev": "688681beb269ef0c7bec74f99bfbf09cf522437a",
+        "rev": "71be27a084d5b0d44b24eac55ab052edce2511a5",
         "shallow": true,
         "type": "git",
         "url": "file://file:/home/kev/flake/secrets"
