@@ -1,5 +1,5 @@
 {
   keys = {
-    "age-yubikey-master-key".keyFile = /run/secrets/age/yubikey-master-key;
+    "age-yubikey-master-key".keyFile = /var/lib/age/age-yubikey-master.key;
   };
 }

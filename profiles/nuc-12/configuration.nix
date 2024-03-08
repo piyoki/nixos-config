@@ -13,9 +13,12 @@ _:
       ../../themes
 
       # shared modules
-      ../../shared/nixos.nix
+      ../../shared/modules/secrets
     ];
 
   # Set hostname
   networking.hostName = "nixos-nuc-12";
+
+  # Import secrets
+  modules.secrets.daily-driver.system.enable = true;
 }
