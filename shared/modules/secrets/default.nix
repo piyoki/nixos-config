@@ -1,36 +1,51 @@
 { inputs, lib, config, ... }:
 
+# NOTES:
+# Permission modes are in octal representation (same as chmod),
+# the digits represent: user|group|others
+# 7 - full (rwx)
+# 6 - read and write (rw-)
+# 5 - read and execute (r-x)
+# 4 - read only (r--)
+# 3 - write and execute (-wx)
+# 2 - write only (-w-)
+# 1 - execute only (--x)
+# 0 - none (---)
+
+# Reference: https://github.com/Mic92/sops-nix
+
 with lib;
 let
   cfg = config.modules.secrets;
-  defaultAccess = { mode = "0600"; };
+  defaultAccess = { mode = "0600"; }; # user only
+  rootOnlyAccess = { mode = "0600"; owner = "root"; }; # root only
   noAccess = { mode = "0000"; };
 in
 {
   imports = [ ];
 
   options.modules.secrets = {
-    # home secrets
-    home = {
-      daily-driver.enable = mkEnableOption "Home secrets for desktop | laptop";
+    daily-driver = {
+      # home secrets
+      home.enable = mkEnableOption "Home secrets for desktop | laptop";
+      system.enable = mkEnableOption "System secrets for desktop | laptop";
     };
 
-    system = {
-      # impermanence.enable = mkEnableOption "Wether use impermanence and ephemeral root file sytem";
-      daily-driver.enable = mkEnableOption "System secrets for desktop | laptop";
+    server = {
+      system.base.enable = mkEnableOption "System secrets for network servers";
+      # system.network.enable = mkEnableOption "System secrets for network servers";
+      # system.application.enable = mkEnableOption "Secrets for application servers";
+      # system.operation.enable = mkEnableOption "Secrets for operation servers (backup, monitoring, etc)";
     };
 
-    # server = {
-    #   network.enable = mkEnableOption "Secrets for network servers";
-    #   application.enable = mkEnableOption "Secrets for application servers";
-    #   operation.enable = mkEnableOption "Secrets for operation servers (backup, monitoring, etc)";
-    # };
+    # impermanence.enable = mkEnableOption "Wether use impermanence and ephemeral root file sytem";
   };
 
   config = mkIf
     (
-      cfg.home.daily-driver.enable ||
-      cfg.system.daily-driver.enable
+      cfg.daily-driver.home.enable ||
+      cfg.daily-driver.system.enable ||
+      cfg.server.system.base.enable
     )
     (
       mkMerge [
@@ -42,7 +57,8 @@ in
           };
         }
 
-        (mkIf (cfg.home.daily-driver.enable) {
+        # daily-driver specific secrets
+        (mkIf (cfg.daily-driver.home.enable) {
           sops.secrets = {
             "minio/config" = {
               sopsFile = "${inputs.secrets}/minio.enc.yaml";
@@ -59,7 +75,7 @@ in
           };
         })
 
-        (mkIf (cfg.system.daily-driver.enable) {
+        (mkIf (cfg.daily-driver.system.enable) {
           sops.secrets = {
             "age/yubikey-master-key" = {
               sopsFile = "${inputs.secrets}/age-keys.enc.yaml";
@@ -69,12 +85,21 @@ in
             "samba/qnap" = {
               sopsFile = "${inputs.secrets}/samba.enc.yaml";
               path = "/etc/.smbcredentials";
-            } // defaultAccess;
+            } // rootOnlyAccess;
           };
           sops.secrets = {
             "login/initialHashedPassword" = {
               sopsFile = "${inputs.secrets}/login.enc.yaml";
-            } // defaultAccess;
+            } // rootOnlyAccess;
+          };
+        })
+
+        # server specific secrets
+        (mkIf (cfg.server.system.base.enable) {
+          sops.secrets = {
+            "login/initialHashedPassword" = {
+              sopsFile = "${inputs.secrets}/login.enc.yaml";
+            } // rootOnlyAccess;
           };
         })
       ]

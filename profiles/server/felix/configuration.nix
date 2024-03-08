@@ -6,13 +6,13 @@
     ./hardware-configuration.nix
 
     # host specific modules
-    ../../../system/services/docker.nix
+    # ../../../system/services/docker.nix
     ../../../system/services/gnupg/server.nix
 
     # shared modules
+    ../../../shared/modules/secrets
     # ../../../shared/modules/system/tmpfs/persistent/server.nix
     ../../../shared/server/system/base.nix
-    # ../../../shared/server/system/secrets.nix
   ];
 
   networking.hostName = "nixos-felix";
@@ -36,4 +36,7 @@
 
   # enable qemu-guest-agent
   services.qemuGuest.enable = lib.mkDefault true;
+
+  # Import secrets
+  modules.secrets.server.system.base.enable = true;
 }
