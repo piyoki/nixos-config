@@ -73,6 +73,7 @@
         # daily-drivers
         laptop = genSystem { profile = "thinkpad-x1-carbon"; };
         desktop = genSystem { profile = "nuc-12"; };
+      } // {
         # servers
         mars = genSystem { profile = "mars"; isServer = true; };
         felix = genSystem { profile = "felix"; isServer = true; };
