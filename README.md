@@ -40,6 +40,7 @@ As the date of writing (March 2024), I've commited myself switching to NixOS on 
 - [Nix Dev](https://nix.dev/)
 - [MyNixOS](https://mynixos.com/)
 - [Noogle](https://noogle.dev/)
+- [NixOS CN](https://nixos-cn.org/)
 
 ### Configs from open-source community
 
