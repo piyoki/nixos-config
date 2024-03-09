@@ -3,16 +3,19 @@
 
 # define alias
 alias b := rebuild
-
 # set options
 set positional-arguments := true
+set dotenv-load := true
+
+# assign default value to vars
+profile := "$PROFILE"
 
 # default recipe to display help information
 default:
   @just --list
 
 # rebuild nixos
-rebuild host:
+rebuild host=profile:
   @sudo nixos-rebuild switch --upgrade --flake .#{{ host }}
 
 deploy host:
@@ -58,3 +61,7 @@ pull:
 lint:
   @statix fix --ignore 'templates/' .
   @deadnix --edit --exclude 'templates/' .
+
+# check flake
+check:
+  @nix flake check
