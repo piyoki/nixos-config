@@ -23,7 +23,7 @@ deploy host:
 
 # update all flake inputs
 update:
-  @sudo nix flake update
+  @nix flake update
 
 # show flake outputs
 show:
@@ -31,7 +31,7 @@ show:
 
 # update a particular flake input
 update-input input:
-  @sudo nix flake lock --update-input {{ input }}
+  @nix flake lock --update-input {{ input }}
 
 # nix-prefetch-url
 prefetch-url url:
