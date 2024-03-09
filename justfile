@@ -53,3 +53,8 @@ count:
 # git pull
 pull:
   @git pull --rebase
+
+# apply fix from linters
+lint:
+  @statix fix --ignore 'templates/' .
+  @deadnix --edit --exclude 'templates/' .
