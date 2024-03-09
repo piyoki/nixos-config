@@ -22,6 +22,10 @@ deploy host:
 update:
   @sudo nix flake update
 
+# show flake outputs
+show:
+  @nix flake show
+
 # update a particular flake input
 update-input input:
   @sudo nix flake lock --update-input {{ input }}
