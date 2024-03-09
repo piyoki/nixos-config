@@ -2,7 +2,7 @@
 ---
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: main
+    rev: v4.5.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -13,7 +13,7 @@ repos:
       - id: double-quote-string-fixer
       - id: end-of-file-fixer
   - repo: https://github.com/nix-community/nixpkgs-fmt
-    rev: master
+    rev: v1.3.0
     hooks:
       - id: nixpkgs-fmt
   # - repo: local

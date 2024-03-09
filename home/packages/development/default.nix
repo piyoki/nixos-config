@@ -24,5 +24,6 @@
     insomnia # The most intuitive cross-platform REST API Client
     git-trim # Automatically trims your branches whose tracking remote refs are merged or gone
     hugo # A fast and modern static website engine
+    pre-commit # A framework for managing and maintaining multi-language pre-commit hooks
   ];
 }
