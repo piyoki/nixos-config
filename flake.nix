@@ -94,6 +94,7 @@
           };
         };
       };
+
       # hosts
       nixosConfigurations = genFlake {
         inherit (profiles) daily-drivers servers;
