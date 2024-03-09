@@ -3,15 +3,15 @@ _:
 {
   imports = [
     # default home modules
-    ../../home
+    ../../../home
 
     # host specific modules
     ./secrets
     ./modules/dotfiles.nix
 
     # shared modules
-    ../../shared/modules/secrets
-    (import ../../shared/modules/home/gnupg.nix ./conf/gpg.conf)
+    ../../../shared/modules/secrets
+    (import ../../../shared/modules/home/gnupg.nix ./conf/gpg.conf)
   ];
 
   # Import secrets
