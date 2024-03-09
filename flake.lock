@@ -238,11 +238,11 @@
     "dot-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1707838987,
-        "narHash": "sha256-7LX40Bo+yDJXcJqk33Rd66jY/d1lkURQjjGPr/0kSTg=",
+        "lastModified": 1709976738,
+        "narHash": "sha256-J0ezwikaUOkrkTnI6q7b685vc8gcOjSOfYjDpG0XOsg=",
         "owner": "yqlbu",
         "repo": "dot-nvim",
-        "rev": "ddee0ccd34123318ad87515d52d3d59b45d26a3a",
+        "rev": "59869949cc60471cdfcf0ed677ec7a8528652a6e",
         "type": "github"
       },
       "original": {
@@ -480,11 +480,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1709638821,
-        "narHash": "sha256-/3CuMujAPy0/PyBmAJ72CuUP02JJLR+VoxParNbwxG8=",
+        "lastModified": 1709976782,
+        "narHash": "sha256-7B3fQxMR5igwUYbZILhkRxrHGCKGNEMpekwcLCwazLw=",
         "ref": "master",
-        "rev": "85b15189880d7f458465f732d9f9ebae639b1431",
-        "revCount": 115,
+        "rev": "7fc15bbaa008e9f177c8891b5894b6795f782cd8",
+        "revCount": 116,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
@@ -830,12 +830,12 @@
         "rev": "d3a4bece08451c4c3a6faaf68d1a5c2cb6b7b48e",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -1374,12 +1374,12 @@
         "rev": "71be27a084d5b0d44b24eac55ab052edce2511a5",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
