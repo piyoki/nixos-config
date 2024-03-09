@@ -1,6 +1,9 @@
-{ user, ... }:
+{ inputs, user, ... }:
 
 {
+  # overlays
+  nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
+
   # home-manager basic settings
   home = {
     username = user;

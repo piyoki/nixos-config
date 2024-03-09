@@ -8,7 +8,6 @@
     jq
     lazygit
     neovim
-    vivid
     zoxide
     trash-cli
     unzip

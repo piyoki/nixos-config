@@ -133,6 +133,7 @@
       sops-nix.url = "github:Mic92/sops-nix";
       pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
       daeuniverse.url = "github:daeuniverse/flake.nix/exp";
+      neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
       # personal nur
       nur.url = "github:yqlbu/nur-packages";
