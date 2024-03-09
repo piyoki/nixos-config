@@ -238,11 +238,11 @@
     "dot-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1709977514,
-        "narHash": "sha256-/ocGXMkdCWNDWUqeGco8ZntwifSmC/YnEMmScB6x3Hg=",
+        "lastModified": 1709978141,
+        "narHash": "sha256-+1ZHH0AqjVSCaEUyXuiX2mxQt3acJayfm5a4CEmQNHE=",
         "owner": "yqlbu",
         "repo": "dot-nvim",
-        "rev": "af424c5c0b8c7aee0bc91d150be85b484a8ab1a3",
+        "rev": "edb2c2070fb8613b30d0904720a8ce8bf539ae9a",
         "type": "github"
       },
       "original": {
@@ -480,11 +480,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1709977545,
-        "narHash": "sha256-Hwp+T9Hjx3GpGR0UcOhumIFzJpSyftzpH29xGx0UlB4=",
+        "lastModified": 1709978172,
+        "narHash": "sha256-02KuaECdYNJvFg/IeBF626CVSEKGsKdjbAOZqfkG+5s=",
         "ref": "master",
-        "rev": "529e045b5d0021ee44c92cc4c4fc7acc17030cb4",
-        "revCount": 118,
+        "rev": "0dd5c7d84b0198415a8a06f069221c844516939d",
+        "revCount": 119,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
