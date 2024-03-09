@@ -10,28 +10,40 @@
   <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/yqlbu/nixos-config?style=flat&logo=history&colorA=24273A&colorB=C4EEF2" alt="lastcommit"/>
 </p>
 
-![image](https://github.com/yqlbu/nixos-config/assets/31861128/5f470721-507d-4cbc-9754-4fef671ed8a4)
+![image](https://github.com/yqlbu/nixos-config/assets/31861128/a15812e5-a8de-45a1-bb3a-5373273390bc)
 
 > [!NOTE]
 > This repo contains the declarative configuration of a few NixOS systems, with ~100% config nixfied.
 
-## Dependencies
+## Upstream inputs
 
 - [home-manager](https://github.com/nix-community/home-manager) configurations as flake module.
-- [sops-nix](https://github.com/Mic92/sops-nix) to decrypt in-flight secrets from remote
-- [nixpkgs-wayland](https://github.com/nix-community/nixpkgs-wayland) to fetch up-to-date wayland packages for daily usage
+- [sops-nix](https://github.com/Mic92/sops-nix) to decrypt in-flight secrets from remote.
+- [nixpkgs-wayland](https://github.com/nix-community/nixpkgs-wayland) to fetch up-to-date wayland packages for daily usage.
+- [impemenance](https://github.com/nix-community/nixpkgs-wayland](https://github.com/nix-community/impermanence) to create `tmpfs` root stateless OS.
+- [pre-commit-hooks](https://github.com/cachix/pre-commit-hooks.nix) to integrate pre-commit-hooks with flake.
 
 ## References
+
+### Wikis
 
 - [How to Learn Nix](https://ianthehenry.com/posts/how-to-learn-nix)
 - [Nix Pills](https://nixos.org/guides/nix-pills/index.html)
 - [Nix Flakes](https://nixos.wiki/wiki/Flakes)
-- [NixOS Config Example (@librephoenix/nixos-config)](https://github.com/librephoenix/nixos-config)
 - [Nix Language](https://nixos.org/manual/nix/stable/language/)
 - [NixOS & Flakes Book](https://nixos-and-flakes.thiscute.world/)
 - [Nix Dev](https://nix.dev/)
 - [MyNixOS](https://mynixos.com/)
+- [Noogle](https://noogle.dev/)
+- [NixOS]
+
+### Configs
+
+- [NixOS Config (@librephoenix/nixos-config)](https://github.com/librephoenix/nixos-config)
+- [NixOS Config (@ryan4yin/nix-config)](https://github.com/ryan4yin/nix-config)
 
 ## Community
 
-[NixOS-CN-telegram](https://t.me/nixos_zhcn)
+- [NixOS-CN-telegram](https://t.me/nixos_zhcn)
+- [NixOS-CN-Matrix](https://matrix.to/#/%23zh-cn:nixos.org)
+- [NixOS-Redit](https://www.reddit.com/r/NixOS/)
