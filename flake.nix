@@ -9,9 +9,13 @@
         inherit system;
         config.allowUnfree = lib.mkDefault true;
       };
+      pkgs-unstable = (import nixpkgs-unstable) {
+        inherit system;
+        config.allowUnfree = lib.mkDefault true;
+      };
       inherit (nixpkgs) lib;
       inherit (import ./shared/vars) user;
-      specialArgs = { inherit inputs pkgs system user; };
+      specialArgs = { inherit inputs pkgs pkgs-unstable system user; };
       extraModules = [
         sops-nix.nixosModules.sops
       ];
@@ -113,6 +117,7 @@
     {
       # public source
       nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+      nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
       home-manager = {
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
