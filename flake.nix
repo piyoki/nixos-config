@@ -57,8 +57,34 @@
           };
           imports = hostModules ++ homeModules ++ extraModules;
         };
+      # function to generate nixosConfigurations with flake
+      genFlake = { daily-drivers, servers }: (
+        # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
+        lib.attrsets.mergeAttrsList (
+          # (map): instantiate nixosConfigurations.${profile} from inputs
+          (map (profile: { ${profile} = genSystem { inherit profile; }; }) daily-drivers) ++
+          (map (profile: { ${profile} = genSystem { inherit profile; isServer = true; }; }) servers)
+        ));
+      # function to generate colemna configs with flake for remote deploy
+      genColmena = servers: (
+        { meta = { nixpkgs = pkgs; inherit specialArgs; }; } //
+        # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
+        lib.attrsets.mergeAttrsList (map (profile: { ${profile} = genDeploy { inherit profile; }; }) servers)
+      );
+      # host profiles
+      profiles = {
+        daily-drivers = [
+          "thinkpad-x1-carbon"
+          "nuc-12"
+        ];
+        servers = [
+          "mars"
+          "felix"
+        ];
+      };
     in
     {
+      # checks
       checks = {
         pre-commit-check = pre-commit-hooks.lib.${system}.run {
           src = ./.;
@@ -69,68 +95,58 @@
         };
       };
 
-      nixosConfigurations = {
-        # daily-drivers
-        laptop = genSystem { profile = "thinkpad-x1-carbon"; };
-        desktop = genSystem { profile = "nuc-12"; };
-      } // {
-        # servers
-        mars = genSystem { profile = "mars"; isServer = true; };
-        felix = genSystem { profile = "felix"; isServer = true; };
+      # hosts
+      nixosConfigurations = genFlake {
+        inherit (profiles) daily-drivers servers;
       };
 
       # remote deploy
-      colmena = {
-        meta = { nixpkgs = pkgs; inherit specialArgs; };
+      colmena = genColmena profiles.servers;
+    };
 
-        # servers
-        mars = genDeploy { profile = "mars"; };
-        felix = genDeploy { profile = "felix"; };
+  inputs =
+    {
+      # public source
+      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+      home-manager = {
+        url = "github:nix-community/home-manager";
+        inputs.nixpkgs.follows = "nixpkgs";
       };
-    };
+      haumea = {
+        url = "github:nix-community/haumea/main";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+      nixpkgs-wayland = {
+        url = "github:nix-community/nixpkgs-wayland";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+      hyprland = {
+        url = "github:hyprwm/Hyprland";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+      impermanence.url = "github:nix-community/impermanence";
+      sops-nix.url = "github:Mic92/sops-nix";
+      pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
+      daeuniverse.url = "github:daeuniverse/flake.nix/exp";
 
-  inputs = {
-    # public source
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    haumea = {
-      url = "github:nix-community/haumea/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixpkgs-wayland = {
-      url = "github:nix-community/nixpkgs-wayland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    impermanence.url = "github:nix-community/impermanence";
-    sops-nix.url = "github:Mic92/sops-nix";
-    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
-    daeuniverse.url = "github:daeuniverse/flake.nix/exp";
+      # personal nur
+      nur.url = "github:yqlbu/nur-packages";
+      assets.url = "github:yqlbu/nur-assets";
 
-    # personal nur
-    nur.url = "github:yqlbu/nur-packages";
-    assets.url = "github:yqlbu/nur-assets";
+      # private repos
+      secrets = {
+        url = "git+file:/home/kev/flake/secrets?shallow=1";
+        # url = "path:/home/kev/flake/secrets";
+        flake = false;
+      };
+      home-estate = {
+        url = "git+file:/home/kev/flake/home-estate?shallow=1";
+        # url = "path:/home/kev/flake/home-estate";
+        flake = false;
+      };
 
-    # private repos
-    secrets = {
-      url = "git+file:/home/kev/flake/secrets?shallow=1";
-      # url = "path:/home/kev/flake/secrets";
-      flake = false;
+      # personal dotfiles
+      dotfiles-laptop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=x1-carbon";
+      dotfiles-desktop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
     };
-    home-estate = {
-      url = "git+file:/home/kev/flake/home-estate?shallow=1";
-      # url = "path:/home/kev/flake/home-estate";
-      flake = false;
-    };
-
-    # personal dotfiles
-    dotfiles-laptop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=x1-carbon";
-    dotfiles-desktop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
-  };
 }
