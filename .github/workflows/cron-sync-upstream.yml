@@ -1,5 +1,5 @@
 ---
-name: Synchronize nixpkgs-wayland upstream (Cron)
+name: Synchronize upstream (Cron)
 on:
   workflow_dispatch:
   schedule:
@@ -20,13 +20,11 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - uses: DeterminateSystems/flake-checker-action@main
 
-      - name: update flake upstream input
-        shell: bash
-        run: |
-          nix flake lock --update-input nixpkgs-wayland
-
-      - uses: EndBug/add-and-commit@main
+      - name: Update flake.lock
+        uses: DeterminateSystems/update-flake-lock@main
         with:
-          add: flake.lock
-          commit: --signoff
-          message: "chore(flake): update flake.lock to sync input.nixpkgs-wayland"
+          pr-title: "chore(flake) update flake.lock"
+          pr-labels: |
+            flake-lock
+            automated
+          inputs: nixpkgs-wayland hyprland sops-nix
