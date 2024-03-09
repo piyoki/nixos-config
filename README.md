@@ -10,10 +10,14 @@
   <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/yqlbu/nixos-config?style=flat&logo=history&colorA=24273A&colorB=C4EEF2" alt="lastcommit"/>
 </p>
 
-![image](https://github.com/yqlbu/nixos-config/assets/31861128/a15812e5-a8de-45a1-bb3a-5373273390bc)
+![image](https://github.com/yqlbu/nixos-config/assets/31861128/993ba5c8-6423-4b04-9d78-f80be95a0cfd)
 
 > [!NOTE]
 > This repo contains the declarative configuration of a few NixOS systems, with ~100% config nixfied.
+
+## Introduction
+
+As the date of writing (March 2024), I've commited myself switching to NixOS on my daily-drivers and a few servers. This repository reflects my current multi-profile NixOS configuration with Flake. I'd like to actively learn more about Nix, specially NixOS with Flake. In my view, NixOS is a revolutionary invention in the Linux world, as it offers a new paradigm of system configuration and package management. It is not only reliable and secure, but also fun and rewarding to use.
 
 ## Upstream inputs
 
@@ -36,8 +40,9 @@
 - [Nix Dev](https://nix.dev/)
 - [MyNixOS](https://mynixos.com/)
 - [Noogle](https://noogle.dev/)
+- [NixOS CN](https://nixos-cn.org/)
 
-### Configs
+### Configs from open-source community
 
 - [NixOS Config (@librephoenix/nixos-config)](https://github.com/librephoenix/nixos-config)
 - [NixOS Config (@ryan4yin/nix-config)](https://github.com/ryan4yin/nix-config)
