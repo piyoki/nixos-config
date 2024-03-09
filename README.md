@@ -10,7 +10,7 @@
   <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/yqlbu/nixos-config?style=flat&logo=history&colorA=24273A&colorB=C4EEF2" alt="lastcommit"/>
 </p>
 
-![image](https://github.com/yqlbu/nixos-config/assets/31861128/a15812e5-a8de-45a1-bb3a-5373273390bc)
+![image](https://github.com/yqlbu/nixos-config/assets/31861128/993ba5c8-6423-4b04-9d78-f80be95a0cfd)
 
 > [!NOTE]
 > This repo contains the declarative configuration of a few NixOS systems, with ~100% config nixfied.
