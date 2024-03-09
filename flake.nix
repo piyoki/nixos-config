@@ -111,6 +111,7 @@
 
     # personal nur
     nur.url = "github:yqlbu/nur-packages";
+    assets.url = "github:yqlbu/nur-assets";
 
     # private repos
     secrets = {
