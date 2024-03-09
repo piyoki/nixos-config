@@ -6,7 +6,7 @@
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_11)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_10)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_9)
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, pkgs-unstable, modulesPath, ... }:
 
 {
   imports =
@@ -16,7 +16,7 @@
 
   boot = {
     # Use the systemd-boot EFI boot loader.
-    kernelPackages = pkgs.linuxPackages_testing;
+    kernelPackages = pkgs-unstable.linuxPackages_testing;
     # kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
 
