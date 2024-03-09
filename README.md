@@ -15,6 +15,10 @@
 > [!NOTE]
 > This repo contains the declarative configuration of a few NixOS systems, with ~100% config nixfied.
 
+## Introduction
+
+As the date of writing (March 2024), I've commited myself switching to NixOS on my daily-drivers and a few servers. This repository reflects my current multi-profile NixOS configuration with Flake. I'd like to actively learn more about Nix, specially NixOS with Flake. In my view, NixOS is a revolutionary invention in the Linux world, as it offers a new paradigm of system configuration and package management. It is not only reliable and secure, but also fun and rewarding to use.
+
 ## Upstream inputs
 
 - [home-manager](https://github.com/nix-community/home-manager) configurations as flake module.
@@ -37,7 +41,7 @@
 - [MyNixOS](https://mynixos.com/)
 - [Noogle](https://noogle.dev/)
 
-### Configs
+### Configs from open-source community
 
 - [NixOS Config (@librephoenix/nixos-config)](https://github.com/librephoenix/nixos-config)
 - [NixOS Config (@ryan4yin/nix-config)](https://github.com/ryan4yin/nix-config)
