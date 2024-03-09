@@ -16,6 +16,20 @@ repos:
     rev: v1.3.0
     hooks:
       - id: nixpkgs-fmt
+  - repo: local
+    hooks:
+      - id: statix
+        name: statix-lint
+        entry: statix fix --ignore "templates/" .
+        language: system
+        types: [nix]
+  - repo: local
+    hooks:
+      - id: deadnix
+        name: deadnix-lint
+        entry: deadnix --edit --exclude "templates/" .
+        language: system
+        types: [nix]
   # - repo: local
   #   hooks:
   #     - id: markdown-lint

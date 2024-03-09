@@ -1,4 +1,4 @@
-{ pkgs, lib, system, ... }:
+{ lib, system, ... }:
 
 {
   # settings specific to this VM setup
