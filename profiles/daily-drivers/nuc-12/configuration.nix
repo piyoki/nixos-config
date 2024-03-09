@@ -7,13 +7,13 @@ _:
       ./hardware-configuration.nix
 
       # system modules
-      ../../system
+      ../../../system
 
       # themes modules
-      ../../themes
+      ../../../themes
 
       # shared modules
-      ../../shared/modules/secrets
+      ../../../shared/modules/secrets
     ];
 
   # Set hostname

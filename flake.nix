@@ -34,7 +34,7 @@
       genSystem =
         { profile
         , isServer ? false
-        , profilePrefix ? (if (!isServer) then ./profiles/${profile} else ./profiles/server/${profile})
+        , profilePrefix ? (if (!isServer) then ./profiles/daily-drivers/${profile} else ./profiles/server/${profile})
         , hostModules ? (
             [ (profilePrefix + "/configuration.nix") ] ++
             (if (!isServer) then [ hyprland.nixosModules.default ] else [ ])

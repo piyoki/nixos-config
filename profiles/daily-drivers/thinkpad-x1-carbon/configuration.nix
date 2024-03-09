@@ -6,15 +6,15 @@ _:
     ./hardware-configuration.nix
 
     # system modules
-    ../../system
-    ../../system/services/greetd.nix
-    ../../system/services/powermanagement/laptop.nix
+    ../../../system
+    ../../../system/services/greetd.nix
+    ../../../system/services/powermanagement/laptop.nix
 
     # themes modules
-    ../../themes
+    ../../../themes
 
     # shared modules
-    ../../shared/modules/secrets
+    ../../../shared/modules/secrets
   ];
 
   # Set hostname
