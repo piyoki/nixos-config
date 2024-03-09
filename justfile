@@ -3,6 +3,8 @@
 
 # define alias
 alias b := rebuild
+alias upi := update-input
+
 # set options
 set positional-arguments := true
 set dotenv-load := true
