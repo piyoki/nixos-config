@@ -35,10 +35,10 @@
         { profile
         , isServer ? false
         , profilePrefix ? (if (!isServer) then ./profiles/${profile} else ./profiles/server/${profile})
-        , hostModules ? [
-            (profilePrefix + "/configuration.nix")
-            (if (!isServer) then hyprland.nixosModules.default else { })
-          ]
+        , hostModules ? (
+            [ (profilePrefix + "/configuration.nix") ] ++
+            ((if (!isServer) then [ hyprland.nixosModules.default ] else { }))
+          )
         , homeModules ? (genHomeModules (import (profilePrefix + "/home.nix")))
         }: lib.nixosSystem {
           inherit specialArgs;
