@@ -61,3 +61,7 @@ pull:
 lint:
   @statix fix --ignore 'templates/' .
   @deadnix --edit --exclude 'templates/' .
+
+# check flake
+check:
+  @nix flake check
