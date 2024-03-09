@@ -67,7 +67,7 @@ in
         }
 
         # daily-driver specific secrets
-        (mkIf (cfg.daily-driver.home.enable) {
+        (mkIf cfg.daily-driver.home.enable {
           sops.secrets = {
             "minio/config" = {
               sopsFile = "${inputs.secrets}/minio.enc.yaml";
@@ -84,7 +84,7 @@ in
           };
         })
 
-        (mkIf (cfg.daily-driver.system.enable) initialLoginPass // {
+        (mkIf cfg.daily-driver.system.enable initialLoginPass // {
           sops.secrets = {
             "age/yubikey-master-key" = {
               sopsFile = "${inputs.secrets}/age-keys.enc.yaml";
@@ -97,7 +97,7 @@ in
         })
 
         # server specific secrets
-        (mkIf (cfg.server.system.base.enable) initialLoginPass)
+        (mkIf cfg.server.system.base.enable initialLoginPass)
       ]
     );
 }
