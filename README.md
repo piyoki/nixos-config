@@ -20,7 +20,7 @@
 - [home-manager](https://github.com/nix-community/home-manager) configurations as flake module.
 - [sops-nix](https://github.com/Mic92/sops-nix) to decrypt in-flight secrets from remote.
 - [nixpkgs-wayland](https://github.com/nix-community/nixpkgs-wayland) to fetch up-to-date wayland packages for daily usage.
-- [impemenance](https://github.com/nix-community/impermanence) to create `tmpfs` root stateless OS.
+- [impemenance](https://github.com/nix-community/impermanence) to create tmpfs root stateless OS.
 - [pre-commit-hooks](https://github.com/cachix/pre-commit-hooks.nix) to integrate pre-commit-hooks with flake.
 - [haumea](https://github.com/nix-community/haumea) - to create filesystem-based module system for Nix
 
