@@ -94,7 +94,6 @@
           };
         };
       };
-
       # hosts
       nixosConfigurations = genFlake {
         inherit (profiles) daily-drivers servers;
@@ -102,6 +101,11 @@
 
       # remote deploy
       colmena = genColmena profiles.servers;
+
+      # development
+      devShell = nixpkgs.legacyPackages.${system}.mkShell {
+        inherit (self.checks.${system}.pre-commit-check) shellHook;
+      };
     };
 
   inputs =
