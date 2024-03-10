@@ -1,4 +1,4 @@
-{ inputs, user, ... }:
+{ inputs, user, lib, ... }:
 
 let
   mode = "0700";
@@ -15,22 +15,22 @@ in
       hideMounts = true;
 
       # directories to map
-      directories = import ./dirs/common-system-dirs.nix;
+      directories = lib.mkDefault (import ./dirs/common-system-dirs.nix);
 
       # files to map
-      files = [
+      files = lib.mkDefault [
         "/etc/machine-id"
       ];
 
       # home dirs and files to map
       users.${user} = {
-        directories = (import ./dirs/common-home-dirs.nix) ++ [
+        directories = lib.mkDefault ((import ./dirs/common-home-dirs.nix) ++ [
           (genSpecialDir "flake")
           (genSpecialDir ".gnupg")
           (genSpecialDir ".ssh")
-        ];
+        ]);
 
-        files = [
+        files = lib.mkDefault [
           ".gitconfig"
         ];
       };
