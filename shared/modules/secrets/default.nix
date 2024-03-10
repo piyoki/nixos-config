@@ -34,8 +34,8 @@ in
   options.modules.secrets = {
     workstation = {
       # home secrets
-      home.enable = mkEnableOption "Home secrets for desktop | laptop";
-      system.enable = mkEnableOption "System secrets for desktop | laptop";
+      home.enable = mkEnableOption "Home secrets for workstation";
+      system.enable = mkEnableOption "System secrets for workstation";
     };
 
     server = {

@@ -46,19 +46,15 @@ in
               (import ./dirs/common-misc-dirs.nix) ++
               (import ./dirs/common-xdg-dirs.nix) ++
               (import ./dirs/extra-xdg-dirs.nix) ++
-              commonSpecialDirs ++
-              [
-                # excluded, conflicts with sops-nix
-                # ".gitconfigs
-                # ".mc"
-              ];
+              commonSpecialDirs;
+            # excluded; conflicts with sops-nix
+            # ".gitconfigs
+            # ".mc"
 
             files = (import ./files/workstation-home-specific.nix) ++
-              (import ./files/common-home-files.nix) ++
-              [
-                # excluded, conflicts with sops-nix
-                # ".gitconfig
-              ];
+              (import ./files/common-home-files.nix);
+            # excluded; conflicts with sops-nix
+            # ".gitconfig
           };
         };
       })
@@ -74,13 +70,11 @@ in
           # home dirs and files to map
           users.${user} = {
             directories = (import ./dirs/common-home-dirs.nix) ++
-              commonSpecialDirs ++ [ ];
+              commonSpecialDirs;
 
-            files = (import ./files/common-home-files.nix) ++
-              [
-                # excluded, conflicts with sops-nix
-                # ".gitconfig
-              ];
+            files = import ./files/common-home-files.nix;
+            # excluded; conflicts with sops-nix
+            # ".gitconfig
           };
         };
       })
