@@ -14,5 +14,5 @@
     ../../../system/internationalisation/time.nix
   ];
 
-  sops.age.keyFile = lib.mkForce "/run/keys/age-yubikey-master-key";
+  sops.age.keyFile = lib.mkForce "/run/keys/age-yubikey-master.key";
 }
