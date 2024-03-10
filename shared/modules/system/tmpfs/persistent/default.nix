@@ -5,6 +5,11 @@ let
   cfg = config.modules.persistent;
   mode = "0700";
   genDir = directory: { inherit directory mode; };
+  commonSpecialDirs = [
+    (genDir "flake")
+    (genDir ".gnupg")
+    (genDir ".ssh")
+  ];
 in
 {
   imports = [
@@ -41,11 +46,8 @@ in
               (import ./dirs/common-misc-dirs.nix) ++
               (import ./dirs/common-xdg-dirs.nix) ++
               (import ./dirs/extra-xdg-dirs.nix) ++
+              commonSpecialDirs ++
               [
-                (genDir "flake")
-                (genDir ".gnupg")
-                (genDir ".ssh")
-
                 # excluded, conflicts with sops-nix
                 # ".gitconfigs
                 # ".mc"
@@ -75,11 +77,7 @@ in
           # home dirs and files to map
           users.${user} = {
             directories = (import ./dirs/common-home-dirs.nix) ++
-              [
-                (genDir "flake")
-                (genDir ".gnupg")
-                (genDir ".ssh")
-              ];
+              commonSpecialDirs ++ [ ];
 
             files = [
               # excluded, conflicts with sops-nix
