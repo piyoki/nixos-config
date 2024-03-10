@@ -14,7 +14,6 @@
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
     # after resize the disk, it will grow partition automatically.
     growPartition = true;
-    # kernelParams = [ "console=ttyS0" ];
 
     loader = {
       systemd-boot = {
@@ -31,9 +30,17 @@
     };
 
     kernelModules = [ "kvm-amd" ];
+    # kernelParams = [ "console=ttyS0" ];
     extraModulePackages = [ ];
-    # clear /tmp on boot to get a stateless /tmp directory.
-    tmp.cleanOnBoot = true;
+    extraModprobeConfig = ''
+    '';
+
+    tmp = {
+      # Clear /tmp on boot to get a stateless /tmp directory.
+      cleanOnBoot = true;
+      # Size of tmpfs in percentage.
+      tmpfsSize = "5%"; # default "50%"
+    };
   };
 
 
@@ -57,7 +64,7 @@
         device = "/dev/disk/by-uuid/031752e4-b7af-4942-a62a-74650501fdb3";
         fsType = "btrfs";
         options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
-        # impermance's data is required for booting
+        # impermanence's data is required for booting
         neededForBoot = true;
       };
 

@@ -46,15 +46,20 @@
       options snd_hda_intel power_save=1 power_save_controller=Y
       options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=5690
     '';
-    # clear /tmp on boot to get a stateless /tmp directory.
-    tmp.cleanOnBoot = true;
+
+    tmp = {
+      # Clear /tmp on boot to get a stateless /tmp directory.
+      cleanOnBoot = true;
+      # Size of tmpfs in percentage.
+      tmpfsSize = "5%"; # default "50%"
+    };
   };
 
   fileSystems = {
     "/" = {
       device = "tmpfs";
       fsType = "tmpfs";
-      options = [ "relatime" "mode=755" ];
+      options = [ "relatime" "size=25%" "mode=755" ];
     };
 
     "/nix" =
@@ -69,7 +74,7 @@
         device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
         fsType = "btrfs";
         options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
-        # impermance's data is required for booting
+        # impermanence's data is required for booting
         neededForBoot = true;
       };
 
