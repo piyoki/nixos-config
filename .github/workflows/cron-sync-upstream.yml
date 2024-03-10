@@ -28,3 +28,4 @@ jobs:
             flake-lock
             automated
           inputs: nixpkgs-wayland hyprland sops-nix
+          token: ${{ secrets.ACCESS_TOKEN }}
