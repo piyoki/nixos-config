@@ -14,12 +14,12 @@ _:
 
       # shared modules
       ../../../shared/modules/secrets
-      ../../../shared/daily-driver/persistent.nix
+      ../../../shared/workstation/persistent.nix
     ];
 
   # Set hostname
   networking.hostName = "nixos-nuc-12";
 
   # Import secrets
-  modules.secrets.daily-driver.system.enable = true;
+  modules.secrets.workstation.system.enable = true;
 }
