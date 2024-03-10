@@ -5,14 +5,8 @@
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
-      pkgs = (import nixpkgs) {
-        inherit system;
-        config.allowUnfree = lib.mkDefault true;
-      };
-      pkgs-unstable = (import nixpkgs-unstable) {
-        inherit system;
-        config.allowUnfree = lib.mkDefault true;
-      };
+      pkgs = (import nixpkgs) { inherit system; config.allowUnfree = lib.mkDefault true; };
+      pkgs-unstable = (import nixpkgs-unstable) { inherit system; config.allowUnfree = lib.mkDefault true; };
       inherit (nixpkgs) lib;
       inherit (import ./shared/vars) user;
       specialArgs = { inherit inputs pkgs pkgs-unstable system user; };
@@ -40,8 +34,9 @@
         , isServer ? false
         , profilePrefix ? (if (!isServer) then ./profiles/daily-drivers/${profile} else ./profiles/server/${profile})
         , hostModules ? (
-            [ (profilePrefix + "/configuration.nix") ] ++
-            (if (!isServer) then [ hyprland.nixosModules.default ] else [ ])
+            [ (profilePrefix + "/configuration.nix") ] ++ (lib.optionals (!isServer) [
+              hyprland.nixosModules.default
+            ])
           )
         , homeModules ? (genHomeModules (import (profilePrefix + "/home.nix")))
         }: lib.nixosSystem {
@@ -91,59 +86,36 @@
       };
 
       # hosts
-      nixosConfigurations = genFlake {
-        inherit (profiles) daily-drivers servers;
-      };
+      nixosConfigurations = genFlake { inherit (profiles) daily-drivers servers; };
 
       # remote deploy
       colmena = genColmena profiles.servers;
     };
 
-  inputs =
-    {
-      # public source
-      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-      nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
-      home-manager = {
-        url = "github:nix-community/home-manager";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-      haumea = {
-        url = "github:nix-community/haumea/main";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-      nixpkgs-wayland = {
-        url = "github:nix-community/nixpkgs-wayland";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-      hyprland = {
-        url = "github:hyprwm/Hyprland";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-      impermanence.url = "github:nix-community/impermanence";
-      sops-nix.url = "github:Mic92/sops-nix";
-      pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
-      daeuniverse.url = "github:daeuniverse/flake.nix/exp";
-      neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+  inputs = {
+    # public source
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
+    haumea = { url = "github:nix-community/haumea/main"; inputs.nixpkgs.follows = "nixpkgs"; };
+    nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
+    hyprland = { url = "github:hyprwm/Hyprland"; inputs.nixpkgs.follows = "nixpkgs"; };
+    impermanence.url = "github:nix-community/impermanence";
+    sops-nix.url = "github:Mic92/sops-nix";
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
+    daeuniverse.url = "github:daeuniverse/flake.nix/exp";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-      # personal nur
-      nur.url = "github:yqlbu/nur-packages";
-      assets.url = "github:yqlbu/nur-assets";
+    # personal nur
+    nur.url = "github:yqlbu/nur-packages";
+    assets.url = "github:yqlbu/nur-assets";
 
-      # private repos
-      secrets = {
-        url = "git+file:/home/kev/flake/secrets?shallow=1";
-        # url = "path:/home/kev/flake/secrets";
-        flake = false;
-      };
-      home-estate = {
-        url = "git+file:/home/kev/flake/home-estate?shallow=1";
-        # url = "path:/home/kev/flake/home-estate";
-        flake = false;
-      };
+    # private repos
+    secrets = { url = "git+file:/home/kev/flake/secrets?shallow=1"; flake = false; };
+    home-estate = { url = "git+file:/home/kev/flake/home-estate?shallow=1"; flake = false; };
 
-      # personal dotfiles
-      dotfiles-laptop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=x1-carbon";
-      dotfiles-desktop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
-    };
+    # personal dotfiles
+    dotfiles-laptop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=x1-carbon";
+    dotfiles-desktop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
+  };
 }
