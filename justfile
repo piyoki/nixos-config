@@ -20,8 +20,13 @@ default:
 rebuild host=profile:
   @sudo nixos-rebuild switch --upgrade --flake .#{{ host }}
 
+# remote deploy with colmena
 deploy host:
   @colmena apply --verbose --on {{ host }} --show-trace
+
+# remote deploy servers with @tags with colmena
+deploy-with-tags tags:
+  @colmena apply --verbose --on @{{ tags }} --show-trace
 
 # update all flake inputs
 update:

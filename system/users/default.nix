@@ -6,8 +6,8 @@ let
   ];
 in
 {
-  users = {
-    users.${user} = {
+  users.users = {
+    ${user} = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
       home = "/home/${user}";
@@ -17,7 +17,7 @@ in
       packages = with pkgs; [ fish ];
     };
 
-    users.root = {
+    root = {
       shell = pkgs.bash;
     };
   };
