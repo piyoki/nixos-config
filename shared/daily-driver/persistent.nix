@@ -1,33 +1,33 @@
-{ user, lib, ... }:
+{ inputs, user, ... }:
 
 let
   mode = "0700";
   genSpecialDir = directory: { inherit directory mode; };
-  commonDirsPrefix = ../../shared/modules/system/tmpfs/persistent/dirs;
+  commonDirsPrefix = ../modules/system/tmpfs/persistent/dirs;
 in
 {
   imports = [
-    # shared modules
-    ../modules/system/tmpfs/persistent/base.nix
+    inputs.impermanence.nixosModules.impermanence
+    ../modules/system/tmpfs/persistent/nix-daemon.nix
   ];
 
   # extra persistent dirs
   environment = {
     persistence."/persistent" = {
-      directories = lib.mkForce (
+      directories = (
         (import (commonDirsPrefix + "/common-system-dirs.nix")) ++
         [ ]
       );
 
       # files to map
-      files = lib.mkForce [
+      files = [
         "/etc/machine-id"
         "/etc/.smbcredentials"
       ];
 
       # home dirs and files to map
       users.${user} = {
-        directories = lib.mkForce (
+        directories = (
           (import (commonDirsPrefix + "/common-home-dirs.nix")) ++
           (import (commonDirsPrefix + "/common-xdg-dirs.nix")) ++
           [
@@ -52,12 +52,13 @@ in
           ]
         );
 
-        files = lib.mkForce [
+        files = [
           ".gitconfig"
           ".wakatime.cfg"
           ".wakatime.bdb"
           ".bash_history"
           ".viminfo"
+          ".tmux.conf"
         ];
       };
     };
