@@ -1,4 +1,5 @@
 [
+  # common home dirs
   "tmp"
   ".cache"
   ".config"

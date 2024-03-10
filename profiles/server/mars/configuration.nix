@@ -11,7 +11,7 @@
 
     # shared modules
     ../../../shared/modules/secrets
-    ../../../shared/modules/system/tmpfs/persistent/server.nix
+    ../../../shared/modules/system/tmpfs/persistent
     ../../../shared/server/system/base.nix
   ];
 
@@ -39,5 +39,12 @@
   services.qemuGuest.enable = lib.mkDefault true;
 
   # Import secrets
-  modules.secrets.server.system.base.enable = true;
+  modules = {
+    secrets.server.system.base.enable = true;
+    # Load persistent dirs and files
+    persistent = {
+      enable = true;
+      hostType = "server";
+    };
+  };
 }
