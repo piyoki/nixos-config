@@ -43,17 +43,21 @@ in
             ".cargo"
             ".wakatime"
             ".icons"
-            ".mc"
-            ".gitconfigs"
+
+            # excluded, conflicts with sops-nix
+            # ".gitconfigs"
+            # ".mc"
           ];
 
         files = [
-          ".gitconfig"
           ".wakatime.cfg"
           ".wakatime.bdb"
           ".bash_history"
           ".viminfo"
           ".tmux.conf"
+
+          # excluded, conflicts with sops-nix
+          # ".gitconfig"
         ];
       };
     };
