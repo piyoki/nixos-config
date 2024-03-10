@@ -54,11 +54,8 @@ in
               ];
 
             files = (import ./files/workstation-home-specific.nix) ++
+              (import ./files/common-home-files.nix) ++
               [
-                ".bash_history"
-                ".viminfo"
-                ".tmux.conf"
-
                 # excluded, conflicts with sops-nix
                 # ".gitconfig
               ];
@@ -79,10 +76,11 @@ in
             directories = (import ./dirs/common-home-dirs.nix) ++
               commonSpecialDirs ++ [ ];
 
-            files = [
-              # excluded, conflicts with sops-nix
-              # ".gitconfig
-            ];
+            files = (import ./files/common-home-files.nix) ++
+              [
+                # excluded, conflicts with sops-nix
+                # ".gitconfig
+              ];
           };
         };
       })
