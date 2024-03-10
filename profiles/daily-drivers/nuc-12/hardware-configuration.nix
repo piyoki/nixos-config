@@ -51,36 +51,50 @@
   };
 
   fileSystems = {
+    # "/" = {
+    #   device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
+    #   fsType = "btrfs";
+    #   options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@" ];
+    # };
     "/" = {
-      device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@" ];
+      device = "tmpfs";
+      fsType = "tmpfs";
+      options = [ "relatime" "mode=755" ];
     };
 
-    "/home" =
-      {
-        device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@home" ];
-      };
+    # "/home" =
+    #   {
+    #     device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
+    #     fsType = "btrfs";
+    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@home" ];
+    #   };
 
     "/nix" =
       {
         device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
         fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@nix" ];
+      };
+
+    "/persistent" =
+      {
+        device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
+        # impermance's data is required for booting
+        neededForBoot = true;
       };
 
     "/snapshots" =
       {
         device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
         fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
       };
 
     "/boot" =
       {
-        device = "/dev/disk/by-uuid/A323-8AC7";
+        device = "/dev/disk/by-uuid/5983-F041";
         fsType = "vfat";
       };
   };

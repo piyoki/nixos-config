@@ -14,6 +14,7 @@ _:
 
       # shared modules
       ../../../shared/modules/secrets
+      ../../../shared/daily-driver/persistent.nix
     ];
 
   # Set hostname

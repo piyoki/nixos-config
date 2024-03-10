@@ -111,8 +111,8 @@
     assets.url = "github:yqlbu/nur-assets";
 
     # private repos
-    secrets = { url = "git+file:/home/kev/flake/secrets?shallow=1"; flake = false; };
-    home-estate = { url = "git+file:/home/kev/flake/home-estate?shallow=1"; flake = false; };
+    secrets = { url = "git+file:/mnt/persistent/home/kev/flake/secrets?shallow=1"; flake = false; };
+    home-estate = { url = "git+file:/mnt/persistent/home/kev/flake/home-estate?shallow=1"; flake = false; };
 
     # personal dotfiles
     dotfiles-laptop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=x1-carbon";
