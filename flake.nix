@@ -32,7 +32,7 @@
       genSystem =
         { profile
         , isServer ? false
-        , profilePrefix ? (if (!isServer) then ./profiles/daily-drivers/${profile} else ./profiles/server/${profile})
+        , profilePrefix ? (if (!isServer) then ./profiles/workstations/${profile} else ./profiles/server/${profile})
         , hostModules ? (
             [ (profilePrefix + "/configuration.nix") ] ++ (lib.optionals (!isServer) [
               hyprland.nixosModules.default
@@ -57,11 +57,11 @@
           imports = hostModules ++ homeModules ++ extraModules;
         };
       # function to generate nixosConfigurations with flake
-      genFlake = { daily-drivers, servers }: (
+      genFlake = { workstations, servers }: (
         # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
         lib.attrsets.mergeAttrsList (
           # (map): instantiate nixosConfigurations.${profile} from inputs
-          (map (profile: { ${profile} = genSystem { inherit profile; }; }) daily-drivers) ++
+          (map (profile: { ${profile} = genSystem { inherit profile; }; }) workstations) ++
           (map (profile: { ${profile} = genSystem { inherit profile; isServer = true; }; }) servers)
         ));
       # function to generate colemna configs with flake for remote deploy
@@ -86,7 +86,7 @@
       };
 
       # hosts
-      nixosConfigurations = genFlake { inherit (profiles) daily-drivers servers; };
+      nixosConfigurations = genFlake { inherit (profiles) workstations servers; };
 
       # remote deploy
       colmena = genColmena profiles.servers;

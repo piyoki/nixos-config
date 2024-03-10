@@ -15,5 +15,5 @@ _:
   ];
 
   # Import secrets
-  config.modules.secrets.daily-driver.home.enable = true;
+  config.modules.secrets.workstation.home.enable = true;
 }

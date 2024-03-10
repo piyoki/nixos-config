@@ -34,7 +34,7 @@ in
   imports = [ ];
 
   options.modules.secrets = {
-    daily-driver = {
+    workstation = {
       # home secrets
       home.enable = mkEnableOption "Home secrets for desktop | laptop";
       system.enable = mkEnableOption "System secrets for desktop | laptop";
@@ -52,8 +52,8 @@ in
 
   config = mkIf
     (
-      cfg.daily-driver.home.enable ||
-      cfg.daily-driver.system.enable ||
+      cfg.workstation.home.enable ||
+      cfg.workstation.system.enable ||
       cfg.server.system.base.enable
     )
     (
@@ -66,8 +66,8 @@ in
           };
         }
 
-        # daily-driver specific secrets
-        (mkIf cfg.daily-driver.home.enable {
+        # workstation specific secrets
+        (mkIf cfg.workstation.home.enable {
           sops.secrets = {
             "minio/config" = {
               sopsFile = "${inputs.secrets}/minio.enc.yaml";
@@ -84,7 +84,7 @@ in
           };
         })
 
-        (mkIf cfg.daily-driver.system.enable initialLoginPass // {
+        (mkIf cfg.workstation.system.enable initialLoginPass // {
           sops.secrets = {
             "age/yubikey-master-key" = {
               sopsFile = "${inputs.secrets}/age-keys.enc.yaml";

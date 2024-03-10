@@ -1,7 +1,7 @@
 {
   # host profiles
   profiles = {
-    daily-drivers = [
+    workstations = [
       "thinkpad-x1-carbon"
       "nuc-12"
     ];
