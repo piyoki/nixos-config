@@ -77,11 +77,11 @@
     "dot-fish": {
       "flake": false,
       "locked": {
-        "lastModified": 1709431595,
-        "narHash": "sha256-N/1fNRfy0EbEZMwT6fM6HPq0fbmgUN67H0hf35v6EOk=",
+        "lastModified": 1710080571,
+        "narHash": "sha256-3k7alK0Sl+bBD921+SY11yp+DJHuQ1/DGk8sTVkGrqk=",
         "owner": "yqlbu",
         "repo": "dot-fish",
-        "rev": "05f3ef75d7dd1bf34796a95d1a3078b5d424df77",
+        "rev": "2640aa583e2fa8863f7d1560ceda745ab643597c",
         "type": "github"
       },
       "original": {
@@ -480,11 +480,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1709978985,
-        "narHash": "sha256-A5sWNNWOhSBDESOGqU/vyD4hXdZI9CZBzNqPiM7kJi0=",
+        "lastModified": 1710080602,
+        "narHash": "sha256-qo0Tl1Xoa9KY3um9xKiKIuNrwkobwOc9Z8TcB1F4seU=",
         "ref": "master",
-        "rev": "165e930c9eddb34a59d53143b213fd11dd076441",
-        "revCount": 121,
+        "rev": "02709da0887cb01403aa8228996101bb8bddec58",
+        "revCount": 122,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
@@ -928,12 +928,12 @@
         "rev": "d3a4bece08451c4c3a6faaf68d1a5c2cb6b7b48e",
         "shallow": true,
         "type": "git",
-        "url": "file:/mnt/persistent/home/kev/flake/home-estate"
+        "url": "file://file:/mnt/persistent/home/kev/flake/home-estate"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/mnt/persistent/home/kev/flake/home-estate"
+        "url": "file://file:/mnt/persistent/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -1602,12 +1602,12 @@
         "rev": "c758d6651c638e8e3bf6b7fdd1e93dee43f21246",
         "shallow": true,
         "type": "git",
-        "url": "file:/mnt/persistent/home/kev/flake/secrets"
+        "url": "file://file:/mnt/persistent/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/mnt/persistent/home/kev/flake/secrets"
+        "url": "file://file:/mnt/persistent/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
