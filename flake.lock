@@ -1596,10 +1596,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1709832789,
-        "narHash": "sha256-yer+QEN51QQX6rweQLErz7xsKh+vtYagC6eXCYQqVJQ=",
+        "lastModified": 1710050205,
+        "narHash": "sha256-Ek3rsE9HUukse5O04xUUj6GseUZBET4rtpB7XnjCBD8=",
         "ref": "refs/heads/master",
-        "rev": "71be27a084d5b0d44b24eac55ab052edce2511a5",
+        "rev": "c758d6651c638e8e3bf6b7fdd1e93dee43f21246",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/secrets"
