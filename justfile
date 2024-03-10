@@ -21,7 +21,7 @@ rebuild host=profile:
   @sudo nixos-rebuild switch --upgrade --flake .#{{ host }}
 
 deploy host:
-  @colmena apply --verbose --on {{ host }}
+  @colmena apply --verbose --on {{ host }} --show-trace
 
 # update all flake inputs
 update:
@@ -43,9 +43,18 @@ prefetch-url url:
 prefetch-git repo rev:
   @nix-prefetch-git --url 'git@github.com:{{ repo }}' --rev '{{ rev }}' --fetch-submodules
 
-# nix-collect-garbage
+# activate nix-repl
+repl:
+  nix repl -f flake:nixpkgs
+
+# remove all generations older than 7 days
+clean:
+  sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 3d
+
+# garbage collect all unused nix store entries
 gc:
-  @sudo nix-collect-garbage -d
+  @sudo nix store gc --debug
+  @sudo nix-collect-garbage --delete-old
 
 # stage all files
 add:
