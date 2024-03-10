@@ -14,7 +14,8 @@ _:
 
       # shared modules
       ../../../shared/modules/secrets
-      ../../../shared/workstation/persistent.nix
+      # ../../../shared/workstation/persistent.nix
+      ../../../shared/modules/system/tmpfs/persistent
     ];
 
   # Set hostname
@@ -22,4 +23,10 @@ _:
 
   # Import secrets
   modules.secrets.workstation.system.enable = true;
+
+  # Load persistent dirs and files
+  modules.persistent = {
+    enable = true;
+    profile = "workstation";
+  };
 }

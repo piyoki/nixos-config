@@ -31,8 +31,6 @@ let
   };
 in
 {
-  imports = [ ];
-
   options.modules.secrets = {
     workstation = {
       # home secrets
