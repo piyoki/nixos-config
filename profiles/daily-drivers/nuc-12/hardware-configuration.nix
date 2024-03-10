@@ -51,23 +51,11 @@
   };
 
   fileSystems = {
-    # "/" = {
-    #   device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
-    #   fsType = "btrfs";
-    #   options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@" ];
-    # };
     "/" = {
       device = "tmpfs";
       fsType = "tmpfs";
       options = [ "relatime" "mode=755" ];
     };
-
-    # "/home" =
-    #   {
-    #     device = "/dev/disk/by-uuid/9976cd06-8015-483b-b300-340426135689";
-    #     fsType = "btrfs";
-    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@home" ];
-    #   };
 
     "/nix" =
       {

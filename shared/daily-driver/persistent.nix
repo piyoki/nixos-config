@@ -14,10 +14,7 @@ in
   # extra persistent dirs
   environment = {
     persistence."/persistent" = {
-      directories = (
-        (import (commonDirsPrefix + "/common-system-dirs.nix")) ++
-        [ ]
-      );
+      directories = import (commonDirsPrefix + "/common-system-dirs.nix");
 
       # files to map
       files = [
@@ -27,8 +24,7 @@ in
 
       # home dirs and files to map
       users.${user} = {
-        directories = (
-          (import (commonDirsPrefix + "/common-home-dirs.nix")) ++
+        directories = (import (commonDirsPrefix + "/common-home-dirs.nix")) ++
           (import (commonDirsPrefix + "/common-xdg-dirs.nix")) ++
           [
             (genSpecialDir "flake")
@@ -49,8 +45,7 @@ in
             ".icons"
             ".mc"
             ".gitconfigs"
-          ]
-        );
+          ];
 
         files = [
           ".gitconfig"
