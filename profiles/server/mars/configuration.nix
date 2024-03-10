@@ -11,7 +11,7 @@
 
     # shared modules
     ../../../shared/modules/secrets
-    ../../../shared/modules/system/tmpfs/persistent/server.nix
+    ../../../shared/modules/system/tmpfs/persistent
     ../../../shared/server/system/base.nix
   ];
 
@@ -40,4 +40,10 @@
 
   # Import secrets
   modules.secrets.server.system.base.enable = true;
+
+  # Load persistent dirs and files
+  modules.persistent = {
+    enable = true;
+    hostType = "server";
+  };
 }

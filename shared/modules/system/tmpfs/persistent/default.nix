@@ -1,11 +1,10 @@
-{ inputs, user, lib, ... }:
+{ config, inputs, user, lib, ... }:
 
 with lib;
 let
   cfg = config.modules.persistent;
   mode = "0700";
-  commonDirsPrefix = ./dirs;
-  genSpecialDir = directory: { inherit directory mode; };
+  genDir = directory: { inherit directory mode; };
 in
 {
   imports = [
@@ -25,55 +24,66 @@ in
   config = mkIf cfg.enable (
     mkMerge [
       # common attrs
-      { environment.persistence."/persistent".hideMounts = true; };
+      { environment.persistence."/persistent".hideMounts = true; }
 
-      # profile specific attrs
-      (mkIf (cfg.profile == "workstation") {
+      # workstation specific attrs
+      (mkIf (cfg.hostType == "workstation") {
         environment.persistence."/persistent" = {
           # system dirs and files to map
-          directories = import (commonDirsPrefix + "/common-system-dirs.nix");
+          directories = import ./dirs/common-system-dirs.nix;
 
-          files = [
-            "/etc/machine-id"
-            "/etc/.smbcredentials"
-          ];
+          files = [ "/etc/machine-id " ] ++
+            (import ./files/workstation-system-specific.nix);
 
           # home dirs and files to map
           users.${user} = {
-            directories = (import (commonDirsPrefix + "/common-home-dirs.nix")) ++
-              (import (commonDirsPrefix + "/common-xdg-dirs.nix")) ++
+            directories = (import ./dirs/common-home-dirs.nix) ++
+              (import ./dirs/common-misc-dirs.nix) ++
+              (import ./dirs/common-xdg-dirs.nix) ++
+              (import ./dirs/extra-xdg-dirs.nix) ++
               [
-                (genSpecialDir "flake")
-                (genSpecialDir ".gnupg")
-                (genSpecialDir ".ssh")
-
-                # custom XDG_DIRS
-                "Tank"
-                "Pikpak"
-                "Media"
-                "Workspace"
-
-                "go"
-                ".mozilla"
-                ".npm"
-                ".cargo"
-                ".wakatime"
-                ".icons"
+                (genDir "flake")
+                (genDir ".gnupg")
+                (genDir ".ssh")
 
                 # excluded, conflicts with sops-nix
-                # ".gitconfigs"
+                # ".gitconfigs
                 # ".mc"
               ];
 
-            files = [
-              ".wakatime.cfg"
-              ".wakatime.bdb"
-              ".bash_history"
-              ".viminfo"
-              ".tmux.conf"
+            files = (import ./files/workstation-home-specific.nix) ++
+              [
+                ".bash_history"
+                ".viminfo"
+                ".tmux.conf"
 
+                # excluded, conflicts with sops-nix
+                # ".gitconfig
+              ];
+          };
+        };
+      })
+
+      # server specific attrs
+      (mkIf (cfg.hostType == "server") {
+        environment.persistence."/persistent" = {
+          # system dirs and files to map
+          directories = import ./dirs/common-system-dirs.nix;
+
+          files = [ "/etc/machine-id" ];
+
+          # home dirs and files to map
+          users.${user} = {
+            directories = (import ./dirs/common-home-dirs.nix) ++
+              [
+                (genDir "flake")
+                (genDir ".gnupg")
+                (genDir ".ssh")
+              ];
+
+            files = [
               # excluded, conflicts with sops-nix
-              # ".gitconfig"
+              # ".gitconfig
             ];
           };
         };

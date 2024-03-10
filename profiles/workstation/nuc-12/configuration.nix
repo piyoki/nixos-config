@@ -14,7 +14,6 @@ _:
 
       # shared modules
       ../../../shared/modules/secrets
-      # ../../../shared/workstation/persistent.nix
       ../../../shared/modules/system/tmpfs/persistent
     ];
 
@@ -27,6 +26,6 @@ _:
   # Load persistent dirs and files
   modules.persistent = {
     enable = true;
-    profile = "workstation";
+    hostType = "workstation";
   };
 }

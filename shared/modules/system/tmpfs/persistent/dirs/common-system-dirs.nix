@@ -1,4 +1,5 @@
 [
+  # common system dirs
   "/etc/NetworkManager/system-connections"
   "/root"
   "/var"

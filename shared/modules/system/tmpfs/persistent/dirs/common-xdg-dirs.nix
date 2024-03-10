@@ -1,4 +1,5 @@
 [
+  # common XDG_DIRS
   "Downloads"
   "Pictures"
   "Desktop"
