@@ -39,11 +39,12 @@
   services.qemuGuest.enable = lib.mkDefault true;
 
   # Import secrets
-  modules.secrets.server.system.base.enable = true;
-
-  # Load persistent dirs and files
-  modules.persistent = {
-    enable = true;
-    hostType = "server";
+  modules = {
+    secrets.server.system.base.enable = true;
+    # Load persistent dirs and files
+    persistent = {
+      enable = true;
+      hostType = "server";
+    };
   };
 }

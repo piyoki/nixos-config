@@ -20,12 +20,13 @@ _:
   # Set hostname
   networking.hostName = "nixos-nuc-12";
 
-  # Import secrets
-  modules.secrets.workstation.system.enable = true;
-
-  # Load persistent dirs and files
-  modules.persistent = {
-    enable = true;
-    hostType = "workstation";
+  modules = {
+    # Import secrets
+    secrets.workstation.system.enable = true;
+    # Load persistent dirs and files
+    persistent = {
+      enable = true;
+      hostType = "workstation";
+    };
   };
 }
