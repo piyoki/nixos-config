@@ -76,16 +76,7 @@
         lib.attrsets.mergeAttrsList (map (profile: { ${profile} = genDeploy { inherit profile; }; }) servers)
       );
       # host profiles
-      profiles = {
-        daily-drivers = [
-          "thinkpad-x1-carbon"
-          "nuc-12"
-        ];
-        servers = [
-          "mars"
-          "felix"
-        ];
-      };
+      inherit (import ./profiles.nix) profiles;
     in
     {
       # checks
