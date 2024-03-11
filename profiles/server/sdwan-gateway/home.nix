@@ -24,6 +24,7 @@
     htop
 
     # terminal
+    neofetch
     tailspin # A log file highlighter
   ];
 }

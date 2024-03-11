@@ -9,6 +9,7 @@ with lib;
     "system/environment/server.nix"
     "system/services/openssh/server.nix"
     "system/services/zramd.nix"
+    "system/networking/sdwan.nix"
     "system/internationalisation/locale.nix"
     "system/internationalisation/time.nix"
 
@@ -58,4 +59,10 @@ with lib;
 
   # enable qemu-guest-agent
   services.qemuGuest.enable = mkDefault true;
+
+  # enable sdwan service
+  services.sdwan = {
+    enable = true;
+    autostart = mkForce true;
+  };
 }

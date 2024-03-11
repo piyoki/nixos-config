@@ -1,10 +1,11 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 
+with lib;
 {
   imports = [ inputs.home-estate.nixosModules.sdwan ];
 
   services.sdwan = {
-    enable = true;
-    autostart = false;
+    enable = mkDefault true;
+    autostart = mkDefault false;
   };
 }
