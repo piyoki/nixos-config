@@ -76,7 +76,7 @@
         lib.attrsets.mergeAttrsList (map (profile: { ${profile} = genDeploy { inherit profile; }; }) servers)
       );
       # function to generate pre-commit-checks
-      genChecks = _: (pre-commit-hooks.lib.${system}.run {
+      genChecks = system: (pre-commit-hooks.lib.${system}.run {
         src = ./.;
         hooks = {
           nixpkgs-fmt.enable = true; # formatter
@@ -87,7 +87,7 @@
     in
     {
       # checks
-      checks.pre-commit-check = genChecks;
+      checks.${system}.pre-commit-check = genChecks system;
       # hosts
       nixosConfigurations = genFlake { inherit (profiles) workstations servers; };
       # remote deploy
