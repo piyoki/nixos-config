@@ -1,13 +1,15 @@
-{ lib, ... }:
+{ sharedLib, lib, ... }:
 
 {
-  imports = [
+  imports = (map sharedLib.relativeToRoot [
     # host specific modules
-    ../../../home/apps/lazygit
-    (import ../../../home/services/encryption/server.nix { restart = false; inherit lib; })
-    (import ../../../shared/modules/home/gnupg.nix ../../../shared/server/conf/gnupg.conf)
+    "home/apps/lazygit"
 
     # shared modules
-    ../../../shared/server/home/base.nix
+    "shared/server/home/base.nix"
+  ]) ++ [
+    # host specific modules
+    (import ../../../home/services/encryption/server.nix { restart = false; inherit lib; })
+    (import ../../../shared/modules/home/gnupg.nix ../../../shared/server/conf/gnupg.conf)
   ];
 }

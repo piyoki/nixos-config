@@ -1,15 +1,17 @@
-_:
+{ sharedLib, ... }:
 
 {
-  imports = [
+  imports = (map sharedLib.relativeToRoot [
     # default home modules
-    ../../../home
+    "home"
 
+    # shared modules
+    "shared/modules/secrets"
+  ]) ++ [
     # host specific modules
     ./secrets
 
     # shared modules
-    ../../../shared/modules/secrets
     (import ../../../shared/modules/home/gnupg.nix ./conf/gpg.conf)
   ];
 

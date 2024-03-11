@@ -1,18 +1,19 @@
-{ lib, ... }:
+{ sharedLib, lib, ... }:
 
+with lib;
 {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-
+  imports = (map sharedLib.relativeToRoot [
     # host specific modules
-    ../../../system/services/docker.nix
-    ../../../system/services/gnupg/server.nix
+    "system/services/docker.nix"
+    "system/services/gnupg/server.nix"
 
     # shared modules
-    ../../../shared/modules/secrets
-    ../../../shared/modules/system/tmpfs/persistent
-    ../../../shared/server/system/base.nix
+    "shared/modules/secrets"
+    "shared/modules/system/tmpfs/persistent"
+    "shared/server/system/base.nix"
+  ]) ++ [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
   ];
 
   networking. hostName = "nixos-mars";
@@ -21,11 +22,11 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  # networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.ens18.useDHCP = lib.mkDefault true;
+  # networking.useDHCP = mkDefault true;
+  # networking.interfaces.ens18.useDHCP = mkDefault true;
   networking = {
     interfaces.ens18 = {
-      useDHCP = lib.mkDefault false;
+      useDHCP = mkDefault false;
       ipv4.addresses = [{
         address = "10.118.25.30";
         prefixLength = 24;
@@ -36,7 +37,7 @@
   };
 
   # enable qemu-guest-agent
-  services.qemuGuest.enable = lib.mkDefault true;
+  services.qemuGuest.enable = mkDefault true;
 
   # Import secrets
   modules = {
