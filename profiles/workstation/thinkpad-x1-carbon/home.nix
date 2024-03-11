@@ -13,7 +13,7 @@
     ./modules/dotfiles.nix
 
     # shared modules
-    (import ../../../shared/modules/home/gnupg.nix ./conf/gpg.conf)
+    (import ../../../shared/modules/home/gnupg ./conf/gpg.conf)
   ];
 
   # Import secrets

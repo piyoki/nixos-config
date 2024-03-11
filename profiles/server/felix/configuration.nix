@@ -9,7 +9,7 @@ with lib;
 
     # shared modules
     "shared/modules/secrets"
-    # ../../../shared/modules/system/tmpfs/persistent/server.nix
+    # "shared/modules/system/tmpfs/persistent/server.nix"
     "shared/server/system/base.nix"
   ]) ++ [
     # Include the results of the hardware scan.
