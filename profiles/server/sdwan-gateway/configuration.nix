@@ -15,7 +15,6 @@ with lib;
 
     # shared modules
     "shared/nixos.nix"
-    "shared/server/system/base.nix"
   ]) ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
