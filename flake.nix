@@ -8,6 +8,7 @@
       pkgs = (import nixpkgs) { inherit system; config.allowUnfree = lib.mkDefault true; };
       inherit (nixpkgs) lib;
       inherit (import ./shared/vars) user;
+      inherit (import ./profiles.nix) profiles;
       extraModules = [
         sops-nix.nixosModules.sops
       ];
@@ -74,8 +75,6 @@
         # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
         lib.attrsets.mergeAttrsList (map (profile: { ${profile} = genDeploy { inherit profile; }; }) servers)
       );
-      # host profiles
-      inherit (import ./profiles.nix) profiles;
     in
     {
       # checks
