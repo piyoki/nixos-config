@@ -14,14 +14,11 @@ with lib;
 
     # shared modules
     "shared/nixos.nix"
-    "shared/modules/secrets"
     "shared/server/system/base.nix"
   ]) ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
-
-  sops.age.keyFile = mkForce "/run/keys/age-yubikey-master.key";
 
   # user patch
   users.users.${user} = {
@@ -61,7 +58,4 @@ with lib;
 
   # enable qemu-guest-agent
   services.qemuGuest.enable = mkDefault true;
-
-  # Import secrets
-  modules.secrets.server.system.base.enable = true;
 }
