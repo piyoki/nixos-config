@@ -1,17 +1,33 @@
-{ sharedLib, lib, ... }:
+{ sharedLib, pkgs, lib, user, ... }:
 
 with lib;
 {
   imports = (map sharedLib.relativeToRoot [
     # host specific modules
+    "system/users/server.nix"
+    "system/packages/server.nix"
+    "system/environment/server.nix"
+    "system/services/openssh/server.nix"
+    "system/services/zramd.nix"
+    "system/internationalisation/locale.nix"
+    "system/internationalisation/time.nix"
 
     # shared modules
+    "shared/nixos.nix"
     "shared/modules/secrets"
     "shared/server/system/base.nix"
   ]) ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
+
+  sops.age.keyFile = mkForce "/run/keys/age-yubikey-master.key";
+
+  # user patch
+  users.users.${user} = {
+    shell = mkForce pkgs.bash;
+    packages = mkForce [ ];
+  };
 
   networking.hostName = "nixos-sdwan-gateway";
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
