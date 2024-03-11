@@ -1,22 +1,21 @@
 { sharedLib, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = (map sharedLib.relativeToRoot [
+    # system modules
+    "system"
 
-      # system modules
-      ../../../system
+    # themes modules
+    "themes"
 
-      # themes modules
-      ../../../themes
-    ] ++
     # shared modules
-    (map sharedLib.relativeToRoot [
-      "shared/modules/secrets"
-      "shared/modules/system/tmpfs/persistent"
-    ]);
+    "shared/modules/secrets"
+    "shared/modules/system/tmpfs/persistent"
+  ]) ++
+  [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Set hostname
   networking.hostName = "nixos-nuc-12";
