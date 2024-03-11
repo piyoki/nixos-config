@@ -10,6 +10,6 @@
   ]) ++ [
     # host specific modules
     (import ../../../home/services/encryption/server.nix { restart = false; inherit lib; })
-    (import ../../../shared/modules/home/gnupg.nix ../../../shared/server/conf/gnupg.conf)
+    (import ../../../shared/modules/home/gnupg ../../../shared/server/conf/gnupg.conf)
   ];
 }
