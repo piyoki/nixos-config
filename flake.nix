@@ -105,7 +105,6 @@
     impermanence.url = "github:nix-community/impermanence";
     sops-nix.url = "github:Mic92/sops-nix";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
-    daeuniverse.url = "github:daeuniverse/flake.nix/exp";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # personal nur
@@ -114,7 +113,7 @@
 
     # private repos
     secrets = { url = "git+file:/home/kev/flake/secrets?shallow=1"; flake = false; };
-    home-estate = { url = "git+file:/home/kev/flake/home-estate?shallow=1"; flake = false; };
+    home-estate = { url = "git+file:/home/kev/flake/home-estate?shallow=1"; };
 
     # personal dotfiles
     dotfiles-laptop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=x1-carbon";
