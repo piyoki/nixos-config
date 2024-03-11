@@ -8,8 +8,9 @@
       pkgs = (import nixpkgs) { inherit system; config.allowUnfree = lib.mkDefault true; };
       pkgs-unstable = (import nixpkgs-unstable) { inherit system; config.allowUnfree = lib.mkDefault true; };
       inherit (nixpkgs) lib;
+      inherit (import ./shared/lib { inherit lib; }) sharedLib;
       inherit (import ./shared/vars) user;
-      specialArgs = { inherit inputs pkgs pkgs-unstable system user; };
+      specialArgs = { inherit inputs pkgs pkgs-unstable system user sharedLib; };
       extraModules = [
         sops-nix.nixosModules.sops
       ];
@@ -28,6 +29,7 @@
           };
         }
       ];
+      # function to generate specialArgs
       # function to generate nixosSystem
       genSystem =
         { profile
