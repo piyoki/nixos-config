@@ -1,7 +1,7 @@
 {
   # NixOS configuration (with HomeManager)
   # build system
-  outputs = { nixpkgs, pre-commit-hooks, home-manager, ... }@inputs: with inputs;
+  outputs = { nixpkgs, home-manager, ... }@inputs: with inputs;
     let
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
@@ -75,22 +75,22 @@
         # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
         lib.attrsets.mergeAttrsList (map (profile: { ${profile} = genDeploy { inherit profile; }; }) servers)
       );
+      # function to generate pre-commit-checks
+      genChecks = _: (pre-commit-hooks.lib.${system}.run {
+        src = ./.;
+        hooks = {
+          nixpkgs-fmt.enable = true; # formatter
+          statix.enable = true; # linter
+          deadnix.enable = true; # linter
+        };
+      }
+      );
     in
     {
       # checks
-      checks = {
-        pre-commit-check = pre-commit-hooks.lib.${system}.run {
-          src = ./.;
-          hooks = {
-            nixpkgs-fmt.enable = true; # formatter
-            statix.enable = true; # linter
-          };
-        };
-      };
-
+      checks.pre-commit-check = genChecks;
       # hosts
       nixosConfigurations = genFlake { inherit (profiles) workstations servers; };
-
       # remote deploy
       colmena = genColmena profiles.servers;
     };
