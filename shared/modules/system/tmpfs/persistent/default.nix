@@ -37,7 +37,7 @@ in
           # system dirs and files to map
           directories = import ./dirs/common-system-dirs.nix;
 
-          files = [ "/etc/machine-id " ] ++
+          files = [ "/etc/machine-id" ] ++
             (import ./files/workstation-system-specific.nix);
 
           # home dirs and files to map
