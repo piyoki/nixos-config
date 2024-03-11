@@ -26,6 +26,22 @@ with lib;
     packages = mkForce [ ];
   };
 
+  # extra packages
+
+  environment.systemPackages = with pkgs; [
+    # maintenance essentials
+    bat
+    jq
+    unzip
+    zip
+
+    # monitoring
+    htop
+
+    # terminal
+    tailspin # A log file highlighter
+  ];
+
   networking.hostName = "nixos-sdwan-gateway";
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
