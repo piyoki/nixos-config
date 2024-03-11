@@ -6,14 +6,17 @@
       system = "x86_64-linux";
       # use a system-specific version of nixpkgs
       pkgs = (import nixpkgs) { inherit system; config.allowUnfree = lib.mkDefault true; };
-      pkgs-unstable = (import nixpkgs-unstable) { inherit system; config.allowUnfree = lib.mkDefault true; };
       inherit (nixpkgs) lib;
-      inherit (import ./shared/lib { inherit lib; }) sharedLib;
       inherit (import ./shared/vars) user;
-      specialArgs = { inherit inputs pkgs pkgs-unstable system user sharedLib; };
       extraModules = [
         sops-nix.nixosModules.sops
       ];
+      # function to generate specialArgs
+      genSpecialArgs = system: {
+        pkgs-unstable = (import nixpkgs-unstable) { inherit system; config.allowUnfree = lib.mkDefault true; };
+        inherit (import ./shared/lib { inherit lib; }) sharedLib;
+        inherit inputs pkgs system user;
+      };
       # function to generate homeModule
       genHomeModules = homeModules: [
         home-manager.nixosModules.home-manager
@@ -21,7 +24,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            extraSpecialArgs = specialArgs;
+            extraSpecialArgs = genSpecialArgs system;
             users.${user} = homeModules;
             sharedModules = [
               sops-nix.homeManagerModules.sops
@@ -29,7 +32,6 @@
           };
         }
       ];
-      # function to generate specialArgs
       # function to generate nixosSystem
       genSystem =
         { profile
@@ -42,7 +44,7 @@
           )
         , homeModules ? (genHomeModules (import (profilePrefix + "/home.nix")))
         }: lib.nixosSystem {
-          inherit specialArgs;
+          specialArgs = genSpecialArgs system;
           modules = hostModules ++ homeModules ++ extraModules;
         };
       # function to generate remote deploy nixosSystem
@@ -68,7 +70,7 @@
         ));
       # function to generate colemna configs with flake for remote deploy
       genColmena = servers: (
-        { meta = { nixpkgs = pkgs; inherit specialArgs; }; } //
+        { meta = { nixpkgs = pkgs; specialArgs = genSpecialArgs system; }; } //
         # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
         lib.attrsets.mergeAttrsList (map (profile: { ${profile} = genDeploy { inherit profile; }; }) servers)
       );

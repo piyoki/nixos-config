@@ -1,4 +1,4 @@
-_:
+{ sharedLib, ... }:
 
 {
   imports =
@@ -11,11 +11,12 @@ _:
 
       # themes modules
       ../../../themes
-
-      # shared modules
-      ../../../shared/modules/secrets
-      ../../../shared/modules/system/tmpfs/persistent
-    ];
+    ] ++
+    # shared modules
+    (map sharedLib.relativeToRoot [
+      "shared/modules/secrets"
+      "shared/modules/system/tmpfs/persistent"
+    ]);
 
   # Set hostname
   networking.hostName = "nixos-nuc-12";
