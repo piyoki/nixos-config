@@ -1,10 +1,10 @@
-_:
+{ sharedLib, ... }:
 
 {
-  imports = [
+  imports = (map sharedLib.relativeToRoot [
     # host specific modules
 
     # shared modules
-    ../../../shared/server/home/base.nix
-  ];
+    "shared/server/home/base.nix"
+  ]);
 }
