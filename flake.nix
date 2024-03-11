@@ -83,8 +83,7 @@
           statix.enable = true; # linter
           deadnix.enable = true; # linter
         };
-      }
-      );
+      });
     in
     {
       # checks
