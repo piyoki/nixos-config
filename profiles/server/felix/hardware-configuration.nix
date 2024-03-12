@@ -20,7 +20,7 @@
         efiInstallAsRemovable = true;
       };
       # wait for 3 seconds to select the boot entry
-      # timeout = lib.mkForce 3;
+      timeout = lib.mkForce 3;
     };
 
     initrd = {
