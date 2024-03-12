@@ -17,10 +17,10 @@ in
       description = "Set the battery charge threshold";
       serviceConfig = {
         ExecStart = "${pkgs.writeShellScript "lockscreen" ''
-        set -eux
-        ${swBin}/echo 0 > /sys/class/power_supply/BAT0/charge_control_start_threshold
-        ${swBin}/echo 80 > /sys/class/power_supply/BAT0/charge_control_end_threshold
-      ''}";
+          set -eux
+          ${swBin}/echo 0 > /sys/class/power_supply/BAT0/charge_control_start_threshold
+          ${swBin}/echo 80 > /sys/class/power_supply/BAT0/charge_control_end_threshold
+        ''}";
         Type = "oneshot";
         Environment = [
           "PATH=$PATH:${swBin}"
