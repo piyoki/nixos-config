@@ -6,6 +6,7 @@ with lib;
     # system modules
     "shared/nixos.nix"
     "system/users/server.nix"
+    "system/users/init-pass.nix"
     "system/packages/server.nix"
     "system/environment/server.nix"
     "system/services/fish.nix"

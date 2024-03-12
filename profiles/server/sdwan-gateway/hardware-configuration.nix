@@ -1,4 +1,4 @@
-{ lib, system, ... }:
+{ lib, system, pkgs, ... }:
 
 {
   # settings specific to this VM setup
@@ -6,7 +6,7 @@
 
   boot = {
     # use latest kernel
-    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
     growPartition = true;
     kernelModules = [ "kvm-amd" ];

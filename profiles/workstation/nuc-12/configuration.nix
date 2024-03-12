@@ -4,6 +4,7 @@
   imports = (map sharedLib.relativeToRoot [
     # system modules
     "system"
+    "system/users/init-pass.nix"
 
     # themes modules
     "themes"

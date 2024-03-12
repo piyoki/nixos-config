@@ -8,6 +8,7 @@
     servers = [
       "mars"
       "felix"
+      "sdwan-gateway"
     ];
   };
 }

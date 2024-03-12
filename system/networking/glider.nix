@@ -1,9 +1,9 @@
 { inputs, lib, ... }:
 
 {
-  imports = [ inputs.home-estate.nixosModules.sdwan ];
+  imports = [ inputs.home-estate.nixosModules.glider ];
 
-  services.sdwan = {
+  services.glider = {
     enable = lib.mkDefault true;
     autostart = lib.mkDefault false;
   };
