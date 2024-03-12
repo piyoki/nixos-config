@@ -56,18 +56,18 @@ with lib;
     interfaces.ens18 = {
       useDHCP = mkDefault false;
       ipv4.addresses = [{
-        address = "10.0.0.50";
+        address = "10.0.0.49";
         prefixLength = 24;
       }];
       ipv6.addresses = [{
-        address = "fd00::50";
+        address = "fd00::49";
         prefixLength = 64;
       }];
     };
     interfaces.ens19 = {
       useDHCP = mkDefault false;
       ipv4.addresses = [{
-        address = "10.20.0.28";
+        address = "10.20.0.20";
         prefixLength = 24;
       }];
     };
