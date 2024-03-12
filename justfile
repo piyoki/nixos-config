@@ -36,6 +36,10 @@ update:
 show:
   @nix flake show
 
+# check flake
+check:
+  @nix flake check
+
 # update a particular flake input
 update-input input:
   @nix flake lock --update-input {{ input }}
@@ -61,23 +65,19 @@ gc:
   @sudo nix store gc --debug
   @sudo nix-collect-garbage --delete-old
 
-# stage all files
-add:
-  @git add .
-
-# count total number of nix-related files
-count:
-  @rg '' --glob "!.git" --glob "!home-estate" --glob "!secrets" --files-with-matches | wc -l
-
-# git pull
-pull:
-  @git pull --rebase
-
 # apply fix from linters
 lint:
   @statix fix --ignore 'templates/' .
   @deadnix --edit --exclude 'templates/' .
 
-# check flake
-check:
-  @nix flake check
+# count total number of nix-related files
+count:
+  @rg '' --glob "!.git" --glob "!home-estate" --glob "!secrets" --files-with-matches | wc -l
+
+# stage all files
+add:
+  @git add .
+
+# git pull
+pull:
+  @git pull --rebase
