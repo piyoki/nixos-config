@@ -1021,10 +1021,10 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1710240645,
-        "narHash": "sha256-KQMecodCI8bkBSxyvZH90xZcyk0gN+Wsj4JR4srfdA4=",
+        "lastModified": 1710246147,
+        "narHash": "sha256-ndivFAGo0cLxOP+EC/GNgTshUeuzZjCweU5hcte8Hok=",
         "ref": "master",
-        "rev": "8e18c58c0d45eee7dda7dd0521c259f10c89bd15",
+        "rev": "86d4b1d34a66af9092142eece039ced63ec21ff6",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/home-estate"
