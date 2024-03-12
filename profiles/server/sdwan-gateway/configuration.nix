@@ -10,6 +10,7 @@ with lib;
     "system/services/openssh/server.nix"
     "system/services/zramd.nix"
     "system/networking/sdwan.nix"
+    "system/networking/glider.nix"
     "system/internationalisation/locale.nix"
     "system/internationalisation/time.nix"
 
@@ -23,7 +24,7 @@ with lib;
   # user patch
   users.users.${user} = {
     shell = mkForce pkgs.bash;
-    packages = mkForce [ ];
+    extraGroups = mkForce [ "wheel" ];
   };
 
   # extra packages
@@ -72,12 +73,19 @@ with lib;
     nameservers = [ "223.5.5.5" ];
   };
 
-  # enable qemu-guest-agent
-  services.qemuGuest.enable = mkDefault true;
 
-  # enable sdwan service
-  services.sdwan = {
-    enable = true;
-    autostart = mkForce true;
+  services = {
+    # enable qemu-guest-agent
+    qemuGuest.enable = mkDefault true;
+    # enable sdwan service
+    sdwan = {
+      enable = true;
+      autostart = mkForce true;
+    };
+    # # enable glider service
+    glider = {
+      enable = true;
+      autostart = mkForce true;
+    };
   };
 }
