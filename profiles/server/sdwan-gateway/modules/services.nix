@@ -3,8 +3,6 @@
 with lib;
 {
   services = {
-    # enable qemu-guest-agent
-    qemuGuest.enable = mkDefault true;
     # enable sdwan service
     sdwan = {
       enable = true;

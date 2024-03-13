@@ -4,13 +4,16 @@ with lib;
 {
   imports = (map sharedLib.relativeToRoot [
     # host specific modules
+    "system/services/fish.nix"
     "system/services/docker.nix"
     "system/services/gnupg/server.nix"
+    "system/users/init-pass.nix"
 
     # shared modules
-    "shared/modules/secrets"
-    "shared/modules/system/tmpfs/persistent"
     "shared/server/system/base.nix"
+    "shared/server/system/services/sops.nix"
+    "shared/modules/system/tmpfs/persistent"
+    "shared/modules/secrets"
   ]) ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -35,9 +38,6 @@ with lib;
     defaultGateway = "10.118.25.4";
     nameservers = [ "10.118.25.4" ];
   };
-
-  # enable qemu-guest-agent
-  services.qemuGuest.enable = mkDefault true;
 
   # Import secrets
   modules = {

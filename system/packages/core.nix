@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     # basic but essential
+    bash-completion
     git
     gnutar
     killall
