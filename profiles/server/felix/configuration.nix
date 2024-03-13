@@ -7,9 +7,8 @@ with lib;
     "system/services/docker.nix"
 
     # shared modules
-    # "shared/modules/system/tmpfs/persistent/server.nix"
     "shared/server/system/base.nix"
-    "shared/server/system/patches/users-shell-bash.nix"
+    # "shared/modules/system/tmpfs/persistent/server.nix"
   ]) ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
