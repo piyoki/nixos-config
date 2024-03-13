@@ -36,9 +36,6 @@ with lib;
     nameservers = [ "10.118.25.4" ];
   };
 
-  # enable qemu-guest-agent
-  services.qemuGuest.enable = mkDefault true;
-
   # Import secrets
   modules = {
     secrets.server.system.base.enable = true;
