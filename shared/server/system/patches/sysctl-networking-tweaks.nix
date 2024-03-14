@@ -5,6 +5,9 @@ _:
 # https://github.com/3ayonara/LinuxTools/blob/main/Network/BBR/sysctl.conf
 {
   boot.kernel.sysctl = {
+    # enable ip_forward
+    "net.ipv4.ip_forward" = 1;
+    "net.ipv6.conf.all.forwarding" = 1;
     # enable bbr
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.core.default_qdisc" = "fq";

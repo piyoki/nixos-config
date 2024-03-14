@@ -11,9 +11,8 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/networking.nix
-    ./modules/routing.nix
     ./modules/services.nix
   ];
 
-  networking.hostName = "nixos-sdwan-gateway";
+  networking.hostName = "nixos-tailscale-gateway";
 }

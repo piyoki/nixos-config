@@ -1,14 +1,11 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 
 {
   # mesh network
-  environment.systemPackages = with pkgs; [
-    tailscale
-  ];
-
   services = {
     tailscale.enable = true;
   };
 
+  # disable systemd service
   systemd.services.tailscaled.wantedBy = lib.mkForce [ ];
 }
