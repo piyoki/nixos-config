@@ -1,4 +1,4 @@
-_:
+{ pkgs, ... }:
 
 {
   programs = {
@@ -9,7 +9,7 @@ _:
     gnupg = {
       agent = {
         enable = true;
-        pinentryFlavor = "curses";
+        pinentryPackage = pkgs.pinentry-curses;
         enableSSHSupport = true;
         # /etc/gnupg/gpg-agent.conf
         settings = {
@@ -28,4 +28,5 @@ _:
     /run/current-system/sw/bin/gpg-connect-agent /bye
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   '';
+
 }
