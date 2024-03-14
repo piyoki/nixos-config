@@ -22,9 +22,7 @@ in
           ${swBin}/echo 80 > /sys/class/power_supply/BAT0/charge_control_end_threshold
         ''}";
         Type = "oneshot";
-        Environment = [
-          "PATH=$PATH:${swBin}"
-        ];
+        Environment = [ "PATH=$PATH:${swBin}" ];
       };
     };
   };

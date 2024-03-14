@@ -14,6 +14,7 @@
     unzip
     neofetch
     curl
+    ethtool
 
     # monitoring
     htop
