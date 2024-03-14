@@ -27,13 +27,11 @@
         ];
         serif = [
           "GenSekiGothic TW B"
-          "Sarasa Gothic TC"
           "Noto Serif CJK TC"
           "Source Han Serif TC"
         ];
         sansSerif = [
           "GenSekiGothic TW B"
-          "Sarasa Gothic TC"
           "Noto Sans CJK TC"
           "Source Han Sans TC"
         ];
