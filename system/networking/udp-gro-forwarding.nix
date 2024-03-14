@@ -16,9 +16,9 @@ in
     after = [ "network.target" "iptables.service" "ip6tables.service" ];
     serviceConfig = {
       ExecStart = "${pkgs.writeShellScript "udp-gro-forwarding" ''
-          set -eux
-          NETDEV=$(${swBin}/ip route show 0/0 | grep 'via' | cut -f5 -d ' ')
-          ${pkgs.ethtool}/bin/ethtool -K $NETDEV rx-udp-gro-forwarding on rx-gro-list off;
+        set -eux
+        NETDEV=$(${swBin}/ip route show 0/0 | grep 'via' | cut -f5 -d ' ')
+        ${pkgs.ethtool}/bin/ethtool -K $NETDEV rx-udp-gro-forwarding on rx-gro-list off;
         ''}";
       Type = "oneshot";
       Environment = [ "PATH=$PATH:${swBin}" ];

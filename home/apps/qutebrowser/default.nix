@@ -13,7 +13,11 @@ let
 in
 {
   options.dotfiles.qutebrowser = {
-    profile = mkOption config.common.profile;
+    profile = mkOption {
+      type = types.str;
+      default = "desktop";
+      description = "host profile";
+    };
   };
 
   config = {

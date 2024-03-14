@@ -49,7 +49,11 @@ let
 in
 {
   options.dotfiles.tmux = {
-    profile = mkOption config.common.profile;
+    profile = mkOption {
+      type = types.str;
+      default = "desktop";
+      description = "host profile";
+    };
   };
 
   config = {
