@@ -6,6 +6,10 @@ let
   swBin = "/run/current-system/sw/bin";
 in
 {
+  environment.systemPackages = with pkgs; [
+    ethtool
+  ];
+
   # /etc/systemd/system/udp-gro-forwarding.service
   systemd.services."udp-gro-forwarding" = {
     description = "UDP Gro Forwarding Service";
@@ -21,8 +25,4 @@ in
     };
     wantedBy = [ "multi-user.target" ];
   };
-
-  environment.systemPackages = with pkgs; [
-    ethtool
-  ];
 }
