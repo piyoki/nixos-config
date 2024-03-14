@@ -61,13 +61,25 @@
           };
           imports = hostModules ++ homeModules ++ extraModules;
         };
+      # function to generate nixosSystem for microvm
+      genMicroVM =
+        { profile
+        , hostModules ? [
+            microvm.nixosModules.microvm
+            (import ./shared/modules/microvm/${profile}.nix)
+          ]
+        }: lib.nixosSystem {
+          specialArgs = genSpecialArgs system;
+          modules = hostModules;
+        };
       # function to generate nixosConfigurations with flake
-      genFlake = { workstations, servers }: (
+      genFlake = { workstations, servers, microvms }: (
         # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
         lib.attrsets.mergeAttrsList (
           # (map): instantiate nixosConfigurations.${profile} from inputs
           (map (profile: { ${profile} = genSystem { inherit profile; }; }) workstations) ++
-          (map (profile: { ${profile} = genSystem { inherit profile; isServer = true; }; }) servers)
+          (map (profile: { ${profile} = genSystem { inherit profile; isServer = true; }; }) servers) ++
+          (map (profile: { "${profile}-microvm" = genMicroVM { inherit profile; }; }) microvms)
         ));
       # function to generate colemna configs with flake for remote deploy
       genColmena = servers: (
@@ -89,9 +101,13 @@
       # checks
       checks.${system}.pre-commit-check = genChecks system;
       # hosts
-      nixosConfigurations = genFlake { inherit (profiles) workstations servers; };
+      nixosConfigurations = genFlake { inherit (profiles) workstations servers microvms; };
       # remote deploy
       colmena = genColmena profiles.servers;
+      # packages
+      packages.${system} = {
+        firecracker-microvm = self.nixosConfigurations.firecracker-microvm.config.microvm.declaredRunner;
+      };
     };
 
   inputs = {
@@ -102,6 +118,7 @@
     haumea = { url = "github:nix-community/haumea/main"; inputs.nixpkgs.follows = "nixpkgs"; };
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "github:hyprwm/Hyprland"; inputs.nixpkgs.follows = "nixpkgs"; };
+    microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
     impermanence.url = "github:nix-community/impermanence";
     sops-nix.url = "github:Mic92/sops-nix";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
