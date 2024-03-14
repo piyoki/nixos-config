@@ -40,6 +40,10 @@ show:
 check:
   @nix flake check
 
+# view flake.lock
+view:
+  @nix-melt
+
 # update a particular flake input
 update-input input:
   @nix flake lock --update-input {{ input }}
