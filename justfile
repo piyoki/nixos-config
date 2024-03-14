@@ -40,6 +40,10 @@ show:
 check:
   @nix flake check
 
+# run nix pkg
+run pkg:
+  @nix run .#{{ pkg }}
+
 # view flake.lock
 view:
   @nix-melt
