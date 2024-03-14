@@ -96,6 +96,11 @@
           deadnix.enable = true; # linter
         };
       });
+      # function to generate nix packages
+      genPkgs = lib.attrsets.mergeAttrsList (
+        # microvm artifacts
+        (map (profile: { "${profile}-microvm" = self.nixosConfigurations."${profile}-microvm".config.microvm.declaredRunner; }) profiles.microvms)
+      );
     in
     {
       # checks
@@ -105,9 +110,7 @@
       # remote deploy
       colmena = genColmena profiles.servers;
       # packages
-      packages.${system} = {
-        firecracker-microvm = self.nixosConfigurations.firecracker-microvm.config.microvm.declaredRunner;
-      };
+      packages.${system} = genPkgs;
     };
 
   inputs = {
