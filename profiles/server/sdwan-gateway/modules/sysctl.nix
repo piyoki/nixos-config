@@ -2,6 +2,7 @@ _:
 
 # References:
 # https://cloud.tencent.com/developer/article/2141920
+# https://github.com/3ayonara/LinuxTools/blob/main/Network/BBR/sysctl.conf
 {
   boot.kernel.sysctl = {
     # enable bbr
