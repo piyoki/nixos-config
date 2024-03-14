@@ -11,5 +11,8 @@
       "sdwan-gateway"
       "tailscale-gateway"
     ];
+    microvms = [
+      "firecracker"
+    ];
   };
 }
