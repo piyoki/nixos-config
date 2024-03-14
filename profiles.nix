@@ -9,6 +9,7 @@
       "mars"
       "felix"
       "sdwan-gateway"
+      "tailscale-gateway"
     ];
   };
 }

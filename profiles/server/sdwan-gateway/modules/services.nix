@@ -2,10 +2,10 @@
 
 with lib;
 {
-  imports = (map sharedLib.relativeToRoot [
+  imports = map sharedLib.relativeToRoot [
     "system/networking/sdwan.nix"
     "system/networking/glider.nix"
-  ]);
+  ];
 
   services = {
     # enable sdwan service
