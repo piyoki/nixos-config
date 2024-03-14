@@ -31,7 +31,4 @@ with lib;
     defaultGateway6 = { address = "fd00::1"; interface = "ens18"; };
     nameservers = [ "223.5.5.5" ];
   };
-
-
-
 }
