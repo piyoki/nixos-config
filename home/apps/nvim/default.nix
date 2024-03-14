@@ -7,7 +7,11 @@ let
 in
 {
   options.dotfiles.nvim = {
-    profile = mkOption config.common.profile;
+    profile = mkOption {
+      type = types.str;
+      default = "desktop";
+      description = "host profile";
+    };
   };
 
   config = {
