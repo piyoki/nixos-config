@@ -77,11 +77,11 @@
     "dot-fish": {
       "flake": false,
       "locked": {
-        "lastModified": 1710080571,
-        "narHash": "sha256-3k7alK0Sl+bBD921+SY11yp+DJHuQ1/DGk8sTVkGrqk=",
+        "lastModified": 1710513666,
+        "narHash": "sha256-RSKaa5xf1Z1ikrOjDWq7fIO9mur9azH/rKusPFPGo24=",
         "owner": "yqlbu",
         "repo": "dot-fish",
-        "rev": "2640aa583e2fa8863f7d1560ceda745ab643597c",
+        "rev": "b08dbe2ad38da5f07acd15be3d54a5ece8d2487c",
         "type": "github"
       },
       "original": {
@@ -480,11 +480,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1710080602,
-        "narHash": "sha256-qo0Tl1Xoa9KY3um9xKiKIuNrwkobwOc9Z8TcB1F4seU=",
+        "lastModified": 1710513700,
+        "narHash": "sha256-EoMqKJwhX0rF3zikQpbs6MZvoZvXTzVFYUSNzpVoUzQ=",
         "ref": "master",
-        "rev": "02709da0887cb01403aa8228996101bb8bddec58",
-        "revCount": 122,
+        "rev": "51af238de3c7c7e958177746f77488f4ae075b4d",
+        "revCount": 123,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
@@ -1137,13 +1137,13 @@
         "rev": "2a6c6d4ab3241184ce1a2c195060f23499b30f5f",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       },
       "original": {
         "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -2050,12 +2050,12 @@
         "rev": "a09e847cf0f079f8cd650ce8963a3e7608abc68a",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
