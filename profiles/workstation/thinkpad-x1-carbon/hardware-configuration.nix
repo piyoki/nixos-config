@@ -6,7 +6,7 @@
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_11)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_10)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_9)
-{ config, lib, pkgs, pkgs-unstable, modulesPath, ... }:
+{ config, lib, pkgs, pkgs-unstable, modulesPath, system, ... }:
 
 {
   imports =
@@ -131,4 +131,6 @@
 
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
+
+  nixpkgs.hostPlatform = lib.mkDefault system;
 }

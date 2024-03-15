@@ -43,6 +43,4 @@
       channel = "https://nixos.org/channels/nixos-unstable";
     };
   };
-
-  nixpkgs.hostPlatform = lib.mkDefault system;
 }
