@@ -15,5 +15,6 @@
     vivid
     zoxide
     tailspin # A log file highlighter
+    atuin # Replacement for a shell history which records additional commands context with optional encrypted synchronization between machines
   ];
 }
