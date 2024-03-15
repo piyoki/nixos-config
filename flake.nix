@@ -8,7 +8,7 @@
       pkgs = (import nixpkgs) { inherit system; config.allowUnfree = lib.mkDefault true; };
       inherit (nixpkgs) lib;
       inherit (import ./shared/vars) user;
-      inherit (import ./profiles.nix) profiles;
+      profiles = import ./profiles.nix { };
       extraModules = [
         sops-nix.nixosModules.sops
       ];
@@ -37,13 +37,13 @@
       genSystem =
         { profile
         , isServer ? false
-        , profilePrefix ? (if (!isServer) then ./profiles/workstation/${profile} else ./profiles/server/${profile})
+        , profilePrefix ? (if (!isServer) then ./profiles/workstation/${profile.hostname} else ./profiles/server/${profile.hostname})
         , hostModules ? (
             [ (profilePrefix + "/configuration.nix") ] ++ (lib.optionals (!isServer) [
               hyprland.nixosModules.default
             ])
           )
-        , homeModules ? (genHomeModules (import (profilePrefix + "/home.nix")))
+        , homeModules ? lib.optionals profile.home-manager (genHomeModules (import (profilePrefix + "/home.nix")))
         }: lib.nixosSystem {
           specialArgs = genSpecialArgs system;
           modules = hostModules ++ homeModules ++ extraModules;
@@ -51,11 +51,11 @@
       # function to generate remote deploy nixosSystem
       genDeploy =
         { profile
-        , hostModules ? [ ./profiles/server/${profile}/configuration.nix ]
-        , homeModules ? (genHomeModules (import ./profiles/server/${profile}/home.nix))
+        , hostModules ? [ ./profiles/server/${profile.hostname}/configuration.nix ]
+        , homeModules ? lib.optionals profile.home-manager (genHomeModules (import ./profiles/server/${profile.hostname}/home.nix))
         }: {
           deployment = {
-            targetHost = "nixos-${profile}";
+            targetHost = "nixos-${profile.hostname}";
             inherit (import ./shared/vars) targetPort targetUser tags;
             inherit (import ./shared/server/age-key.nix) keys;
           };
@@ -66,7 +66,7 @@
         { profile
         , hostModules ? [
             microvm.nixosModules.microvm
-            (import ./shared/modules/microvm/${profile}.nix)
+            (import ./shared/modules/microvm/${profile.hostname}.nix)
           ]
         }: lib.nixosSystem {
           specialArgs = genSpecialArgs system;
@@ -77,15 +77,15 @@
         # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
         lib.attrsets.mergeAttrsList (
           # (map): instantiate nixosConfigurations.${profile} from inputs
-          (map (profile: { ${profile} = genSystem { inherit profile; }; }) workstations) ++
-          (map (profile: { ${profile} = genSystem { inherit profile; isServer = true; }; }) servers) ++
-          (map (profile: { "${profile}-microvm" = genMicroVM { inherit profile; }; }) microvms)
+          (map (profile: { ${profile.hostname} = genSystem { inherit profile; }; }) workstations) ++
+          (map (profile: { ${profile.hostname} = genSystem { inherit profile; isServer = true; }; }) servers) ++
+          (map (profile: { "${profile.hostname}-microvm" = genMicroVM { inherit profile; }; }) microvms)
         ));
       # function to generate colemna configs with flake for remote deploy
       genColmena = servers: (
         { meta = { nixpkgs = pkgs; specialArgs = genSpecialArgs system; }; } //
         # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
-        lib.attrsets.mergeAttrsList (map (profile: { ${profile} = genDeploy { inherit profile; }; }) servers)
+        lib.attrsets.mergeAttrsList (map (profile: { ${profile.hostname} = genDeploy { inherit profile; }; }) servers)
       );
       # function to generate pre-commit-checks
       genChecks = system: (pre-commit-hooks.lib.${system}.run {
@@ -97,17 +97,23 @@
         };
       });
       # function to generate nix packages
-      genPkgs = lib.attrsets.mergeAttrsList (map (profile: { "${profile}-microvm" = self.nixosConfigurations."${profile}-microvm".config.microvm.declaredRunner; }) profiles.microvms);
+      genPkgs = microvms: lib.attrsets.mergeAttrsList (map
+        (profile: {
+          "${profile.hostname}-microvm" = self.nixosConfigurations."${profile.hostname}-microvm".config.microvm.declaredRunner;
+        })
+        microvms
+      );
     in
+    with profiles;
     {
       # checks
       checks.${system}.pre-commit-check = genChecks system;
       # hosts
-      nixosConfigurations = genFlake { inherit (profiles) workstations servers microvms; };
+      nixosConfigurations = genFlake { inherit workstations servers microvms; };
       # remote deploy
-      colmena = genColmena profiles.servers;
+      colmena = genColmena servers;
       # packages
-      packages.${system} = genPkgs;
+      packages.${system} = genPkgs microvms;
     };
 
   inputs = {
