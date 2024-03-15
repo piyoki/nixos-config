@@ -97,10 +97,7 @@
         };
       });
       # function to generate nix packages
-      genPkgs = lib.attrsets.mergeAttrsList (
-        # microvm artifacts
-        (map (profile: { "${profile}-microvm" = self.nixosConfigurations."${profile}-microvm".config.microvm.declaredRunner; }) profiles.microvms)
-      );
+      genPkgs = lib.attrsets.mergeAttrsList (map (profile: { "${profile}-microvm" = self.nixosConfigurations."${profile}-microvm".config.microvm.declaredRunner; }) profiles.microvms);
     in
     {
       # checks
