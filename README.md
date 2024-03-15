@@ -26,7 +26,7 @@ As the date of writing (March 2024), I've commited myself switching to NixOS on 
 - [nixpkgs-wayland](https://github.com/nix-community/nixpkgs-wayland) to fetch up-to-date wayland packages for daily usage.
 - [impemenance](https://github.com/nix-community/impermanence) to create tmpfs root stateless OS.
 - [pre-commit-hooks](https://github.com/cachix/pre-commit-hooks.nix) to integrate pre-commit-hooks with flake.
-- [haumea](https://github.com/nix-community/haumea) - to create filesystem-based module system for Nix.
+- [microvm](https://github.com/astro/microvm.nix) to spin up microvm locally in seconds.
 
 ## References
 

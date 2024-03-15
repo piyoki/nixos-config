@@ -1100,27 +1100,6 @@
         "type": "github"
       }
     },
-    "haumea": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1708375098,
-        "narHash": "sha256-DaFJp3wDHgOqx98U0SF57bXaH2Orp106c+jSdPCVu1E=",
-        "owner": "nix-community",
-        "repo": "haumea",
-        "rev": "ec6350fd9353e7f27ce0e85d31f82e3ed73e4d70",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "main",
-        "repo": "haumea",
-        "type": "github"
-      }
-    },
     "hercules-ci-effects": {
       "inputs": {
         "flake-parts": "flake-parts_3",
@@ -2047,7 +2026,6 @@
         "assets": "assets",
         "dotfiles-desktop": "dotfiles-desktop",
         "dotfiles-laptop": "dotfiles-laptop",
-        "haumea": "haumea",
         "home-estate": "home-estate",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
