@@ -4,6 +4,7 @@
   imports = (map sharedLib.relativeToRoot [
     # host specific modules
     "system/services/docker.nix"
+    "system/services/atuin"
 
     # shared modules
     "shared/server/system/base.nix"
