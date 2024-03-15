@@ -8,6 +8,7 @@
       pkgs = (import nixpkgs) { inherit system; config.allowUnfree = lib.mkDefault true; };
       inherit (nixpkgs) lib;
       inherit (import ./shared/vars) user;
+      specialArgs = genSpecialArgs system;
       profiles = import ./profiles.nix { };
       extraModules = [
         sops-nix.nixosModules.sops
@@ -25,7 +26,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            extraSpecialArgs = genSpecialArgs system;
+            extraSpecialArgs = specialArgs;
             users.${user} = homeModules;
             sharedModules = [
               sops-nix.homeManagerModules.sops
@@ -45,7 +46,7 @@
           )
         , homeModules ? lib.optionals profile.home-manager (genHomeModules (import (profilePrefix + "/home.nix")))
         }: lib.nixosSystem {
-          specialArgs = genSpecialArgs system;
+          inherit specialArgs;
           modules = hostModules ++ homeModules ++ extraModules;
         };
       # function to generate remote deploy nixosSystem
@@ -69,7 +70,7 @@
             (import ./shared/modules/microvm/${profile.hostname}.nix)
           ]
         }: lib.nixosSystem {
-          specialArgs = genSpecialArgs system;
+          inherit specialArgs;
           modules = hostModules;
         };
       # function to generate nixosConfigurations with flake
@@ -83,7 +84,7 @@
         ));
       # function to generate colemna configs with flake for remote deploy
       genColmena = servers: (
-        { meta = { nixpkgs = pkgs; specialArgs = genSpecialArgs system; }; } //
+        { meta = { nixpkgs = pkgs; inherit specialArgs; }; } //
         # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
         lib.attrsets.mergeAttrsList (map (profile: { ${profile.hostname} = genDeploy { inherit profile; }; }) servers)
       );
