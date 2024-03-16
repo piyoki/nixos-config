@@ -22,7 +22,7 @@
   networking.hostName = "nixos-nuc-12";
 
   modules = {
-    # Import secrets
+    # Import system secrets
     secrets.workstation.system.enable = true;
     # Load persistent dirs and files
     persistent = {

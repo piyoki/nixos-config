@@ -20,6 +20,6 @@
   # Set hostname
   networking.hostName = "nixos-x1-carbon";
 
-  # Import secrets
+  # Import system secrets
   modules.secrets.workstation.system.enable = true;
 }
