@@ -7,7 +7,7 @@
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_10)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_9)
 # https://nixos.wiki/wiki/Intel_Graphics
-{ inputs, config, lib, pkgs, modulesPath, system, ... }:
+{ inputs, config, lib, pkgs, pkgs-small, modulesPath, system, ... }:
 
 {
   imports =
@@ -18,7 +18,7 @@
   boot = {
     # Use the systemd-boot EFI boot loader.
     # kernelPackages = pkgs.linuxPackages_latest;
-    # kernelPackages = pkgs-unstable.linuxPackages_testing;
+    # kernelPackages = pkgs-small.linuxPackages_testing;
     kernelPackages = inputs.chaotic.packages.${system}.linuxPackages_cachyos;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
 
@@ -105,7 +105,7 @@
 
   # GPU (Accelerate Video Playback)
   # ref: https://nixos.wiki/wiki/Accelerated_Video_Playback
-  nixpkgs.config.packageOverrides = pkgs: {
+  nixpkgs.config.packageOverrides = _pkgs-small: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
 
@@ -113,10 +113,13 @@
     # linux-firmware
     enableAllFirmware = true;
 
-    # GPU
+    # GPU (OpenGL)
     opengl = {
       enable = true;
-      extraPackages = with pkgs; [
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = with pkgs-small; [
+        intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
         intel-media-driver # Intel Media Driver for VAAPI
         intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family
         # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
@@ -128,6 +131,12 @@
     # CPU
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
+
+  # Mesa
+  # chaotic.mesa-git = {
+  #   enable = true;
+  #   fallbackSpecialisation = false;
+  # };
 
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
