@@ -30,7 +30,6 @@
             users.${user} = homeModules;
             sharedModules = [
               sops-nix.homeManagerModules.sops
-              chaotic.homeManagerModules.default
             ];
           };
         }
