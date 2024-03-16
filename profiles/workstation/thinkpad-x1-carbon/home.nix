@@ -9,13 +9,13 @@
     "shared/modules/secrets"
   ]) ++ [
     # host specific modules
-    ./secrets
+    ./home-secrets
     ./modules/dotfiles.nix
 
     # shared modules
     (import ../../../shared/modules/home/gnupg ./conf/gpg.conf)
   ];
 
-  # Import secrets
+  # Import home secrets
   config.modules.secrets.workstation.home.enable = true;
 }

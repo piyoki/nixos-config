@@ -12,8 +12,11 @@
 # 1 - execute only (--x)
 # 0 - none (---)
 
-# Default user secret path:
+# Default home secret path:
 # /run/user/1000/secrets/
+
+# Default system secret path:
+# /run/secrets/
 
 # Reference: https://github.com/Mic92/sops-nix
 
@@ -21,16 +24,15 @@ with lib;
 let
   cfg = config.modules.secrets;
   defaultAccess = { mode = "0600"; }; # user only
+  openAccess = { mode = "0755"; }; # allow others to read
   rootOnlyAccess = { mode = "0600"; owner = "root"; }; # root only
   noAccess = { mode = "0000"; };
 
   # common secrets
-  initialLoginPass = {
-    sops.secrets = {
-      "login/initialHashedPassword" = {
-        sopsFile = "${inputs.secrets}/login.enc.yaml";
-      } // rootOnlyAccess;
-    };
+  commonSecrets = {
+    "login/initialHashedPassword" = {
+      sopsFile = "${inputs.secrets}/login.enc.yaml";
+    } // rootOnlyAccess;
   };
 in
 {
@@ -82,17 +84,12 @@ in
               sopsFile = "${inputs.secrets}/ssh.enc.yaml";
               path = "${config.home.homeDirectory}/.ssh/config";
             } // defaultAccess;
-            "atuin/server-config" = {
-              sopsFile = "${inputs.secrets}/atuin.enc.yaml";
-            } // defaultAccess;
-            "atuin/env" = {
-              sopsFile = "${inputs.secrets}/atuin.enc.yaml";
-            } // defaultAccess;
           };
         })
 
-        (mkIf cfg.workstation.system.enable initialLoginPass // {
+        (mkIf cfg.workstation.system.enable {
           sops.secrets = {
+            inherit (commonSecrets) "login/initialHashedPassword";
             "age/yubikey-master-key" = {
               sopsFile = "${inputs.secrets}/age-keys.enc.yaml";
             } // noAccess;
@@ -100,11 +97,21 @@ in
               sopsFile = "${inputs.secrets}/samba.enc.yaml";
               path = "/etc/.smbcredentials";
             } // rootOnlyAccess;
+            "atuin/server-config" = {
+              sopsFile = "${inputs.secrets}/atuin.enc.yaml";
+            } // openAccess;
+            "atuin/env" = {
+              sopsFile = "${inputs.secrets}/atuin.enc.yaml";
+            } // openAccess;
           };
         })
 
         # server specific secrets
-        (mkIf cfg.server.system.base.enable initialLoginPass)
+        (mkIf cfg.server.system.base.enable {
+          sops.secrets = {
+            inherit (commonSecrets) "login/initialHashedPassword";
+          };
+        })
       ]
     );
 }
