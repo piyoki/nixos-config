@@ -1,6 +1,8 @@
 # justfile
 # cheatsheet: https://cheatography.com/linux-china/cheat-sheets/justfile/
 
+# ===== Settings ===== #
+#
 # define alias
 alias b := rebuild
 alias upi := update-input
@@ -16,21 +18,19 @@ profile := "$PROFILE"
 default:
   @just --list
 
+# ===== Nix ===== #
+
 # rebuild nixos
 rebuild host=profile:
   @sudo nixos-rebuild switch --upgrade --flake .#{{ host }}
 
-# remote deploy with colmena
-deploy host:
-  @colmena apply --verbose --on {{ host }} --show-trace
-
-# remote deploy servers with @tags with colmena
-deploy-with-tags tags:
-  @colmena apply --verbose --on @{{ tags }} --show-trace
-
 # update all flake inputs
-update:
+up:
   @nix flake update
+
+# update a particular flake input
+upp input:
+  @nix flake lock --update-input {{ input }}
 
 # show flake outputs
 show:
@@ -51,10 +51,6 @@ run pkg:
 # view flake.lock
 view:
   @nix-melt
-
-# update a particular flake input
-update-input input:
-  @nix flake lock --update-input {{ input }}
 
 # nix-prefetch-url
 prefetch-url url:
@@ -82,9 +78,24 @@ lint:
   @statix fix --ignore 'templates/' .
   @deadnix --edit --exclude 'templates/' .
 
+
+# ===== Remote deploy ===== #
+
+# remote deploy with colmena
+deploy host:
+  @colmena apply --verbose --on {{ host }} --show-trace
+
+# remote deploy servers with @tags with colmena
+deploy-with-tags tags:
+  @colmena apply --verbose --on @{{ tags }} --show-trace
+
+# ===== Misc ===== #
+
 # count total number of nix-related files
 count:
   @rg '' --glob "!.git" --glob "!home-estate" --glob "!secrets" --files-with-matches | wc -l
+
+# ===== Git ===== #
 
 # stage all files
 add:
@@ -93,3 +104,13 @@ add:
 # git pull
 pull:
   @git pull --rebase
+
+# ===== Tests ===== #
+
+# clean nvim configs
+nvim-clean:
+  rm -rf ${HOME}.config/nvim
+
+# rsync nvim configs from dot-nvim
+nvim-test: nvim-clean
+  rsync -avz --copy-links --chmod=D2755,F744 $HOME/Workspace/personal/dot-submodules/dot-nvim/ ${HOME}/.config/nvim
