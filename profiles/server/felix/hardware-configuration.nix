@@ -1,4 +1,4 @@
-{ lib, pkgs-unstable, system, ... }:
+{ lib, pkgs-small, system, ... }:
 
 {
   # settings specific to this VM setup
@@ -6,7 +6,7 @@
 
   boot = {
     # use latest kernel
-    kernelPackages = pkgs-unstable.linuxPackages_latest;
+    kernelPackages = pkgs-small.linuxPackages_latest;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
     growPartition = true;
     kernelModules = [ "kvm-amd" ];

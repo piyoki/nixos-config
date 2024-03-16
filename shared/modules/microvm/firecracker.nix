@@ -1,4 +1,4 @@
-{ lib, pkgs-unstable, system, ... }:
+{ lib, pkgs-small, system, ... }:
 
 {
   networking.hostName = "firecracker-microvm";
@@ -7,7 +7,7 @@
     inherit (import ../../vars) stateVersion;
   };
   nixpkgs.hostPlatform = lib.mkDefault system;
-  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
+  boot.kernelPackages = pkgs-small.linuxPackages_latest;
   microvm = {
     hypervisor = "firecracker";
     socket = "control.socket";

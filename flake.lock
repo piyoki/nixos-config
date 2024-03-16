@@ -68,7 +68,7 @@
         "niri": "niri",
         "nix-filter": "nix-filter",
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-small"
         ],
         "systems": "systems_2",
         "yafas": "yafas"
@@ -1846,6 +1846,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-small": {
+      "locked": {
+        "lastModified": 1710573879,
+        "narHash": "sha256-6TAuOGJ3Rol9H/rCT0Nss24743emgFwZnyqo62IczIk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "72ceff62282654d809b05fd7103fae0570b45c18",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable-small",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1702780907,
@@ -1954,22 +1970,6 @@
       "original": {
         "owner": "NixOS",
         "ref": "release-23.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-unstable": {
-      "locked": {
-        "lastModified": 1710339354,
-        "narHash": "sha256-+P5ccUPiLouHexb8aJrUOVOIja9qm+fG57pgAu7uIRs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "2dbc8f62d8af7a1ab962e4b20d12b25ddcb86ced",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable-small",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -2411,7 +2411,7 @@
         "microvm": "microvm",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_10",
-        "nixpkgs-unstable": "nixpkgs-unstable",
+        "nixpkgs-small": "nixpkgs-small",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "nur": "nur_2",
         "pre-commit-hooks": "pre-commit-hooks_5",

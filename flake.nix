@@ -15,7 +15,7 @@
       ];
       # function to generate specialArgs
       genSpecialArgs = system: {
-        pkgs-unstable = (import nixpkgs-unstable) { inherit system; config.allowUnfree = lib.mkDefault true; };
+        pkgs-small = (import nixpkgs-small) { inherit system; config.allowUnfree = lib.mkDefault true; };
         inherit (import ./shared/lib { inherit lib; }) sharedLib;
         inherit inputs pkgs system user;
       };
@@ -121,8 +121,8 @@
   inputs = {
     # public source
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
-    chaotic = { url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; inputs.nixpkgs.follows = "nixpkgs"; };
+    nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    chaotic = { url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; inputs.nixpkgs.follows = "nixpkgs-small"; };
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
