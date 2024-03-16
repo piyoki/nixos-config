@@ -17,5 +17,5 @@
   ];
 
   # Import home secrets
-  config.modules.secrets.workstation.home.enable = true;
+  modules.secrets.workstation.home.enable = true;
 }
