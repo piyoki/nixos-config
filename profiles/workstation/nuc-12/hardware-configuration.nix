@@ -3,6 +3,8 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, pkgs-unstable, modulesPath, system, ... }:
 
+# References:
+# https://nixos.wiki/wiki/Intel_Graphics
 {
   imports =
     [
@@ -100,8 +102,6 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s13f0u3u4.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wwp0s20f0u8i1.useDHCP = lib.mkDefault true;
 
   # GPU (Accelerate Video Playback)
   # ref: https://nixos.wiki/wiki/Accelerated_Video_Playback
