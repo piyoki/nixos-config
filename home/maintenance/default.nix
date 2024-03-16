@@ -1,8 +1,5 @@
-{ ... }:
+{ sharedLib, ... }:
 
 {
-  imports = [
-    ./ansible
-    ./scripts
-  ];
+  imports = sharedLib.scanPaths ./.;
 }
