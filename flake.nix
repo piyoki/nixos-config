@@ -58,7 +58,7 @@
           deployment = {
             targetHost = "nixos-${profile.hostname}";
             inherit (import ./shared/vars) targetPort targetUser tags;
-            inherit (import ./shared/server/age-key.nix) keys;
+            inherit (profile) keys;
           };
           imports = hostModules ++ homeModules ++ extraModules;
         };
