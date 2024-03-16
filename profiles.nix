@@ -2,20 +2,31 @@ _:
 
 let
   # default values
-  home-manager = false;
+  secretsDir = ./shared/server/secrets;
+  genProfile =
+    { hostname
+    , home-manager ? false
+    , keys ? { }
+    }: { inherit hostname home-manager keys; };
 in
 {
   workstations = [
-    { hostname = "thinkpad-x1-carbon"; home-manager = true; }
-    { hostname = "nuc-12"; home-manager = true; }
+    (genProfile { hostname = "thinkpad-x1-carbon"; home-manager = true; })
+    (genProfile { hostname = "nuc-12"; home-manager = true; })
   ];
   servers = [
-    { hostname = "mars"; home-manager = true; }
-    { hostname = "felix"; inherit home-manager; }
-    { hostname = "sdwan-gateway"; inherit home-manager; }
-    { hostname = "tailscale-gateway"; inherit home-manager; }
+    (genProfile { hostname = "mars"; home-manager = true; })
+    (genProfile { hostname = "tailscale-gateway"; })
+    (genProfile { hostname = "sdwan-gateway"; })
+    (genProfile
+      {
+        hostname = "felix";
+        keys = {
+          inherit (import (secretsDir + "/atuin-server.nix")) "env" "server.toml";
+        };
+      })
   ];
   microvms = [
-    { hostname = "firecracker"; }
+    (genProfile { hostname = "firecracker"; })
   ];
 }
