@@ -29,8 +29,12 @@ deploy-with-tags tags:
   @colmena apply --verbose --on @{{ tags }} --show-trace
 
 # update all flake inputs
-update:
+up:
   @nix flake update
+
+# update a particular flake input
+upp input:
+  @nix flake lock --update-input {{ input }}
 
 # show flake outputs
 show:
@@ -51,10 +55,6 @@ run pkg:
 # view flake.lock
 view:
   @nix-melt
-
-# update a particular flake input
-update-input input:
-  @nix flake lock --update-input {{ input }}
 
 # nix-prefetch-url
 prefetch-url url:
