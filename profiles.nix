@@ -18,13 +18,7 @@ in
     (genProfile { hostname = "mars"; home-manager = true; })
     (genProfile { hostname = "tailscale-gateway"; })
     (genProfile { hostname = "sdwan-gateway"; })
-    (genProfile
-      {
-        hostname = "felix";
-        keys = {
-          inherit (import (secretsDir + "/atuin-server.nix")) "env" "server.toml";
-        };
-      })
+    (genProfile { hostname = "felix"; keys = { inherit (import (secretsDir + "/atuin-server.nix")) "env" "server.toml"; }; })
   ];
   microvms = [
     (genProfile { hostname = "firecracker"; })
