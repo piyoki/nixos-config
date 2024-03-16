@@ -1,13 +1,5 @@
-_:
+{ sharedLib, ... }:
 
 {
-  imports = [
-    ./development
-    ./devops
-    ./monitoring
-    ./peripherals
-    ./windowmanager/hyprland
-    ./xdg
-    ./wayland
-  ];
+  imports = sharedLib.scanPaths ./.;
 }

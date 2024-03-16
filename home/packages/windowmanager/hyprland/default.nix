@@ -1,17 +1,7 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, sharedLib, ... }:
 
 {
-  imports = [
-    ./browser
-    ./document
-    ./editor
-    ./im
-    ./media
-    ./productivity
-    ./screenshot
-    ./system
-    ./terminal
-  ];
+  imports = sharedLib.scanPaths ./.;
 
   home.packages = [
     inputs.hyprland.packages."${pkgs.system}".hyprland
