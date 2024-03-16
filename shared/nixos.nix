@@ -1,4 +1,4 @@
-{ pkgs, lib, user, system, ... }:
+{ pkgs, lib, user, ... }:
 
 {
   # Ref: https://nixos.wiki/wiki/Nixos-rebuild
@@ -18,10 +18,10 @@
 
       # substituers will be appended to the default substituters when fetching packages
       extra-substituters = [
-        # "https://hyprland.cachix.org"
+        "https://hyprland.cachix.org"
       ];
       extra-trusted-public-keys = [
-        # "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
       # ref: https://github.com/NixOS/nix/issues/4894
       # workaround to fix ssh signature issues
