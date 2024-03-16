@@ -12,6 +12,9 @@
 # 1 - execute only (--x)
 # 0 - none (---)
 
+# Default user secret path:
+# /run/user/1000/secrets/
+
 # Reference: https://github.com/Mic92/sops-nix
 
 with lib;
@@ -78,6 +81,12 @@ in
             "ssh/config" = {
               sopsFile = "${inputs.secrets}/ssh.enc.yaml";
               path = "${config.home.homeDirectory}/.ssh/config";
+            } // defaultAccess;
+            "atuin/server-config" = {
+              sopsFile = "${inputs.secrets}/atuin.enc.yaml";
+            } // defaultAccess;
+            "atuin/env" = {
+              sopsFile = "${inputs.secrets}/atuin.enc.yaml";
             } // defaultAccess;
           };
         })
