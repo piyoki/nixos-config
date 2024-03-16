@@ -1,15 +1,7 @@
-_:
+{ sharedLib, ... }:
 
 {
-  imports = [
-    ./encryption
-    ./dconf
-    ./mpd
-    ./go
-    ./systemd
-    ./xdg
-    ./wayland-session
-  ];
+  imports = sharedLib.scanPaths ./.;
 
   # disable dunst systemd service, controlled it by windowmanager instead
   services.dunst.enable = false;
