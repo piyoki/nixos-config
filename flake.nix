@@ -122,13 +122,13 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
+    sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "github:hyprwm/Hyprland"; inputs.nixpkgs.follows = "nixpkgs"; };
-    microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
-    impermanence.url = "github:nix-community/impermanence";
-    sops-nix.url = "github:Mic92/sops-nix";
-    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    impermanence.url = "github:nix-community/impermanence";
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
+    microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
 
     # personal nur
     nur.url = "github:yqlbu/nur-packages";
