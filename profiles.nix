@@ -1,8 +1,8 @@
 _:
 
 let
-  # default values
   secretsDir = ./shared/server/secrets;
+  # function to generate nixosSystem profile
   genProfile =
     { hostname
     , home-manager ? false
