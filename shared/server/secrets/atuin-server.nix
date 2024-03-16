@@ -1,3 +1,4 @@
+# References: https://colmena.cli.rs/unstable/features/keys.html
 {
   "server.toml" = {
     keyFile = /run/secrets/atuin/server-config;
