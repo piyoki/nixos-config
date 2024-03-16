@@ -74,7 +74,7 @@
           modules = hostModules;
         };
       # function to generate nixosConfigurations with flake
-      genFlake = { workstations, servers, microvms }: (
+      genFlake = profiles: with profiles; (
         # (lib.attrsets.mergeAttrsList): merge attribute sets, expect input as a list
         lib.attrsets.mergeAttrsList (
           # (map): instantiate nixosConfigurations.${profile} from inputs
@@ -110,7 +110,7 @@
       # checks
       checks.${system}.pre-commit-check = genChecks system;
       # hosts
-      nixosConfigurations = genFlake { inherit workstations servers microvms; };
+      nixosConfigurations = genFlake profiles;
       # remote deploy
       colmena = genColmena servers;
       # packages
