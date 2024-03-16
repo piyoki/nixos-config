@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 {
   home.packages = with pkgs; [
     microsoft-edge-dev
-    firefox
+    inputs.chaotic.packages.${system}.firefox_nightly
     qutebrowser
   ];
 }

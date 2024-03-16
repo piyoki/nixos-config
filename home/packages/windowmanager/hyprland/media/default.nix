@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 {
   home.packages = with pkgs; [
@@ -10,7 +10,7 @@
     mpdris2 # MPRIS 2 support for mpd
     mpdevil # A simple music browser for MPD
     quodlibet # GTK-based audio player written in Python
-    yt-dlp # Command-line tool to download videos from YouTube.com and other sites
+    inputs.chaotic.packages.${system}.yt-dlp_git # Command-line tool to download videos from YouTube.com and other sites
   ];
 
   services = {

@@ -42,6 +42,7 @@
         , hostModules ? (
             [ (profilePrefix + "/configuration.nix") ] ++ (lib.optionals (!isServer) [
               hyprland.nixosModules.default
+              chaotic.nixosModules.default
             ])
           )
         , homeModules ? lib.optionals profile.home-manager (genHomeModules (import (profilePrefix + "/home.nix")))
@@ -121,6 +122,7 @@
     # public source
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
