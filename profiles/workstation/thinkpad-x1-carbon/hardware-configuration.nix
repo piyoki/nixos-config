@@ -7,7 +7,7 @@
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_10)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_9)
 # https://nixos.wiki/wiki/Intel_Graphics
-{ config, lib, pkgs, pkgs-unstable, modulesPath, system, ... }:
+{ inputs, config, lib, pkgs, modulesPath, system, ... }:
 
 {
   imports =
@@ -17,8 +17,9 @@
 
   boot = {
     # Use the systemd-boot EFI boot loader.
-    kernelPackages = pkgs-unstable.linuxPackages_testing;
     # kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs-unstable.linuxPackages_testing;
+    kernelPackages = inputs.chaotic.packages.${system}.linuxPackages_cachyos;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
 
     loader = {
