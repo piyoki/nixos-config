@@ -1,7 +1,5 @@
-_:
+{ sharedLib, ... }:
 
 {
-  imports = [
-    ./qt
-  ];
+  imports = sharedLib.scanPaths ./.;
 }
