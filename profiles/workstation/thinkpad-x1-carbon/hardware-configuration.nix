@@ -133,10 +133,7 @@
   };
 
   # Mesa
-  # chaotic.mesa-git = {
-  #   enable = true;
-  #   fallbackSpecialisation = false;
-  # };
+  chaotic.mesa-git.enable = true;
 
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";

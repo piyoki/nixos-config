@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     kitty # terminal emulator
+    alacritty_git # terminal emulator
     handbrake # video editor
     hyprpicker # color picker
     lf # terminal file manager
