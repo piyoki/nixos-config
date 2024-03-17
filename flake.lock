@@ -273,11 +273,11 @@
     "dot-fish_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1710675247,
-        "narHash": "sha256-JDwg4g0XzyAVqg0NEtxgiJoWn00DOec6Xxh85wNi3fg=",
+        "lastModified": 1710675646,
+        "narHash": "sha256-bXy5I2tUQzD01yExsZq6OzbWHDCBu3a8vxqvqiTbNa8=",
         "owner": "yqlbu",
         "repo": "dot-fish",
-        "rev": "315c0d4ce5f61fbeffb09abd2c9ead40f371058f",
+        "rev": "708cb83c38dfb69d844f2869ea869a864c452b7e",
         "type": "github"
       },
       "original": {
@@ -305,11 +305,11 @@
     "dot-hypr_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1710655113,
-        "narHash": "sha256-zhaFywRCh2S0gxNmMhE4O5Z1nW8k5zxqiLCKUkGiEdQ=",
+        "lastModified": 1710678227,
+        "narHash": "sha256-aH0QUku3zFnrRd1jcbV9ibwGFYysoZsuMGWAdb8JeMk=",
         "owner": "yqlbu",
         "repo": "dot-hypr",
-        "rev": "dad78d9da43950f3010b0512881b51c5ed42aa08",
+        "rev": "b57a610161dd459866c42bb530cfc414d59d1791",
         "type": "github"
       },
       "original": {
@@ -695,11 +695,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1710675306,
-        "narHash": "sha256-2ZmZGYb/n4E/bUjm797Xq7kOVwcuTd3zroqWOgAshRQ=",
+        "lastModified": 1710678309,
+        "narHash": "sha256-KhsII81Vc45+Lyo/vB7+lNe4rY9LTXXjA1VUwMJ+eM8=",
         "ref": "x1-carbon",
-        "rev": "d95f381c49d5a421fd21eed850966588388453fc",
-        "revCount": 108,
+        "rev": "6b979af0dccb2f087f1982b6ccb0ae0db5759ace",
+        "revCount": 110,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
@@ -1389,13 +1389,13 @@
         "rev": "2a6c6d4ab3241184ce1a2c195060f23499b30f5f",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       },
       "original": {
         "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -2506,12 +2506,12 @@
         "rev": "56960dcdc75142df854d4091fc34ee6352c803e7",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
