@@ -205,6 +205,22 @@
         "type": "github"
       }
     },
+    "dot-alacritty_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1710673171,
+        "narHash": "sha256-Ugok78RQ7WXaPy8EIMgicSsoj557p1u/6tD5TYLLPu4=",
+        "owner": "yqlbu",
+        "repo": "dot-alacritty",
+        "rev": "ffae3fbba9967009a6fd91a3255a61a569bb52c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yqlbu",
+        "repo": "dot-alacritty",
+        "type": "github"
+      }
+    },
     "dot-dunst": {
       "flake": false,
       "locked": {
@@ -257,11 +273,11 @@
     "dot-fish_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1710516368,
-        "narHash": "sha256-U6eZPCixaBmrbaDkVlgg2wl9dg8GcMy1sFOhFHbhVSg=",
+        "lastModified": 1710673095,
+        "narHash": "sha256-jltuEbRdu4w7JLgB/p+SIMBFjBno24IAa8ZcXHHNhe8=",
         "owner": "yqlbu",
         "repo": "dot-fish",
-        "rev": "9d3e7cd553ea77ea55a00c1de578694a3a9ce215",
+        "rev": "e4ab30a96429e4067b5c30f24c0d0d9841eeeda2",
         "type": "github"
       },
       "original": {
@@ -579,11 +595,11 @@
     "dot-tmux_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1709431373,
-        "narHash": "sha256-kdoA7Sl6+5b12p0SyLbbpw+04eqxojz+1eEYBe7Xh2E=",
+        "lastModified": 1710672042,
+        "narHash": "sha256-+MbMIvCSbjN/kbnEX6DJn3ghbRGWhJy7A755ovxU1zM=",
         "owner": "yqlbu",
         "repo": "dot-tmux",
-        "rev": "646f54819b372c235a435d40cd928040b4a45284",
+        "rev": "8ed4a70a04c685e858e27dfdfe202159136ee2d1",
         "type": "github"
       },
       "original": {
@@ -661,6 +677,7 @@
     },
     "dotfiles-laptop": {
       "inputs": {
+        "dot-alacritty": "dot-alacritty_2",
         "dot-dunst": "dot-dunst_2",
         "dot-fish": "dot-fish_2",
         "dot-hypr": "dot-hypr_2",
@@ -678,11 +695,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1710656162,
-        "narHash": "sha256-Wgm6XulGku1CZXYjTb+oet9e+wZ7S2sqgBHiuWk6wwo=",
+        "lastModified": 1710673401,
+        "narHash": "sha256-95fZJuvZ4fqrTXFBtES5qhmjD8eV6GkMZaoWPxiYIG8=",
         "ref": "x1-carbon",
-        "rev": "cc538e8e6ceb3c36dfc17f123238bdf170e476c2",
-        "revCount": 104,
+        "rev": "9f2888e5673c763b555aee837bfc512cdbf07ad9",
+        "revCount": 105,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
