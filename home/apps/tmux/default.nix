@@ -1,9 +1,6 @@
-{ config, lib, pkgs, inputs, system, ... }:
-
-with lib;
+{ pkgs, inputs, system, ... }:
 
 let
-  cfg = config.dotfiles.tmux;
   tpm = pkgs.fetchFromGitHub {
     owner = "tmux-plugins";
     repo = "tpm";
@@ -48,24 +45,14 @@ let
   };
 in
 {
-  options.dotfiles.tmux = {
-    profile = mkOption {
-      type = types.str;
-      default = "desktop";
-      description = "host profile";
-    };
-  };
-
-  config = {
-    home.file = {
-      ".tmux.conf".source = inputs."dotfiles-${cfg.profile}".packages.${system}.tmux + "/.tmux.conf";
-      ".tmux/plugins/tpm".source = tpm + "/";
-      ".tmux/plugins/tmux-sensible".source = tmux-sensible + "/";
-      ".tmux/plugins/tmux-continuum".source = tmux-continuum + "/";
-      ".tmux/plugins/tmux-resurrect".source = tmux-resurrect + "/";
-      ".tmux/plugins/tmux-yank".source = tmux-yank + "/";
-      ".tmux/plugins/t-smart-tmux-session-manager".source = t-smart-tmux-session-manager + "/";
-      ".tmux/plugins/minimal-tmux-status".source = minimal-tmux-status + "/";
-    };
+  home.file = {
+    ".tmux.conf".source = inputs.dotfiles.packages.${system}.tmux-universal + "/.tmux.conf";
+    ".tmux/plugins/tpm".source = tpm + "/";
+    ".tmux/plugins/tmux-sensible".source = tmux-sensible + "/";
+    ".tmux/plugins/tmux-continuum".source = tmux-continuum + "/";
+    ".tmux/plugins/tmux-resurrect".source = tmux-resurrect + "/";
+    ".tmux/plugins/tmux-yank".source = tmux-yank + "/";
+    ".tmux/plugins/t-smart-tmux-session-manager".source = t-smart-tmux-session-manager + "/";
+    ".tmux/plugins/minimal-tmux-status".source = minimal-tmux-status + "/";
   };
 }
