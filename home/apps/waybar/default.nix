@@ -9,12 +9,12 @@ in
   options.dotfiles.waybar = {
     profile = mkOption {
       type = types.str;
-      default = "desktop";
+      default = "universal";
       description = "host profile";
     };
   };
 
   config = {
-    xdg.configFile."waybar".source = inputs."dotfiles-${cfg.profile}".packages.${system}.waybar + "/";
+    xdg.configFile."waybar".source = inputs.dotfiles.packages.${system}."waybar-${cfg.profile}" + "/";
   };
 }

@@ -9,12 +9,12 @@ in
   options.dotfiles.dunst = {
     profile = mkOption {
       type = types.str;
-      default = "desktop";
+      default = "universal";
       description = "host profile";
     };
   };
 
   config = {
-    xdg.configFile."dunst".source = inputs."dotfiles-${cfg.profile}".packages.${system}.dunst + "/";
+    xdg.configFile."dunst".source = inputs.dotfiles.packages.${system}."dunst-${cfg.profile}" + "/";
   };
 }

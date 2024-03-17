@@ -9,12 +9,12 @@ in
   options.dotfiles.hypr = {
     profile = mkOption {
       type = types.str;
-      default = "desktop";
+      default = "universal";
       description = "host profile";
     };
   };
 
   config = {
-    xdg.configFile."hypr".source = inputs."dotfiles-${cfg.profile}".packages.${system}.hypr + "/";
+    xdg.configFile."hypr".source = inputs.dotfiles.packages.${system}."hypr-${cfg.profile}" + "/";
   };
 }
