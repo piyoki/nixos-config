@@ -733,11 +733,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1710682163,
-        "narHash": "sha256-zDqwKXB+tacqd6SHV6GO8FG4Z7o/bZfGVVyTBj3KIIk=",
+        "lastModified": 1710682506,
+        "narHash": "sha256-i2WB9XC5nSMaN2QfW/4e5H0s7YZ4QaeHqz5KvevpWQ8=",
         "ref": "master",
-        "rev": "8328cdbe5df68bb6a11587736fcd8bafa02854c2",
-        "revCount": 147,
+        "rev": "124a0f79f0e469eecf029f2d7b80cee09e534061",
+        "revCount": 148,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
