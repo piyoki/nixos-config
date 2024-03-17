@@ -142,7 +142,6 @@
     home-estate = { url = "git+file:/home/kev/flake/home-estate?ref=master&shallow=1"; };
 
     # personal dotfiles
-    dotfiles-laptop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=x1-carbon";
-    dotfiles-desktop.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
+    dotfiles.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
   };
 }
