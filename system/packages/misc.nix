@@ -11,5 +11,6 @@
     cpufetch # Simplistic yet fancy CPU architecture fetching tool
     vulkan-tools # Khronos official Vulkan Tools and Utilities
     intel-gpu-tools # Tools for development and testing of the Intel DRM driver
+    glxinfo # Test utilities for OpenGL
   ];
 }
