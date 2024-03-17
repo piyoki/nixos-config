@@ -1,4 +1,4 @@
-![image](https://github.com/yqlbu/nixos-config/assets/31861128/fe25d8c7-e611-4b5f-b789-4327a9ac5d8c)<h1 align="center">❄️ Nix Flake</h1>
+<h1 align="center">❄️ Nix Flake</h1>
 <p align="center">
     <em>Declare Nix System as Code</em>
 </p>
