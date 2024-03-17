@@ -1,4 +1,4 @@
-{ sharedLib, ... }:
+{ inputs, sharedLib, ... }:
 
 {
   imports = (map sharedLib.relativeToRoot [
@@ -20,6 +20,12 @@
 
   # Set hostname
   networking.hostName = "nixos-nuc-12";
+
+  # Set overlays
+  nixpkgs.overlays = [
+    inputs.neovim-nightly-overlay.overlay.default
+    inputs.chaotic.overlays.default
+  ];
 
   modules = {
     # Import system secrets

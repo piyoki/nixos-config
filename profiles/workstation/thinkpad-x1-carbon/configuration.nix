@@ -1,4 +1,4 @@
-{ sharedLib, ... }:
+{ inputs, sharedLib, ... }:
 
 {
   imports = (map sharedLib.relativeToRoot [
@@ -15,6 +15,12 @@
   ]) ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+  ];
+
+  # Set overlays
+  nixpkgs.overlays = [
+    inputs.neovim-nightly-overlay.overlay
+    inputs.chaotic.overlays
   ];
 
   # Set hostname
