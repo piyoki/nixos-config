@@ -1,4 +1,4 @@
-{ lib, pkgs-small, system, ... }:
+{ inputs, lib, system, ... }:
 
 {
   # settings specific to this VM setup
@@ -6,7 +6,7 @@
 
   boot = {
     # use latest kernel
-    kernelPackages = pkgs-small.linuxPackages_latest;
+    kernelPackages = inputs.chaotic.packages.${system}.linuxPackages_cachyos;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
     growPartition = true;
     kernelModules = [ "kvm-amd" ];
