@@ -3,6 +3,7 @@
 {
   imports = (map sharedLib.relativeToRoot [
     # host specific modules
+    "system/services/scx.nix"
     "system/services/fish.nix"
     "system/services/docker.nix"
     "system/services/gnupg/server.nix"
