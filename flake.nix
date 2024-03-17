@@ -4,12 +4,13 @@
   outputs = { nixpkgs, home-manager, ... }@inputs: with inputs;
     let
       system = "x86_64-linux";
+      inherit (import ./profiles.nix { }) profiles;
+      inherit (import ./shared/overlays { inherit inputs; }) overlays;
       # use a system-specific version of nixpkgs
-      pkgs = (import nixpkgs) { inherit system; config.allowUnfree = lib.mkDefault true; };
+      pkgs = (import nixpkgs) { inherit system overlays; config.allowUnfree = lib.mkDefault true; };
       inherit (nixpkgs) lib;
       inherit (import ./shared/vars) user;
       specialArgs = genSpecialArgs system;
-      profiles = import ./profiles.nix { };
       extraModules = [
         sops-nix.nixosModules.sops
       ];
