@@ -55,6 +55,7 @@ in
               (import ./files/common-home-files.nix);
             # excluded; conflicts with sops-nix
             # ".gitconfig
+            # ".tmux.conf
           };
         };
       })
