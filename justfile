@@ -2,7 +2,7 @@
 # cheatsheet: https://cheatography.com/linux-china/cheat-sheets/justfile/
 
 # ===== Settings ===== #
-#
+
 # define alias
 alias b := rebuild
 
@@ -76,7 +76,6 @@ gc:
 lint:
   @statix fix --ignore 'templates/' .
   @deadnix --edit --exclude 'templates/' .
-
 
 # ===== Remote deploy ===== #
 
