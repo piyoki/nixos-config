@@ -21,7 +21,7 @@ _:
     "net.ipv4.tcp_syncookies" = 1;
     "net.ipv4.tcp_syn_retries" = 2;
     "net.ipv4.tcp_synack_retries" = 2;
-    "net.ipv4.tcp_timestamps" = 1;
+    "net.ipv4.tcp_timestsmps" = 0;
     "net.ipv4.tcp_fin_timeout" = 30;
     "net.ipv4.tcp_max_syn_backlog" = 8192;
     "net.ipv4.tcp_max_tw_buckets" = 5000;
@@ -29,8 +29,6 @@ _:
     "net.core.wmem_max" = 16777216;
     "net.ipv4.tcp_keepalive_intvl" = 3;
     "net.ipv4.tcp_keepalive_probes" = 5;
-    "net.ipv4.tcp_keepalive_time" = 600;
-    "net.ipv4.tcp_retries1" = 3;
-    "net.ipv4.tcp_retries2" = 5;
+    "net.ipv4.tcp_keepalive_time" = 1200;
   };
 }
