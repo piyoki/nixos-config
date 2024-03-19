@@ -4,7 +4,6 @@ _:
   imports = [
     # ./cifs-mount.nix
     ./fish.nix
-    ./windowmanager.nix
     ./gnupg
     ./powermanagement
     # ./greetd.nix
@@ -18,6 +17,7 @@ _:
     ./scx.nix
     ./openssh
     ./gnome-keyring.nix
+    ./windowmanager
     ./zramd.nix
   ];
 }
