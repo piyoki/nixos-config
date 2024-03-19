@@ -377,10 +377,10 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1710829136,
-        "narHash": "sha256-9Wx04a7OPq++0PGq8+EU2LBbFFIbArgtCe3+QkGYcQ8=",
+        "lastModified": 1710829368,
+        "narHash": "sha256-Hhes6RBmz0PSJSzdI7OPxcvmjkazHQqSJiZwILXZpgM=",
         "ref": "master",
-        "rev": "21f447b4ec63a5281724c5a9c6799889502af3ad",
+        "rev": "5e5e2c330db11ef5f6ec15196ee4946bf4404904",
         "revCount": 151,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
