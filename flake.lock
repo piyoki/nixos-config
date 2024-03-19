@@ -1166,10 +1166,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1710829578,
-        "narHash": "sha256-nWUp/65uokTAhYqpl37KxVnk5tyYyyY9YwMfUxjf3V4=",
+        "lastModified": 1710843234,
+        "narHash": "sha256-fxRgVgKfLq7F44GE0lCW6h01Eg8vtYgL70wwnUh2QI4=",
         "ref": "master",
-        "rev": "f7ce8295434d5ff2ed1d6562fc18738558b0c58c",
+        "rev": "6d9a4c540912b240ec037c5d5f4356da9b731503",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/home-estate"
@@ -2289,11 +2289,11 @@
         "pre-commit-hooks": "pre-commit-hooks_4"
       },
       "locked": {
-        "lastModified": 1710422440,
-        "narHash": "sha256-0KO9D/0ij2OjFIr4ood+EVzkkE4qArljgboGXDHPMXI=",
+        "lastModified": 1710843164,
+        "narHash": "sha256-6FCU+HuYh7OFPqFBFpmbUG2UUsa/0FgottTtrP6KWPs=",
         "owner": "yqlbu",
         "repo": "nur-packages",
-        "rev": "af72302eccc0f6cde1d6b3b5bbceda608ac30cfa",
+        "rev": "3c62dd9e26a4edccf74880bd1c0cd6a4b1c7fd4f",
         "type": "github"
       },
       "original": {
