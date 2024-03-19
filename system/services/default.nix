@@ -14,6 +14,7 @@ _:
     # ./virtualization.nix
     # ./docker.nix
     # ./printer.nix
+    ./rclone.nix
     ./scx.nix
     ./openssh
     ./gnome-keyring.nix

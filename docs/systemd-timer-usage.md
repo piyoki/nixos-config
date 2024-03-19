@@ -1,4 +1,4 @@
-# Cron (Systemd Timer)
+# Systemd Timer
 
 <!-- vim-markdown-toc GFM -->
 
