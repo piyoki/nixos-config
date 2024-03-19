@@ -360,6 +360,7 @@
         "dunst-universal": "dunst-universal",
         "fish-universal": "fish-universal",
         "flake-utils": "flake-utils_4",
+        "foot-universal": "foot-universal",
         "hypr-laptop": "hypr-laptop",
         "hypr-universal": "hypr-universal",
         "kitty-universal": "kitty-universal",
@@ -377,11 +378,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1710843184,
-        "narHash": "sha256-C8mHnKWSBzf1pvfD/Cg85bJOOKBMxoynVVJlIXtfB/s=",
+        "lastModified": 1710865149,
+        "narHash": "sha256-TBt/UuteiXEhpaTeTmy4EZhCdEZSim2LwUU3fu06p2s=",
         "ref": "master",
-        "rev": "d81dbf672c504c80b6b5a0539b7f38dc5e35aac8",
-        "revCount": 152,
+        "rev": "fb0be0024c0384c7189a9149c000d5ccd721681c",
+        "revCount": 153,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
@@ -1024,6 +1025,22 @@
         "type": "github"
       }
     },
+    "foot-universal": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1710865042,
+        "narHash": "sha256-z3kCWhGJBZs9jLdaqPkV1gVvCZI9BXbiUqs9B5bEdUs=",
+        "owner": "yqlbu",
+        "repo": "dot-foot",
+        "rev": "ef4712be8cb57f001aa25144c82090ec5ac7c8b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yqlbu",
+        "repo": "dot-foot",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -1172,13 +1189,13 @@
         "rev": "6d9a4c540912b240ec037c5d5f4356da9b731503",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       },
       "original": {
         "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -2622,12 +2639,12 @@
         "rev": "56960dcdc75142df854d4091fc34ee6352c803e7",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
