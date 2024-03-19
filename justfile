@@ -23,6 +23,10 @@ default:
 rebuild host=profile:
   @sudo nixos-rebuild switch --upgrade --flake .#{{ host }}
 
+# build nixos (debug mode)
+rebuild-debug host=profile:
+  @nom build .#nixosConfigurations.{{ host }}.config.system.build.toplevel --show-trace --verbose
+
 # update all flake inputs
 up:
   @nix flake update
@@ -107,8 +111,8 @@ pull:
 
 # clean nvim configs
 nvim-clean:
-  rm -rf ${HOME}.config/nvim
+  @rm -rf ${HOME}.config/nvim
 
 # rsync nvim configs from dot-nvim
 nvim-test: nvim-clean
-  rsync -avz --copy-links --chmod=D2755,F744 $HOME/Workspace/personal/dot-submodules/dot-nvim/ ${HOME}/.config/nvim
+  @rsync -avz --copy-links --chmod=D2755,F744 $HOME/Workspace/personal/dot-submodules/dot-nvim/ ${HOME}/.config/nvim
