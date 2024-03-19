@@ -8,10 +8,10 @@ let
 in
 {
   # mount pikpak webdav drive
-  systemd.user.services."rclone" = {
+  systemd.services."rclone" = {
     description = "Mount pikpak webdav drive (Rclone)";
     after = [ "network-pre.target" "NetworkManager.service" "systemd-resolved.service" ];
-    wantedBy = [ "multi-user.target" ];
+    # wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       User = "kev";
       ExecStartPre = "${swBin}/mkdir -p $CACHE_DIR";
