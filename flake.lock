@@ -377,11 +377,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1710768581,
-        "narHash": "sha256-ZO7EvkSob7TS04Ea0/MQbrMycZeey84ckHFDRUOvdac=",
+        "lastModified": 1710829136,
+        "narHash": "sha256-9Wx04a7OPq++0PGq8+EU2LBbFFIbArgtCe3+QkGYcQ8=",
         "ref": "master",
-        "rev": "e8e04e2081c7a099799b78b18012d1c186187fda",
-        "revCount": 150,
+        "rev": "21f447b4ec63a5281724c5a9c6799889502af3ad",
+        "revCount": 151,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
@@ -1172,13 +1172,13 @@
         "rev": "db4b7790cd06bd06f30207f3817e87d39a739dc0",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       },
       "original": {
         "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -2622,12 +2622,12 @@
         "rev": "56960dcdc75142df854d4091fc34ee6352c803e7",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
