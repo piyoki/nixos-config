@@ -103,6 +103,7 @@
       genPkgs = microvms: lib.attrsets.mergeAttrsList (map
         (profile: {
           "${profile.hostname}-microvm" = self.nixosConfigurations."${profile.hostname}-microvm".config.microvm.declaredRunner;
+          nix-fast-build = inputs.nix-fast-build.packages.${system}.default;
         })
         microvms
       );
@@ -133,6 +134,7 @@
     impermanence.url = "github:nix-community/impermanence";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs-small"; };
+    nix-fast-build.url = "github:Mic92/nix-fast-build";
 
     # personal nur
     nur.url = "github:yqlbu/nur-packages";
