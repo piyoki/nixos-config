@@ -2,3 +2,5 @@ node_modules/
 build.logs
 .env
 var.img
+
+result*
