@@ -5,6 +5,7 @@
 
 # define alias
 alias b := rebuild
+alias bc := fast-build-current
 
 # set options
 set positional-arguments := true
@@ -46,6 +47,14 @@ check:
 # build nix pkg
 build pkg:
   @nom build .#{{ pkg }}
+
+# eval and build nixosConfiguration for currentSystem
+fast-build-current:
+  @nix run .#nix-fast-build -- --flake ".#checks.$(nix eval --raw --impure --expr builtins.currentSystem)"
+
+# eval and build nixosConfiguration for all profiles
+fast-build-all:
+  @nix run .#nix-fast-build
 
 # run nix pkg
 run pkg:
