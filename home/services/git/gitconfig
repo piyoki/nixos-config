@@ -42,6 +42,7 @@
   nonexist = "remote prune origin --dry-run" # list non-exist(remote) branches via `git nonexist`
   pp = "push -u origin" # push to remote via `git pp <branch>`
   head = "git rev-parse HEAD"
+  msg = "show -s --format=%s HEAD"
   last = "log -1 HEAD" # check last commit metadata from HEAD via `git last`
 
   # advanced
