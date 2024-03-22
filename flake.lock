@@ -1434,13 +1434,13 @@
         "rev": "d60f11aa6d0a196a5f91521c52834e2076de58db",
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/home-estate"
+        "url": "file:/home/kev/flake/home-estate"
       },
       "original": {
         "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/home-estate"
+        "url": "file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -3196,12 +3196,12 @@
         "rev": "e5afc22b24dd4f4c6a7f7682014e4765b30f5d9d",
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/secrets"
+        "url": "file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/secrets"
+        "url": "file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
