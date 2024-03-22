@@ -124,6 +124,7 @@
     # public source
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    pilots.url = "github:NixOS-Pilots/pilots";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     chaotic-kernel.url = "github:chaotic-cx/nyx/2952a351037582a8aeb11be9cf57901d872bcf30";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs-small"; };
