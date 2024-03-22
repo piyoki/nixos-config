@@ -3190,10 +3190,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1710946197,
-        "narHash": "sha256-k3zkOselTtN7A8hCCa+87lWmoShr3HA5kclEhChFhgE=",
+        "lastModified": 1711116304,
+        "narHash": "sha256-qcXvpxO0hTzbt1zjJu2Qs4YZFw5BC3mCZ/L7ukJ7DQg=",
         "ref": "refs/heads/master",
-        "rev": "e5afc22b24dd4f4c6a7f7682014e4765b30f5d9d",
+        "rev": "7ce9fe8eafb53c7f684ac7e764c6446e643a8cc8",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/secrets"
