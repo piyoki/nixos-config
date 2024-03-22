@@ -2,6 +2,6 @@ _:
 
 # References:
 # https://nixos.wiki/wiki/Qutebrowser
-(oldAttrs: {
-  qutebrowser = oldAttrs.qutebrowser.override { enableWideVine = true; };
+(_self: super: {
+  qutebrowser = super.qutebrowser.override { enableWideVine = true; enableVulkan = true; };
 })
