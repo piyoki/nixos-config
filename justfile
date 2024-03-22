@@ -44,6 +44,10 @@ show:
 check:
   @nix flake check
 
+# locate pkg
+locate pkg:
+  @nix-store --query --outputs $(which {{ pkg }})
+
 # build nix pkg
 build pkg:
   @nom build .#{{ pkg }}
