@@ -1,0 +1,81 @@
+[includeIf "gitdir:~/flake/"] # include for all .git projects under $HOME/flake/
+  path = ~/.gitconfigs/.gitconfig.personal
+
+[includeIf "gitdir:~/Workspace/personal/"] # include for all .git projects under $HOME/Workspace/personal/
+  path = ~/.gitconfigs/.gitconfig.personal
+
+[includeIf "gitdir:~/.local/share/"] # include for all .git projects under $HOME/.local/share/
+  path = ~/.gitconfigs/.gitconfig.personal
+
+[includeIf "gitdir:~/Workspace/work/"] # include for all .git projects under $HOME/Workspace/work/
+  path = ~/.gitconfigs/.gitconfig.work
+
+[includeIf "gitdir:~/Workspace/extras/"] # include for all .git projects under $HOME/Workspace/extras/
+  path = ~/.gitconfigs/.gitconfig.extras
+
+[core]
+  editor = vim
+  pager = less
+  excludesfile = ~/.gitignore # valid everywhere
+
+[diff]
+  colorMoved = default
+
+[merge]
+  conflictstyle = diff3
+  tool = vimdiff
+
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[alias]
+  # basic
+  s = "status"
+  cb = "checkout -b" # checkout a new branch via `git cb <branch>`
+  cm = "commit -m" # commit via `git cm <message>`
+  co = "checkout"
+  ca = "commit -am" # commit all changes via `git ca <message>`
+  dc = "diff --cached"
+  amend = "commit --amend" # amend commit message via `git amend <message>`
+  unstage = "reset HEAD --" # unstage file via `git unstage <file>`
+  undo = "reset --soft HEAD~" # undo last commit via `git undo`
+  nonexist = "remote prune origin --dry-run" # list non-exist(remote) branches via `git nonexist`
+  pp = "push -u origin" # push to remote via `git pp <branch>`
+  head = "git rev-parse HEAD"
+  last = "log -1 HEAD" # check last commit metadata from HEAD via `git last`
+
+  # advanced
+  # delete non-exist(remote) branches
+  delnonexist = "remote prune origin"
+
+  # submodule interactions
+  update = "submodule update --init --recursive"
+  foreach = "submodule foreach"
+
+[delta]
+  ; (cmd to check current config) delta --diff-so-fancy --show-config
+  tabs = 2
+  navigate = true
+  light = false
+  line-numbers = true
+  syntax-theme = "Visual Studio Dark+"
+  side-by-side = true
+  features = decorations
+  true-color = always
+
+[delta "interactive"]
+  keep-plus-minus-markers = false
+
+[delta "decorations"]
+  commit-decoration-style = blue ol
+  commit-style = raw
+  file-style = omit
+  hunk-header-decoration-style = "#ccccff box"
+  ; hunk-header-file-style = white
+  hunk-header-file-style = "#ccccff"
+  hunk-header-style = file line-number syntax
+  grep-line-number-style = "#ccccff"
+  line-numbers-left-style = "#404040"
+  line-numbers-right-style = "#404040"
+  line-numbers-plus-style = bold green 22
+  line-numbers-minus-style = bold red 52
