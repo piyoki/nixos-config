@@ -9,13 +9,8 @@ let
   };
 in
 {
-  home.packages = with pkgs.python311Packages; [
-    adblock # Python wrapper for Brave's adblocking library
-  ];
-
   xdg.configFile = {
     "qutebrowser/config.py".source = inputs.dotfiles.packages.${system}.qutebrowser-universal + "/config.py";
-    "qutebrowser/scripts".source = inputs.dotfiles.packages.${system}.qutebrowser-universal + "/scripts";
     "qutebrowser/catppuccin".source = theme + "/";
   };
 }
