@@ -46,7 +46,7 @@ check:
 
 # locate pkg
 locate pkg:
-  @nix-store --query --outputs $(which {{ pkg }})
+  @nix eval nixpkgs#{{ pkg }}.outPath
 
 # build nix pkg
 build pkg:
