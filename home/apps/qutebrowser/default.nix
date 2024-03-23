@@ -11,6 +11,7 @@ in
 {
   xdg.configFile = {
     "qutebrowser/config.py".source = inputs.dotfiles.packages.${system}.qutebrowser-universal + "/config.py";
+    "qutebrowser/scripts".source = inputs.dotfiles.packages.${system}.qutebrowser-universal + "/scripts";
     "qutebrowser/catppuccin".source = theme + "/";
   };
 }
