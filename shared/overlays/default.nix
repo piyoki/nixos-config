@@ -6,6 +6,5 @@
     inputs.chaotic.overlays.default
   ] ++ [
     (import ./webcord.nix { })
-    (import ./qutebrowser.nix { })
   ];
 }
