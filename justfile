@@ -36,6 +36,10 @@ up:
 upp input:
   @nix flake lock --update-input {{ input }}
 
+# update a particular flake input with fzf
+upx:
+  @nix flake metadata --json | nix run nixpkgs#jq '.locks.nodes.root.inputs[]' | sed 's/\"//g' | nix run nixpkgs#fzf | xargs nix flake lock --update-input
+
 # show flake outputs
 show:
   @nix flake show
