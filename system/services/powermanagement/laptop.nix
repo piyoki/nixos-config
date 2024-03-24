@@ -6,8 +6,8 @@
 # https://wiki.archlinux.org/title/Power_management
 let
   swBin = "/run/current-system/sw/bin";
-  upperBound = 100;
-  lowerBound = 0;
+  upperBound = "100";
+  lowerBound = "0";
 in
 {
   # systemd unit
@@ -38,4 +38,8 @@ in
   # Fn+h - Performance mode (aka High)
   # cat /sys/firmware/acpi/platform_profile_choices
   # cat /sys/firmware/acpi/platform_profile
+
+  # view acpi parameters
+  # sudo acpi -V | grep -i battery
+  # outputs: Battery 0: design capacity 4527 mAh, last full capacity 4710 mAh = 100%
 }
