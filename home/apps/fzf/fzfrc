@@ -1,0 +1,1 @@
+--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker='*' --prompt='QUERY> '
