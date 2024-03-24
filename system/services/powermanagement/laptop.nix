@@ -6,6 +6,8 @@
 # https://wiki.archlinux.org/title/Power_management
 let
   swBin = "/run/current-system/sw/bin";
+  upperBound = 100;
+  lowerBound = 0;
 in
 {
   # systemd unit
@@ -16,10 +18,10 @@ in
       after = [ "multi-user.target" ];
       description = "Set the battery charge threshold";
       serviceConfig = {
-        ExecStart = "${pkgs.writeShellScript "lockscreen" ''
+        ExecStart = "${pkgs.writeShellScript "battery_charge_threshold" ''
           set -eux
-          ${swBin}/echo 0 > /sys/class/power_supply/BAT0/charge_control_start_threshold
-          ${swBin}/echo 80 > /sys/class/power_supply/BAT0/charge_control_end_threshold
+          ${swBin}/echo ${lowerBound} > /sys/class/power_supply/BAT0/charge_control_start_threshold
+          ${swBin}/echo ${upperBound} > /sys/class/power_supply/BAT0/charge_control_end_threshold
         ''}";
         Type = "oneshot";
         Environment = [ "PATH=$PATH:${swBin}" ];
