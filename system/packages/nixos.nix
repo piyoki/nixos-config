@@ -11,5 +11,6 @@
     nix-output-monitor # Processes output of Nix commands to show helpful and pretty information
     colmena # A simple, stateless NixOS deployment tool
     nix-melt # A ranger-like flake.lock viewer
+    cachix # Command-line client for Nix binary cache hosting https://cachix.org
   ];
 }
