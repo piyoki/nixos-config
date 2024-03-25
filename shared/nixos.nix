@@ -22,12 +22,14 @@
         "https://hyprland.cachix.org"
         "https://nyx.chaotic.cx"
         "https://nix-community.cachix.org"
+        "https://nixospilots.cachix.org"
       ];
       extra-trusted-public-keys = [
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
         "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "nixospilots.cachix.org-1:agmYn3jPCVyiqhSfyPtW8vjB4WavuEdSv49skpup2XE="
       ];
       # ref: https://github.com/NixOS/nix/issues/4894
       # workaround to fix ssh signature issues
