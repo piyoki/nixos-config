@@ -1,0 +1,36 @@
+#  Reference: https://github.com/marketplace/actions/rss-to-issues
+
+name: Monitor new upstream git release versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run this Action every day at 4:00pm UTC
+    - cron: "0 16 * * *"
+
+env:
+  CHARACTER_LIMIT: 1000
+  MAX_AGE: 7d
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    strategy:
+      matrix:
+        include:
+          - project: hyprland
+            labels: hyprwm/Hyprland
+            feed: https://github.com/hyprwm/Hyprland/releases.atom
+      fail-fast: false
+    steps:
+      - uses: git-for-windows/rss-to-issues@v0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          feed: ${{ matrix.feed }}
+          prefix: "[New ${{ matrix.project }} version]"
+          character-limit: ${{ env.CHARACTER_LIMIT }}
+          dry-run: false
+          max-age: ${{ env.MAX_AGE }}
+          labels: github/release,automated-issue,${{ matrix.labels }}
