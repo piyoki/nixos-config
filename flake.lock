@@ -532,11 +532,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1711441328,
-        "narHash": "sha256-5d7wGQ/JeVAH7onSGbOrL+UG529k94fn+Y4DhVU1POs=",
+        "lastModified": 1711445950,
+        "narHash": "sha256-VfhwPVXSMgSlv+dIVW5aM3+IBODeETwXpHHgu7i62Cs=",
         "ref": "master",
-        "rev": "6ac3a124a6fb549f69b3813bbf9481a9ba8c2ea2",
-        "revCount": 173,
+        "rev": "8c11cef73aaedfdb608ba29bf3442eee58930715",
+        "revCount": 174,
         "type": "git",
         "url": "https://github.com/yqlbu/dotfiles.nix"
       },
@@ -1651,11 +1651,11 @@
     "hypr-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1711441297,
-        "narHash": "sha256-tuvUQM2v3cLA9qkr7bl+eN2hURE6B9r9yEsd3qSQwLQ=",
+        "lastModified": 1711445918,
+        "narHash": "sha256-zrASmtNw6yovmAG/3H3vvHRniaUsIIr3wVGjP9qLmrg=",
         "owner": "yqlbu",
         "repo": "dot-hypr",
-        "rev": "02a10dd31508fca7e08d887aa4307bc0164e6e14",
+        "rev": "0114114234464884b364ad935167e0cf31e103cd",
         "type": "github"
       },
       "original": {
@@ -1703,16 +1703,16 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1710547119,
-        "narHash": "sha256-xLxbGRsKs40j+4tKeHydW1VUpCPOizYcduYQvBUitoY=",
+        "lastModified": 1710600709,
+        "narHash": "sha256-W+34KhCnqscRXN/IkvuJMiVx0Fa64RcYn8H4sZjzceI=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "19c90048d65a5660384d2fb865926a366696d6be",
+        "rev": "c5e28ebcfe00a510922779b2c568cfa52a317445",
         "type": "github"
       },
       "original": {
         "owner": "hyprwm",
-        "ref": "v0.37.0",
+        "ref": "v0.37.1",
         "repo": "Hyprland",
         "type": "github"
       }
