@@ -1,5 +1,3 @@
-#  Reference: https://github.com/marketplace/actions/rss-to-issues
-
 name: Monitor new upstream git release versions
 
 on:
@@ -28,18 +26,14 @@ jobs:
       - name: Generate GitHub Auth Token
         # https://github.com/tibdex/github-app-token
         id: generate_token
-        uses: tibdex/github-app-token@main
+        uses: tibdex/github-app-token@v2
         with:
           app_id: ${{ secrets.GH_APP_ID }}
           private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
-      - uses: actions/checkout@main
-        with:
-          ref: master
-          # submodules: true
-          token: "${{ secrets.ACCESS_TOKEN }}"
-
-      - uses: git-for-windows/rss-to-issues@v0
+      - name: Post changes to GitHub issue
+        uses: git-for-windows/rss-to-issues@v0
+        # https://github.com/marketplace/actions/rss-to-issues
         with:
           github-token: ${{ steps.generate_token.outputs.token }}
           feed: ${{ matrix.feed }}
