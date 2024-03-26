@@ -6,6 +6,5 @@ _:
     ./bluetooth.nix
     ./display.nix
     ./usb.nix
-    ./fringerprint.nix
   ];
 }
