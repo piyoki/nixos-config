@@ -6,7 +6,7 @@
     "system"
     "system/services/greetd.nix"
     "system/services/powermanagement/laptop.nix"
-    "system/hardware/fingerprint.nix"
+    # "system/hardware/fingerprint.nix"
 
     # themes modules
     "themes"
