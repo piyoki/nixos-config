@@ -56,13 +56,21 @@ btrfs subvolume create @
 btrfs subvolume create @home
 btrfs subvolume create @nix
 btrfs subvolume create @snapshots
+# for tmpfs filesystem only
+# btrfs subvolume create @persistent
+# btrfs subvolume create @tmp
 cd
 umount /mnt
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/mapper/root /mnt
 mkdir /mnt/{boot,home,nix,snapshots}
+# for tmpfs filesystem only
+# mkdir /mnt/{boot,home,nix,snapshots}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/mapper/root /mnt/home/
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@nix /dev/mapper/root /mnt/nix/
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/mapper/root /mnt/snapshots/
+# for tmpfs filesystem only
+# mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@persistent /dev/mapper/root /mnt/persistent/
+# mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@tmp /dev/mapper/root /mnt/tmp/
 mount /dev/nvme0n1p1 /mnt/boot
 # verify mount points
 lsblk -o PATH,FSTYPE,MOUNTPOINT /dev/nvme0n1
