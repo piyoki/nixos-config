@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     foot # A fast, lightweight and minimalistic Wayland terminal emulator
     alacritty_git # A cross-platform, GPU-accelerated terminal emulator
-    handbrake # A tool for converting video files and ripping DVDs
     hyprpicker # color picker
     lf # terminal file manager
     pistol # General purpose file previewer designed for Ranger, Lf to make scope.sh redundant
