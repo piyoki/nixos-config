@@ -2,8 +2,10 @@
 
 {
   home.packages = with pkgs; [
+    gtk3
+    gtk4
     flat-remix-gtk
-    tokyonight-gtk-theme
+    # tokyonight-gtk-theme
   ];
 
   gtk = {
