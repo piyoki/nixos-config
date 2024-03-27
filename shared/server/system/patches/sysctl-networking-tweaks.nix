@@ -57,8 +57,8 @@ _:
     "net.ipv4.tcp_syncookies" = 1;
 
     # keepalive related tweaks
-    # with the following settings, your application will detect dead TCP connections after 1200 seconds (600s + 125s + 125s + 125s + 125s).
-    "net.ipv4.tcp_keepalive_time" = 600;
+    # with the following settings, your application will detect dead TCP connections after 1800 seconds (1200s + 125s + 125s + 125s + 125s).
+    "net.ipv4.tcp_keepalive_time" = 1200;
     "net.ipv4.tcp_keepalive_intvl" = 125;
     "net.ipv4.tcp_keepalive_probes" = 4;
   };
