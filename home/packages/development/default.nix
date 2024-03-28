@@ -18,6 +18,7 @@
     lazygit
     luajit
     shfmt
+    black # The uncompromising Python code formatter
     stylua
     tree-sitter
     litecli # Command-line interface for SQLite
