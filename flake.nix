@@ -138,14 +138,14 @@
     nix-fast-build.url = "github:Mic92/nix-fast-build";
 
     # personal nur
-    nur.url = "github:yqlbu/nur-packages";
-    assets.url = "github:yqlbu/nur-assets";
+    nur.url = "github:miooochi/nur-packages";
+    assets.url = "github:miooochi/nur-assets";
 
     # private repos
     secrets = { url = "git+file:/home/kev/flake/secrets?shallow=1"; flake = false; };
     home-estate = { url = "git+file:/home/kev/flake/home-estate?ref=master&shallow=1"; };
 
     # personal dotfiles
-    dotfiles.url = "git+https://github.com/yqlbu/dotfiles.nix?ref=master";
+    dotfiles.url = "git+https://github.com/miooochi/dotfiles.nix?ref=master";
   };
 }
