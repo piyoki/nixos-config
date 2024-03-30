@@ -1,8 +1,8 @@
-{ inputs, pkgs, system, ... }:
+{ inputs, system, ... }:
 
 {
-  home.packages = with pkgs; [
-    (inputs.pilots.packages.${system}.qutebrowser_nightly.overrideAttrs {
+  home.packages = [
+    (inputs.pilots.packages.${system}.qutebrowser_nightly.override {
       enableWideVine = true;
       enableVulkan = true;
     })
