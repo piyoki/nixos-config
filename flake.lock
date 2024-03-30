@@ -3,8 +3,8 @@
     "alacritty-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1710945921,
-        "narHash": "sha256-CleBChqmT+vljrUWomvOSwFse+oIZIOwbggkf+F4ksQ=",
+        "lastModified": 1710948385,
+        "narHash": "sha256-xk7pBBH499TgnLq+18zue2Hh5Wme29b6pWkO+kSLDo0=",
         "owner": "miooochi",
         "repo": "dot-alacritty",
         "rev": "3f4377ab6d5af3a3d1ffef4b9ff90e9a9116d1d6",
@@ -553,11 +553,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1711721587,
-        "narHash": "sha256-JcMWBZ3D2XLtnHCon1Cq7jfyaryFPb93Nxf+8BWyyFk=",
+        "lastModified": 1711782381,
+        "narHash": "sha256-DudqUW7fC92YaWFrTWLcY7CLDvF/f/HIeV9e6psC+N0=",
         "ref": "master",
-        "rev": "16d58e4eb2d57f10a61864baa1ff0e4f145c688c",
-        "revCount": 182,
+        "rev": "edde761b9485c99a00f2db4144982c3838bda45d",
+        "revCount": 183,
         "type": "git",
         "url": "https://github.com/miooochi/dotfiles.nix"
       },
@@ -667,8 +667,8 @@
     "fish-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1710767490,
-        "narHash": "sha256-eP+r6xkFKFlykeLXbjUL2PBJXADvxscXi7c1C7qTxTg=",
+        "lastModified": 1711247569,
+        "narHash": "sha256-h8vc82iTzWPrUbRHaJ9/w4IVgfuGlNoUR+zs2SMtD4M=",
         "owner": "miooochi",
         "repo": "dot-fish",
         "rev": "9a19ec5f8cc156bca8028c4b495abe57a24e12cc",
@@ -1437,8 +1437,8 @@
     "foot-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1710945962,
-        "narHash": "sha256-9kRQzW3U9QG0vXxdF2fgArQdRasLrB6EEVMkW+YCY2Y=",
+        "lastModified": 1710948347,
+        "narHash": "sha256-N7dEJ6ltGIAjH0mmJ39JYPfK/L7FkwYMIGjhM5EkW5A=",
         "owner": "miooochi",
         "repo": "dot-foot",
         "rev": "91470e452ea8236a67ec7276f9dce3cd3142371d",
@@ -1714,8 +1714,8 @@
     "hypr-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1710678227,
-        "narHash": "sha256-aH0QUku3zFnrRd1jcbV9ibwGFYysoZsuMGWAdb8JeMk=",
+        "lastModified": 1711373883,
+        "narHash": "sha256-3NvuFWfPWqIarBo2mnb3EwAy8k/4ynRJDp/Qjh+hLMo=",
         "owner": "miooochi",
         "repo": "dot-hypr",
         "rev": "2c79837500f5547849b61ad78caac18b6a115a56",
@@ -1731,8 +1731,8 @@
     "hypr-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1710655088,
-        "narHash": "sha256-zhaFywRCh2S0gxNmMhE4O5Z1nW8k5zxqiLCKUkGiEdQ=",
+        "lastModified": 1711445918,
+        "narHash": "sha256-zrASmtNw6yovmAG/3H3vvHRniaUsIIr3wVGjP9qLmrg=",
         "owner": "miooochi",
         "repo": "dot-hypr",
         "rev": "0114114234464884b364ad935167e0cf31e103cd",
@@ -3117,11 +3117,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1711333969,
-        "narHash": "sha256-5PiWGn10DQjMZee5NXzeA6ccsv60iLu+Xtw+mfvkUAs=",
+        "lastModified": 1711703276,
+        "narHash": "sha256-iMUFArF0WCatKK6RzfUJknjem0H9m4KgorO/p3Dopkk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "57e6b3a9e4ebec5aa121188301f04a6b8c354c9b",
+        "rev": "d8fe5e6c92d0d190646fb9f1056741a229980089",
         "type": "github"
       },
       "original": {
@@ -3450,8 +3450,8 @@
     "qutebrowser-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1709440051,
-        "narHash": "sha256-+CoFt1D34BLxfuZSayeophIA+bt0T24APK7N4nm00oM=",
+        "lastModified": 1711467172,
+        "narHash": "sha256-B3WQCNjLTWvvkZpB88h2dL51GXDS8kEPlZ7YYYvlZuk=",
         "owner": "miooochi",
         "repo": "dot-qutebrowser",
         "rev": "c12983717a0d1d104af305fcc84061c0df83d357",
@@ -4196,8 +4196,8 @@
     "waybar-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1708995557,
-        "narHash": "sha256-YjejBcBtWL0qF4IBvnR+kW3umxmlgAwiuYzBYlGnRV8=",
+        "lastModified": 1711515979,
+        "narHash": "sha256-p7XU2Cg3RSePYDN0edpmgKKcJG13nacmeq8rZqY+Vak=",
         "owner": "miooochi",
         "repo": "dot-waybar",
         "rev": "af5cc3270ae020194286ece87e8fbfd61a3a0922",
@@ -4213,8 +4213,8 @@
     "waybar-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1709638778,
-        "narHash": "sha256-8sJI6dEW3BBHpoZtz79XOCEZ9ygMPnP526XGyuLj0p0=",
+        "lastModified": 1711516010,
+        "narHash": "sha256-p53OOBZn43HBTKsMHW2u6MjJZ38WiSDzoLcwbIltb7s=",
         "owner": "miooochi",
         "repo": "dot-waybar",
         "rev": "44252940c4eaa6a6586c3ea8611b4dfb674bd955",
