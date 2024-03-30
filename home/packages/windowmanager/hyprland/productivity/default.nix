@@ -16,6 +16,7 @@
     # localsend # An open source cross-platform alternative to AirDrop
     android-file-transfer # Reliable MTP client with minimalistic UI
     goofys # A high-performance, POSIX-ish Amazon S3 file system written in Go
+    thunderbird # A full-featured e-mail client
 
     # fish plugins
     fishPlugins.fzf-fish
