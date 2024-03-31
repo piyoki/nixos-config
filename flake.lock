@@ -3,11 +3,11 @@
     "alacritty-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1710948385,
-        "narHash": "sha256-xk7pBBH499TgnLq+18zue2Hh5Wme29b6pWkO+kSLDo0=",
+        "lastModified": 1711862074,
+        "narHash": "sha256-r2bdZoA7f1+kl838YTRWUbnAT4yK2+i3hJaZ5VHyOvQ=",
         "owner": "miooochi",
         "repo": "dot-alacritty",
-        "rev": "3f4377ab6d5af3a3d1ffef4b9ff90e9a9116d1d6",
+        "rev": "52dbf60b7c75b3abf58df31aaa28594fca44a865",
         "type": "github"
       },
       "original": {
@@ -553,11 +553,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1711806927,
-        "narHash": "sha256-JSJVBZSJ58qhNZfg4giB5dUJMuy7f5UgFv2u2gYEO6M=",
+        "lastModified": 1711862102,
+        "narHash": "sha256-+w+rKjVdXF9Ykc0obC619zaZZdO8vfyopvxACHg1TrM=",
         "ref": "master",
-        "rev": "e5f70d0fbb57ac685a32df42d2b16a9d305a46a6",
-        "revCount": 191,
+        "rev": "3fe69c17575a6047b26a77773d97c2678cf7ab60",
+        "revCount": 192,
         "type": "git",
         "url": "https://github.com/miooochi/dotfiles.nix"
       },
@@ -1621,13 +1621,13 @@
         "rev": "9bebcf6d213a0f55d739f82055559f48066bd121",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       },
       "original": {
         "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -3662,12 +3662,12 @@
         "rev": "b5f1ec0c54d90af65784d04630bc47f340fb5736",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
