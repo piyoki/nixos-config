@@ -1621,13 +1621,13 @@
         "rev": "9ec7715d41bea3e484a73f729bb68c76e1def09e",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       },
       "original": {
         "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "file://file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -2834,11 +2834,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1711760525,
-        "narHash": "sha256-/K1OeEe6nMLLh3lmaxU/dvta18FT8rx2qazc4mca5t0=",
+        "lastModified": 1711786745,
+        "narHash": "sha256-3vyZvKs35aVzOa+/vRenR/052aapmxRH4L3+wh+wG2E=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "893c53dacede0d6fbea9d9835ab27ed2f79f0b7c",
+        "rev": "11544449e6b696e209463aae094e736368eef757",
         "type": "github"
       },
       "original": {
@@ -3662,12 +3662,12 @@
         "rev": "b5f1ec0c54d90af65784d04630bc47f340fb5736",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "file://file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
