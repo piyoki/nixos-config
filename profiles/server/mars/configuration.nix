@@ -4,10 +4,8 @@
   imports = (map sharedLib.relativeToRoot [
     # host specific modules
     "system/services/scx.nix"
-    "system/services/fish.nix"
     "system/services/docker.nix"
     "system/services/gnupg/server.nix"
-    "system/users/init-pass.nix"
 
     # shared modules
     "shared/server/system/base.nix"
@@ -23,8 +21,6 @@
   networking.hostName = "nixos-mars";
 
   modules = {
-    # Import secrets
-    secrets.server.system.base.enable = true;
     # Load persistent dirs and files
     persistent = {
       enable = true;
