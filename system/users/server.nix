@@ -1,11 +1,24 @@
 { inputs, user, lib, ... }:
 
 with lib;
+let
+  keyFiles = [
+    "${inputs.home-estate}/authorized_keys"
+  ];
+in
 {
-  imports = [ ./default.nix ];
+  imports = [
+    ./init-pass.nix
+    ./basic.nix
+  ];
 
   users.users = {
-    ${user}.extraGroups = mkForce [ "wheel" ];
-    root.openssh.authorizedKeys.keyFiles = [ "${inputs.home-estate}/authorized_keys" ];
+    ${user} = {
+      extraGroups = mkForce [ "whell" ];
+    };
+
+    root = {
+      openssh.authorizedKeys.keyFiles = keyFiles;
+    };
   };
 }
