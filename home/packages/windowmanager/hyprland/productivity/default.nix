@@ -9,7 +9,6 @@
     pistol # General purpose file previewer designed for Ranger, Lf to make scope.sh redundant
     minio-client # A replacement for ls, cp, mkdir, diff and rsync commands for filesystems and object storage
     rofi-wayland # Window switcher, run dialog and dmenu replacement for Wayland (App Launcher)
-    inputs.nixpkgs-wayland.packages.${system}.wl-screenrec # screen recorder
     inputs.nixpkgs-wayland.packages.${system}.wf-recorder # screen recorder
     ventoy # bootable usb solution
     kid3 # A simple and powerful audio tag editor
