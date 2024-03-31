@@ -495,16 +495,16 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1711805245,
-        "narHash": "sha256-AjVHX2e2FC0jfBo/OxWVw3lvh1sKWF5wa/G3ZJ0cD2E=",
+        "lastModified": 1711861725,
+        "narHash": "sha256-yiiyPZDrHHzw/QDI/nfy1KypHSeiSPQsXH56I0pknlk=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "67228f443be059135e0b169d766cfe26da43ea20",
+        "rev": "45734951cc9907c08129f16544597896c5b7d588",
         "type": "github"
       },
       "original": {
         "owner": "daeuniverse",
-        "ref": "exp",
+        "ref": "unstable",
         "repo": "flake.nix",
         "type": "github"
       }
@@ -1615,19 +1615,19 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1711819628,
-        "narHash": "sha256-6BpfxBg7SyUamkham/K5YhLEv99N5Jnqo0o6dS+PGvc=",
+        "lastModified": 1711861841,
+        "narHash": "sha256-UXQ4skJ4VLMLHi0NMwrFTxclyIihU3s7xsCiZI3Fujk=",
         "ref": "master",
-        "rev": "9ec7715d41bea3e484a73f729bb68c76e1def09e",
+        "rev": "9bebcf6d213a0f55d739f82055559f48066bd121",
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/home-estate"
+        "url": "file:/home/kev/flake/home-estate"
       },
       "original": {
         "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/home-estate"
+        "url": "file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -3662,12 +3662,12 @@
         "rev": "b5f1ec0c54d90af65784d04630bc47f340fb5736",
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/secrets"
+        "url": "file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/secrets"
+        "url": "file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
