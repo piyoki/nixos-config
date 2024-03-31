@@ -7,6 +7,9 @@
 
   # extra packages
   environment.systemPackages = with pkgs; [
+    # system essentials
+    python3
+
     # maintenance essentials
     bat
     jq
