@@ -57,12 +57,16 @@ build pkg:
   @nom build .#{{ pkg }}
 
 # eval and build nixosConfiguration for currentSystem
-eval:
+fast-build:
   @nix run .#nix-fast-build -- --flake ".#checks.$(nix eval --raw --impure --expr builtins.currentSystem)"
 
 # eval and build nixosConfiguration for all profiles
-eval-all:
+fast-build-all:
   @nix run .#nix-fast-build
+
+# eval
+eval host=profile:
+  @nix build .#nixosConfigurations.{{ host }}.config.system.build.toplevel --print-out-paths
 
 # run nix pkg
 run pkg:

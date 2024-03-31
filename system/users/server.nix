@@ -14,7 +14,7 @@ in
 
   users.users = {
     ${user} = {
-      extraGroups = mkForce [ "whell" ];
+      extraGroups = mkForce [ "wheel" ];
     };
 
     root = {

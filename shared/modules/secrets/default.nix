@@ -103,6 +103,9 @@ in
             "atuin/env" = {
               sopsFile = "${inputs.secrets}/atuin.enc.yaml";
             } // openAccess;
+            "attic/env" = {
+              sopsFile = "${inputs.secrets}/attic.enc.yaml";
+            } // openAccess;
           };
         })
 
