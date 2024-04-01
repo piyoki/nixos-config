@@ -3,11 +3,11 @@
     "alacritty-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1711862074,
-        "narHash": "sha256-r2bdZoA7f1+kl838YTRWUbnAT4yK2+i3hJaZ5VHyOvQ=",
+        "lastModified": 1711987002,
+        "narHash": "sha256-mQmu2zLRAiyw4OiooBbBI6CCDCMeFCCVjsvR2hBkXek=",
         "owner": "miooochi",
         "repo": "dot-alacritty",
-        "rev": "52dbf60b7c75b3abf58df31aaa28594fca44a865",
+        "rev": "c7a1a4f3ff62b0f0319aa8514846649f1a2ce94e",
         "type": "github"
       },
       "original": {
@@ -553,11 +553,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1711987002,
-        "narHash": "sha256-dC06R4MDz7qKsY39MNmsjUHe+UGAGbN3DQ1OLmIs8Fg=",
+        "lastModified": 1711987043,
+        "narHash": "sha256-Wg9NVIQvyO4PtACWU8R+Adb0R67qJoq2+K+nIM99ziQ=",
         "ref": "master",
-        "rev": "1135b4b6f8aff999dcdc013a9861be5ac8a0c7aa",
-        "revCount": 198,
+        "rev": "66820fcba8359cefc9506918f372fb513827bd8f",
+        "revCount": 199,
         "type": "git",
         "url": "https://github.com/miooochi/dotfiles.nix"
       },
