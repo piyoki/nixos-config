@@ -5,7 +5,6 @@
     # host specific modules
     "system/services/scx.nix"
     "system/services/docker.nix"
-    "system/services/atticd"
 
     # shared modules
     "shared/server/system/base.nix"

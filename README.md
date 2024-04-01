@@ -32,7 +32,6 @@ As the date of writing (March 2024), I've commited myself switching to NixOS on 
 - [pre-commit-hooks](https://github.com/cachix/pre-commit-hooks.nix) to integrate pre-commit-hooks with flake.
 - [microvm](https://github.com/astro/microvm.nix) to spin up microvm locally in seconds.
 - [nix-fast-build](https://github.com/Mic92/nix-fast-build) to speed up evaluation and building process.
-- [attic](https://github.com/zhaofengli/attic) to leverage self-hostable Nix Binary Cache server
 
 ## References
 
