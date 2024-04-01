@@ -136,7 +136,6 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs-small"; };
     nix-fast-build.url = "github:Mic92/nix-fast-build";
-    attic = { url = "github:zhaofengli/attic"; inputs.nixpkgs.follows = "nixpkgs-small"; };
 
     # personal nur
     nur.url = "github:miooochi/nur-packages";

@@ -16,7 +16,7 @@ in
       (genProfile { hostname = "nuc-12"; home-manager = true; })
     ];
     servers = [
-      (genProfile { hostname = "mars"; keys = { inherit (import (secretsDir + "/attic-server.nix")) "env"; }; })
+      (genProfile { hostname = "mars"; })
       (genProfile { hostname = "tailscale-gateway"; })
       (genProfile { hostname = "sdwan-gateway"; })
       (genProfile { hostname = "felix"; keys = { inherit (import (secretsDir + "/atuin-server.nix")) "env" "server.toml"; }; })
