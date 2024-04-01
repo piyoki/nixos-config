@@ -1,0 +1,14 @@
+---
+version: '3.8'
+services:
+  postgresql:
+    image: postgres:14
+    restart: unless-stopped
+    volumes: # Don't remove permanent storage for index database files!
+      - "./database:/var/lib/postgresql/data/"
+    env_file:
+      - .env
+    # environment:
+    #   POSTGRES_USER: ${ATTICD_DB_USERNAME}
+    #   POSTGRES_PASSWORD: ${ATTICD_DB_PASSWORD}
+    #   POSTGRES_DB: ${ATTICD_DB_NAME}

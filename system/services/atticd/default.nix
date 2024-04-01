@@ -26,9 +26,10 @@
 
     settings = {
       listen = "[::]:8080";
-
+      # Database
+      database.url = "postgresql://attic:attic@localhost:5432/attic";
+      # api-endpoint = "";
       # Data chunking
-      #
       # Warning: If you change any of the values here, it will be
       # difficult to reuse existing chunks for newly-uploaded NARs
       # since the cutpoints will be different. As a result, the
@@ -50,8 +51,6 @@
         max-size = 256 * 1024; # 256 KiB
       };
       # Backend storage
-      # database.url = "postgresql://attic:attic@localhost:5432/attic";
-      # api-endpoint = "https://attic.nyaw.xyz/";
       storage = {
         type = "s3";
         region = "ap-east-1";
