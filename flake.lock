@@ -553,11 +553,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1711987043,
-        "narHash": "sha256-Wg9NVIQvyO4PtACWU8R+Adb0R67qJoq2+K+nIM99ziQ=",
+        "lastModified": 1712053429,
+        "narHash": "sha256-meJRzBZlh+B+U3Xxu3YbW5BOxbJ1K5Psb2oeFV5zjN0=",
         "ref": "master",
-        "rev": "66820fcba8359cefc9506918f372fb513827bd8f",
-        "revCount": 199,
+        "rev": "abb7c5b42d821e47a99049b37b51a0198b35f554",
+        "revCount": 200,
         "type": "git",
         "url": "https://github.com/miooochi/dotfiles.nix"
       },
@@ -667,11 +667,11 @@
     "fish-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1711247569,
-        "narHash": "sha256-h8vc82iTzWPrUbRHaJ9/w4IVgfuGlNoUR+zs2SMtD4M=",
+        "lastModified": 1712053394,
+        "narHash": "sha256-sxaMED51ZoK8Gy4FRGKNEJruaNzM+dh4oOSLiYeiFaw=",
         "owner": "miooochi",
         "repo": "dot-fish",
-        "rev": "9a19ec5f8cc156bca8028c4b495abe57a24e12cc",
+        "rev": "5eef1d407c50c792387efb14b98a86f1c892443e",
         "type": "github"
       },
       "original": {
