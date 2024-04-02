@@ -2,6 +2,6 @@ _:
 
 {
   security.pki.certificateFiles = [
-    ./ca.crt
+    ./tls/homelab.sh/ca.crt
   ];
 }
