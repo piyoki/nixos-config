@@ -26,7 +26,7 @@
         "https://hyprland.cachix.org/"
       ];
       extra-trusted-public-keys = [
-        "s3.homelab.sh:38Vu33SlYUZIrMoWkixfiPmkYfrLWGWI0VTVR1YvPok="
+        "s3.homelab.sh:5+8YGYJHHX4YOzexAVE+jf5D14RnTK0Upr19UJOi6C4="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
         "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
@@ -36,7 +36,7 @@
       # ref: https://github.com/NixOS/nix/issues/4894
       # workaround to fix ssh signature issues
       require-sigs = false;
-      secret-key-files = "/home/${user}/secret.key";
+      secret-key-files = "/home/${user}/.config/nix/secret.key";
     };
 
     # garbage collection
@@ -58,7 +58,9 @@
 
   systemd.services.nix-daemon = {
     environment = {
+      NIX_GIT_SSL_CAINFO = "/etc/ssl/certs/ca-certificates.crt";
       NIX_SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
+      SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
     };
   };
 }
