@@ -18,6 +18,7 @@
     neofetch
     curl
     ethtool
+    pwgen
 
     # monitoring
     htop

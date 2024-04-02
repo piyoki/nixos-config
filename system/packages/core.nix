@@ -14,5 +14,6 @@
     wget
     ripgrep
     just
+    pwgen
   ];
 }
