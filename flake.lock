@@ -553,11 +553,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1712053570,
-        "narHash": "sha256-TSkGdUWHrzeg0IwkPwo+IBVfwTWO/gPIpdOtzoYagnI=",
+        "lastModified": 1712104556,
+        "narHash": "sha256-LzXXmk7xbJ0mG4/xpjLn6HyvPfXkt4P/4fOYHGe4z7M=",
         "ref": "master",
-        "rev": "d6fbb74a8778c354ee741d1d870b89fff0b2d47f",
-        "revCount": 201,
+        "rev": "afe74d31241fe06a20b66aa3ae57a4ef390eceab",
+        "revCount": 202,
         "type": "git",
         "url": "https://github.com/miooochi/dotfiles.nix"
       },
@@ -1615,10 +1615,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1712058478,
-        "narHash": "sha256-x1etMycRNs8yW0Q4Y9wp9EIr8R7Qidkh/8187nClB80=",
+        "lastModified": 1712105326,
+        "narHash": "sha256-p9J4g1lnCh8HZAdEeSn2piFCqApB2uHENccg8nTIzC8=",
         "ref": "master",
-        "rev": "c2e1a8e0a0516f953b203c68491bcd32963ff259",
+        "rev": "492e70b78a50bc5cc588cb2f4d5804dd0c1a2352",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/home-estate"
@@ -1714,11 +1714,11 @@
     "hypr-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1711373883,
-        "narHash": "sha256-3NvuFWfPWqIarBo2mnb3EwAy8k/4ynRJDp/Qjh+hLMo=",
+        "lastModified": 1712104480,
+        "narHash": "sha256-XfCzWiGHSDX27EnWg5Qmkpt2XHg+vRuuhtNQsiLntxQ=",
         "owner": "miooochi",
         "repo": "dot-hypr",
-        "rev": "2c79837500f5547849b61ad78caac18b6a115a56",
+        "rev": "2af5cd8cfa50aae85ceaf41fd76ebecaf3cd408b",
         "type": "github"
       },
       "original": {
@@ -1731,11 +1731,11 @@
     "hypr-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1711445918,
-        "narHash": "sha256-zrASmtNw6yovmAG/3H3vvHRniaUsIIr3wVGjP9qLmrg=",
+        "lastModified": 1712104442,
+        "narHash": "sha256-NYiHj0+wYorHVaF7Ykx/xcoYQIIapwhe5sphTcyJCHE=",
         "owner": "miooochi",
         "repo": "dot-hypr",
-        "rev": "0114114234464884b364ad935167e0cf31e103cd",
+        "rev": "bbab38a07151d0ec596c4e888ecc0ffa247b5459",
         "type": "github"
       },
       "original": {

@@ -5,7 +5,7 @@ _:
     ./polkit.nix
     ./sudo.nix
     ./intel_gpu_top.nix
-    ./pki
+    ./pki.nix
   ];
 
   security = {
