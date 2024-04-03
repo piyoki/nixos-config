@@ -1615,10 +1615,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1712058478,
-        "narHash": "sha256-x1etMycRNs8yW0Q4Y9wp9EIr8R7Qidkh/8187nClB80=",
+        "lastModified": 1712105326,
+        "narHash": "sha256-p9J4g1lnCh8HZAdEeSn2piFCqApB2uHENccg8nTIzC8=",
         "ref": "master",
-        "rev": "c2e1a8e0a0516f953b203c68491bcd32963ff259",
+        "rev": "492e70b78a50bc5cc588cb2f4d5804dd0c1a2352",
         "shallow": true,
         "type": "git",
         "url": "file://file:/home/kev/flake/home-estate"
