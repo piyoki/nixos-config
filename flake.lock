@@ -1615,19 +1615,19 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1712105326,
-        "narHash": "sha256-p9J4g1lnCh8HZAdEeSn2piFCqApB2uHENccg8nTIzC8=",
+        "lastModified": 1712160420,
+        "narHash": "sha256-41A+7ur0ezidAeIaoBvzLsOyfLDh8IJT311YFH59db0=",
         "ref": "master",
-        "rev": "492e70b78a50bc5cc588cb2f4d5804dd0c1a2352",
+        "rev": "c5375dfc9797df0a1d4efc8099d3d1266771abd8",
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/home-estate"
+        "url": "file:/home/kev/flake/home-estate"
       },
       "original": {
         "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/home-estate"
+        "url": "file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -3662,12 +3662,12 @@
         "rev": "9735be97043233ddcd400079d6ef38ccec3d0def",
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/secrets"
+        "url": "file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file://file:/home/kev/flake/secrets"
+        "url": "file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {
