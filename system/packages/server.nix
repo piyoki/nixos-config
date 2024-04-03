@@ -19,6 +19,7 @@
     curl
     ethtool
     pwgen
+    openssl
 
     # monitoring
     htop
