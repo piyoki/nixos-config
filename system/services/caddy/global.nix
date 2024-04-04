@@ -26,4 +26,7 @@ _:
     # directory for virtual machine's images
     "d /var/lib/caddy/fileserver/vms 0755 caddy caddy"
   ];
+
+  # Allow HTTP HTTPS ports
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 }
