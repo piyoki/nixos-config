@@ -84,6 +84,14 @@ in
               sopsFile = "${inputs.secrets}/ssh.enc.yaml";
               path = "${config.home.homeDirectory}/.ssh/config";
             } // defaultAccess;
+            "nix/public_key" = {
+              sopsFile = "${inputs.secrets}/nix.enc.yaml";
+              path = "${config.xdg.configHome}/nix/public.key";
+            } // defaultAccess;
+            "nix/secret_key" = {
+              sopsFile = "${inputs.secrets}/nix.enc.yaml";
+              path = "${config.xdg.configHome}/nix/secret.key";
+            } // defaultAccess;
           };
         })
 

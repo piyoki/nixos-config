@@ -3656,10 +3656,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1712191652,
-        "narHash": "sha256-15PchI8Z3VrWaulo2yVTrD+AgDLhFLiz2n6QR0wNvo0=",
+        "lastModified": 1712214232,
+        "narHash": "sha256-PCjvZokBM6S6mfWbEwjlz04OCFdlPh6RHC7vsF3o7Tc=",
         "ref": "refs/heads/master",
-        "rev": "1d38bfd65035cd419e3d2d0bc89d9526a995dc95",
+        "rev": "1e2183a56e22fe882d49329b2346346a61d1e222",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/secrets"
