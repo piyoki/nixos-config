@@ -41,7 +41,6 @@ _:
     "net.ipv4.tcp_max_syn_backlog" = 8192;
     "net.ipv4.tcp_max_tw_buckets" = 5000;
     "net.ipv4.tcp_tw_reuse" = 1;
-    "net.ipv4.tcp_tw_recycle" = 1;
     "net.ipv4.tcp_fin_timeout" = 10;
 
     # disable TCP slow start on idle connections
@@ -53,13 +52,19 @@ _:
     # enable mtu probing
     "net.ipv4.tcp_mtu_probing" = 1;
 
+    # enable reverse path filtering
+    # the kernel will do source validation of the packets received from all the interfaces on the machine.
+    # this can protect from attackers that are using IP spoofing methods to do harm.
+    "net.ipv4.conf.default.rp_filter" = 1;
+    "net.ipv4.conf.all.rp_filter" = 1;
+
     # prevent sync or udp flood attacks
-    "net.ipv4.tcp_syncookies" = 1;
+    # "net.ipv4.tcp_syncookies" = 1;
 
     # keepalive related tweaks
     # with the following settings, your application will detect dead TCP connections after 1800 seconds (1200s + 125s + 125s + 125s + 125s).
-    "net.ipv4.tcp_keepalive_time" = 1200;
-    "net.ipv4.tcp_keepalive_intvl" = 125;
-    "net.ipv4.tcp_keepalive_probes" = 4;
+    # "net.ipv4.tcp_keepalive_time" = 1200;
+    # "net.ipv4.tcp_keepalive_intvl" = 125;
+    # "net.ipv4.tcp_keepalive_probes" = 4;
   };
 }
