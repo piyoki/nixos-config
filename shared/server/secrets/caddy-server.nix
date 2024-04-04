@@ -4,7 +4,7 @@ let
   user = "caddy"; # used by caddy only
   group = "users";
   permissions = "0400";
-  uploadAt = "post-activation";
+  uploadAt = "pre-activation";
 in
 {
   "ecc_server.crt" = {
