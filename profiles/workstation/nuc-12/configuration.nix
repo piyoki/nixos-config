@@ -5,6 +5,7 @@
     # system modules
     "system"
     "system/users/init-pass.nix"
+    "system/services/scx.nix"
 
     # themes modules
     "themes"
