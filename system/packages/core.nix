@@ -15,5 +15,6 @@
     ripgrep
     just
     pwgen
+    openssl
   ];
 }

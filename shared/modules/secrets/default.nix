@@ -23,7 +23,7 @@
 with lib;
 let
   cfg = config.modules.secrets;
-  defaultAccess = { mode = "0600"; }; # user only
+  defaultAccess = { mode = "0600"; }; # user only # root only and ready only
   openAccess = { mode = "0755"; }; # allow others to read
   rootOnlyAccess = { mode = "0600"; owner = "root"; }; # root only
   noAccess = { mode = "0000"; };
@@ -89,6 +89,7 @@ in
 
         (mkIf cfg.workstation.system.enable {
           sops.secrets = {
+            # Host specific
             inherit (commonSecrets) "login/initialHashedPassword";
             "age/yubikey-master-key" = {
               sopsFile = "${inputs.secrets}/age-keys.enc.yaml";
@@ -97,11 +98,19 @@ in
               sopsFile = "${inputs.secrets}/samba.enc.yaml";
               path = "/etc/.smbcredentials";
             } // rootOnlyAccess;
+
+            # Application specific
             "atuin/server-config" = {
               sopsFile = "${inputs.secrets}/atuin.enc.yaml";
             } // openAccess;
             "atuin/env" = {
               sopsFile = "${inputs.secrets}/atuin.enc.yaml";
+            } // openAccess;
+            "tls/homelablocal/ecc_server_cert" = {
+              sopsFile = "${inputs.secrets}/tls/homelab.local.enc.yaml";
+            } // openAccess;
+            "tls/homelablocal/ecc_server_key" = {
+              sopsFile = "${inputs.secrets}/tls/homelab.local.enc.yaml";
             } // openAccess;
           };
         })
