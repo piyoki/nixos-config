@@ -35,5 +35,5 @@ jobs:
           pr-labels: |
             flake-lock
             automated
-          inputs: nixpkgs-wayland hyprland sops-nix
+          inputs: nixpkgs-wayland sops-nix pilots chaotic neovim-nightly-overlay microvm pre-commit-hooks impermanence nix-fast-build
           token: ${{ steps.generate_token.outputs.token }}
