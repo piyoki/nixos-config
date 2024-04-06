@@ -13,7 +13,7 @@ in
     after = [ "network-pre.target" "NetworkManager.service" "systemd-resolved.service" ];
     # wantedBy = [ "multi-user.target" ];
     serviceConfig = {
-      User = "kev";
+      User = user;
       ExecStartPre = "${swBin}/mkdir -p $CACHE_DIR";
       ExecStart = "${pkgs.writeShellScript "rclone" ''
         set -eux
