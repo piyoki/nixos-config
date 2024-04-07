@@ -11,7 +11,6 @@ in
     ./sdwan.nix
     ./tailscale.nix
     ./networkmanager.nix
-    ./udp-gro-forwarding.nix
   ];
 
   environment.systemPackages = with pkgs; [
