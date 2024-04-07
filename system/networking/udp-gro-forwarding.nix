@@ -13,7 +13,7 @@ in
   # /etc/systemd/system/udp-gro-forwarding.service
   systemd.services."udp-gro-forwarding" = {
     description = "UDP Gro Forwarding Service";
-    after = [ "network.target" "iptables.service" "ip6tables.service" ];
+    after = [ "network.target" "iptables.service" "ip6tables.service" "multi-user.target" ];
     serviceConfig = {
       ExecStart = "${pkgs.writeShellScript "udp-gro-forwarding" ''
         set -eux
