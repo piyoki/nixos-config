@@ -130,7 +130,7 @@
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs-small"; };
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs-small"; };
-    hyprland = { url = "github:hyprwm/Hyprland/v0.38.0"; inputs.nixpkgs.follows = "nixpkgs-small"; };
+    hyprland = { url = "github:hyprwm/Hyprland/v0.38.1"; inputs.nixpkgs.follows = "nixpkgs-small"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     impermanence.url = "github:nix-community/impermanence";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
