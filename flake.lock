@@ -1615,19 +1615,18 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1712502472,
-        "narHash": "sha256-lwXpD+IKMuPstx574eW7uXyVW7Kb+3ug3d/KAV8zGeM=",
-        "ref": "master",
-        "rev": "edef2e1dabcaadbf409f50c7e02de0677b3798f3",
+        "lastModified": 1712503655,
+        "narHash": "sha256-75MAI9cXwv/owpOtGPQLrZJ4JAC+stWLRrUIracCJUI=",
+        "ref": "refs/heads/master",
+        "rev": "4681f148403d12e1bf76bb756e9b3afaafd7a670",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "ssh://git@github.com/miooochi/home-estate.git"
       },
       "original": {
-        "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/home-estate"
+        "url": "ssh://git@github.com/miooochi/home-estate.git"
       }
     },
     "home-manager": {
@@ -3656,18 +3655,18 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1712214232,
-        "narHash": "sha256-PCjvZokBM6S6mfWbEwjlz04OCFdlPh6RHC7vsF3o7Tc=",
+        "lastModified": 1712504333,
+        "narHash": "sha256-n3JxWwMFu+dsNFSw9XL+myN8D1pxkQsQBB5K0mPCMek=",
         "ref": "refs/heads/master",
-        "rev": "1e2183a56e22fe882d49329b2346346a61d1e222",
+        "rev": "bd0ff4bb602741d048a61b39a92dc378c92de596",
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "ssh://git@github.com/miooochi/sops-credentials.git"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "file:/home/kev/flake/secrets"
+        "url": "ssh://git@github.com/miooochi/sops-credentials.git"
       }
     },
     "sops-nix": {

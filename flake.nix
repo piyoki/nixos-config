@@ -142,8 +142,8 @@
     assets.url = "github:miooochi/nur-assets";
 
     # private repos
-    secrets = { url = "git+file:/home/kev/flake/secrets?shallow=1"; flake = false; };
-    home-estate = { url = "git+file:/home/kev/flake/home-estate?ref=master&shallow=1"; };
+    secrets = { url = "git+ssh://git@github.com/miooochi/sops-credentials.git?shallow=1"; flake = false; };
+    home-estate = { url = "git+ssh://git@github.com/miooochi/home-estate.git?shallow=1"; };
 
     # personal dotfiles
     dotfiles.url = "git+https://github.com/miooochi/dotfiles.nix?ref=master";
