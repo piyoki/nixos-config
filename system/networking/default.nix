@@ -8,7 +8,6 @@ let
 in
 {
   imports = [
-    ./sdwan.nix
     ./tailscale.nix
     ./networkmanager.nix
   ];
