@@ -92,6 +92,10 @@ in
               sopsFile = "${inputs.secrets}/nix.enc.yaml";
               path = "${config.xdg.configHome}/nix/secret.key";
             } // defaultAccess;
+            "aws/credentials" = {
+              sopsFile = "${inputs.secrets}/aws.enc.yaml";
+              path = "${config.home.homeDirectory}/.aws/credentials";
+            } // defaultAccess;
           };
         })
 
