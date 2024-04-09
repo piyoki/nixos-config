@@ -15,7 +15,7 @@ _:
     "net.ipv6.conf.all.forwarding" = 1;
     # enable bbr
     "net.ipv4.tcp_congestion_control" = "bbr";
-    "net.core.default_qdisc" = "fq";
+    "net.core.default_qdisc" = "cake";
     # enable tcp_fastopen
     "net.ipv4.tcp_fastopen" = 3;
     # increase ephermeral IP ports
@@ -59,7 +59,7 @@ _:
     "net.ipv4.conf.all.rp_filter" = 1;
 
     # prevent sync or udp flood attacks
-    # "net.ipv4.tcp_syncookies" = 1;
+    "net.ipv4.tcp_syncookies" = 0;
 
     # keepalive related tweaks
     # with the following settings, your application will detect dead TCP connections after 1800 seconds (1200s + 125s + 125s + 125s + 125s).
