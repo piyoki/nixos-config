@@ -28,7 +28,7 @@
 
     initrd = {
       availableKernelModules = [ "xe" "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "lz4" ];
-      kernelModules = [ "xe" "i2c_dev" "coretemp" ];
+      kernelModules = [ "xe" "i2c_dev" "coretemp" "kvm-intel" ];
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/79869bdd-49a1-44d5-b57c-0ca9fa89c4c9";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
