@@ -1,7 +1,12 @@
-{ sharedLib, ... }:
+{ lib, ... }:
 
+with lib;
 {
-  imports = map sharedLib.relativeToRoot [
-    "system/services/caddy"
-  ];
+  services = {
+    # enable reverse-proxy service
+    reverse-proxy = {
+      enable = true;
+      autostart = mkForce true;
+    };
+  };
 }
