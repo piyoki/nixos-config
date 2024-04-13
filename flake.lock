@@ -1633,10 +1633,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1713005070,
-        "narHash": "sha256-Fi8hlmLQgWxZKBu9Stdm73+X0nhF0gxoLYrg9sABDx0=",
+        "lastModified": 1713013340,
+        "narHash": "sha256-BoQwHMnzl3c9hItLsd5LQoY6cNt/A5cwwmcRyZgx3OE=",
         "ref": "refs/heads/master",
-        "rev": "13c50506a02fe537c36716260e9ffa43ffa7dfb0",
+        "rev": "e5517a46ccdb9d10f455ee11f48511cf409192a0",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/miooochi/home-estate.git"
