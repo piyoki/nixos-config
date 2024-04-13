@@ -3347,11 +3347,11 @@
         "pre-commit-hooks": "pre-commit-hooks_5"
       },
       "locked": {
-        "lastModified": 1712641417,
-        "narHash": "sha256-xeCcjX0OosFP8VZqDlLz8AXi44cVTNPtne+gjv81i0Q=",
+        "lastModified": 1713006402,
+        "narHash": "sha256-I3cSIQg18xR9zJ9Cf/iB1Utf4YLpw+deJjE+yC9seL4=",
         "owner": "NixOS-Pilots",
         "repo": "pilots",
-        "rev": "469ea62d99ffa4d67d84eea06c2002ef4ff85392",
+        "rev": "d04d29a1a536ff70298fe68e9d38c9c5e964482b",
         "type": "github"
       },
       "original": {
