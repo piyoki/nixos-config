@@ -13,7 +13,6 @@
       noto-fonts
       noto-fonts-emoji
       source-code-pro
-      nerdfonts
 
       # overrides
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
