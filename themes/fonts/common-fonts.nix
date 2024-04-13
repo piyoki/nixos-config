@@ -5,17 +5,23 @@
   fonts = {
     packages = with pkgs; [
       cantarell-fonts
-      fira-code
-      fira-code-symbols
       maple-mono
       maple-mono-NF
-      jetbrains-mono
       noto-fonts
       noto-fonts-emoji
       source-code-pro
 
-      # overrides
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      # nerdfonts
+      # https://github.com/NixOS/nixpkgs/blob/master/pkgs/data/fonts/nerdfonts/shas.nix
+      (nerdfonts.override {
+        fonts = [
+          # symbols icon only
+          "NerdFontsSymbolsOnly"
+          # Characters
+          "FiraCode"
+          "JetBrainsMono"
+        ];
+      })
     ];
 
     fontconfig = {
@@ -33,6 +39,10 @@
           "GenSekiGothic TW B"
           "Noto Sans CJK TC"
           "Source Han Sans TC"
+        ];
+        monospace = [
+          "JetBrainsMono Nerd Font"
+          "Noto Color Emoji"
         ];
       };
     };
