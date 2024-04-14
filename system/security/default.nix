@@ -12,7 +12,7 @@ _:
     # required by pulseaudio
     rtkit.enable = true;
 
-    # make swaylock unlocks with correct password
+    # make swaylock unlock with correct password
     pam.services = {
       swaylock = {
         text = ''

@@ -52,7 +52,7 @@
       # Clear /tmp on boot to get a stateless /tmp directory.
       cleanOnBoot = true;
       # Size of tmpfs in percentage.
-      tmpfsSize = "5%"; # default "50%"
+      tmpfsSize = "20%"; # default "50%"
     };
   };
 
