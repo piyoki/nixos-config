@@ -1,12 +1,13 @@
-{ sharedLib, lib, ... }:
+{ inputs, sharedLib, lib, ... }:
 
 with lib;
 {
-  imports = map sharedLib.relativeToRoot [
-    "system/networking/sdwan.nix"
-    "system/networking/glider.nix"
+  imports = [
+    inputs.home-estate.nixosModules.sdwan
+    inputs.home-estate.nixosModules.glider
+  ] ++ (map sharedLib.relativeToRoot [
     "system/networking/udp-gro-forwarding.nix"
-  ];
+  ]);
 
   services = {
     # enable sdwan service
@@ -14,7 +15,7 @@ with lib;
       enable = true;
       autostart = mkForce true;
     };
-    # # enable glider service
+    # enable glider service
     glider = {
       enable = true;
       autostart = mkForce true;
