@@ -2,9 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    waybar # (stable) wayland-based bar/dock
-    # inputs.nixpkgs-wayland.packages.${system}.waybar # (nightly) wayland-based bar/dock
-    inputs.nixpkgs-wayland.packages.${system}.swww # Efficient animated wallpaper daemon for wayland, controlled at runtime
+    hyprpaper
+    inputs.nixpkgs-wayland.packages.${system}.waybar # (nightly) wayland-based bar/dock
     inputs.nixpkgs-wayland.packages.${system}.swayidle # idle management daemon
     inputs.nixpkgs-wayland.packages.${system}.swaylock-effects # screenlock daemon
     cliphist # clipboard manager
