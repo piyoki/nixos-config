@@ -11,6 +11,12 @@
 # 2 - write only (-w-)
 # 1 - execute only (--x)
 # 0 - none (---)
+# Tear down permission
+# r - 4
+# w - 2
+# x - 1
+# Examples
+# 0644 -> rw- r-- r--
 
 # Default home secret path:
 # /run/user/1000/secrets/
