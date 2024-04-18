@@ -1,8 +1,8 @@
-{ inputs, pkgs, system, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-    inputs.chaotic.packages.${system}.telegram-desktop_git
+    telegram-desktop
     webcord # A Discord and SpaceBar electron-based client implemented without Discord API
   ];
 }
