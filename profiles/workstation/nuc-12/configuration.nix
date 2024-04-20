@@ -3,7 +3,7 @@
 {
   imports = (map sharedLib.relativeToRoot [
     # system modules
-    "system"
+    "system/workstation.nix"
     "system/users/init-pass.nix"
     "system/services/scx.nix"
 

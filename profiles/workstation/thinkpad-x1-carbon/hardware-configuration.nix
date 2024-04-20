@@ -53,30 +53,36 @@
       options snd_hda_intel power_save=1 power_save_controller=Y
       options i915 enable_guc=3 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
-    # clear /tmp on boot to get a stateless /tmp directory.
-    tmp.cleanOnBoot = true;
+
+    tmp = {
+      # Clear /tmp on boot to get a stateless /tmp directory.
+      cleanOnBoot = true;
+      # Size of tmpfs in percentage.
+      tmpfsSize = "20%"; # default "50%"
+    };
   };
 
   fileSystems = {
-    "/" =
-      {
-        device = "/dev/disk/by-uuid/54b6c0e4-9b42-4549-be1d-49d43aff9263";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@" ];
-      };
-
-    "/home" =
-      {
-        device = "/dev/disk/by-uuid/54b6c0e4-9b42-4549-be1d-49d43aff9263";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@home" ];
-      };
+    "/" = {
+      device = "tmpfs";
+      fsType = "tmpfs";
+      options = [ "relatime" "size=25%" "mode=755" ];
+    };
 
     "/nix" =
       {
         device = "/dev/disk/by-uuid/54b6c0e4-9b42-4549-be1d-49d43aff9263";
         fsType = "btrfs";
         options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
+      };
+
+    "/persistent" =
+      {
+        device = "/dev/disk/by-uuid/54b6c0e4-9b42-4549-be1d-49d43aff9263";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
+        # impermanence's data is required for booting
+        neededForBoot = true;
       };
 
     "/snapshots" =

@@ -3,13 +3,7 @@
 with lib;
 let
   cfg = config.modules.persistent;
-  mode = "0700";
-  genDir = directory: { inherit directory mode; };
-  commonSpecialDirs = [
-    (genDir "flake")
-    (genDir ".gnupg")
-    (genDir ".ssh")
-  ];
+  inherit (import ./dirs/common-home-special-dirs.nix { }) commonSpecialDirs;
 in
 {
   imports = [
@@ -36,9 +30,7 @@ in
         environment.persistence."/persistent" = {
           # system dirs and files to map
           directories = import ./dirs/common-system-dirs.nix;
-
-          files = [ "/etc/machine-id" ] ++
-            (import ./files/workstation-system-specific.nix);
+          files = import ./files/workstation-system-specific.nix;
 
           # home dirs and files to map
           users.${user} = {
