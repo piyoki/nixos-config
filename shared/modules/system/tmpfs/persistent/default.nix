@@ -36,9 +36,7 @@ in
         environment.persistence."/persistent" = {
           # system dirs and files to map
           directories = import ./dirs/common-system-dirs.nix;
-
-          files = [ "/etc/machine-id" ] ++
-            (import ./files/workstation-system-specific.nix);
+          files = import ./files/workstation-system-specific.nix;
 
           # home dirs and files to map
           users.${user} = {
