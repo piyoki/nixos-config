@@ -102,6 +102,10 @@ in
               sopsFile = "${inputs.secrets}/aws.enc.yaml";
               path = "${config.home.homeDirectory}/.aws/credentials";
             } // defaultAccess;
+            "kube/config" = {
+              sopsFile = "${inputs.secrets}/k8s.enc.yaml";
+              path = "${config.home.homeDirectory}/.kube/config";
+            } // defaultAccess;
           };
         })
 
