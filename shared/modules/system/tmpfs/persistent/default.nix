@@ -3,13 +3,7 @@
 with lib;
 let
   cfg = config.modules.persistent;
-  mode = "0700";
-  genDir = directory: { inherit directory mode; };
-  commonSpecialDirs = [
-    (genDir "flake")
-    (genDir ".gnupg")
-    (genDir ".ssh")
-  ];
+  inherit (import ./dirs/common-home-special-dirs.nix { }) commonSpecialDirs;
 in
 {
   imports = [
