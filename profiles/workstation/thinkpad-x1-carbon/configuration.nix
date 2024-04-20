@@ -24,6 +24,13 @@
   # Set hostname
   networking.hostName = "nixos-x1-carbon";
 
-  # Import system secrets
-  modules.secrets.workstation.system.enable = true;
+  modules = {
+    # Import system secrets
+    secrets.workstation.system.enable = true;
+    # Load persistent dirs and files
+    persistent = {
+      enable = true;
+      hostType = "workstation";
+    };
+  };
 }
