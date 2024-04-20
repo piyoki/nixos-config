@@ -3,7 +3,8 @@
 {
   imports = (map sharedLib.relativeToRoot [
     # system modules
-    "system"
+    "system/workstation.nix"
+    "system/users/init-pass.nix"
     "system/services/greetd.nix"
     "system/services/powermanagement/laptop.nix"
     "system/services/scx.nix"
@@ -14,6 +15,7 @@
 
     # shared modules
     "shared/modules/secrets"
+    "shared/modules/system/tmpfs/persistent"
   ]) ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
