@@ -8,6 +8,7 @@
     "system/services/greetd.nix"
     "system/services/powermanagement/laptop.nix"
     "system/services/scx.nix"
+    "system/hardware/keyd.nix"
     # "system/hardware/fingerprint.nix"
 
     # themes modules
