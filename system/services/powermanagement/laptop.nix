@@ -6,7 +6,7 @@
 # https://wiki.archlinux.org/title/Power_management
 let
   swBin = "/run/current-system/sw/bin";
-  upperBound = "100";
+  upperBound = "99";
   lowerBound = "0";
 in
 {
