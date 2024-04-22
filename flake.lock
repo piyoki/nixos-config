@@ -553,11 +553,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1713746297,
-        "narHash": "sha256-TXVeFpLsSbHfud+G2JeXWm8ZJpoGilv1GvoX97IOyHg=",
+        "lastModified": 1713800880,
+        "narHash": "sha256-hISXRfv9uOefPds6Uz9qo5CEIhf8febHtlrK0T+9q6M=",
         "ref": "master",
-        "rev": "82ddea91051dc2432803ceac42ca1fbd169a8705",
-        "revCount": 210,
+        "rev": "751f3e425ad49558ec8683f2ea5a91bdd1cbdba9",
+        "revCount": 213,
         "type": "git",
         "url": "https://github.com/miooochi/dotfiles.nix"
       },
@@ -1731,11 +1731,11 @@
     "hypr-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1713713623,
-        "narHash": "sha256-r+1cegqWFlvt4NKEmK3pxIywm2Ca4/uGRg5bvHXYT1w=",
+        "lastModified": 1713800789,
+        "narHash": "sha256-NAe4x7vogLslHuat3TqXq2fVaxhYc5G0zAEbPht55a8=",
         "owner": "miooochi",
         "repo": "dot-hypr",
-        "rev": "f2a5cc7fa581708f7da948ac7dab2117e7245da4",
+        "rev": "948ea4cd8b4efdb982a3e3cccba27c11f35206df",
         "type": "github"
       },
       "original": {
@@ -4256,11 +4256,11 @@
     "waybar-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1713746274,
-        "narHash": "sha256-Le77SLur7VhJ3faSwiD30gCS4I0TdtfPHXMZV5P6E4I=",
+        "lastModified": 1713800845,
+        "narHash": "sha256-6E9E5ieLF3zLVMzoYw8nWsNlqwus7LTrmVUQawctXT4=",
         "owner": "miooochi",
         "repo": "dot-waybar",
-        "rev": "dd2401066e1982cd13a98818da71960ac2011002",
+        "rev": "67a92bba43b41d53010ca52a991b6fa161368a39",
         "type": "github"
       },
       "original": {
@@ -4273,11 +4273,11 @@
     "waybar-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1713054861,
-        "narHash": "sha256-w+b/FxqPNhBxd7/Bsb+LGYgpLWEQoVtiWnTpJMyslXk=",
+        "lastModified": 1713800556,
+        "narHash": "sha256-gC1xw1xPLkokUlVGyxaMqdIrhzXgNeWDSU3vcycoTr4=",
         "owner": "miooochi",
         "repo": "dot-waybar",
-        "rev": "a514b927991239b5037bc81792a9225f96b68996",
+        "rev": "6eda5d05a3476a01c5807188ee025200e2218510",
         "type": "github"
       },
       "original": {
