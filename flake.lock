@@ -1633,10 +1633,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1713613701,
-        "narHash": "sha256-nvSz8LKdk5oQ5Cc8vOsnOQVZzVeKiPEGzNDG9jl3Qy8=",
+        "lastModified": 1713796432,
+        "narHash": "sha256-j9DsGLkStzk6nM019LJvEViRbNyfzd+cDAvoyXXen70=",
         "ref": "refs/heads/master",
-        "rev": "47b4e263ccb376ee95beb01cb4b774deff4068c1",
+        "rev": "62fd65e99c2650fa2b1b6494b7ffe0e719ad96ab",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/miooochi/home-estate.git"
@@ -3708,10 +3708,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1713572476,
-        "narHash": "sha256-Wek0mmsXwLD19T0+2psXyoSNiXruULLxyczyAHHWdzg=",
+        "lastModified": 1713796798,
+        "narHash": "sha256-bMETDTKL+QBgPkdX/LagOFOzC6XHo3HRQ2/tE3Z9/9A=",
         "ref": "refs/heads/master",
-        "rev": "11a61c45983af7d639365e3aeb3164a85864ecd3",
+        "rev": "bd81450179702101ccd1eeb1d3abb9f47248a570",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/miooochi/sops-credentials.git"
