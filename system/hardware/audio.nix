@@ -6,6 +6,7 @@
     pamixer
   ];
 
+  # Enable pipewire, alsa, and jack
   services = {
     pipewire = {
       enable = true;
