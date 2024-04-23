@@ -16,5 +16,6 @@
     just
     pwgen
     openssl
+    dnsutils
   ];
 }
