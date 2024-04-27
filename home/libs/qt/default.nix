@@ -10,6 +10,5 @@
     libsForQt5.kio-extras
     qt6Packages.qt6ct
     qt6.qtimageformats
-    qt6.qtwebengine
   ];
 }
