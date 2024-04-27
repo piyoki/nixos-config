@@ -1,4 +1,4 @@
-_:
+{ lib, ... }:
 
 # A key remapping daemon for linux.
 # Reference: https://github.com/rvaiya/keyd
@@ -19,4 +19,7 @@ _:
       };
     };
   };
+
+  # disable systemd service
+  systemd.services.keyd.wantedBy = lib.mkForce [ ];
 }
