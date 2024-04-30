@@ -1,5 +1,5 @@
 ---
-name: Synchronize upstream (Cron)
+name: Synchronize upstream (Cron) for pre-commit-hooks
 on:
   workflow_dispatch:
   schedule:
@@ -8,6 +8,21 @@ on:
 
 jobs:
   sync-upstream:
+    strategy:
+      matrix:
+        target:
+          - pilots
+          - chaotic
+          - home-manager
+          - sops-nix
+          - nixpkgs-wayland,
+          - neovim-nightly-overlay
+          - impermanence
+          - pre-commit-hooks
+          - microvm
+          - nix-fast-build
+      fail-fast: false
+
     runs-on: ubuntu-latest
     steps:
       - name: Generate GitHub Auth Token
@@ -35,5 +50,5 @@ jobs:
           pr-labels: |
             flake-lock
             automated
-          inputs: nixpkgs-wayland sops-nix pilots chaotic neovim-nightly-overlay microvm pre-commit-hooks impermanence nix-fast-build
+          inputs: ${{ matrix.target }}
           token: ${{ steps.generate_token.outputs.token }}
