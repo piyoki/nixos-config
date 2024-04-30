@@ -1,5 +1,5 @@
 ---
-name: Synchronize upstream (Cron) for pre-commit-hooks
+name: (Cron) Synchronize upstream flake inputs
 on:
   workflow_dispatch:
   schedule:
