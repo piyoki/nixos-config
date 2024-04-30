@@ -15,7 +15,7 @@ jobs:
           - chaotic
           - home-manager
           - sops-nix
-          - nixpkgs-wayland,
+          - nixpkgs-wayland
           - neovim-nightly-overlay
           - impermanence
           - pre-commit-hooks
