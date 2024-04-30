@@ -4,6 +4,7 @@
   ".cache"
   ".config"
   ".local"
+  ".var"
   ".terminfo"
   ".sops"
   ".tmux"
