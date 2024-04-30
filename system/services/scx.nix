@@ -30,8 +30,7 @@ in
     serviceConfig = {
       ExecStart = "${pkgs.writeShellScript "scx" ''
         set -eux
-        # ${bin}/bin/scx_lavd
-        ${bin}/bin/scx_rustland
+        ${bin}/bin/scx_lavd
       ''}";
       Type = "simple";
       StandardError = "journal";
