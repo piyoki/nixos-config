@@ -7,17 +7,17 @@ on:
     - cron: "0 0 */7 * *"
 
 env:
-  targets:
-    - "pilots"
-    - "chaotic"
-    - "home-manager"
-    - "sops-nix"
-    - "nixpkgs-wayland"
-    - "neovim-nightly-overlay"
-    - "impermanence"
-    - "pre-commit-hooks"
-    - "microvm"
-    - "nix-fast-build"
+  targets: |
+    pilots
+    chaotic
+    home-manager
+    sops-nix
+    nixpkgs-wayland
+    neovim-nightly-overlay
+    impermanence
+    pre-commit-hooks
+    microvm
+    nix-fast-build
 
 jobs:
   sync-upstream:
@@ -48,7 +48,7 @@ jobs:
           pr-labels: |
             flake-lock
             automated
-          inputs: ${{ join(env.targets, ' ') }}
+          inputs: ${{ env.targets }}
           token: ${{ steps.generate_token.outputs.token }}
 
       - name: Print PR number
