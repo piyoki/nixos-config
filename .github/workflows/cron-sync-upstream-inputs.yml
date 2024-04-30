@@ -1,28 +1,26 @@
 ---
-name: Synchronize upstream (Cron) for pre-commit-hooks
+name: (Cron) Synchronize upstream flake inputs
 on:
   workflow_dispatch:
   schedule:
     # Run this Action every 7 days at 0:00pm UTC
     - cron: "0 0 */7 * *"
 
+env:
+  targets: |
+    pilots
+    chaotic
+    home-manager
+    sops-nix
+    nixpkgs-wayland
+    neovim-nightly-overlay
+    impermanence
+    pre-commit-hooks
+    microvm
+    nix-fast-build
+
 jobs:
   sync-upstream:
-    strategy:
-      matrix:
-        target:
-          - pilots
-          - chaotic
-          - home-manager
-          - sops-nix
-          - nixpkgs-wayland,
-          - neovim-nightly-overlay
-          - impermanence
-          - pre-commit-hooks
-          - microvm
-          - nix-fast-build
-      fail-fast: false
-
     runs-on: ubuntu-latest
     steps:
       - name: Generate GitHub Auth Token
@@ -44,11 +42,16 @@ jobs:
       - uses: DeterminateSystems/flake-checker-action@main
 
       - name: Update flake.lock
+        id: update-flake-lock
         uses: DeterminateSystems/update-flake-lock@main
         with:
-          pr-title: "chore(flake) update flake.lock"
+          pr-title: "chore(flake) update flake.lock for the selected upstream inputs"
           pr-labels: |
             flake-lock
             automated
-          inputs: ${{ matrix.target }}
+          inputs: ${{ env.targets }}
           token: ${{ steps.generate_token.outputs.token }}
+
+      - name: Print PR number
+        run: |
+          echo Pull request number is ${{ steps.update-flake-lock.outputs.pull-request-number }}.
