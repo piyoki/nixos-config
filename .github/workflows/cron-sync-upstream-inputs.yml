@@ -54,4 +54,4 @@ jobs:
 
       - name: Print PR number
         run: |
-          echo Pull request number is ${{ steps.update-flake-lock.outputs.pull-request-number }}.
+          echo "Pull request number is ${{ steps.update-flake-lock.outputs.pull-request-number }}"
