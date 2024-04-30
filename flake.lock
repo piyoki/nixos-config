@@ -531,16 +531,16 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1714138623,
-        "narHash": "sha256-L+x+mBihzyFMWeWntMeA22H1IB6W97jHhxtkVis4lHY=",
+        "lastModified": 1714467174,
+        "narHash": "sha256-1qLkaNWN6+O57k1Y6JCZtU/meZfkGQ6/SvdmNkvNRwE=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "e9267d99113629f78d2bc1912bc5b14ebf26e704",
+        "rev": "0c7d4341ff8008bcc7f70caa49beaf8e7b2094cf",
         "type": "github"
       },
       "original": {
         "owner": "daeuniverse",
-        "ref": "dae-v0.6.0rc2",
+        "ref": "exp",
         "repo": "flake.nix",
         "type": "github"
       }
@@ -1669,10 +1669,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1714319507,
-        "narHash": "sha256-6i98/sCc3kHArMrqd1vDcxLu84JunKK7G80e3pkb8rw=",
+        "lastModified": 1714476681,
+        "narHash": "sha256-hG50OHAuIIt7VafbgPtQn7MfwUt0jB6hmfNF6gjX9Jc=",
         "ref": "refs/heads/master",
-        "rev": "1603a5d2bf16ac7dcdb8f15faf8961e51272faf4",
+        "rev": "dc8b6e329ba7825306cb08fe2986d97e0f6d568d",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/miooochi/home-estate.git"
@@ -3018,11 +3018,11 @@
     },
     "nixpkgs_16": {
       "locked": {
-        "lastModified": 1714076141,
-        "narHash": "sha256-Drmja/f5MRHZCskS6mvzFqxEaZMeciScCTFxWVLqWEY=",
+        "lastModified": 1714253743,
+        "narHash": "sha256-mdTQw2XlariysyScCv2tTE45QSU9v/ezLcHJ22f0Nxc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7bb2ccd8cdc44c91edba16c48d2c8f331fb3d856",
+        "rev": "58a1abdbae3217ca6b702f03d3b35125d88a2994",
         "type": "github"
       },
       "original": {
