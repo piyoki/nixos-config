@@ -44,7 +44,7 @@ jobs:
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@main
         with:
-          pr-title: "chore(flake) update flake.lock for inputs.${{ matrix.target }}"
+          pr-title: "chore(flake) update flake.lock for the selected upstream inputs"
           pr-labels: |
             flake-lock
             automated
