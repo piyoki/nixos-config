@@ -3,9 +3,11 @@
 # to /etc/nixos/configuration.nix instead.
 
 # References:
+# https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_12)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_11)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_10)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_9)
+# https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon
 # https://nixos.wiki/wiki/Intel_Graphics
 { inputs, config, lib, pkgs, pkgs-small, modulesPath, system, ... }:
 
