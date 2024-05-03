@@ -127,14 +127,14 @@
     pilots.url = "github:NixOS-Pilots/pilots";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     chaotic-kernel.url = "github:chaotic-cx/nyx/11b4acecf7aa41e4b3fcb34a985fe0477da4347c";
-    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs-small"; };
+    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
-    nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs-small"; };
-    hyprland = { url = "github:hyprwm/Hyprland/v0.39.1"; inputs.nixpkgs.follows = "nixpkgs-small"; };
+    nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
+    hyprland = { url = "github:hyprwm/Hyprland"; inputs.nixpkgs.follows = "nixpkgs"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     impermanence.url = "github:nix-community/impermanence";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
-    microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs-small"; };
+    microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
     nix-fast-build.url = "github:Mic92/nix-fast-build";
 
     # personal nur
