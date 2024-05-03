@@ -1,15 +1,9 @@
 { pkgs, ... }:
 
-let
-  commonPorts = [
-    22 # ssh
-    53317 # localsend
-  ];
-in
 {
   imports = [
+    ./firewall.nix
     ./tailscale.nix
-    ./networkmanager.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -18,12 +12,7 @@ in
   ];
 
   networking = {
+    networkmanager.enable = true;
     nftables.enable = true;
-    firewall = {
-      enable = true;
-      # open ports in firewall
-      allowedTCPPorts = commonPorts;
-      allowedUDPPorts = commonPorts;
-    };
   };
 }
