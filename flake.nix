@@ -126,7 +126,7 @@
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     pilots.url = "github:NixOS-Pilots/pilots";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    chaotic-kernel.url = "github:chaotic-cx/nyx/11b4acecf7aa41e4b3fcb34a985fe0477da4347c";
+    chaotic-kernel.url = "github:chaotic-cx/nyx/d0521172e501167d82973899ad37e768d3d2a695";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
