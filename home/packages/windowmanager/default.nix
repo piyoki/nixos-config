@@ -1,5 +1,9 @@
-_:
+{ inputs, pkgs, sharedLib, ... }:
 
 {
-  imports = [ ./hyprland ];
+  imports = sharedLib.scanPaths ./.;
+
+  home.packages = [
+    inputs.hyprland.packages."${pkgs.system}".hyprland
+  ];
 }
