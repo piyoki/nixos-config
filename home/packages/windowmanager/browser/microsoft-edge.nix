@@ -12,14 +12,21 @@
         # Force GPU accleration
         "--ignore-gpu-blocklist"
         "--enable-zero-copy"
+        # "--enable-unsafe-webgpu"
 
         # Force to run on Wayland
         "--ozone-platform-hint=auto"
         "--ozone-platform=wayland"
         "--enable-wayland-ime"
 
+        # Reduce memory usage
+        "--process-per-site"
+
+        # Force darkmode
+        "--force-dark-mode"
+
         # Enable additional features
-        "--enable-features=UseOzonePlatform,VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,WaylandWindowDecorations"
+        "--enable-features=WebUIDarkMode,UseOzonePlatform,VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,WaylandWindowDecorations"
       ];
     })
   ];
