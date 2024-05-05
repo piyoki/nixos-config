@@ -6,5 +6,6 @@
     okular # document viewer
     libreoffice-fresh # office softwares
     poppler_utils # pdf utils (CLI), pdfunite included
+    ghostscript # PostScript interpreter (mainline version)
   ];
 }
