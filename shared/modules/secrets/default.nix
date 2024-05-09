@@ -78,17 +78,17 @@ in
         # workstation specific secrets
         (mkIf cfg.workstation.home.enable {
           sops.secrets = {
-            "minio/config" = {
-              sopsFile = "${inputs.secrets}/minio.enc.yaml";
-              path = "${config.home.homeDirectory}/.mc/config.json";
-            } // defaultAccess;
-            "rclone/pikpak" = {
-              sopsFile = "${inputs.secrets}/rclone.enc.yaml";
-              path = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
-            } // defaultAccess;
             "ssh/config" = {
               sopsFile = "${inputs.secrets}/ssh.enc.yaml";
               path = "${config.home.homeDirectory}/.ssh/config";
+            } // defaultAccess;
+            "ssh_keys/id_rsa_yubikey_desktop" = {
+              sopsFile = "${inputs.secrets}/ssh-keys.enc.yaml";
+              path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_desktop.pub";
+            } // defaultAccess;
+            "ssh_keys/id_rsa_yubikey_laptop" = {
+              sopsFile = "${inputs.secrets}/ssh-keys.enc.yaml";
+              path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_laptop.pub";
             } // defaultAccess;
             "nix/public_key" = {
               sopsFile = "${inputs.secrets}/nix.enc.yaml";
@@ -97,6 +97,14 @@ in
             "nix/secret_key" = {
               sopsFile = "${inputs.secrets}/nix.enc.yaml";
               path = "${config.xdg.configHome}/nix/secret.key";
+            } // defaultAccess;
+            "minio/config" = {
+              sopsFile = "${inputs.secrets}/minio.enc.yaml";
+              path = "${config.home.homeDirectory}/.mc/config.json";
+            } // defaultAccess;
+            "rclone/pikpak" = {
+              sopsFile = "${inputs.secrets}/rclone.enc.yaml";
+              path = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
             } // defaultAccess;
             "aws/credentials" = {
               sopsFile = "${inputs.secrets}/aws.enc.yaml";

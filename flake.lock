@@ -3802,10 +3802,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1713796798,
-        "narHash": "sha256-bMETDTKL+QBgPkdX/LagOFOzC6XHo3HRQ2/tE3Z9/9A=",
+        "lastModified": 1715262721,
+        "narHash": "sha256-wXjGOQszb6G75J3CWAft51gcav+fmhhzGcAWGxbWQtc=",
         "ref": "refs/heads/master",
-        "rev": "bd81450179702101ccd1eeb1d3abb9f47248a570",
+        "rev": "00faa04a4e349297ff6c710dfedb122e0784767d",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/miooochi/sops-credentials.git"
