@@ -1,5 +1,0 @@
-{ sharedLib, ... }:
-
-{
-  imports = sharedLib.scanPaths ./.;
-}
