@@ -9,7 +9,6 @@
     "shared/modules/secrets"
   ]) ++ [
     # host specific modules
-    ./home-secrets
 
     # shared modules
     (import ../../../shared/modules/home/gnupg ./conf/gpg.conf)

@@ -9,7 +9,6 @@
     "shared/modules/secrets"
   ]) ++ [
     # host specific modules
-    ./home-secrets
     ./modules/dotfiles.nix
 
     # shared modules
