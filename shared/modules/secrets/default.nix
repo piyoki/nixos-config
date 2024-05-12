@@ -40,6 +40,15 @@ let
       sopsFile = "${inputs.secrets}/login.enc.yaml";
     } // rootOnlyAccess;
   };
+
+  # function to generate nested secrets
+  genNestedSecrets = { secretPaths, sopsFile, access }: (
+    builtins.mapAttrs
+      (_name: value: value // {
+        inherit sopsFile;
+      } // access)
+      (attrsets.mergeAttrsList secretPaths)
+  );
 in
 {
   options.modules.secrets = {
@@ -76,50 +85,62 @@ in
         }
 
         # workstation specific secrets
-        (mkIf cfg.workstation.home.enable {
-          sops.secrets = {
-            "ssh/config" = {
-              sopsFile = "${inputs.secrets}/ssh.enc.yaml";
-              path = "${config.home.homeDirectory}/.ssh/config";
-            } // defaultAccess;
-            "ssh_keys/id_rsa_yubikey_desktop" = {
-              sopsFile = "${inputs.secrets}/ssh-keys.enc.yaml";
-              path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_desktop.pub";
-            } // defaultAccess;
-            "ssh_keys/id_rsa_yubikey_laptop" = {
-              sopsFile = "${inputs.secrets}/ssh-keys.enc.yaml";
-              path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_laptop.pub";
-            } // defaultAccess;
-            "nix/public_key" = {
-              sopsFile = "${inputs.secrets}/nix.enc.yaml";
-              path = "${config.xdg.configHome}/nix/public.key";
-            } // defaultAccess;
-            "nix/secret_key" = {
-              sopsFile = "${inputs.secrets}/nix.enc.yaml";
-              path = "${config.xdg.configHome}/nix/secret.key";
-            } // defaultAccess;
-            "minio/config" = {
-              sopsFile = "${inputs.secrets}/minio.enc.yaml";
-              path = "${config.home.homeDirectory}/.mc/config.json";
-            } // defaultAccess;
-            "rclone/pikpak" = {
-              sopsFile = "${inputs.secrets}/rclone.enc.yaml";
-              path = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
-            } // defaultAccess;
-            "aws/credentials" = {
-              sopsFile = "${inputs.secrets}/aws.enc.yaml";
-              path = "${config.home.homeDirectory}/.aws/credentials";
-            } // defaultAccess;
-            "kube/config" = {
-              sopsFile = "${inputs.secrets}/k8s.enc.yaml";
-              path = "${config.home.homeDirectory}/.kube/config";
-            } // defaultAccess;
-          };
-        })
+        (mkIf cfg.workstation.home.enable
+          {
+            sops.secrets =
+              genNestedSecrets
+                {
+                  sopsFile = "${inputs.secrets}/nix.enc.yaml";
+                  access = defaultAccess;
+                  secretPaths = [
+                    { "nix/public_key".path = "${config.xdg.configHome}/nix/public.key"; }
+                    { "nix/secret_key".path = "${config.xdg.configHome}/nix/secret.key"; }
+                  ];
+                }
+              // genNestedSecrets {
+                sopsFile = "${inputs.secrets}/ssh-keys.enc.yaml";
+                access = defaultAccess;
+                secretPaths = [
+                  { "ssh_keys/id_rsa_yubikey_desktop".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_desktop.pub"; }
+                  { "ssh_keys/id_rsa_yubikey_laptop".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_laptop.pub"; }
+                ];
+              }
+              // genNestedSecrets {
+                sopsFile = "${inputs.secrets}/nix.gitconfig.enc.yaml";
+                access = defaultAccess;
+                secretPaths = [
+                  { "gitconfig/profile/desktop".path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.personal"; }
+                  { "gitconfig/profile/work".path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.work"; }
+                  { "gitconfig/profile/extras".path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.extras"; }
+                ];
+              }
+              // {
+                "ssh/config" = {
+                  sopsFile = "${inputs.secrets}/ssh.enc.yaml";
+                  path = "${config.home.homeDirectory}/.ssh/config";
+                } // defaultAccess;
+                "minio/config" = {
+                  sopsFile = "${inputs.secrets}/minio.enc.yaml";
+                  path = "${config.home.homeDirectory}/.mc/config.json";
+                } // defaultAccess;
+                "rclone/pikpak" = {
+                  sopsFile = "${inputs.secrets}/rclone.enc.yaml";
+                  path = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
+                } // defaultAccess;
+                "aws/credentials" = {
+                  sopsFile = "${inputs.secrets}/aws.enc.yaml";
+                  path = "${config.home.homeDirectory}/.aws/credentials";
+                } // defaultAccess;
+                "kube/config" = {
+                  sopsFile = "${inputs.secrets}/k8s.enc.yaml";
+                  path = "${config.home.homeDirectory}/.kube/config";
+                } // defaultAccess;
+              };
+          })
 
         (mkIf cfg.workstation.system.enable {
           sops.secrets = {
-            # Host specific
+            # host specific
             inherit (commonSecrets) "login/initialHashedPassword";
             "age/yubikey-master-key" = {
               sopsFile = "${inputs.secrets}/age-keys.enc.yaml";
@@ -129,7 +150,7 @@ in
               path = "/etc/.smbcredentials";
             } // rootOnlyAccess;
 
-            # Application specific
+            # application specific
             "atuin/server-config" = {
               sopsFile = "${inputs.secrets}/atuin.enc.yaml";
             } // openAccess;
