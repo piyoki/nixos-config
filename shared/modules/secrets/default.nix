@@ -64,8 +64,6 @@ in
       # system.application.enable = mkEnableOption "Secrets for application servers";
       # system.operation.enable = mkEnableOption "Secrets for operation servers (backup, monitoring, etc)";
     };
-
-    # impermanence.enable = mkEnableOption "Wether use impermanence and ephemeral root file system";
   };
 
   config = mkIf
