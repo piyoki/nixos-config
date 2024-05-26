@@ -4,6 +4,7 @@
 
 <!-- vim-markdown-toc GFM -->
 
+* [Wipe drives](#wipe-drives)
 * [Partition drives](#partition-drives)
 * [Create encryption](#create-encryption)
 * [Format partitions](#format-partitions)
@@ -15,6 +16,14 @@
 * [References](#references)
 
 <!-- vim-markdown-toc -->
+
+## Wipe drives
+
+With `wipefs`
+
+```bash
+wipefs --all /dev/sda
+```
 
 ## Partition drives
 
