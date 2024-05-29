@@ -1,13 +1,15 @@
-{ pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 {
   home.packages = with pkgs; [
     # maintenance essentials
     delta
     lazygit
-    neovim
     zoxide
     trash-cli
+
+    # editor
+    inputs.neovim-nightly-overlay.packages.${system}.default
 
     # monitoring
     btop
