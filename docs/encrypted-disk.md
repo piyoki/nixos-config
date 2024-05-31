@@ -44,6 +44,12 @@ cryptsetup --cipher aes-xts-plain64 --hash sha512 --use-random --verify-passphra
 # open partition
 cryptsetup luksOpen /dev/sda ext
 # enter passphrase
+
+# view mapper status
+cryptsetup -v status ext
+
+# format LUKS partition
+dd if=/dev/zero of=/dev/mapper/ext
 ```
 
 ## Format partitions
