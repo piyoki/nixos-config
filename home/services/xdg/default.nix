@@ -83,6 +83,7 @@
         XDG_MEDIA_DIR = "${config.home.homeDirectory}/Media";
         XDG_TANK_DIR = "${config.home.homeDirectory}/Tank";
         XDG_SHARED_DIR = "${config.home.homeDirectory}/Shared";
+        XDG_EXTERNAL_DIR = "${config.home.homeDirectory}/External";
         XDG_PIKPAK_DIR = "${config.home.homeDirectory}/Pikpak";
         XDG_WORKSPACE_DIR = "${config.home.homeDirectory}/Workspace";
         XDG_WORKSPACE_GIT_PERSONAL_DIR = "${config.home.homeDirectory}/Workspace/personal";
