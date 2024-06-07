@@ -9,6 +9,9 @@
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_9)
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon
 # https://nixos.wiki/wiki/Intel_Graphics
+
+# Hardware issues troubleshooting:
+# https://discourse.nixos.org/t/sound-not-working/12585/15
 { inputs, config, lib, pkgs, pkgs-small, modulesPath, system, ... }:
 
 {

@@ -13,5 +13,6 @@
     intel-gpu-tools # Tools for development and testing of the Intel DRM driver
     glxinfo # Test utilities for OpenGL
     acpi # Show battery status and other ACPI information
+    sof-firmware #Sound Open Firmware
   ];
 }
