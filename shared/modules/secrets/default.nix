@@ -113,7 +113,7 @@ in
               sopsFile = "${inputs.secrets}/nix.gitconfig.enc.yaml";
               access = defaultAccess;
               secretPaths = [
-                { "gitconfig/profile/desktop".path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.personal"; }
+                { "gitconfig/profile/laptop".path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.personal"; }
                 { "gitconfig/profile/work".path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.work"; }
                 { "gitconfig/profile/extras".path = "${config.home.homeDirectory}/.gitconfigs/.gitconfig.extras"; }
               ];
