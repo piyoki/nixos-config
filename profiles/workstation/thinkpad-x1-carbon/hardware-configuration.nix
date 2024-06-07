@@ -29,8 +29,8 @@
     };
 
     initrd = {
-      availableKernelModules = [ "xe" "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "lz4" ];
-      kernelModules = [ "xe" "i2c_dev" "coretemp" ];
+      availableKernelModules = [ "xe" "i915" "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "lz4" ];
+      kernelModules = [ "xe" "i915" "i2c_dev" "coretemp" ];
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/79869bdd-49a1-44d5-b57c-0ca9fa89c4c9";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
@@ -53,6 +53,7 @@
     extraModprobeConfig = ''
       options snd_intel_dspcfg dsp_driver=1
       options snd_hda_intel power_save=1 power_save_controller=Y
+      options xe enable_guc=3 enable_fbc=1 enable_psr=1 force_probe=7d55
       options i915 enable_guc=3 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
 
