@@ -54,8 +54,9 @@
     kernelParams = [ ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''
+      options snd slots=snd-hda-intel
       options snd_intel_dspcfg dsp_driver=1
-      options snd_hda_intel power_save=1 power_save_controller=Y
+      options snd_hda_intel enable=1
       options xe enable_guc=3 enable_fbc=1 enable_psr=1 force_probe=7d55
       options i915 enable_guc=3 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
