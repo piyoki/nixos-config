@@ -13,7 +13,7 @@
 # View options of a specific kernel module
 # sudo modinfo i915 | egrep -i "guc|huc|dmc"
 
-{ inputs, config, lib, pkgs, pkgs-small, modulesPath, system, ... }:
+{ inputs, config, lib, pkgs, modulesPath, system, ... }:
 
 {
   imports =
@@ -129,8 +129,7 @@
     opengl = {
       enable = true;
       driSupport = true;
-      driSupport32Bit = true;
-      extraPackages = with pkgs-small; [
+      extraPackages = with pkgs; [
         intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
         intel-media-driver # Intel Media Driver for VAAPI
         intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family
