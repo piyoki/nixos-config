@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 # Reference: https://nixos.wiki/wiki/Sway
 {
@@ -19,9 +19,7 @@
 
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
     # gtk portal needed to make gtk apps happy
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    configPackages = [ inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland ];
   };
 }

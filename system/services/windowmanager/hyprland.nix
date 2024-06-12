@@ -3,7 +3,8 @@
 # Reference:
 # https://wiki.hyprland.org/Nix/Hyprland-on-NixOS/
 let
-  pkgs-hypr = inputs.hyprland.inputs.nixpkgs.legacyPackages.${system};
+  nixpkgs-hypr = inputs.hyprland.inputs.nixpkgs.legacyPackages.${system};
+  pkgs-hypr = inputs.hyprland.packages.${system};
 in
 {
   # enable hyprland
@@ -16,7 +17,13 @@ in
   hardware.opengl = {
     # if you also want 32-bit support (e.g for Steam)
     driSupport32Bit = true;
-    package = pkgs-hypr.mesa.drivers;
-    package32 = pkgs-hypr.pkgsi686Linux.mesa.drivers;
+    package = nixpkgs-hypr.mesa.drivers;
+    package32 = nixpkgs-hypr.pkgsi686Linux.mesa.drivers;
+  };
+
+  xdg.portal = {
+    # hyprland has its own portal, wlr is not needed
+    wlr.enable = false;
+    configPackages = [ pkgs-hypr.xdg-desktop-portal-hyprland ];
   };
 }
