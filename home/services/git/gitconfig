@@ -1,3 +1,9 @@
+[includeIf "gitdir:~/Workspace/work/"] # include for all .git projects under $HOME/Workspace/work/
+  path = ~/.gitconfigs/.gitconfig.work
+
+[includeIf "gitdir:~/Workspace/extras/"] # include for all .git projects under $HOME/Workspace/extras/
+  path = ~/.gitconfigs/.gitconfig.extras
+
 [includeIf "gitdir:~/flake/"] # include for all .git projects under $HOME/flake/
   path = ~/.gitconfigs/.gitconfig.personal
 
@@ -6,12 +12,6 @@
 
 [includeIf "gitdir:~/.local/share/"] # include for all .git projects under $HOME/.local/share/
   path = ~/.gitconfigs/.gitconfig.personal
-
-[includeIf "gitdir:~/Workspace/work/"] # include for all .git projects under $HOME/Workspace/work/
-  path = ~/.gitconfigs/.gitconfig.work
-
-[includeIf "gitdir:~/Workspace/extras/"] # include for all .git projects under $HOME/Workspace/extras/
-  path = ~/.gitconfigs/.gitconfig.extras
 
 [core]
   editor = vim
