@@ -12,11 +12,7 @@
         # Force GPU accleration
         "--ignore-gpu-blocklist"
         "--enable-zero-copy"
-        "--use-gl=desktop"
-        # "--enable-unsafe-webgpu"
-        "--enable-oop-rasterization"
-        "--enable-gpu-rasterization"
-        "--enable-vulkan"
+        "--enable-unsafe-webgpu"
 
         # Force to run on Wayland
         "--ozone-platform-hint=auto"

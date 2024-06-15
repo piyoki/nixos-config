@@ -58,7 +58,7 @@
       options snd slots=snd-hda-intel
       options snd_intel_dspcfg dsp_driver=3
       options snd_hda_intel enable=1
-      options i915 enable_guc=3 enable_fbc=1 enable_psr=1 force_probe=7d55
+      options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
 
     tmp = {
@@ -129,6 +129,8 @@
     opengl = {
       enable = true;
       driSupport = true;
+      # if you also want 32-bit support (e.g for Steam)
+      driSupport32Bit = true;
       extraPackages = with pkgs; [
         intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
         intel-media-driver # Intel Media Driver for VAAPI
