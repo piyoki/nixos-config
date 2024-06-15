@@ -3540,10 +3540,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1716338487,
-        "narHash": "sha256-v7Amdf/ygtHPjCAz2LQYLK9wYciVrAFuTBbifOSUFAg=",
+        "lastModified": 1718425043,
+        "narHash": "sha256-y8werjVVMYnZEr7RKc83ynPP4Oh5UbhAuH7M20qMCF0=",
         "ref": "refs/heads/master",
-        "rev": "d5ec1356b82ca589f5bb1955e47a1a3459451415",
+        "rev": "7bb937488c4e1cfa92721509faff6fa83c6dc411",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/miooochi/sops-credentials.git"
