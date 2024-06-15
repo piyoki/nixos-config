@@ -12,7 +12,11 @@
         # Force GPU accleration
         "--ignore-gpu-blocklist"
         "--enable-zero-copy"
+        "--use-gl=desktop"
         # "--enable-unsafe-webgpu"
+        "--enable-oop-rasterization"
+        "--enable-gpu-rasterization"
+        "--enable-vulkan"
 
         # Force to run on Wayland
         "--ozone-platform-hint=auto"
@@ -26,7 +30,7 @@
         "--force-dark-mode"
 
         # Enable additional features
-        "--enable-features=WebUIDarkMode,UseOzonePlatform,VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,WaylandWindowDecorations"
+        "--enable-features=VaapiVideoDecoder,VaapiVideoEncoder,VaapiVideoDecodeLinuxGL,VaapiIgnoreDriverChecks,WebUIDarkMode,UseOzonePlatform,WebRTCPipeWireCapturer,WaylandWindowDecorations"
       ];
     })
   ];
