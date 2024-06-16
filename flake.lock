@@ -409,16 +409,16 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1718520892,
-        "narHash": "sha256-87ERLs/zbqRPS87U7RuhtUhRmUTxwXflqs36skn4pNU=",
+        "lastModified": 1718583371,
+        "narHash": "sha256-4mHCANvnKklgKDhxdHbyY28X7fxnxFhecf7uiI7jIaU=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "f93e3e341d7aa0a717e1d7c54a56c1d896270c68",
+        "rev": "bc19b3aeeee43e3203b3ce8eafd2b174c2cfa6f3",
         "type": "github"
       },
       "original": {
         "owner": "daeuniverse",
-        "ref": "exp",
+        "ref": "unstable",
         "repo": "flake.nix",
         "type": "github"
       }
@@ -1523,10 +1523,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1718520976,
-        "narHash": "sha256-t+cQP52RpGRYRTPKonJS3okuM3WnvqYHM495Tba7gfY=",
+        "lastModified": 1718583500,
+        "narHash": "sha256-GZEOthzy/Yw0/9SZw5o2CgRgOxT3ZrIb9g8hnUePmfo=",
         "ref": "refs/heads/master",
-        "rev": "40adf3b24409dfcc9ecebc25080310c3b8f1bdf6",
+        "rev": "f9fb7f2c182bb96f8269e5d326d370e6ec6c7ad2",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/miooochi/home-estate.git"
