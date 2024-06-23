@@ -126,11 +126,9 @@
     enableAllFirmware = true;
 
     # GPU (OpenGL)
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
       # if you also want 32-bit support (e.g for Steam)
-      driSupport32Bit = true;
       extraPackages = with pkgs; [
         intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
         intel-media-driver # Intel Media Driver for VAAPI
