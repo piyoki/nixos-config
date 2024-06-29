@@ -8,6 +8,7 @@ on:
 
 env:
   targets: |
+    nixpkgs
     pilots
     chaotic
     home-manager
