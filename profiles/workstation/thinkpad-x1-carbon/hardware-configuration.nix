@@ -56,7 +56,7 @@
     extraModulePackages = [ ];
     extraModprobeConfig = ''
       options snd slots=snd-hda-intel
-      options snd_intel_dspcfg dsp_driver=3
+      options snd_intel_dspcfg dsp_driver=1
       options snd_hda_intel enable=1
       options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
