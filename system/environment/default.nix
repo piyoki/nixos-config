@@ -17,6 +17,8 @@ _:
       NIXOS_OZONE_WL = "1";
       # Default applications
       BROWSER = "qutebrowser";
+      # Force intel-media-driver
+      LIBVA_DRIVER_NAME = "iHD";
     };
   };
 }

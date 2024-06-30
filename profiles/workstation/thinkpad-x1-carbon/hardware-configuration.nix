@@ -117,8 +117,8 @@
 
   # GPU (Accelerate Video Playback)
   # ref: https://nixos.wiki/wiki/Accelerated_Video_Playback
-  nixpkgs.config.packageOverrides = _pkgs-small: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
 
   hardware = {
@@ -131,8 +131,8 @@
       # if you also want 32-bit support (e.g for Steam)
       extraPackages = with pkgs; [
         intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
-        intel-media-driver # Intel Media Driver for VAAPI
-        intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family
+        intel-media-driver # Intel Media Driver for VAAPI; # LIBVA_DRIVER_NAME=iHD
+        intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family; # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
         # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
         vaapiVdpau # VDPAU driver for the VAAPI library
         libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
