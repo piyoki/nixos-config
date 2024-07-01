@@ -3198,10 +3198,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1718425043,
-        "narHash": "sha256-y8werjVVMYnZEr7RKc83ynPP4Oh5UbhAuH7M20qMCF0=",
+        "lastModified": 1719847382,
+        "narHash": "sha256-9qjlvuk0QbWVFCGOysbG2NxZcAf9+xggEU681sfBTL4=",
         "ref": "refs/heads/master",
-        "rev": "7bb937488c4e1cfa92721509faff6fa83c6dc411",
+        "rev": "24a1b975f5f67f1b6f165f0a6041d6bdad655db1",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/sops-credentials.git"
