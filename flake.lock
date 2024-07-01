@@ -339,11 +339,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1719120774,
-        "narHash": "sha256-By5CiUtafTXpwu0/3fvRWxXiiKQ9EchV15U0EEhSmoM=",
+        "lastModified": 1719839493,
+        "narHash": "sha256-NQNfSh/JSSD7NUmCDZr3jObHV7ZmS+ubVXwg4346ga0=",
         "ref": "master",
-        "rev": "a052394af43159d4437abe15d409105ad6d3aaca",
-        "revCount": 224,
+        "rev": "42c41e3ea33a2e96addce85d8244098d6ac9c83f",
+        "revCount": 225,
         "type": "git",
         "url": "https://github.com/piyoki/dotfiles.nix"
       },
