@@ -562,7 +562,7 @@ Reference: https://old.reddit.com/r/NixOS/comments/10ueaev/how_do_i_get_the_sha2
 
 ```bash
 nix-prefetch-git
-# nix-prefetch-git --url 'https://github.com/miooochi/dot-rofi' --rev 'refs/heads/x1-carbon'
+# nix-prefetch-git --url 'https://github.com/piyoki/dot-rofi' --rev 'refs/heads/x1-carbon'
 
 # output:
 git revision is caf2c90fdd081479692a5bf48d669d5d2d2ec0be
@@ -571,7 +571,7 @@ git human-readable version is -- none --
 Commit date is 2024-02-04 17:19:38 +0800
 hash is 030rzigrh33gd4mxydjrj9gl7pnl1d72hj9a5344zmxvcx1y1v0c
 {
-  "url": "https://github.com/miooochi/dot-rofi",
+  "url": "https://github.com/piyoki/dot-rofi",
   "rev": "caf2c90fdd081479692a5bf48d669d5d2d2ec0be",
   "date": "2024-02-04T17:19:38+08:00",
   "path": "/nix/store/w69sjd6qrnvkadr4pwwhq38nw8z856q3-dot-rofi",
@@ -591,7 +591,7 @@ usage
 
 let
   repo = pkgs.fetchFromGitHub {
-    owner = "miooochi";
+    owner = "piyoki";
     repo = "dot-hypr";
     rev = "5e71f2fd9b0992c73872d34d0bc6a8570724172f";
     sha256 = "0sa4s1gx13lcrlf85jklixgcl7k1plzy6v6xlpy49h673xxivrnl";

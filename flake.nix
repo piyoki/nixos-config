@@ -138,14 +138,14 @@
     nix-fast-build.url = "github:Mic92/nix-fast-build";
 
     # personal nur
-    nur.url = "github:miooochi/nur-packages";
-    assets.url = "github:miooochi/nur-assets";
+    nur.url = "github:piyoki/nur-packages";
+    assets.url = "github:piyoki/nur-assets";
 
     # private repos
-    secrets = { url = "git+ssh://git@github.com/miooochi/sops-credentials.git?shallow=1"; flake = false; };
-    home-estate = { url = "git+ssh://git@github.com/miooochi/home-estate.git?shallow=1"; };
+    secrets = { url = "git+ssh://git@github.com/piyoki/sops-credentials.git?shallow=1"; flake = false; };
+    home-estate = { url = "git+ssh://git@github.com/piyoki/home-estate.git?shallow=1"; };
 
     # personal dotfiles
-    dotfiles.url = "git+https://github.com/miooochi/dotfiles.nix?ref=master";
+    dotfiles.url = "git+https://github.com/piyoki/dotfiles.nix?ref=master";
   };
 }
