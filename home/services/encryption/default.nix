@@ -15,4 +15,11 @@
       bitwarden # A secure and free password manager for all of your devices (UI)
     ];
   };
+
+  # Keybase
+  # https://mynixos.com/nixpkgs/options/services.kbfs
+  # https://gist.github.com/taktoa/3133a4d9b1614fad1f4841f145441406
+  services.kbfs = {
+    enable = true;
+  };
 }
