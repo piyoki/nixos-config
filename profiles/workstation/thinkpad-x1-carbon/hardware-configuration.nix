@@ -6,10 +6,14 @@
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon
 # https://nixos.wiki/wiki/Intel_Graphics
 
-# Hardware issues troubleshooting:
+# Hardware (Realtek Audio) issues troubleshooting:
+# Notes: this issue happens since Linux Kernel 6.7.x
 # https://discourse.nixos.org/t/sound-not-working/12585/15
 # https://discourse.nixos.org/t/realtek-audio-sound-card-not-recognized-by-pipewire/36637/3
 # https://discourse.nixos.org/t/intel-tiger-lake-pro-audio-no-audio/40592/2
+
+# Workaround solution:
+# https://bbs.archlinux.org/viewtopic.php?id=292393
 
 # Useful commands:
 # View options of a specific kernel module
@@ -54,11 +58,16 @@
     };
 
     kernelModules = [ "kvm-intel" ];
-    kernelParams = [
-      "snd-intel-dspcfg.dsp_driver=1"
-    ];
+    kernelParams = [ ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''
+      # blacklist legacy realtek codec (since Kernel 6.7.x)
+      blacklist snd_hda_codec_realtek
+
+      # Load intel dsp driver for audio
+      options snd-intel-dspcfg dsp_driver=1
+
+      # Apply intel integrated graphics params
       options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
 
