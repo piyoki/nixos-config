@@ -8,6 +8,8 @@
 
 # Hardware issues troubleshooting:
 # https://discourse.nixos.org/t/sound-not-working/12585/15
+# https://discourse.nixos.org/t/realtek-audio-sound-card-not-recognized-by-pipewire/36637/3
+# https://discourse.nixos.org/t/intel-tiger-lake-pro-audio-no-audio/40592/2
 
 # Useful commands:
 # View options of a specific kernel module
@@ -52,12 +54,11 @@
     };
 
     kernelModules = [ "kvm-intel" ];
-    kernelParams = [ ];
+    kernelParams = [
+      "snd-intel-dspcfg.dsp_driver=1"
+    ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''
-      options snd slots=snd-hda-intel
-      options snd_intel_dspcfg dsp_driver=1
-      options snd_hda_intel enable=1
       options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
 
