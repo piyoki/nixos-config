@@ -27,6 +27,10 @@ in
         }
         # system related
         {
+          command = "${swBin}/systemctl";
+          options = [ "NOPASSWD" ];
+        }
+        {
           command = "${swBin}/tee";
           options = [ "NOPASSWD" ];
         }
