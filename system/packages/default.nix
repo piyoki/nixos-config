@@ -2,7 +2,7 @@ _:
 
 {
   imports = [
-    ./bpf.nix
+    # ./bpf.nix
     ./core.nix
     ./nixos.nix
     ./trace.nix
