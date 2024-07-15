@@ -39,8 +39,8 @@
     };
 
     initrd = {
-      availableKernelModules = [ "i915" "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "lz4" ];
-      kernelModules = [ "i915" "i2c_dev" "coretemp" ];
+      availableKernelModules = [ "xe" "i915" "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "lz4" ];
+      kernelModules = [ "xe" "i915" "i2c_dev" "coretemp" ];
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/79869bdd-49a1-44d5-b57c-0ca9fa89c4c9";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
@@ -68,7 +68,8 @@
       options snd-intel-dspcfg dsp_driver=1
 
       # Apply intel integrated graphics params
-      options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
+      options i915 force_probe=!7d55
+      options xe enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
 
     tmp = {
@@ -152,6 +153,9 @@
     # CPU
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
+
+  # OpenGL (mesa-git)
+  chaotic.mesa-git.enable = true;
 
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
