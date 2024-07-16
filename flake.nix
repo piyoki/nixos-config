@@ -44,6 +44,7 @@
             [ (profilePrefix + "/configuration.nix") ] ++ (lib.optionals (!isServer) [
               hyprland.nixosModules.default
               chaotic.nixosModules.default
+              auto-cpufreq.nixosModules.default
             ])
           )
         , homeModules ? lib.optionals profile.home-manager (genHomeModules (import (profilePrefix + "/home.nix")))
@@ -136,6 +137,7 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
     nix-fast-build.url = "github:Mic92/nix-fast-build";
+    auto-cpufreq = { url = "github:AdnanHodzic/auto-cpufreq"; inputs.nixpkgs.follows = "nixpkgs"; };
 
     # personal nur
     nur.url = "github:piyoki/nur-packages";

@@ -35,29 +35,29 @@
 
     # prevents overheating on Intel CPUs
     thermald.enable = true;
+  };
 
-    # auto-cpufreq settings
-    auto-cpufreq = {
-      enable = true;
-      settings = {
-        battery = {
-          governor = "powersave";
-          energy_performance_preference = "power";
-          turbo = "never";
+  # auto-cpufreq settings
+  programs.auto-cpufreq = {
+    enable = true;
+    settings = {
+      battery = {
+        governor = "powersave";
+        energy_performance_preference = "power";
+        turbo = "never";
 
-          scaling_min_freq = lib.mkDefault "400000"; # 400 MHz
-          scaling_max_freq = lib.mkDefault "1400000"; # 1400 MHz, or 1.4 GHz
+        scaling_min_freq = lib.mkDefault "400000"; # 400 MHz
+        scaling_max_freq = lib.mkDefault "1400000"; # 1400 MHz, or 1.4 GHz
 
-          enable_thresholds = true;
-          start_threshold = 0;
-          stop_threshold = 80;
-        };
+        enable_thresholds = true;
+        start_threshold = 0;
+        stop_threshold = 80;
+      };
 
-        charger = {
-          governor = "performance";
-          turbo = "auto";
-          energy_performance_preference = "performance";
-        };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+        energy_performance_preference = "performance";
       };
     };
   };
