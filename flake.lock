@@ -72,6 +72,26 @@
         "url": "https://flakehub.com/f/zhaofengli/attic/0.1.%2A.tar.gz"
       }
     },
+    "auto-cpufreq": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1721140624,
+        "narHash": "sha256-+Qdb5NdkTA1rdDQUeO9biWeIjH7qFnUQglEFArvh3Jk=",
+        "owner": "AdnanHodzic",
+        "repo": "auto-cpufreq",
+        "rev": "6f7e469e66ac4fe94ec44d31ea890aeb27d237d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AdnanHodzic",
+        "repo": "auto-cpufreq",
+        "type": "github"
+      }
+    },
     "chaotic": {
       "inputs": {
         "compare-to": "compare-to",
@@ -3129,6 +3149,7 @@
     "root": {
       "inputs": {
         "assets": "assets",
+        "auto-cpufreq": "auto-cpufreq",
         "chaotic": "chaotic",
         "chaotic-kernel": "chaotic-kernel",
         "dotfiles": "dotfiles",
