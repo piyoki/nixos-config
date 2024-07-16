@@ -32,6 +32,7 @@
 * [Prefetch link (git and url)](#prefetch-link-git-and-url)
   * [Git](#git)
   * [URL](#url)
+* [Clean up boot initrd cache](#clean-up-boot-initrd-cache)
 
 <!-- vim-markdown-toc -->
 
@@ -606,4 +607,11 @@ in
 
 ```bash
 nix-prefetch-url
+```
+
+## Clean up boot initrd cache
+
+```bash
+du -h -d 1 /boot/kernels/
+sudo rm -rf /boot/kernels/*
 ```
