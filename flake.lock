@@ -302,11 +302,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1718583371,
-        "narHash": "sha256-4mHCANvnKklgKDhxdHbyY28X7fxnxFhecf7uiI7jIaU=",
+        "lastModified": 1721353446,
+        "narHash": "sha256-DhiUmhlHtvzplWZ7H3rXhj/fkSKC7X1QTbnj+Q4igsw=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "bc19b3aeeee43e3203b3ce8eafd2b174c2cfa6f3",
+        "rev": "ec266c194055b062e4c08dff37af0094e32daaa5",
         "type": "github"
       },
       "original": {
@@ -1357,10 +1357,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1720421970,
-        "narHash": "sha256-DRsdsdHAPEX5HSYl7WXc3Awm+3KjbYku3cYkcJrNx04=",
+        "lastModified": 1721353537,
+        "narHash": "sha256-SJvem1Rvp8nvbni8Pv9YTRCmjZeKS6Nw/SNIC7RnmgI=",
         "ref": "refs/heads/master",
-        "rev": "f170703164b511ba37a4acd478ddaa77f5d14da1",
+        "rev": "71d06820a701c29c9d8b87ed0fbbc8461f9480aa",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/home-estate.git"
@@ -3220,10 +3220,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1720054946,
-        "narHash": "sha256-Aq1XhdVznyfLmBCORBOXwuHtZO7LT5jkZAxZ7vJ5ZKQ=",
+        "lastModified": 1721350494,
+        "narHash": "sha256-quFXbvkgj7aFFP8eVKxWU/WM6USTzVShLd4YP1eXgdk=",
         "ref": "refs/heads/master",
-        "rev": "2d726abbd1fa3f4384de509ddf6d4a9154e09644",
+        "rev": "b78dcdcccc842ae320723069bf1aec76bfab3174",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/sops-credentials.git"
