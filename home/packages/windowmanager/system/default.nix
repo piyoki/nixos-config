@@ -18,5 +18,6 @@
     zip
     trash-cli
     unzip
+    trayscale # Unofficial GUI wrapper around the Tailscale CLI client
   ];
 }
