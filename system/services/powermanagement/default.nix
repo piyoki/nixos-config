@@ -6,10 +6,10 @@
 # https://wiki.archlinux.org/title/Power_management
 {
   # default power management settings
-  powerManagement = {
-    enable = true;
-    cpuFreqGovernor = lib.mkDefault "powersave";
-  };
+  # powerManagement = {
+  #   enable = true;
+  #   cpuFreqGovernor = lib.mkDefault "powersave";
+  # };
 
   services = {
     # power-saving setttings
