@@ -9,9 +9,6 @@
     sof-firmware
   ];
 
-  # Only meant for ALSA-based configurations
-  sound.enable = false;
-
   # Disable Pulseaudio because Pipewire is used
   hardware.pulseaudio.enable = lib.mkForce false;
 
