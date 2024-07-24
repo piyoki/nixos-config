@@ -42,17 +42,17 @@
     enable = true;
     settings = {
       battery = {
+        turbo = "never";
         governor = "powersave";
         energy_performance_preference = "power";
-        turbo = "never";
 
-        scaling_min_freq = lib.mkDefault "400000"; # 400 MHz
+        scaling_min_freq = lib.mkDefault "800000"; # 800 MHz
         scaling_max_freq = lib.mkDefault "1400000"; # 1400 MHz, or 1.4 GHz
       };
 
       charger = {
+        turbo = "always"; # [ always, auto, never]
         governor = "performance";
-        turbo = "auto";
         energy_performance_preference = "performance";
       };
     };
