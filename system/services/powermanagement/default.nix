@@ -48,10 +48,6 @@
 
         scaling_min_freq = lib.mkDefault "400000"; # 400 MHz
         scaling_max_freq = lib.mkDefault "1400000"; # 1400 MHz, or 1.4 GHz
-
-        enable_thresholds = true;
-        start_threshold = 0;
-        stop_threshold = 80;
       };
 
       charger = {
