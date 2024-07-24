@@ -22,9 +22,9 @@
       # let `xdg-open` to open the url with the correct application.
       defaultApplications =
         let
-          browser = [ "qutebrowser.desktop" ];
+          browser = [ "firefox-nightly.desktop" ];
           editor = [ "nvim.desktop" ];
-          document = [ "okular" ];
+          document = [ "org.kde.okular.deskto" ];
         in
         {
           "application/json" = browser;
