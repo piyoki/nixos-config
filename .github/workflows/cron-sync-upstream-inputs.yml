@@ -20,6 +20,7 @@ env:
     pre-commit-hooks
     microvm
     nix-fast-build
+    auto-cpufreq
 
 jobs:
   sync-upstream:
