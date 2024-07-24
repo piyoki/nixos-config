@@ -51,7 +51,7 @@
       };
 
       charger = {
-        turbo = "always"; # [ always, auto, never]
+        turbo = "auto"; # [ always, auto, never]
         governor = "performance";
         energy_performance_preference = "performance";
       };
