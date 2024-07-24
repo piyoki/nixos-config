@@ -155,7 +155,7 @@
   };
 
   # OpenGL (mesa-git)
-  chaotic.mesa-git.enable = false;
+  chaotic.mesa-git.enable = true;
 
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
