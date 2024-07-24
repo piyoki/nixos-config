@@ -137,7 +137,7 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
     nix-fast-build = { url = "github:Mic92/nix-fast-build"; };
-    auto-cpufreq = { url = "github:AdnanHodzic/auto-cpufreq"; };
+    auto-cpufreq = { url = "github:piyoki/auto-cpufreq/forked-with-fix"; }; # ref: https://github.com/AdnanHodzic/auto-cpufreq/issues/740
 
     # personal nur
     nur.url = "github:piyoki/nur-packages";

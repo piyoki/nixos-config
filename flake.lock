@@ -110,15 +110,16 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1721759810,
-        "narHash": "sha256-QzO6z/U5YK5F0Ggl9s38eHM/fFQk6D7Ri/iea2Apa+E=",
-        "owner": "AdnanHodzic",
+        "lastModified": 1721784514,
+        "narHash": "sha256-aktQwmIWt0tSteToMDIb3C/jmL+McMivj4lJtWb7abc=",
+        "owner": "piyoki",
         "repo": "auto-cpufreq",
-        "rev": "c7bab0e36fd22d9673d1714544292c8c26e26aac",
+        "rev": "5f80da497d2ff12c1aacc853b7f4291d688232e2",
         "type": "github"
       },
       "original": {
-        "owner": "AdnanHodzic",
+        "owner": "piyoki",
+        "ref": "forked-with-fix",
         "repo": "auto-cpufreq",
         "type": "github"
       }
