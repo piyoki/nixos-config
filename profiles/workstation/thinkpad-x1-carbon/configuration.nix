@@ -1,4 +1,4 @@
-{ sharedLib, ... }:
+{ inputs, sharedLib, lib, ... }:
 
 {
   imports = (map sharedLib.relativeToRoot [
@@ -20,7 +20,10 @@
   ]) ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-  ];
+    inputs.home-estate.nixosModules.sdwan
+  ] ++ (map sharedLib.relativeToRoot [
+    "system/networking/udp-gro-forwarding.nix"
+  ]);
 
   # Set hostname
   networking.hostName = "nixos-x1-carbon";
@@ -32,6 +35,14 @@
     persistent = {
       enable = true;
       hostType = "workstation";
+    };
+  };
+
+  services = {
+    # enable sdwan service
+    sdwan = {
+      enable = true;
+      autostart = lib.mkForce false;
     };
   };
 }
