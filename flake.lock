@@ -110,16 +110,15 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1721784514,
-        "narHash": "sha256-aktQwmIWt0tSteToMDIb3C/jmL+McMivj4lJtWb7abc=",
-        "owner": "piyoki",
+        "lastModified": 1722283260,
+        "narHash": "sha256-ZBaWylzqmnPyGWD5uwVhDfrmZ5n+uwUDMPvAJW3BQ/Y=",
+        "owner": "AdnanHodzic",
         "repo": "auto-cpufreq",
-        "rev": "5f80da497d2ff12c1aacc853b7f4291d688232e2",
+        "rev": "a14d06ce946a87928790dbd3fb4d69fcda51f2e3",
         "type": "github"
       },
       "original": {
-        "owner": "piyoki",
-        "ref": "forked-with-fix",
+        "owner": "AdnanHodzic",
         "repo": "auto-cpufreq",
         "type": "github"
       }
@@ -2636,11 +2635,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1717112898,
-        "narHash": "sha256-7R2ZvOnvd9h8fDd65p0JnB7wXfUvreox3xFdYWd1BnY=",
+        "lastModified": 1721373214,
+        "narHash": "sha256-crpGeGQGFlnCsMyCE5eheyjzo3xo03o1FXJ2sAbm7No=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6132b0f6e344ce2fe34fc051b72fb46e34f668e0",
+        "rev": "af9c15bc7a314c226d7d5d85e159f7a73e8d9fae",
         "type": "github"
       },
       "original": {
