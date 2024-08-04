@@ -13,7 +13,7 @@ _:
     ./thunar.nix
     # ./virtualization.nix
     # ./docker.nix
-    # ./printer.nix
+    ./printer.nix
     ./rclone.nix
     ./openssh
     ./gnome-keyring.nix
