@@ -2,6 +2,9 @@
 
 # References:
 # https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265/23
+let
+  lock = { Status = "locked"; };
+in
 {
   programs.firefox = {
     enable = true;
@@ -10,15 +13,11 @@
       /* ---- PREFERENCES ---- */
       # Set preferences shared by all profiles.
       Preferences = {
-        "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
-        "extensions.pocket.enabled" = {
-          Value = true;
-          Status = "locked";
-        };
-        "extensions.screenshots.disabled" = {
-          Value = false;
-          Status = "locked";
-        };
+        "browser.contentblocking.category" = { Value = "strict"; } // lock;
+        "extensions.pocket.enabled" = { Value = true; } // lock;
+        "extensions.screenshots.disabled" = { Value = false; } // lock;
+        # Ref: https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
+        "gfx.webrender.all" = { Value = true; } // lock;
       };
       /* ---- EXTENSIONS ---- */
       # To add any addons, manually install it then find the UUID in about:debugging#/runtime/this-firefox.
