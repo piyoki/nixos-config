@@ -8,6 +8,7 @@
     gnutar
     killall
     neofetch
+    screen
     tmux
     tree
     vim
