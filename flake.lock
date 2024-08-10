@@ -55,11 +55,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1711723396,
-        "narHash": "sha256-wpQwSt3eC2WFit0KXaPxI6s6WCgCjGgeEAdl4G+A3R4=",
+        "lastModified": 1723250383,
+        "narHash": "sha256-7pO2CdKftegqMosawIP19BpXyQ9MCt9se2Tfdg0Sh14=",
         "owner": "piyoki",
         "repo": "nur-assets",
-        "rev": "19e5a0d025d6f3f1f4e5acb658e08f7c914e534a",
+        "rev": "4d784917c827799e17a6dbe2f5eadaec9504a6c9",
         "type": "github"
       },
       "original": {
