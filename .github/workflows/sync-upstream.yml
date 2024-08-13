@@ -3,7 +3,7 @@ name: Synchronize upstream inputs
 on:
   workflow_dispatch:
     inputs:
-      input:
+      target:
         type: string
         description: flake input to be synced
         options:
@@ -35,10 +35,10 @@ jobs:
       - name: update flake upstream input
         shell: bash
         run: |
-          nix flake lock --update-input ${{ inputs.input }}
+          nix flake lock --update-input ${{ inputs.target }}
 
       - uses: EndBug/add-and-commit@main
         with:
           add: flake.lock
           commit: --signoff
-          message: "chore(flake): update flake.lock to sync input.${{ inputs.input }}"
+          message: "chore(flake): update flake.lock to sync input.${{ inputs.target }}"
