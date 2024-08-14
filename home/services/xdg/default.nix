@@ -22,7 +22,7 @@
       # let `xdg-open` to open the url with the correct application.
       defaultApplications =
         let
-          browser = [ "firefox-nightly.desktop" ];
+          browser = [ "firefox.desktop" ];
           editor = [ "nvim.desktop" ];
           document = [ "org.kde.okular.deskto" ];
         in
