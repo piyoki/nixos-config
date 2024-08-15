@@ -26,19 +26,19 @@ jobs:
   sync-upstream:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate GitHub Auth Token
+      - name: Generate GitHub auth token
         # https://github.com/tibdex/github-app-token
         id: generate_token
-        uses: tibdex/github-app-token@v2
+        uses: tibdex/github-app-token@v2.1.0
         with:
           app_id: ${{ secrets.GH_APP_ID }}
           private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - uses: actions/checkout@main
         with:
-          ref: master
-          # submodules: true
-          token: "${{ secrets.ACCESS_TOKEN }}"
+        #   ref: master
+        #   submodules: true
+          token: ${{ steps.generate_token.outputs.token }}
 
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
