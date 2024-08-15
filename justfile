@@ -131,9 +131,9 @@ pull:
 # ===== Tests ===== #
 
 # clean nvim configs
-dot-clean:
-  @rm -rf ${HOME}.config/nvim
+dot-clean config:
+  @rm -rf ${HOME}.config/{{ config }}
 
 # rsync nvim configs from dot-nvim
-dot-test config: dot-clean
+dot-test config:
   @rsync -avz --copy-links --chmod=D2755,F744 $HOME/Workspace/personal/dot-submodules/dot-{{ config }}/ ${HOME}/.config/{{ config }}
