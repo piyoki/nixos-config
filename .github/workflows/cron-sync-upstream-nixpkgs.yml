@@ -1,25 +1,14 @@
 ---
-name: (Cron) Synchronize upstream flake inputs
+name: (Cron) Synchronize upstream nixpkgs
 on:
   workflow_dispatch:
   schedule:
-    # Run this Action every 3 days at 0:00pm UTC
-    - cron: "0 0 */3 * *"
+    # Run this Action every 7 days at 0:00pm UTC
+    - cron: "0 0 */7 * *"
 
 env:
   targets: |
-    pilots
-    chaotic
-    home-manager
-    sops-nix
-    nixpkgs-wayland
-    hyprland
-    neovim-nightly-overlay
-    impermanence
-    pre-commit-hooks
-    microvm
-    nix-fast-build
-    auto-cpufreq
+    nixpkgs
 
 jobs:
   sync-upstream:
@@ -47,7 +36,7 @@ jobs:
         id: update-flake-lock
         uses: DeterminateSystems/update-flake-lock@main
         with:
-          pr-title: "chore(flake) update flake.lock for the selected upstream inputs"
+          pr-title: "chore(flake) update flake.lock for upstream nixpkgs"
           pr-labels: |
             flake-lock
             automated
