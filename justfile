@@ -132,7 +132,7 @@ pull:
 
 # clean nvim configs
 dot-clean config:
-  @rm -rf ${HOME}.config/{{ config }}
+  @rm -rf ${HOME}/.config/{{ config }}
 
 # rsync nvim configs from dot-nvim
 dot-test config:
