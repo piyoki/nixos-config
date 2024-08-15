@@ -17,7 +17,7 @@
 
 ## Introduction
 
-As the date of writing (March 2024), I've commited myself switching to NixOS on my daily-drivers and a few servers. This repository reflects my current multi-profile NixOS configuration with Flake. I'd like to actively learn more about Nix, specially NixOS with Flake. In my view, NixOS is a revolutionary invention in the Linux world, as it offers a new paradigm of system configuration and package management. It is not only reliable and secure, but also fun and rewarding to use.
+As the date of writing (March 2024), I've committed myself switching to NixOS on my daily-drivers and a few servers. This repository reflects my current multi-profile NixOS configuration with Flake. I'd like to actively learn more about Nix, specially NixOS with Flake. In my view, NixOS is a revolutionary invention in the Linux world, as it offers a new paradigm of system configuration and package management. It is not only reliable and secure, but also fun and rewarding to use.
 
 ## Upstream inputs
 
