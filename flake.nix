@@ -136,8 +136,8 @@
     impermanence.url = "github:nix-community/impermanence";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
-    nix-fast-build = { url = "github:Mic92/nix-fast-build"; };
-    auto-cpufreq = { url = "github:AdnanHodzic/auto-cpufreq"; };
+    nix-fast-build.url = "github:Mic92/nix-fast-build";
+    auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
 
     # personal nur
     nur.url = "github:piyoki/nur-packages";
@@ -145,7 +145,7 @@
 
     # private repos
     secrets = { url = "git+ssh://git@github.com/piyoki/sops-credentials.git?shallow=1"; flake = false; };
-    home-estate = { url = "git+ssh://git@github.com/piyoki/home-estate.git?shallow=1"; };
+    home-estate.url = "git+ssh://git@github.com/piyoki/home-estate.git?shallow=1";
 
     # personal dotfiles
     dotfiles.url = "git+https://github.com/piyoki/dotfiles.nix?ref=master";
