@@ -17,6 +17,7 @@
     android-file-transfer # Reliable MTP client with minimalistic UI
     goofys # A high-performance, POSIX-ish Amazon S3 file system written in Go
     thunderbird # A full-featured e-mail client
+    tdf # Tui-based PDF viewer
 
     # fish plugins
     fishPlugins.fzf-fish
