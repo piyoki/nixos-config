@@ -46,6 +46,7 @@ in
           (extension "tampermonkey" "firefox@tampermonkey.net")
           (extension "webrtc-control" "jid0-oFxt2GoakYukFl7Yp42Kq@jetpack")
           (extension "print-friendly-pdf" "jid0-YQz0l1jthOIz179ehuitYAOdBEs@jetpack")
+          (extension "language-tool" "731ac4a9-3751-488d-877b-d793c1d33cae")
         ];
     };
   };
