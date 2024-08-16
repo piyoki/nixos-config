@@ -7,7 +7,8 @@ on:
     - cron: "0 0 */3 * *"
 
 env:
-  targets: |
+  OWNER: piyoki
+  TARGETS: |
     pilots
     chaotic
     home-manager
@@ -20,6 +21,10 @@ env:
     microvm
     nix-fast-build
     auto-cpufreq
+  PR_LABELS: |
+    flake-lock
+    automated
+  GIT_COMMIT_MESSAGE: "chore(flake) update flake.lock for the selected upstream inputs"
 
 jobs:
   sync-upstream:
@@ -28,7 +33,7 @@ jobs:
       - name: Generate GitHub auth token
         # https://github.com/tibdex/github-app-token
         id: generate_token
-        uses: tibdex/github-app-token@v2.1.0
+        uses: tibdex/github-app-token@main
         with:
           app_id: ${{ secrets.GH_APP_ID }}
           private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
@@ -47,12 +52,11 @@ jobs:
         id: update-flake-lock
         uses: DeterminateSystems/update-flake-lock@main
         with:
-          pr-title: "chore(flake) update flake.lock for the selected upstream inputs"
-          pr-labels: |
-            flake-lock
-            automated
-          inputs: ${{ env.targets }}
+          pr-title: ${{ env.GIT_COMMIT_MESSAGE }}
+          pr-labels: ${{ env.PR_LABELS }}
+          inputs: ${{ env.TARGETS }}
           token: ${{ steps.generate_token.outputs.token }}
+          pr-assignees: ${{ env.OWNER }}
 
       - name: Print PR number
         run: |
