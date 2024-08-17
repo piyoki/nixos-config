@@ -390,11 +390,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1723899514,
-        "narHash": "sha256-o8ol9Oj05sp2WZNkjGCMb/OHIatP+YVPhrwjCqt0ZqA=",
+        "lastModified": 1723899671,
+        "narHash": "sha256-NJ2I5RaN4MBcP0Ug/Ujw49EGfXu2jqTvf5xeasqPjzU=",
         "ref": "master",
-        "rev": "9565534621b417b1dad67dd4a43807ca9a89b1f7",
-        "revCount": 276,
+        "rev": "0a25b0cdff8f9f1833f866c1cc7c6ca8bde0c8d7",
+        "revCount": 277,
         "type": "git",
         "url": "https://github.com/piyoki/dotfiles.nix"
       },
@@ -407,11 +407,11 @@
     "dunst-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1723564739,
-        "narHash": "sha256-1nm67JMeYlPTjkaFA56AEwXEUxeHr9fkOWJQHDRsZ3E=",
+        "lastModified": 1723899152,
+        "narHash": "sha256-BqyvfVgxf6aYtuPCjGdpWyvW2uiOquFyou7tqj93jCs=",
         "owner": "piyoki",
         "repo": "dot-dunst",
-        "rev": "b598b30cd005bf68527d030195d8c52aba37f512",
+        "rev": "fcf11dc39ddd02f52ee0ddcc6b728cc090a6260a",
         "type": "github"
       },
       "original": {
@@ -1168,11 +1168,11 @@
     "foot-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1723564958,
-        "narHash": "sha256-WCLliMb+b36tBJV9a/pg4/XkP66Skr0xFT7zWZhjy6Y=",
+        "lastModified": 1723899481,
+        "narHash": "sha256-FJ054R19qRrKWH31e1RBL2EP8oGi/MvgsTZcavf0wtk=",
         "owner": "piyoki",
         "repo": "dot-foot",
-        "rev": "b5231a6b64baf1e5fcf82a90c969af07ece6ddcd",
+        "rev": "ba7f2b037da56dc81022056e2f78cb0b933fc428",
         "type": "github"
       },
       "original": {
@@ -2834,11 +2834,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1711703276,
-        "narHash": "sha256-iMUFArF0WCatKK6RzfUJknjem0H9m4KgorO/p3Dopkk=",
+        "lastModified": 1723637854,
+        "narHash": "sha256-med8+5DSWa2UnOqtdICndjDAEjxr5D7zaIiK4pn0Q7c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d8fe5e6c92d0d190646fb9f1056741a229980089",
+        "rev": "c3aa7b8938b17aebd2deecf7be0636000d62a2b9",
         "type": "github"
       },
       "original": {
@@ -3768,11 +3768,11 @@
     "waybar-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1723563403,
-        "narHash": "sha256-z75iL5FWsuankXOHN2YW19qgggWUKlNgakRQPTV2oEc=",
+        "lastModified": 1723899064,
+        "narHash": "sha256-CHl/AQZuexwcASHslUQdZv47bW4oM9QP1sXc/0fbnxU=",
         "owner": "piyoki",
         "repo": "dot-waybar",
-        "rev": "df273b6256c8808693218b3bf9b1f481becbe08c",
+        "rev": "dddca324a98d681e6bb02e0ae9ee4add79b03a02",
         "type": "github"
       },
       "original": {
