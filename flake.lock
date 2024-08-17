@@ -390,11 +390,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1723898756,
-        "narHash": "sha256-Uz1oeyrlRSTRWtJoKQneTGz/8PoH5gaH9hwyKR61Yh8=",
+        "lastModified": 1723898894,
+        "narHash": "sha256-eRdaDWNNRRwiWvLR5tHUmHvoA0PtyZlQ60r9nRwHmIU=",
         "ref": "master",
-        "rev": "983a40e500d740f6bd88cd45d3baac360baebacd",
-        "revCount": 264,
+        "rev": "b6222e765b67d0e85c2c9d2362ca060644bfa63b",
+        "revCount": 266,
         "type": "git",
         "url": "https://github.com/piyoki/dotfiles.nix"
       },
@@ -3143,11 +3143,11 @@
     "rofi-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1723564219,
-        "narHash": "sha256-f1eUZqM2ZXeLnK0Jg4GThK0VGYzZj1xznERwr3xJ7IU=",
+        "lastModified": 1723898844,
+        "narHash": "sha256-ZvcDbq4GuAv1v5fscriEcZpIenC5Ch7yoIp3DvJD8T8=",
         "owner": "piyoki",
         "repo": "dot-rofi",
-        "rev": "0967467d122372618cebb45f8a73112384557346",
+        "rev": "ed326698817cb98415e7d77ac60108c98ff9f59d",
         "type": "github"
       },
       "original": {
@@ -3160,11 +3160,11 @@
     "rofi-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1723564199,
-        "narHash": "sha256-cMVcPulqxZsnY4vmKNOiQmNLcgpvNsqAacMuf14gOzE=",
+        "lastModified": 1723898818,
+        "narHash": "sha256-hjFH/9yS4FyesInbI/Mjhtk2lSJDP8rHys+7gcx5NZY=",
         "owner": "piyoki",
         "repo": "dot-rofi",
-        "rev": "6936aba63ce1c6a871296821a4417435699795a1",
+        "rev": "8589226b03b5559b2491fefbf64e46ef6313e67b",
         "type": "github"
       },
       "original": {
