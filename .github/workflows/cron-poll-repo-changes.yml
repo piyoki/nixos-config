@@ -1,4 +1,4 @@
-name: (Cron) Poll changes from upstream repo (chaotic/nyx)
+name: (Cron) Poll changes from upstream repo
 
 on:
   workflow_dispatch:
@@ -34,24 +34,6 @@ jobs:
         with:
           app_id: ${{ secrets.GH_APP_ID }}
           private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
-
-          # - name: Poll changes from GitHub repo
-          #   # https://github.com/poll-github-repo/action
-          #   uses: poll-github-repo/action@v1
-          #   with:
-          #     token: ${{ steps.generate_token.outputs.token }}
-          #     yes-create-issues: true
-          #     cache-path: .github/artifacts/${{ matrix.path }}.last-sync
-          #     repo-to-sync: ${{ matrix.repo }}
-          #     path-to-sync: ${{ matrix.path }}
-          #     tracking-issue-label: ${{ matrix.label }}
-          #     tracking-issue-title: "[Sync] Updates on ${{ matrix.repo }} {{ path }}: {{ sha-short }}"
-          #     tracking-issue-body: |
-          #       ## Summary
-
-          #       New commit in ${{ matrix.repo }} ({{ commit-date }}) ({{ sha-full }}):
-
-          #       {{ message }} [link]({{ url }})
 
       - name: Post changes to GitHub issue
         uses: git-for-windows/rss-to-issues@v0
