@@ -1,0 +1,44 @@
+name: (Cron) Monitor new upstream git release versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run this Action every day at 4:00pm UTC
+    - cron: "0 16 * * *"
+
+env:
+  CHARACTER_LIMIT: 1000
+  MAX_AGE: 7d
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    strategy:
+      matrix:
+        include:
+          - project: hyprland
+            labels: hyprwm/Hyprland
+            feed: https://github.com/hyprwm/Hyprland/releases.atom
+      fail-fast: false
+    steps:
+      - name: Generate GitHub Auth Token
+        # https://github.com/tibdex/github-app-token
+        id: generate_token
+        uses: tibdex/github-app-token@v2.1.0
+        with:
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - name: Post changes to GitHub issue
+        uses: git-for-windows/rss-to-issues@v0
+        # https://github.com/marketplace/actions/rss-to-issues
+        with:
+          github-token: ${{ steps.generate_token.outputs.token }}
+          feed: ${{ matrix.feed }}
+          prefix: "[New ${{ matrix.project }} version]"
+          character-limit: ${{ env.CHARACTER_LIMIT }}
+          dry-run: false
+          max-age: ${{ env.MAX_AGE }}
+          labels: github/release,automated-issue,${{ matrix.labels }}

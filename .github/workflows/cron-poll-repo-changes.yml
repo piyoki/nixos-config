@@ -1,26 +1,27 @@
-name: Monitor new upstream git release versions
+name: (Cron) Poll changes from upstream repo
 
 on:
   workflow_dispatch:
   schedule:
-    # Run this Action every day at 4:00pm UTC
-    - cron: "0 16 * * *"
+    # Run this Action every day at 1:00am UTC
+    - cron: '0 1 * * *'
 
 env:
   CHARACTER_LIMIT: 1000
-  MAX_AGE: 7d
+  MAX_AGE: 14d
 
 jobs:
-  scrape:
+  poll-upstream-changes:
     runs-on: ubuntu-latest
     permissions:
       issues: write
     strategy:
       matrix:
         include:
-          - project: hyprland
-            labels: hyprwm/Hyprland
-            feed: https://github.com/hyprwm/Hyprland/releases.atom
+          - project: nyx
+            labels: chaotic-cx/nyx
+            path: pkgs/linux-cachyos/versions-hardened.json
+            feed: https://github.com/chaotic-cx/nyx/commits/main/pkgs/linux-cachyos/versions-hardened.json.atom
       fail-fast: false
     steps:
       - name: Generate GitHub Auth Token
@@ -37,8 +38,8 @@ jobs:
         with:
           github-token: ${{ steps.generate_token.outputs.token }}
           feed: ${{ matrix.feed }}
-          prefix: "[New ${{ matrix.project }} version]"
+          prefix: "[New ${{ matrix.project }} changes]"
           character-limit: ${{ env.CHARACTER_LIMIT }}
           dry-run: false
           max-age: ${{ env.MAX_AGE }}
-          labels: github/release,automated-issue,${{ matrix.labels }}
+          labels: github/repo-content,automated-issue,${{ matrix.labels }}
