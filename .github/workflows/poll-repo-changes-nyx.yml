@@ -1,11 +1,11 @@
-name: Poll changes from upstream repo
+name: (Cron) Poll changes from upstream repo (chaotic/nyx)
 
 on:
   workflow_dispatch:
   schedule:
     # Run this Action every day at 1:00am UTC
     - cron: '0 1 * * *'
-  pull_request:
+  push:
     branches:
       - poll-changes-from-nyx
 

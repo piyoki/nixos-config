@@ -1,4 +1,4 @@
-name: Monitor new upstream git release versions
+name: (Cron) Monitor new upstream git release versions
 
 on:
   workflow_dispatch:
