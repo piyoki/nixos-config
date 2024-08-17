@@ -9,10 +9,6 @@ on:
     branches:
       - poll-changes-from-nyx
 
-env:
-  REPO_TO_SYNC: chaotic-cx/nyx
-  TRACKING_ISSUE_LABEL: upstream-nyx-changes
-
 jobs:
   poll-upstream-changes:
     runs-on: ubuntu-latest
@@ -21,9 +17,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - project: hyprland
-            labels: hyprwm/Hyprland
-            feed: https://github.com/hyprwm/Hyprland/releases.atom
+          - repo: chaotic/nyx
+            label: upstream-nyx-changes
+            path: pkgs/linux-cachyos/versions-hardened.json
       fail-fast: false
     steps:
       - name: Generate GitHub Auth Token
@@ -34,19 +30,18 @@ jobs:
           app_id: ${{ secrets.GH_APP_ID }}
           private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
-      - name: Poll changes from GitHub repo (${{ env.REPO_TO_SYNC }} - linux-cachyos kernel)
+      - name: Poll changes from GitHub repo (${{ env.REPO_TO_SYNC }}
         uses: poll-github-repo/action@v1
-        env:
-          PATH_TO_SYNC: pkgs/linux-cachyos/versions-hardened.json
         with:
           token: ${{ steps.generate_token.outputs.token }}
-          repo-to-sync: ${{ env.REPO_TO_SYNC }}
-          path-to-sync: ${{ env.PATH_TO_SYNC }}
-          tracking-issue-label: ${{ env.TRACKING_ISSUE_LABEL }}
-          tracking-issue-title: "[Sync] Updates on ${{ env.REPO_TO_SYNC }} {{ path }}: {{ sha-short }}"
+          cache-path: .github/artifacts/${{ matrix.path }}.last-sync
+          repo-to-sync: ${{ matrix.repo }}
+          path-to-sync: ${{ matrix.path }}
+          tracking-issue-label: ${{ matrix.label }}
+          tracking-issue-title: "[Sync] Updates on ${{ matrix.repo }} {{ path }}: {{ sha-short }}"
           tracking-issue-body: |
             ## Summary
 
-            New commit in ${{ env.REPO_TO_SYNC }} ({{ commit-date }}) ({{ sha-full }}):
+            New commit in ${{ matrix.repo }} ({{ commit-date }}) ({{ sha-full }}):
 
             {{ message }} [link]({{ url }})
