@@ -9,6 +9,10 @@ on:
     branches:
       - poll-changes-from-nyx
 
+env:
+  CHARACTER_LIMIT: 1000
+  MAX_AGE: 14d
+
 jobs:
   poll-upstream-changes:
     runs-on: ubuntu-latest
@@ -17,10 +21,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - repo: chaotic-cx/nyx
-            ref: main
-            label: upstream-nyx-changes
+          - project: nyx
+            labels: chaotic-cx/nyx
             path: pkgs/linux-cachyos/versions-hardened.json
+            feed: https://github.com/chaotic-cx/nyx/commits/main/pkgs/linux-cachyos/versions-hardened.json.atom
       fail-fast: false
     steps:
       - name: Generate GitHub Auth Token
@@ -31,41 +35,32 @@ jobs:
           app_id: ${{ secrets.GH_APP_ID }}
           private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
-      - uses: actions/checkout@main
-        with:
-          token: ${{ steps.generate_token.outputs.token }}
-          repository: ${{ matrix.repo }}
-          ref: ${{ matrix.ref }}
-          fetch-depth: 0
-          #   submodules: true
-
-      - name: Poll changes from GitHub repo (${{ env.REPO_TO_SYNC }}
-        uses: poll-github-repo/action@v1
-        with:
-          token: ${{ steps.generate_token.outputs.token }}
-          yes-create-issues: true
-          cache-path: .github/artifacts/${{ matrix.path }}.last-sync
-          repo-to-sync: ${{ matrix.repo }}
-          path-to-sync: ${{ matrix.path }}
-          tracking-issue-label: ${{ matrix.label }}
-          tracking-issue-title: "[Sync] Updates on ${{ matrix.repo }} {{ path }}: {{ sha-short }}"
-          tracking-issue-body: |
-            ## Summary
-
-            New commit in ${{ matrix.repo }} ({{ commit-date }}) ({{ sha-full }}):
-
-            {{ message }} [link]({{ url }})
-
-          # - name: Poll changes from GitHub repo (${{ env.REPO_TO_SYNC }}
-          #   id: poll-changes
-          #   uses: tj-actions/changed-files@main
+          # - name: Poll changes from GitHub repo
+          #   # https://github.com/poll-github-repo/action
+          #   uses: poll-github-repo/action@v1
           #   with:
-          #     files: ${{ matrix.path }}
+          #     token: ${{ steps.generate_token.outputs.token }}
+          #     yes-create-issues: true
+          #     cache-path: .github/artifacts/${{ matrix.path }}.last-sync
+          #     repo-to-sync: ${{ matrix.repo }}
+          #     path-to-sync: ${{ matrix.path }}
+          #     tracking-issue-label: ${{ matrix.label }}
+          #     tracking-issue-title: "[Sync] Updates on ${{ matrix.repo }} {{ path }}: {{ sha-short }}"
+          #     tracking-issue-body: |
+          #       ## Summary
 
-          # - name: Run step if any file(s) in the docs folder change
-          #   if: steps.changed-files-specific.outputs.any_changed == 'true'
-          #   env:
-          #     ALL_CHANGED_FILES: ${{ steps.poll-changes.outputs.all_changed_files }}
-          #   run: |
-          #     echo "One or more files in the docs folder has changed."
-          #     echo "List all the files that have changed: $ALL_CHANGED_FILES"
+          #       New commit in ${{ matrix.repo }} ({{ commit-date }}) ({{ sha-full }}):
+
+          #       {{ message }} [link]({{ url }})
+
+      - name: Post changes to GitHub issue
+        uses: git-for-windows/rss-to-issues@v0
+        # https://github.com/marketplace/actions/rss-to-issues
+        with:
+          github-token: ${{ steps.generate_token.outputs.token }}
+          feed: ${{ matrix.feed }}
+          prefix: "[New ${{ matrix.project }} changes]"
+          character-limit: ${{ env.CHARACTER_LIMIT }}
+          dry-run: false
+          max-age: ${{ env.MAX_AGE }}
+          labels: github/repo-content,automated-issue,${{ matrix.labels }}
