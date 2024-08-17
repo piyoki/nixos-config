@@ -18,8 +18,9 @@ jobs:
       matrix:
         include:
           - repo: chaotic/nyx
+            ref: main
             label: upstream-nyx-changes
-            path: "pkgs/linux-cachyos/versions-hardened.json"
+            path: pkgs/linux-cachyos/versions-hardened.json
       fail-fast: false
     steps:
       - name: Generate GitHub Auth Token
@@ -30,19 +31,41 @@ jobs:
           app_id: ${{ secrets.GH_APP_ID }}
           private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
-      - name: Poll changes from GitHub repo (${{ env.REPO_TO_SYNC }}
-        uses: poll-github-repo/action@v1
+      - uses: actions/checkout@main
         with:
           token: ${{ steps.generate_token.outputs.token }}
-          yes-create-issues: true
-          cache-path: .github/artifacts/${{ matrix.path }}.last-sync
-          repo-to-sync: ${{ matrix.repo }}
-          path-to-sync: ${{ matrix.path }}
-          tracking-issue-label: ${{ matrix.label }}
-          tracking-issue-title: "[Sync] Updates on ${{ matrix.repo }} {{ path }}: {{ sha-short }}"
-          tracking-issue-body: |
-            ## Summary
+          repository: ${{ matrix.repo }}
+          ref: ${{ matrix.ref }}
+          fetch-depth: 0
+          #   submodules: true
 
-            New commit in ${{ matrix.repo }} ({{ commit-date }}) ({{ sha-full }}):
+          # - name: Poll changes from GitHub repo (${{ env.REPO_TO_SYNC }}
+          #   uses: poll-github-repo/action@v1
+          #   with:
+          #     token: ${{ steps.generate_token.outputs.token }}
+          #     yes-create-issues: true
+          #     cache-path: .github/artifacts/${{ matrix.path }}.last-sync
+          #     repo-to-sync: ${{ matrix.repo }}
+          #     path-to-sync: ${{ matrix.path }}
+          #     tracking-issue-label: ${{ matrix.label }}
+          #     tracking-issue-title: "[Sync] Updates on ${{ matrix.repo }} {{ path }}: {{ sha-short }}"
+          #     tracking-issue-body: |
+          #       ## Summary
 
-            {{ message }} [link]({{ url }})
+          #       New commit in ${{ matrix.repo }} ({{ commit-date }}) ({{ sha-full }}):
+
+          #       {{ message }} [link]({{ url }})
+
+      - name: Poll changes from GitHub repo (${{ env.REPO_TO_SYNC }}
+        id: poll-changes
+        uses: tj-actions/changed-files@main
+        with:
+          files: ${{ matrix.path }}
+
+      - name: Run step if any file(s) in the docs folder change
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        env:
+          ALL_CHANGED_FILES: ${{ steps.poll-changes.outputs.all_changed_files }}
+        run: |
+          echo "One or more files in the docs folder has changed."
+          echo "List all the files that have changed: $ALL_CHANGED_FILES"
