@@ -5,6 +5,9 @@ on:
   schedule:
     # Run this Action every day at 1:00am UTC
     - cron: '0 1 * * *'
+  pull_request:
+    branches:
+      - poll-changes-from-nyx
 
 env:
   REPO_TO_SYNC: chaotic-cx/nyx
