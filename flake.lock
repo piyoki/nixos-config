@@ -3,11 +3,11 @@
     "alacritty-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1723564840,
-        "narHash": "sha256-IgcSmIzKEvgESCZmuTyJ1IpaYNvii5NTCZtUDPuWqps=",
+        "lastModified": 1723899455,
+        "narHash": "sha256-c5FPl8a+KnYhlrwzhutXeLmB4MZAu1QIc1+tNjGd+H4=",
         "owner": "piyoki",
         "repo": "dot-alacritty",
-        "rev": "7681bc38926e60de50e05cc3f05419da645aff9f",
+        "rev": "2ca6af30f7045dc0e7da7515d480640f859ac886",
         "type": "github"
       },
       "original": {
@@ -390,11 +390,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1723899457,
-        "narHash": "sha256-hBT1u3i/n4jPlsCrtaoPUH24exNq7j8NiffvLubgqhA=",
+        "lastModified": 1723899514,
+        "narHash": "sha256-o8ol9Oj05sp2WZNkjGCMb/OHIatP+YVPhrwjCqt0ZqA=",
         "ref": "master",
-        "rev": "65aa02449b404baa1921c6d7a2f40589aa40a24b",
-        "revCount": 275,
+        "rev": "9565534621b417b1dad67dd4a43807ca9a89b1f7",
+        "revCount": 276,
         "type": "git",
         "url": "https://github.com/piyoki/dotfiles.nix"
       },
