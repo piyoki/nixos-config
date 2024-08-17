@@ -1,0 +1,49 @@
+name: Poll changes from upstream repo
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run this Action every day at 1:00am UTC
+    - cron: '0 1 * * *'
+
+env:
+  REPO_TO_SYNC: chaotic-cx/nyx
+  TRACKING_ISSUE_LABEL: upstream-nyx-changes
+
+jobs:
+  poll-upstream-changes:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    strategy:
+      matrix:
+        include:
+          - project: hyprland
+            labels: hyprwm/Hyprland
+            feed: https://github.com/hyprwm/Hyprland/releases.atom
+      fail-fast: false
+    steps:
+      - name: Generate GitHub Auth Token
+        # https://github.com/tibdex/github-app-token
+        id: generate_token
+        uses: tibdex/github-app-token@v2.1.0
+        with:
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - name: Poll changes from GitHub repo (${{ env.REPO_TO_SYNC }} - linux-cachyos kernel)
+        uses: poll-github-repo/action@v1
+        env:
+          PATH_TO_SYNC: pkgs/linux-cachyos/versions-hardened.json
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+          repo-to-sync: ${{ env.REPO_TO_SYNC }}
+          path-to-sync: ${{ env.PATH_TO_SYNC }}
+          tracking-issue-label: ${{ env.TRACKING_ISSUE_LABEL }}
+          tracking-issue-title: "[Sync] Updates on ${{ env.REPO_TO_SYNC }} {{ path }}: {{ sha-short }}"
+          tracking-issue-body: |
+            ## Summary
+
+            New commit in ${{ env.REPO_TO_SYNC }} ({{ commit-date }}) ({{ sha-full }}):
+
+            {{ message }} [link]({{ url }})
