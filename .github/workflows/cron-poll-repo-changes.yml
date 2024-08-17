@@ -20,8 +20,8 @@ jobs:
         include:
           - project: nyx
             labels: chaotic-cx/nyx
-            path: pkgs/linux-cachyos/versions-hardened.json
-            feed: https://github.com/chaotic-cx/nyx/commits/main/pkgs/linux-cachyos/versions-hardened.json.atom
+            path: pkgs/linux-cachyos/versions.json
+            feed: https://github.com/chaotic-cx/nyx/commits/main/pkgs/linux-cachyos/versions.json.atom
       fail-fast: false
     steps:
       - name: Generate GitHub Auth Token
