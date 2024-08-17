@@ -19,7 +19,7 @@ jobs:
         include:
           - repo: chaotic/nyx
             label: upstream-nyx-changes
-            path: pkgs/linux-cachyos/versions-hardened.json
+            path: "pkgs/linux-cachyos/versions-hardened.json"
       fail-fast: false
     steps:
       - name: Generate GitHub Auth Token
