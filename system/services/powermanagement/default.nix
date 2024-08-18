@@ -45,15 +45,17 @@
         turbo = "never";
         governor = "powersave";
         energy_performance_preference = "power";
+        platform_profile = "low-power";
 
         scaling_min_freq = lib.mkDefault "800000"; # 800 MHz
         scaling_max_freq = lib.mkDefault "1400000"; # 1400 MHz, or 1.4 GHz
       };
 
       charger = {
-        turbo = "auto"; # [ always, auto, never]
+        turbo = "always"; # [ always, auto, never]
         governor = "performance";
         energy_performance_preference = "performance";
+        platform_profile = "performance";
       };
     };
   };
