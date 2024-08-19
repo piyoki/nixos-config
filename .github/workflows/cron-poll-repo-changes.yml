@@ -21,7 +21,7 @@ jobs:
           - project: nyx
             labels: chaotic-cx/nyx
             path: pkgs/linux-cachyos/versions.json
-            feed: https://github.com/chaotic-cx/nyx/blob/nyxpkgs-unstable/pkgs/linux-cachyos/versions.json
+            feed: https://github.com/chaotic-cx/nyx/commits/nyxpkgs-unstable/pkgs/linux-cachyos/versions.json.atom
       fail-fast: false
     steps:
       - name: Generate GitHub Auth Token
