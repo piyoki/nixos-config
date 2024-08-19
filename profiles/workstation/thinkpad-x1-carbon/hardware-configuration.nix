@@ -138,25 +138,36 @@
     enableAllFirmware = true;
 
     # GPU (OpenGL)
-    graphics = {
-      enable = true;
-      # if you also want 32-bit support (e.g for Steam)
-      extraPackages = with pkgs; [
-        intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
-        intel-media-driver # Intel Media Driver for VAAPI; # LIBVA_DRIVER_NAME=iHD
-        intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family; # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-        # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-        vaapiVdpau # VDPAU driver for the VAAPI library
-        libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
-      ];
-    };
+    # graphics = {
+    #   enable = true;
+    #   extraPackages = with pkgs; [
+    #     intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
+    #     intel-media-driver # Intel Media Driver for VAAPI; # LIBVA_DRIVER_NAME=iHD
+    #     intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family; # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+    #     # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+    #     vaapiVdpau # VDPAU driver for the VAAPI library
+    #     libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
+    #   ];
+    # };
 
     # CPU
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 
   # OpenGL (mesa-git)
-  chaotic.mesa-git.enable = true;
+  chaotic.mesa-git = {
+    enable = true;
+    extraPackages = with pkgs; [
+      inputs.chaotic-kernel.packages.${system}.mesa_git.opencl # OpenCL support for Mesa
+      intel-ocl # Official OpenCL runtime for Intel CPUs
+      intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
+      intel-media-driver # Intel Media Driver for VAAPI; # LIBVA_DRIVER_NAME=iHD
+      intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family; # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiVdpau # VDPAU driver for the VAAPI library
+      libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
+    ];
+  };
 
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
