@@ -19,6 +19,7 @@
       # substituers will be appended to the default substituters when fetching packages
       extra-substituters = [
         # "https://s3.homelab.local/nix-cache/"
+        "https://cache.garnix.io"
         "https://nyx.chaotic.cx/"
         "https://nixospilots.cachix.org/"
         "https://nix-community.cachix.org/"
@@ -27,6 +28,7 @@
       ] ++ inputs.home-estate.nixosModules.nixos.extra-substituters;
       extra-trusted-public-keys = [
         # "s3.homelab.local-1:RdTo2PHh1D/vIAHLK2VwNGav/9aKUuUmlpLLXHKHuDQ="
+        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
         "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
