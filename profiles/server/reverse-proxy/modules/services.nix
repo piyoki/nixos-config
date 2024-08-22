@@ -3,12 +3,12 @@
 with lib;
 {
   imports = [
-    inputs.home-estate.nixosModules.reverse-proxy
+    inputs.home-estate.nixosModules.caddy
   ];
 
   services = {
     # enable reverse-proxy service
-    reverse-proxy = {
+    caddy = {
       enable = true;
       autostart = mkForce true;
     };
