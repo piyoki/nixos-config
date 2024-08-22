@@ -333,11 +333,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1721651513,
-        "narHash": "sha256-PixvokfeOkXJBWiXDidM65MYTFCbbYRGC2/C2TkJLb0=",
+        "lastModified": 1724294322,
+        "narHash": "sha256-LbTgSb6IC3WJPklmjK+2Mr37NmWi8kY0jRjs1Ko9J/E=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "dcebbfaab17c981cc46e17e01a89c496f3d1edb0",
+        "rev": "8e459d3dcfce64cd015c628d74891cbe7f2f102e",
         "type": "github"
       },
       "original": {
@@ -1418,10 +1418,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1724243399,
-        "narHash": "sha256-mOfudY4qK/D/jsNZKYJ5aQvG9L5KJVN8kigQtdWzotA=",
+        "lastModified": 1724294360,
+        "narHash": "sha256-Z2B+viyTIcoTYPQLFOvQWy6MhCFBwAHxC4fg+rD2C3c=",
         "ref": "refs/heads/master",
-        "rev": "859b1ccacc8b1b0375773414227ed90d0637f35e",
+        "rev": "9b3728ec0c8d577325c9bf3fb83272019546fd69",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/home-estate.git"
