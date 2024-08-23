@@ -144,12 +144,14 @@
     assets.url = "github:piyoki/nur-assets";
 
     # private repos
-    # secrets = { url = "git+ssh://git@github.com/piyoki/sops-credentials.git?shallow=1"; flake = false; };
-    secrets = { url = "git+file:/home/kev/flake/secrets?shallow=1"; flake = false; };
-    # home-estate.url = "git+ssh://git@github.com/piyoki/home-estate.git?shallow=1";
-    home-estate.url = "git+file:/home/kev/flake/home-estate?shallow=1";
+    secrets = { url = "git+ssh://git@github.com/piyoki/sops-credentials.git?shallow=1"; flake = false; };
+    home-estate.url = "git+ssh://git@github.com/piyoki/home-estate.git?shallow=1";
 
     # personal dotfiles
     dotfiles.url = "git+https://github.com/piyoki/dotfiles.nix?ref=master";
+
+    # legacy
+    # secrets = { url = "git+file:/home/kev/flake/secrets?shallow=1"; flake = false; };
+    # home-estate.url = "git+file:/home/kev/flake/home-estate?shallow=1";
   };
 }
