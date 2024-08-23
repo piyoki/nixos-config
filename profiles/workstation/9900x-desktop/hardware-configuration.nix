@@ -25,7 +25,7 @@
 
     initrd = {
       availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "lz4" ];
-      kernelModules = [ "amdgpu" "i2c_dev" "coretemp" ];
+      kernelModules = [ "amdgpu" "i2c_dev" ];
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/a1a6982e-78b9-49ae-9563-a60c7f3ec282";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
@@ -43,7 +43,15 @@
     };
 
     kernelModules = [ "kvm-amd" ];
-    kernelParams = [ ];
+    kernelParams = [
+      "amd_pstate=active"
+      "amd_iommu=on"
+      "random.trust_cpu=off"
+      "zswap.enabled=1"
+      "zswap.compressor=zstd"
+      "zswap.zpool=zsmalloc"
+      "ia32_emulation=0"
+    ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''
     '';
