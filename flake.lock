@@ -1420,16 +1420,16 @@
       "locked": {
         "lastModified": 1724341081,
         "narHash": "sha256-SUnshVov2k3TuoKM8Cd9NzTaUTvpUyFteMVw57MyixE=",
-        "ref": "refs/heads/master",
+        "ref": "cd5ae1260e3de3fa21450540b159a6e8aa5de947",
         "rev": "cd5ae1260e3de3fa21450540b159a6e8aa5de947",
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@github.com/piyoki/home-estate.git"
+        "url": "file:/home/kev/flake/home-estate"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@github.com/piyoki/home-estate.git"
+        "url": "file:/home/kev/flake/home-estate"
       }
     },
     "home-manager": {
@@ -3322,16 +3322,16 @@
       "locked": {
         "lastModified": 1721350494,
         "narHash": "sha256-quFXbvkgj7aFFP8eVKxWU/WM6USTzVShLd4YP1eXgdk=",
-        "ref": "refs/heads/master",
+        "ref": "b78dcdcccc842ae320723069bf1aec76bfab3174",
         "rev": "b78dcdcccc842ae320723069bf1aec76bfab3174",
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@github.com/piyoki/sops-credentials.git"
+        "url": "file:/home/kev/flake/secrets"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@github.com/piyoki/sops-credentials.git"
+        "url": "file:/home/kev/flake/secrets"
       }
     },
     "sops-nix": {

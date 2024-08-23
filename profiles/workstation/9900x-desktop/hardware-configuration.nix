@@ -1,26 +1,8 @@
 # References:
-# https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_12)
-# https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_11)
-# https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_10)
-# https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_9)
-# https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon
-# https://nixos.wiki/wiki/Intel_Graphics
+# https://nixos.wiki/wiki/AMD_GPU
 
 # OpenGL related:
 # https://discourse.nixos.org/t/what-exactly-does-hardware-opengl-extrapackages-influence/36384/2
-
-# Hardware (Realtek Audio) issues troubleshooting:
-# Notes: this issue happens since Linux Kernel 6.7.x
-# https://discourse.nixos.org/t/sound-not-working/12585/15
-# https://discourse.nixos.org/t/realtek-audio-sound-card-not-recognized-by-pipewire/36637/3
-# https://discourse.nixos.org/t/intel-tiger-lake-pro-audio-no-audio/40592/2
-
-# Workaround solution:
-# https://bbs.archlinux.org/viewtopic.php?id=292393
-
-# Useful commands:
-# View options of a specific kernel module
-# sudo modinfo i915 | egrep -i "guc|huc|dmc"
 
 { inputs, config, lib, pkgs, modulesPath, system, ... }:
 
@@ -42,10 +24,10 @@
     };
 
     initrd = {
-      availableKernelModules = [ "xe" "i915" "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "lz4" ];
-      kernelModules = [ "xe" "i915" "i2c_dev" "coretemp" ];
+      availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "lz4" ];
+      kernelModules = [ "amdgpu" "i2c_dev" "coretemp" ];
       luks.devices."root" = {
-        device = "/dev/disk/by-uuid/79869bdd-49a1-44d5-b57c-0ca9fa89c4c9";
+        device = "/dev/disk/by-uuid/a1a6982e-78b9-49ae-9563-a60c7f3ec282";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
         # if not specified, you will be prompted for a passphrase instead.
         #keyFile = "/root-part.key";
@@ -60,20 +42,10 @@
       };
     };
 
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [ "kvm-amd" ];
     kernelParams = [ ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''
-      # blacklist legacy realtek codec (since Kernel 6.7.x)
-      blacklist snd_hda_codec_realtek
-
-      # Load intel dsp driver for audio
-      options snd-intel-dspcfg dsp_driver=1
-
-      # Apply intel integrated graphics params
-      options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
-      # options i915 force_probe=!7d55
-      # options xe enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
 
     tmp = {
@@ -84,42 +56,53 @@
     };
   };
 
-  fileSystems = {
-    "/" = {
-      device = "tmpfs";
-      fsType = "tmpfs";
-      options = [ "relatime" "size=25%" "mode=755" ];
+  fileSystems."/" =
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
     };
 
-    "/nix" =
-      {
-        device = "/dev/disk/by-uuid/54b6c0e4-9b42-4549-be1d-49d43aff9263";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
-      };
+  fileSystems."/home" =
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
 
-    "/persistent" =
-      {
-        device = "/dev/disk/by-uuid/54b6c0e4-9b42-4549-be1d-49d43aff9263";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
-        # impermanence's data is required for booting
-        neededForBoot = true;
-      };
+  fileSystems."/nix" =
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" ];
+    };
 
-    "/snapshots" =
-      {
-        device = "/dev/disk/by-uuid/54b6c0e4-9b42-4549-be1d-49d43aff9263";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
-      };
+  fileSystems."/snapshots" =
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+      fsType = "btrfs";
+      options = [ "subvol=@snapshots" ];
+    };
 
-    "/boot" =
-      {
-        device = "/dev/disk/by-uuid/28E0-4664";
-        fsType = "vfat";
-      };
-  };
+  fileSystems."/persistent" =
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+      fsType = "btrfs";
+      options = [ "subvol=@persistent" ];
+    };
+
+  fileSystems."/tmp" =
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+      fsType = "btrfs";
+      options = [ "subvol=@tmp" ];
+    };
+
+  fileSystems."/boot" =
+    {
+      device = "/dev/disk/by-uuid/FDF8-EDDF";
+      fsType = "vfat";
+    };
 
   swapDevices = [ ];
 
@@ -132,9 +115,9 @@
 
   # GPU (Accelerate Video Playback)
   # ref: https://nixos.wiki/wiki/Accelerated_Video_Playback
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-  };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   vaapiIntel = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  # };
 
   hardware = {
     # linux-firmware
@@ -145,11 +128,8 @@
       enable = false; # use mesa-git instead
       extraPackages = with pkgs; [
         inputs.chaotic-kernel.packages.${system}.mesa_git.opencl # OpenCL support for Mesa
-        intel-ocl # Official OpenCL runtime for Intel CPUs
-        intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
-        intel-media-driver # Intel Media Driver for VAAPI; # LIBVA_DRIVER_NAME=iHD
-        intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family; # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-        # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+        amdvlk # AMD Open Source Driver For Vulkan
+        rocmPackages.clr.icd # AMD Common Language Runtime for hipamd, opencl, and rocclr
         vaapiVdpau # VDPAU driver for the VAAPI library
         libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
         libdrm # Direct Rendering Manager library and headers
@@ -157,7 +137,7 @@
     };
 
     # CPU
-    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 
   # OpenGL (mesa-git)
@@ -165,7 +145,7 @@
 
   # Extra hardware packages
   environment.systemPackages = with pkgs; [
-    intel-gpu-tools # Tools for development and testing of the Intel DRM driver
+    amdgpu_top # Tool to display AMDGPU usage
     dmidecode # A tool that reads information about your system's hardware from the BIOS according to the SMBIOS/DMI standard
     libnotify # A library that sends desktop notifications to a notification daemon
     libva-utils # A collection of utilities and examples for VA-API
@@ -174,6 +154,7 @@
     glxinfo # Test utilities for OpenGL
     acpi # Show battery status and other ACPI information
   ];
+
 
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";

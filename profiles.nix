@@ -14,6 +14,7 @@ in
     workstations = [
       (genProfile { hostname = "thinkpad-x1-carbon"; home-manager = true; })
       (genProfile { hostname = "nuc-12"; home-manager = true; })
+      (genProfile { hostname = "9900x-desktop"; home-manager = true; })
     ];
     servers = [
       (genProfile { hostname = "mars"; })
