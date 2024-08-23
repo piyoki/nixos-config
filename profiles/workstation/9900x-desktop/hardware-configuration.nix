@@ -1,3 +1,6 @@
+# References:
+# https://nixos.wiki/wiki/AMD_GPU
+
 { inputs, config, lib, pkgs, modulesPath, system, ... }:
 
 {
@@ -19,7 +22,7 @@
 
     initrd = {
       availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "lz4" ];
-      kernelModules = [ "i2c_dev" "coretemp" ];
+      kernelModules = [ "amdgpu" "i2c_dev" "coretemp" ];
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/a1a6982e-78b9-49ae-9563-a60c7f3ec282";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
@@ -51,43 +54,50 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
       options = [ "subvol=@nix" ];
     };
 
   fileSystems."/snapshots" =
-    { device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
       options = [ "subvol=@snapshots" ];
     };
 
   fileSystems."/persistent" =
-    { device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
       options = [ "subvol=@persistent" ];
     };
 
   fileSystems."/tmp" =
-    { device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+    {
+      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
       options = [ "subvol=@tmp" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/FDF8-EDDF";
+    {
+      device = "/dev/disk/by-uuid/FDF8-EDDF";
       fsType = "vfat";
     };
 
@@ -132,11 +142,8 @@
     enable = true;
     extraPackages = with pkgs; [
       inputs.chaotic-kernel.packages.${system}.mesa_git.opencl # OpenCL support for Mesa
-      # intel-ocl # Official OpenCL runtime for Intel CPUs
-      # intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
-      # intel-media-driver # Intel Media Driver for VAAPI; # LIBVA_DRIVER_NAME=iHD
-      # intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family; # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      rocmPackages.clr # AMD Common Language Runtime for hipamd, opencl, and rocclr
+      amdvlk # AMD Open Source Driver For Vulkan
       vaapiVdpau # VDPAU driver for the VAAPI library
       libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
     ];
