@@ -1,4 +1,4 @@
-{ inputs, pkgs, system, ... }:
+{ inputs, system, ... }:
 
 # References:
 # https://github.com/chaotic-cx/nyx/issues/460

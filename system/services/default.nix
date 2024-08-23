@@ -3,21 +3,22 @@ _:
 {
   imports = [
     # ./cifs-mount.nix
-    ./fish.nix
-    ./gnupg
-    ./powermanagement
-    # ./greetd.nix
     # ./displaymanager.nix
-    ./xdg-portal.nix
-    ./flatpak.nix
-    ./thunar.nix
-    # ./virtualization.nix
     # ./docker.nix
+    ./greetd.nix
+    # ./virtualization.nix
+    ./btrfs.nix
+    ./fish.nix
+    ./flatpak.nix
+    ./gnome-keyring.nix
+    ./gnupg
+    ./openssh
+    ./powermanagement
     ./printer.nix
     ./rclone.nix
-    ./openssh
-    ./gnome-keyring.nix
+    ./thunar.nix
     ./windowmanager
+    ./xdg-portal.nix
     ./zramd.nix
   ];
 }
