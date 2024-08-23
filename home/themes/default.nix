@@ -3,6 +3,6 @@ _:
 {
   imports = [
     ./cursor.nix
-    ../../themes/gtk
+    ./gtk.nix
   ];
 }
