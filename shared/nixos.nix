@@ -32,14 +32,14 @@
         "https://nixospilots.cachix.org/"
         "https://nixpkgs-wayland.cachix.org/"
         "https://hyprland.cachix.org/"
-      ] ++ inputs.home-estate.nixosModules.nixos.extra-substituters;
+      ];
       extra-trusted-public-keys = [
         # "s3.homelab.local-1:RdTo2PHh1D/vIAHLK2VwNGav/9aKUuUmlpLLXHKHuDQ="
         "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
         "nixospilots.cachix.org-1:agmYn3jPCVyiqhSfyPtW8vjB4WavuEdSv49skpup2XE="
-      ] ++ inputs.home-estate.nixosModules.nixos.extra-trusted-public-keys;
+      ];
       # ref: https://github.com/NixOS/nix/issues/4894
       # workaround to fix ssh signature issues
       require-sigs = false;
