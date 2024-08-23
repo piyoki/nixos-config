@@ -182,6 +182,33 @@ reboot
 
 If all goes well, we’ll be prompted for the passphrase for $DISK entered earlier. Switch to another `tty` with `Ctrl+Alt+F1`, login as `root`, passwd <passwd> to set your password. Once you’re logged in, you can continue to tweak your NixOS configuration as you want. However, I generally recommend keeping enabled services at a minimum, and setting up opt-in state first.
 
+## Binary cache usage
+
+> [!NOTE]
+> A binary cache builds Nix packages and caches the result for other machines. Any machine with Nix installed can be a binary cache for another one, no matter the operating system.
+> If you are facing problems with derivations not being in a cache, try switching to a release version. Most caches will have many derivations for a specific release.
+
+Reference: https://nixos.wiki/wiki/Binary_Cache
+
+```nix
+# /etc/nixos/configuration.nix
+{
+  nix = {
+    settings = {
+      substituters = [
+        "http://binarycache.example.com"
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org/"
+      ];
+      trusted-public-keys = [
+        "binarycache.example.com-1:dsafdafDFW123fdasfa123124FADSAD"
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
+  };
+}
+```
+
 ## Flake integration
 
 Start with the following barebone configuraton
