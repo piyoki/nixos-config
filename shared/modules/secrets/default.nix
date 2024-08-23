@@ -111,6 +111,8 @@ in
               sopsFile = "${inputs.secrets}/ssh-keys.enc.yaml";
               access = defaultAccess;
               secretPaths = [
+                { "ssh_keys/id_rsa_s_user".path = "${config.home.homeDirectory}/.ssh/id_rsa_s_user"; }
+                { "ssh_keys/id_rsa_h_user".path = "${config.home.homeDirectory}/.ssh/id_rsa_h_user"; }
                 { "ssh_keys/id_rsa_semaphore".path = "${config.home.homeDirectory}/.ssh/id_rsa_semaphore.pub"; }
                 { "ssh_keys/id_rsa_yubikey_desktop".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_desktop.pub"; }
                 { "ssh_keys/id_rsa_yubikey_laptop".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_laptop.pub"; }
