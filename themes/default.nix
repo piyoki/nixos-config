@@ -2,7 +2,7 @@ _:
 
 {
   imports = [
-    # ./fonts
+    ./fonts
     ./qt
   ];
 }
