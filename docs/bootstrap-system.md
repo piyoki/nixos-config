@@ -79,7 +79,7 @@ umount /mnt
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/mapper/root /mnt
 mkdir /mnt/{boot,home,nix,snapshots}
 # for tmpfs filesystem only
-# mkdir /mnt/{boot,home,nix,snapshots}
+# mkdir /mnt/{boot,home,nix,snapshots,persistent}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/mapper/root /mnt/home/
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@nix /dev/mapper/root /mnt/nix/
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/mapper/root /mnt/snapshots/
