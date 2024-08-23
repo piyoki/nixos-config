@@ -1,6 +1,9 @@
 # References:
 # https://nixos.wiki/wiki/AMD_GPU
 
+# OpenGL related:
+# https://discourse.nixos.org/t/what-exactly-does-hardware-opengl-extrapackages-influence/36384/2
+
 { inputs, config, lib, pkgs, modulesPath, system, ... }:
 
 {
@@ -121,33 +124,37 @@
     enableAllFirmware = true;
 
     # GPU (OpenGL)
-    # graphics = {
-    #   enable = true;
-    #   extraPackages = with pkgs; [
-    #     intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
-    #     intel-media-driver # Intel Media Driver for VAAPI; # LIBVA_DRIVER_NAME=iHD
-    #     intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family; # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-    #     # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-    #     vaapiVdpau # VDPAU driver for the VAAPI library
-    #     libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
-    #   ];
-    # };
+    graphics = {
+      enable = false; # use mesa-git instead
+      extraPackages = with pkgs; [
+        inputs.chaotic-kernel.packages.${system}.mesa_git.opencl # OpenCL support for Mesa
+        amdvlk # AMD Open Source Driver For Vulkan
+        rocmPackages.clr.icd # AMD Common Language Runtime for hipamd, opencl, and rocclr
+        vaapiVdpau # VDPAU driver for the VAAPI library
+        libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
+        libdrm # Direct Rendering Manager library and headers
+      ];
+    };
 
     # CPU
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 
   # OpenGL (mesa-git)
-  chaotic.mesa-git = {
-    enable = true;
-    extraPackages = with pkgs; [
-      inputs.chaotic-kernel.packages.${system}.mesa_git.opencl # OpenCL support for Mesa
-      rocmPackages.clr # AMD Common Language Runtime for hipamd, opencl, and rocclr
-      amdvlk # AMD Open Source Driver For Vulkan
-      vaapiVdpau # VDPAU driver for the VAAPI library
-      libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
-    ];
-  };
+  chaotic.mesa-git.enable = true;
+
+  # Extra hardware packages
+  environment.systemPackages = with pkgs; [
+    amdgpu_top # Tool to display AMDGPU usage
+    dmidecode # A tool that reads information about your system's hardware from the BIOS according to the SMBIOS/DMI standard
+    libnotify # A library that sends desktop notifications to a notification daemon
+    libva-utils # A collection of utilities and examples for VA-API
+    cpufetch # Simplistic yet fancy CPU architecture fetching tool
+    vulkan-tools # Khronos official Vulkan Tools and Utilities
+    glxinfo # Test utilities for OpenGL
+    acpi # Show battery status and other ACPI information
+  ];
+
 
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
