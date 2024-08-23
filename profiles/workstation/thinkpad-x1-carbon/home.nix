@@ -16,5 +16,8 @@
   ];
 
   # Import home secrets
-  modules.secrets.workstation.home.enable = true;
+  modules.secrets.workstation = {
+    home.enable = true;
+    kind = "laptop";
+  };
 }
