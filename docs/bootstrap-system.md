@@ -47,10 +47,10 @@ cryptsetup luksOpen /dev/nvme0n1p2 root
 # enter passphrase
 
 # view mapper status
-cryptsetup -v status ext
+cryptsetup -v status root
 
 # format LUKS partition
-dd if=/dev/zero of=/dev/mapper/ext
+dd if=/dev/zero of=/dev/mapper/root
 ```
 
 ## Format partitions
