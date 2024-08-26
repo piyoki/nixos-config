@@ -50,7 +50,10 @@
       "zswap.enabled=1"
       "zswap.compressor=zstd"
       "zswap.zpool=zsmalloc"
-      "ia32_emulation=0"
+      "amdgpu.dpm=0"
+      "amdgpu.aspm=0"
+      "amdgpu.runpm=0"
+      "amdgpu.bapm=0"
     ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''
