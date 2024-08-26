@@ -29,10 +29,10 @@
     # Import system secrets
     secrets.workstation.system.enable = true;
     # Load persistent dirs and files
-    # persistent = {
-    #   enable = true;
-    #   hostType = "workstation";
-    # };
+    persistent = {
+      enable = true;
+      hostType = "workstation";
+    };
   };
 
   services = {

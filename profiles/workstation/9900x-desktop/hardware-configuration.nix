@@ -66,16 +66,9 @@
 
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@" ];
-    };
-
-  fileSystems."/home" =
-    {
-      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@home" ];
+      device = "tmpfs";
+      fsType = "tmpfs";
+      options = [ "relatime" "size=25%" "mode=755" ];
     };
 
   fileSystems."/nix" =
@@ -97,6 +90,7 @@
       device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
       options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
+      # impermanence's data is required for booting
       neededForBoot = true;
     };
 
