@@ -68,42 +68,43 @@
     {
       device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@" ];
     };
 
   fileSystems."/home" =
     {
       device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
-      options = [ "subvol=@home" ];
+      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@home" ];
     };
 
   fileSystems."/nix" =
     {
       device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
-      options = [ "subvol=@nix" ];
+      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@nix" ];
     };
 
   fileSystems."/snapshots" =
     {
       device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
-      options = [ "subvol=@snapshots" ];
+      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
     };
 
   fileSystems."/persistent" =
     {
       device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
-      options = [ "subvol=@persistent" ];
+      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
+      neededForBoot = true;
     };
 
   fileSystems."/tmp" =
     {
       device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
       fsType = "btrfs";
-      options = [ "subvol=@tmp" ];
+      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@tmp" ];
     };
 
   fileSystems."/boot" =
