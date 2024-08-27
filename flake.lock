@@ -1418,10 +1418,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1724729623,
-        "narHash": "sha256-lbLM1JkKpsFoQFLx7W9hELWuEFYhZjUJPyVchsWP38I=",
+        "lastModified": 1724785293,
+        "narHash": "sha256-zZhXi2aV8WAMRXFzxFjCQfT3Rld0M/ZD89XGxg8ASq0=",
         "ref": "refs/heads/master",
-        "rev": "1aa685895583bab1f7deacacab12976cc034dc7e",
+        "rev": "bd3ef76321c5129116aee7fc5cec618bcf372c36",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/home-estate.git"
@@ -2941,11 +2941,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1711159744,
-        "narHash": "sha256-X4HdzfudMP4Vw/QcyEmOMLNKFqCoygEkprHv+G7mP8A=",
+        "lastModified": 1724765961,
+        "narHash": "sha256-RLYujrHMDzOjkJt249AWrN8zNjvpeO9n0Pv0OOvex28=",
         "owner": "piyoki",
         "repo": "nur-packages",
-        "rev": "86e20984c94309cb953026b3e2b0cb225ea52674",
+        "rev": "c83bb392860c782868a93985f8c9999041070133",
         "type": "github"
       },
       "original": {
@@ -2962,11 +2962,11 @@
         "pre-commit-hooks": "pre-commit-hooks_4"
       },
       "locked": {
-        "lastModified": 1711159744,
-        "narHash": "sha256-X4HdzfudMP4Vw/QcyEmOMLNKFqCoygEkprHv+G7mP8A=",
+        "lastModified": 1724765961,
+        "narHash": "sha256-RLYujrHMDzOjkJt249AWrN8zNjvpeO9n0Pv0OOvex28=",
         "owner": "piyoki",
         "repo": "nur-packages",
-        "rev": "86e20984c94309cb953026b3e2b0cb225ea52674",
+        "rev": "c83bb392860c782868a93985f8c9999041070133",
         "type": "github"
       },
       "original": {
