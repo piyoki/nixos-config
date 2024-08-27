@@ -1415,13 +1415,14 @@
         "flake-utils": "flake-utils_5",
         "nixpkgs": "nixpkgs_10",
         "nur": "nur",
-        "pre-commit-hooks": "pre-commit-hooks_3"
+        "pre-commit-hooks": "pre-commit-hooks_3",
+        "secrets": "secrets"
       },
       "locked": {
-        "lastModified": 1724789989,
-        "narHash": "sha256-KyZ6w7nRWLoZmcrtHgmoXFp2Fcg4TIj988EHa9015w4=",
+        "lastModified": 1724798916,
+        "narHash": "sha256-0+dINeR2p0dtLPMTVuAgtEnWmjxVExAppUSAvUVfGwk=",
         "ref": "refs/heads/master",
-        "rev": "e36e3ec58704cd17fc93ce87a1b835e80450b76d",
+        "rev": "9ffa349af54ebd16eaf4aa143614e29b6a5f2b4b",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/home-estate.git"
@@ -3216,7 +3217,7 @@
         "nur": "nur_2",
         "pilots": "pilots",
         "pre-commit-hooks": "pre-commit-hooks_6",
-        "secrets": "secrets",
+        "secrets": "secrets_2",
         "sops-nix": "sops-nix"
       }
     },
@@ -3320,10 +3321,27 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1724456110,
-        "narHash": "sha256-wd6q9s/9kUhvYMhKnyptGV6x1vvN/CUAttte3iY65ds=",
+        "lastModified": 1724791653,
+        "narHash": "sha256-EYvCC6bEbrAuZrlvCXooYuKVz1CNoZjzSmMOW59Wnus=",
         "ref": "refs/heads/master",
-        "rev": "a9c21424b516cf074ac06cd32d59b2c1aec2e031",
+        "rev": "2f2058e09fcfcf82a1b2d04865453d13b5756249",
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/secrets"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/kev/flake/secrets"
+      }
+    },
+    "secrets_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1724799720,
+        "narHash": "sha256-9XpCpkO32TJJjWLcD1AWXQoW+tBf0soVrzr9zjqK9wo=",
+        "ref": "refs/heads/master",
+        "rev": "16b48b6dd39f106b42726c8b704ef6bf0e9b0ec9",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/sops-credentials.git"

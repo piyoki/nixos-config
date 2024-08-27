@@ -17,7 +17,7 @@
     "shared/modules/system/tmpfs/persistent"
   ]) ++ [
     # host specific modules
-    ./modules/hosts.nix
+    inputs.home-estate.nixosModules.host
   ] ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -44,7 +44,7 @@
     sdwan = {
       enable = true;
       autostart = lib.mkForce false;
-      profile = "laptop";
+      profile = "desktop";
     };
   };
 }

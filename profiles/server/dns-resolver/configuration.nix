@@ -15,5 +15,5 @@
     ./modules/services.nix
   ];
 
-  networking.hostName = "nixos-reverse-proxy";
+  networking.hostName = "nixos-dns-resolver";
 }

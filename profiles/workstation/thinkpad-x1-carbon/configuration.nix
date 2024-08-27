@@ -10,6 +10,7 @@
     "system/services/scx.nix"
     "system/hardware/keyd.nix"
     # "system/hardware/fingerprint.nix"
+    "system/networking/udp-gro-forwarding.nix"
 
     # themes modules
     "themes"
@@ -18,12 +19,15 @@
     "shared/modules/secrets"
     "shared/modules/system/tmpfs/persistent"
   ]) ++ [
+    # host specific modules
+    inputs.home-estate.nixosModules.host
+  ] ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    # external modules
     inputs.home-estate.nixosModules.sdwan
-  ] ++ (map sharedLib.relativeToRoot [
-    "system/networking/udp-gro-forwarding.nix"
-  ]);
+  ];
 
   # Set hostname
   networking.hostName = "nixos-x1-carbon";
