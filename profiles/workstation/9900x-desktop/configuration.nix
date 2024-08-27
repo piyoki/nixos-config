@@ -44,7 +44,7 @@
     sdwan = {
       enable = true;
       autostart = lib.mkForce false;
-      profile = "workstation";
+      profile = "desktop";
     };
   };
 }
