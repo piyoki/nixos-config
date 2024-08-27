@@ -15,6 +15,9 @@
     "shared/modules/secrets"
     "shared/modules/system/tmpfs/persistent"
   ]) ++ [
+    # host specific modules
+    ./modules/hosts.nix
+  ] ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-estate.nixosModules.sdwan

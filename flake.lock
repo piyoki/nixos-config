@@ -1418,10 +1418,10 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1724678793,
-        "narHash": "sha256-6GKBXksqrFw3xDvK2teDXowkGeYDkVyMfTlIOtOQYI8=",
+        "lastModified": 1724729623,
+        "narHash": "sha256-lbLM1JkKpsFoQFLx7W9hELWuEFYhZjUJPyVchsWP38I=",
         "ref": "refs/heads/master",
-        "rev": "edb9af7f2ddf95a674dd5d8073f8c2120206bfce",
+        "rev": "1aa685895583bab1f7deacacab12976cc034dc7e",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/home-estate.git"

@@ -6,11 +6,9 @@ with lib;
     inputs.home-estate.nixosModules.caddy
   ];
 
-  services = {
+  services.reverse-proxy.caddy = {
     # enable reverse-proxy service
-    caddy = {
-      enable = true;
-      autostart = mkForce true;
-    };
+    enable = true;
+    autostart = mkForce true;
   };
 }
