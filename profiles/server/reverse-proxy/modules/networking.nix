@@ -11,11 +11,11 @@
     interfaces.ens18 = {
       useDHCP = lib.mkDefault false;
       ipv4.addresses = [{
-        address = "10.178.0.118";
+        address = "192.168.2.118";
         prefixLength = 24;
       }];
     };
-    defaultGateway = "10.178.0.4";
-    nameservers = [ "10.178.0.4" ];
+    defaultGateway = "192.168.2.1";
+    nameservers = [ "192.168.2.1" ];
   };
 }
