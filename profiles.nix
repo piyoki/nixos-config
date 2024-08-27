@@ -20,6 +20,7 @@ in
       (genProfile { hostname = "mars"; })
       (genProfile { hostname = "tailscale-gateway"; })
       (genProfile { hostname = "sdwan-gateway"; })
+      (genProfile { hostname = "dns-resolver"; })
       (genProfile { hostname = "felix"; keys = { inherit (import (secretsDir + "/atuin-server.nix")) "env" "server.toml"; }; })
       (genProfile { hostname = "reverse-proxy"; keys = { inherit (import (secretsDir + "/caddy-server.nix")) "ecc_server.crt" "ecc_server.key"; }; })
     ];

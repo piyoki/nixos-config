@@ -7,6 +7,7 @@
     "system/users/init-pass.nix"
     "system/services/greetd.nix"
     "system/services/scx.nix"
+    "system/networking/udp-gro-forwarding.nix"
 
     # themes modules
     "themes"
@@ -20,10 +21,10 @@
   ] ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    # external modules
     inputs.home-estate.nixosModules.sdwan
-  ] ++ (map sharedLib.relativeToRoot [
-    "system/networking/udp-gro-forwarding.nix"
-  ]);
+  ];
 
   # Set hostname
   networking.hostName = "nixos-9900x-desktop";
