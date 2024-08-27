@@ -13,6 +13,8 @@
       specialArgs = genSpecialArgs system;
       extraModules = [
         sops-nix.nixosModules.sops
+        chaotic.nixosModules.default
+        auto-cpufreq.nixosModules.default
       ];
       # function to generate specialArgs
       genSpecialArgs = system: {
@@ -43,8 +45,6 @@
         , hostModules ? (
             [ (profilePrefix + "/configuration.nix") ] ++ (lib.optionals (!isServer) [
               hyprland.nixosModules.default
-              chaotic.nixosModules.default
-              auto-cpufreq.nixosModules.default
             ])
           )
         , homeModules ? lib.optionals profile.home-manager (genHomeModules (import (profilePrefix + "/home.nix")))
