@@ -1419,10 +1419,10 @@
         "secrets": "secrets"
       },
       "locked": {
-        "lastModified": 1724847844,
-        "narHash": "sha256-2DxGGS2lRLAd9FhdeCpvmBsikQqVKNCck+XOIBIXwbk=",
+        "lastModified": 1724850818,
+        "narHash": "sha256-yjM3dvW2KULAFkx4pzMcxsrgsioQoYtTGe+f7UToojg=",
         "ref": "refs/heads/master",
-        "rev": "cf39f39105386c29f0069d63ac33826af68ce3e4",
+        "rev": "ca34d6d4d5f66916cf1d4ff4a8e7e1915d830e07",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/home-estate.git"
@@ -3321,10 +3321,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1724791653,
-        "narHash": "sha256-EYvCC6bEbrAuZrlvCXooYuKVz1CNoZjzSmMOW59Wnus=",
+        "lastModified": 1724799720,
+        "narHash": "sha256-9XpCpkO32TJJjWLcD1AWXQoW+tBf0soVrzr9zjqK9wo=",
         "ref": "refs/heads/master",
-        "rev": "2f2058e09fcfcf82a1b2d04865453d13b5756249",
+        "rev": "16b48b6dd39f106b42726c8b704ef6bf0e9b0ec9",
         "shallow": true,
         "type": "git",
         "url": "file:/home/kev/flake/secrets"
