@@ -40,6 +40,12 @@
   };
 
   services = {
+    # enable resolved service
+    resolved = {
+      enable = true;
+      domains = [ "~." ];
+      fallbackDns = [ "192.168.2.8" ];
+    };
     # enable sdwan service
     sdwan = {
       enable = true;
