@@ -7,6 +7,7 @@
     "system/users/init-pass.nix"
     "system/services/greetd.nix"
     "system/services/scx.nix"
+    "system/services/coolercontrold.nix"
     "system/networking/udp-gro-forwarding.nix"
 
     # themes modules
