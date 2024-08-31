@@ -5,6 +5,7 @@ _:
     # ./cifs-mount.nix
     # ./displaymanager.nix
     # ./docker.nix
+    ./podman.nix
     ./greetd.nix
     # ./virtualization.nix
     ./btrfs.nix

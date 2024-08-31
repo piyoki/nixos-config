@@ -5,10 +5,6 @@
     # ansible
     ansible
 
-    # docker
-    lazydocker # Docker terminal UI.
-    # dive # A tool for exploring each layer in a docker image
-
     # kubernetes
     kubectl
     kubernetes-helm
