@@ -391,11 +391,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1724678018,
-        "narHash": "sha256-Fcw5+RG7aMjOzBwWZuHqu/TpvKnNcYV2WPjch+W1GB0=",
+        "lastModified": 1725191972,
+        "narHash": "sha256-ndClXqwnFtMMV5nDgPRBp50gMXJTFT3m4Kf7OdUPlRI=",
         "ref": "master",
-        "rev": "6a93c4525cb560739d9bd0ae73e1a7b8f3ae0b0d",
-        "revCount": 301,
+        "rev": "557040a2ec4010aa2f91a03db9bd82758189bf82",
+        "revCount": 316,
         "type": "git",
         "url": "https://github.com/piyoki/dotfiles.nix"
       },
@@ -1553,11 +1553,11 @@
     "hypr-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1724677969,
-        "narHash": "sha256-dGv1kku+CwYC6fpHoSR956TQxDV/L6zTu+cnkwyiTxk=",
+        "lastModified": 1725191927,
+        "narHash": "sha256-QHn+tqv5C63EB47LSh3RKLGdc9phpbPhJuU91SSS7Xg=",
         "owner": "piyoki",
         "repo": "dot-hypr",
-        "rev": "3f33fbc83cd6c454024e1cd27cd34d1395024cc3",
+        "rev": "cb354b5b02a3ac2f9b1702b56df1ff87c2fe0a47",
         "type": "github"
       },
       "original": {
@@ -1570,11 +1570,11 @@
     "hypr-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1724677914,
-        "narHash": "sha256-opuFO59/2DqKG9XUz2CA+0XW4FzN+zAQLcPToSw2NPE=",
+        "lastModified": 1725163001,
+        "narHash": "sha256-K3g8/kCmMi4TdGW4ZmU9GHt3eP+5b07wFNLH9jCY/EU=",
         "owner": "piyoki",
         "repo": "dot-hypr",
-        "rev": "8d2cc7d3bf3a70160fd56e8d01ae2ba0ea8e855a",
+        "rev": "3466ca3b29246adeaa2c124fb1b1f9ebb52ec1ee",
         "type": "github"
       },
       "original": {
@@ -3051,11 +3051,11 @@
     "nvim-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1724417315,
-        "narHash": "sha256-TFhzwv/8iz7apwHk70qsVsTlwWga0NszZFxwTyPmMe8=",
+        "lastModified": 1725026481,
+        "narHash": "sha256-C151+W1mluB4MW/zI08Wvn8Oq84hrRtQ4WKB3oWngvE=",
         "owner": "piyoki",
         "repo": "dot-nvim",
-        "rev": "fbdbb0422f58eb760e8596c782595903211c6ea2",
+        "rev": "1b95b127f1daf15653beed35d467681b4ccf34fb",
         "type": "github"
       },
       "original": {
