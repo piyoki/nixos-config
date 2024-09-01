@@ -10,7 +10,6 @@
       noto-fonts
       noto-fonts-extra
       noto-fonts-emoji
-      noto-fonts-emoji
       noto-fonts-emoji-blob-bin
       source-code-pro
 

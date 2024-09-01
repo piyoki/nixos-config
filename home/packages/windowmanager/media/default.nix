@@ -11,6 +11,7 @@
     mpdevil # A simple music browser for MPD
     # quodlibet # GTK-based audio player written in Python
     inputs.chaotic.packages.${system}.yt-dlp_git # Command-line tool to download videos from YouTube.com and other sites
+    ncspot # Cross-platform ncurses Spotify client written in Rust, inspired by ncmpc and the likes
   ];
 
   services = {
