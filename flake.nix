@@ -127,11 +127,12 @@
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     pilots.url = "github:NixOS-Pilots/pilots";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    chaotic-kernel.url = "github:chaotic-cx/nyx/a1a11c4bcc8df500b3e11857d02f457b67342779";
+    chaotic-kernel.url = "github:chaotic-cx/nyx/c15b70230c274d2aa11d6c56ce5d50a198c2a994";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "git+https://github.com/hyprwm/Hyprland?tag=v0.42.0&submodules=1"; };
+    pyprland = { url = "git+https://github.com/hyprland-community/pyprland?tag=2.4.0"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     impermanence.url = "github:nix-community/impermanence";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
