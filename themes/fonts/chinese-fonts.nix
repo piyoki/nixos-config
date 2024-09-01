@@ -7,6 +7,7 @@
       noto-fonts-cjk
       source-han-sans
       source-han-serif
+      wqy_zenhei
     ];
   };
 }
