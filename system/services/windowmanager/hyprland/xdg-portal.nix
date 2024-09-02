@@ -1,7 +1,12 @@
-# Reference: https://nixos.wiki/wiki/Sway
+# Reference:
+# https://github.com/hyprwm/xdg-desktop-portal-hyprland
+# https://nixos.wiki/wiki/Sway
 
-{ pkgs, ... }:
+{ pkgs, inputs, system, ... }:
 
+let
+  pkgs-hypr = inputs.hyprland.packages.${system};
+in
 {
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
@@ -18,11 +23,15 @@
     enable = true;
   };
 
+  # enable hyprland's xdg-desktop-portal
   xdg.portal = {
     enable = true;
-    # gtk portal needed to make gtk apps happy
+    # hyprland has its own portal, wlr is not needed
+    wlr.enable = false;
+    configPackages = [ pkgs-hypr.xdg-desktop-portal-hyprland ];
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
+      pkgs-hypr.xdg-desktop-portal-hyprland
     ];
   };
 }
