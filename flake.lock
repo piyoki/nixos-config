@@ -391,11 +391,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1725242787,
-        "narHash": "sha256-nG035X90TcuER1puDiz724Onrt3eY8JDPRVg03L8940=",
+        "lastModified": 1725326836,
+        "narHash": "sha256-+9J8TLcrwYmkfK2nJI2Ffazrx92z2JIvyoLDasHiGzs=",
         "ref": "master",
-        "rev": "7b6d3722c32a4fcd6fab74f7158f5f5729ef1b6a",
-        "revCount": 318,
+        "rev": "c967d7798476d8f61cea579a659778ef1097ef52",
+        "revCount": 321,
         "type": "git",
         "url": "https://github.com/piyoki/dotfiles.nix"
       },
@@ -1553,11 +1553,11 @@
     "hypr-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1725242741,
-        "narHash": "sha256-RQF9XA/ZxdO+nM6UrM/ukH/6dnXmFgSV9407XKxp/m8=",
+        "lastModified": 1725326776,
+        "narHash": "sha256-MCn1RF/UJVbqg0QVePFEdRDPOY34ydLH+ysGc94i2E8=",
         "owner": "piyoki",
         "repo": "dot-hypr",
-        "rev": "0e0faf63f995905be34bac213cb64e62964a9a99",
+        "rev": "8803c027ba8972be59681b61cd65adf33976d387",
         "type": "github"
       },
       "original": {
@@ -1570,11 +1570,11 @@
     "hypr-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1725242686,
-        "narHash": "sha256-FwYbbE6CqdWw9MDhVJm+DllcmN9u0WkHIwxCz4GOqm8=",
+        "lastModified": 1725326736,
+        "narHash": "sha256-ONdX4bmURqefnWtf10nQ/qhlwLojIeWk7bf75/nHtYU=",
         "owner": "piyoki",
         "repo": "dot-hypr",
-        "rev": "f69da0974a7a39b330fe04aabf9910812d833cd0",
+        "rev": "23a36d359484aeccc2c43cf95dffcd469b5e595a",
         "type": "github"
       },
       "original": {
@@ -3302,11 +3302,11 @@
     "rofi-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1723898818,
-        "narHash": "sha256-hjFH/9yS4FyesInbI/Mjhtk2lSJDP8rHys+7gcx5NZY=",
+        "lastModified": 1725300590,
+        "narHash": "sha256-wExLlCasz69BYZCgXoLbdZu3tFO/CSY8NoORxQj7KHs=",
         "owner": "piyoki",
         "repo": "dot-rofi",
-        "rev": "8589226b03b5559b2491fefbf64e46ef6313e67b",
+        "rev": "cd08228f3b4fc6947f42eb67160e7d4157249985",
         "type": "github"
       },
       "original": {
