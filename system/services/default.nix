@@ -19,7 +19,7 @@ _:
     ./rclone.nix
     ./thunar.nix
     ./windowmanager
-    ./xdg-portal.nix
+    # ./xdg-portal.nix
     ./zramd.nix
   ];
 }
