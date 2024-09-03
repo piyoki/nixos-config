@@ -5,6 +5,7 @@
 
 {
   imports = [
+    ./hyprpaper.nix
     ./pyprland.nix
     ./xdg-portal.nix
   ];

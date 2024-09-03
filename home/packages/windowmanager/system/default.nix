@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    hyprpaper
     inputs.nixpkgs-wayland.packages.${system}.waybar # (nightly) wayland-based bar/dock
     inputs.nixpkgs-wayland.packages.${system}.swayidle # idle management daemon
     inputs.nixpkgs-wayland.packages.${system}.swaylock-effects # screenlock daemon
