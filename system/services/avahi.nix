@@ -15,7 +15,11 @@
 {
   services = {
     # Enable Avahi service
-    avahi.enable = true;
+    avahi = {
+      enable = true;
+      # Reflect incoming mDNS requests to all allowed network interfaces.
+      reflector = true;
+    };
 
     # Enable raop-discovery for (airplay) configuration on Pipewire server
     # /etc/pipewire/pipewire.conf.d
@@ -25,5 +29,4 @@
       ];
     };
   };
-
 }
