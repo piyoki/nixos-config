@@ -7,6 +7,8 @@ let
   ];
   specialUDPPorts = [
     41641 # tailscale for peer-to-peer connection
+    6001 # sonos speaker
+    6002 # sonos speaker
   ];
 in
 {
