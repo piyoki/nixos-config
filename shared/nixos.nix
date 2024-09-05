@@ -1,4 +1,4 @@
-{ inputs, pkgs, lib, user, ... }:
+{ pkgs, lib, user, ... }:
 
 {
   # Ref: https://nixos.wiki/wiki/Nixos-rebuild
