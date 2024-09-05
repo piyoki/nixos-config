@@ -1,5 +1,3 @@
-{ inputs, system, ... }:
-
 # References:
 # https://github.com/chaotic-cx/nyx/issues/460
 # https://github.com/sched-ext/scx
@@ -14,6 +12,9 @@
 # 21:38:53 [INFO] DOM[00] cpumask 00000000FF03F03F (20 cpus)
 # 21:38:53 [INFO] DOM[01] cpumask 0000000000FC0FC0 (12 cpus)
 # 21:38:53 [INFO] Rusty Scheduler Attached
+
+{ inputs, system, ... }:
+
 let
   scx_bin = inputs.chaotic.packages.${system}.scx;
 in
