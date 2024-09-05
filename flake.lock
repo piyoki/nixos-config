@@ -1453,10 +1453,10 @@
         "secrets": "secrets"
       },
       "locked": {
-        "lastModified": 1724894039,
-        "narHash": "sha256-8OQnXeg4Y319rMt7506nfcNlDJfa7qlBTrz0sAWAd04=",
+        "lastModified": 1725575102,
+        "narHash": "sha256-fKjqU2a/i73QtTiUCnrBP2GrntIKPpGepsqGb0nq+2s=",
         "ref": "refs/heads/master",
-        "rev": "9ff10d273008536e0245fe248ed752c12ed7fec7",
+        "rev": "3382b6afa353b43daf917491b318466ba5a41844",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/home-estate.git"
@@ -3457,10 +3457,10 @@
     "secrets_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1724799720,
-        "narHash": "sha256-9XpCpkO32TJJjWLcD1AWXQoW+tBf0soVrzr9zjqK9wo=",
+        "lastModified": 1725574667,
+        "narHash": "sha256-+J+TXbuA6DKyZC5HeSD822WJladrpV75KDuRHSyoj2o=",
         "ref": "refs/heads/master",
-        "rev": "16b48b6dd39f106b42726c8b704ef6bf0e9b0ec9",
+        "rev": "b789592c69c315f3986304ee245b11b7c7e60ae2",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/sops-credentials.git"

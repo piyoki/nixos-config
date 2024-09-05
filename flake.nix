@@ -60,6 +60,7 @@
         }: {
           deployment = {
             targetHost = "nixos-${profile.hostname}";
+            # targetHost = "<ipv4 address>";
             inherit (import ./shared/vars) targetPort targetUser tags;
             inherit (profile) keys;
           };
