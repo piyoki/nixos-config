@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     bat
     cmake
+    cmake-format # Source code formatter for cmake listfiles
     ctags
     delta
     gcc
@@ -17,7 +18,6 @@
     jq
     lazygit
     luajit
-    shfmt
     black # The uncompromising Python code formatter
     stylua
     tree-sitter
