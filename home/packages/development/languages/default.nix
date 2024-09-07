@@ -1,11 +1,5 @@
-{ ... }:
+{ sharedLib, ... }:
 
 {
-  imports = [
-    ./python
-    ./nodejs
-    ./rust
-    ./golang
-    ./java
-  ];
+  imports = (sharedLib.scanPaths ./.);
 }
