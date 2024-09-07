@@ -170,8 +170,8 @@
       },
       "original": {
         "owner": "chaotic-cx",
-        "ref": "nyxpkgs-unstable",
         "repo": "nyx",
+        "rev": "6f45a670d5c90cb81aa3123041917cb2c0c87f31",
         "type": "github"
       }
     },
