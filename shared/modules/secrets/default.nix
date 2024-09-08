@@ -140,8 +140,8 @@ in
             # application specific
             "atuin/server-config" = { sopsFile = "${inputs.secrets}/atuin.enc.yaml"; } // openAccess;
             "atuin/env" = { sopsFile = "${inputs.secrets}/atuin.enc.yaml"; } // openAccess;
-            "tls/homelablocal/ecc_server_cert" = { sopsFile = "${inputs.secrets}/tls/homelab.local.enc.yaml"; } // openAccess;
-            "tls/homelablocal/ecc_server_key" = { sopsFile = "${inputs.secrets}/tls/homelab.local.enc.yaml"; } // openAccess;
+            "tls/hikarilabme/ecc_server_cert" = { sopsFile = "${inputs.secrets}/tls/hikarilab.me.enc.yaml"; } // openAccess;
+            "tls/hikarilabme/ecc_server_key" = { sopsFile = "${inputs.secrets}/tls/hikarilab.me.enc.yaml"; } // openAccess;
           };
         })
 

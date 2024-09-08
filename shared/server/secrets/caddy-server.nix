@@ -8,11 +8,11 @@ let
 in
 {
   "ecc_server.crt" = {
-    keyFile = "/run/secrets/tls/homelablocal/ecc_server_cert";
+    keyFile = "/run/secrets/tls/hikarilabme/ecc_server_cert";
     inherit destDir user group permissions uploadAt;
   };
   "ecc_server.key" = {
-    keyFile = "/run/secrets/tls/homelablocal/ecc_server_key";
+    keyFile = "/run/secrets/tls/hikarilabme/ecc_server_key";
     inherit destDir user group permissions uploadAt;
   };
 }
