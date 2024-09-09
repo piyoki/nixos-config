@@ -8,7 +8,6 @@ _:
     ./podman.nix
     ./greetd.nix
     # ./virtualization.nix
-    ./btrfs.nix
     ./fish.nix
     ./flatpak.nix
     ./gnome-keyring.nix
