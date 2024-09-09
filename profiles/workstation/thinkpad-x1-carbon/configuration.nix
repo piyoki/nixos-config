@@ -28,7 +28,6 @@
     # external modules
     inputs.home-estate.nixosModules.sdwan
   ];
-
   # Set hostname
   networking.hostName = "nixos-x1-carbon";
 

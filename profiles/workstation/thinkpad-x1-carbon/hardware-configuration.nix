@@ -177,5 +177,13 @@
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 
+  # HostPlatform
   nixpkgs.hostPlatform = lib.mkDefault system;
+
+  # Maintenance services
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "weekly";
+    fileSystems = [ "/persistent" ];
+  };
 }

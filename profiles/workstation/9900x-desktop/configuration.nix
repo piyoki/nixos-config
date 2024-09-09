@@ -10,6 +10,7 @@
     "system/services/coolercontrold.nix"
     "system/services/avahi.nix"
     "system/networking/udp-gro-forwarding.nix"
+    ("system/services/btrfs.nix" { fileSystems = [ "/persistent" ]; })
 
     # themes modules
     "themes"
