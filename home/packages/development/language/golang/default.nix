@@ -2,6 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    clang-tools
+    golangci-lint # Fast linters Runner for Go
   ];
 }

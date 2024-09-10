@@ -1,26 +1,25 @@
 { pkgs, ... }:
 
+# References:
+# # https://github.com/ryan4yin/nix-config/blob/main/home/base/tui/editors/packages.nix
+
 {
   imports = [
-    ./languages
+    ./language
+    ./linter
+    ./lsp
   ];
 
   home.packages = with pkgs; [
-    bat
-    cmake
-    cmake-format # Source code formatter for cmake listfiles
-    ctags
-    delta
-    gcc
-    github-cli
-    gnumake
-    httpie
-    jq
-    lazygit
-    luajit
-    black # The uncompromising Python code formatter
-    stylua
-    tree-sitter
+    bat # A cat(1) clone with wings
+    ctags # Generates an index (or tag) file of language objects found in source files
+    delta # A viewer for git and diff output
+    gcc # The GNU Compiler Collection
+    github-cli # GitHub’s official command line tool
+    gnumake # The GNU version of the 'make' utility
+    httpie # A command line HTTP client
+    jq # A lightweight and flexible command-line JSON processor
+    lazygit # A simple terminal UI for git commands
     litecli # Command-line interface for SQLite
     insomnia # The most intuitive cross-platform REST API Client
     git-trim # Automatically trims your branches whose tracking remote refs are merged or gone
