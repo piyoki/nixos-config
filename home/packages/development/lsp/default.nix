@@ -11,6 +11,8 @@
     buf-language-server # Language server for protocol buffers
     clang-tools # Clang tools and libraries
     cmake-language-server # CMake language server
+    docker-ls # Dockerfile language server
+    docker-compose-language-service # Docker Compose language server
     emmet-ls # Emmet support based on LSP
     gopls # Official language server for the Go language
     jdt-language-server # Java language server
