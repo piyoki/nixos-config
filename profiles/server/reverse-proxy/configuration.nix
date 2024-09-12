@@ -1,4 +1,4 @@
-{ sharedLib, ... }:
+{ inputs, sharedLib, ... }:
 
 {
   imports = (map sharedLib.relativeToRoot [
@@ -11,7 +11,9 @@
   ]) ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./modules/networking.nix
+
+    # host specific modules
+    inputs.home-estate.nixosModules.host.networking.reverse-proxy
     ./modules/services.nix
   ];
 
