@@ -18,7 +18,7 @@
     "shared/modules/system/tmpfs/persistent"
   ]) ++ [
     # host specific modules
-    inputs.home-estate.nixosModules.host
+    inputs.home-estate.nixosModules.host.extrahosts
   ] ++ [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
