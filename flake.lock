@@ -3319,6 +3319,7 @@
         "pilots": "pilots",
         "pre-commit-hooks": "pre-commit-hooks_6",
         "pyprland": "pyprland",
+        "rust-overlay": "rust-overlay_2",
         "secrets": "secrets_2",
         "sops-nix": "sops-nix"
       }
@@ -3412,6 +3413,26 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "78503e9199010a4df714f29a4f9c00eb2ccae071",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1726194362,
+        "narHash": "sha256-cM7zFscFqdsA5KohUUYndzIp20kUqjj39qnj6Voj+f8=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "a71b1240e29f1ec68612ed5306c328086bed91f9",
         "type": "github"
       },
       "original": {
