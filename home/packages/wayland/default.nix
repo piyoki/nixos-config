@@ -7,6 +7,6 @@
     # inputs.nixpkgs-wayland.packages.${system}.xdg-desktop-portal-wlr # xdg-desktop-portal backend for wlroots
     # inputs.nixpkgs-wayland.packages.${system}.wlroots # A modular Wayland compositor library
     # inputs.nixpkgs-wayland.packages.${system}.new-wayland-protocols # Wayland protocol extensions
-    wev # Wayland event viewer
+    inputs.nixpkgs-wayland.packages.${system}.wev # Wayland event viewer
   ];
 }
