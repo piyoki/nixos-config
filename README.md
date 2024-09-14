@@ -28,7 +28,7 @@ As the date of writing (March 2024), I've committed myself switching to NixOS on
 - [nixpkgs-wayland](https://github.com/nix-community/nixpkgs-wayland) to fetch up-to-date wayland packages for daily usage.
 - [hyprland](https://github.com/hyprwm/Hyprland) to fetch up-to-date Hyprland packages for daily usage.
 - [pyprland](https://github.com/hyprland-community/pyprland) to fetch up-to-date Hyprland plugins for daily usage.
-- [rust-overlay](https://github.com/oxalica/rust-overlay) to fetch nightly rust packages for daily usage.
+- [rust-nightly-overlay](https://github.com/nix-community/fenix) to fetch nightly rust packages for daily usage.
 - [neovim-nightly-overlay](https://github.com/nix-community/neovim-nightly-overlay) to fetch nightly neovim package for daily usage.
 - [impemenance](https://github.com/nix-community/impermanence) to create tmpfs root stateless OS.
 - [pre-commit-hooks](https://github.com/cachix/pre-commit-hooks.nix) to integrate pre-commit-hooks with flake.

@@ -134,7 +134,7 @@
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "git+https://github.com/hyprwm/Hyprland?tag=v0.43.0&submodules=1"; };
     pyprland = { url = "git+https://github.com/hyprland-community/pyprland?tag=2.4.0"; };
-    rust-overlay = { url = "github:oxalica/rust-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
+    rust-nightly-overlay = { url = "github:nix-community/fenix"; inputs.nixpkgs.follows = "nixpkgs"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     impermanence.url = "github:nix-community/impermanence";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
