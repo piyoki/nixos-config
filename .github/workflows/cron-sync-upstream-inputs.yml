@@ -14,7 +14,7 @@ env:
     home-manager
     sops-nix
     nixpkgs-wayland
-    hyprland
+    rust-nightly-overlay
     neovim-nightly-overlay
     impermanence
     pre-commit-hooks
