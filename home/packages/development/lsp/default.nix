@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 # Reference
 # https://github.com/ryan4yin/nix-config/blob/main/home/base/tui/editors/neovim/nvim/lua/plugins/mason.lua
@@ -11,10 +11,11 @@
     buf-language-server # Language server for protocol buffers
     clang-tools # Clang tools and libraries
     cmake-language-server # CMake language server
-    docker-ls # Dockerfile language server
     docker-compose-language-service # Docker Compose language server
+    docker-ls # Dockerfile language server
     emmet-ls # Emmet support based on LSP
     gopls # Official language server for the Go language
+    inputs.rust-nightly-overlay.packages.${system}.latest.rust-analyzer # Modular compiler frontend for the Rust language
     jdt-language-server # Java language server
     lua-language-server # Lua language server
     marksman # Language Server for Markdown
@@ -23,7 +24,6 @@
     nodePackages_latest.vscode-json-languageserver # JSON language server
     nodePackages_latest.vscode-langservers-extracted # HTML/CSS/JSON/ESLint language servers extracted from VSCode
     pyright # Python language server
-    rust-analyzer # Modular compiler frontend for the Rust language
     sqls # SQL language server written in Go
     tailwindcss-language-server # Tailwind CSS language server
     terraform-ls # Terraform Language Server (official)
