@@ -1,3 +1,5 @@
+{ sharedLib, ... }:
+
 # Avahi - Service Discovery for Linux using mDNS/DNS-SD -- compatible with Bonjour
 
 # References:
@@ -12,7 +14,12 @@
 # sudo systemctl restart avahi-daemon
 # systemctl --user restart pipewire pipewire-pulse wireplumber
 
+
 {
+  imports = (map sharedLib.relativeToRoot [
+    "system/networking/firewall/avahi-daemon.nix"
+  ]);
+
   services = {
     # Enable Avahi service
     avahi = {
