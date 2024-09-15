@@ -10,7 +10,7 @@
     "system/services/scx.nix"
     "system/hardware/keyd.nix"
     # "system/hardware/fingerprint.nix"
-    "system/networking/udp-gro-forwarding.nix"
+    # "system/networking/udp-gro-forwarding.nix"
 
     # themes modules
     "themes"

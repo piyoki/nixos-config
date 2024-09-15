@@ -9,7 +9,7 @@
     "system/services/scx.nix"
     "system/services/coolercontrold.nix"
     "system/services/avahi.nix"
-    "system/networking/udp-gro-forwarding.nix"
+    # "system/networking/udp-gro-forwarding.nix"
 
     # themes modules
     "themes"
