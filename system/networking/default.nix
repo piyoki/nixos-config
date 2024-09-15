@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./firewall.nix
+    ./firewall
     ./tailscale.nix
   ];
 
