@@ -21,6 +21,9 @@ jobs:
           - project: hyprland
             labels: hyprwm/Hyprland
             feed: https://github.com/hyprwm/Hyprland/releases.atom
+          - project: pyprland
+            labels: hyprland-community/pyprland
+            feed: https://github.com/hyprland-community/pyprland/releases.atom
       fail-fast: false
     steps:
       - name: Generate GitHub Auth Token
