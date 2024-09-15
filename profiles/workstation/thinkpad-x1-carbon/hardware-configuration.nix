@@ -71,9 +71,9 @@
       options snd-intel-dspcfg dsp_driver=1
 
       # Apply intel integrated graphics params
-      options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
-      # options i915 force_probe=!7d55
-      # options xe enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
+      # options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
+      options i915 force_probe=!7d55
+      options xe enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
 
     tmp = {
