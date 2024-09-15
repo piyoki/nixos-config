@@ -26,8 +26,14 @@
       enable = true;
       # Reflect incoming mDNS requests to all allowed network interfaces.
       reflector = true;
+      wideArea = true;
       # Whether to enable the mDNS NSS (Name Service Switch) plug-in for IPv4. Enabling it allows applications to resolve names in the .local domain by transparently querying the Avahi daemon.
       nssmdns4 = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        userServices = true;
+      };
     };
 
     # Enable raop-discovery for (airplay) configuration on Pipewire server
