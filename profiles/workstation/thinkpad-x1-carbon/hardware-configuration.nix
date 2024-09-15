@@ -71,9 +71,9 @@
       options snd-intel-dspcfg dsp_driver=1
 
       # Apply intel integrated graphics params
-      options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
-      # options i915 force_probe=!7d55
-      # options xe enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
+      # options i915 enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
+      options i915 force_probe=!7d55
+      options xe enable_guc=1 enable_fbc=1 enable_psr=1 force_probe=7d55
     '';
 
     tmp = {
@@ -152,6 +152,7 @@
         # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
         vaapiVdpau # VDPAU driver for the VAAPI library
         libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
+        libdrm # Direct Rendering Manager library and headers
       ];
     };
 
