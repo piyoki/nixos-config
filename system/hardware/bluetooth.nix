@@ -3,6 +3,9 @@
 {
   environment.systemPackages = with pkgs; [
     blueberry
+    bluez
+    bluez-tools
+    bluez-alsa
   ];
 
   # Enable bluetooth
