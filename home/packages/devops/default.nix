@@ -12,5 +12,8 @@
 
     # gitops
     fluxcd # Open and extensible continuous delivery solution for Kubernetes
+
+    # cloudinit
+    cloud-utils # cloud-init utilities
   ];
 }
