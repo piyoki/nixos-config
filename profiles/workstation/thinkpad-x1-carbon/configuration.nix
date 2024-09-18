@@ -9,6 +9,7 @@
     "system/services/powermanagement/laptop.nix"
     "system/services/scx.nix"
     "system/hardware/keyd.nix"
+    "system/services/virtualization/virtmanager.nix"
     # "system/hardware/fingerprint.nix"
     # "system/networking/udp-gro-forwarding.nix"
 

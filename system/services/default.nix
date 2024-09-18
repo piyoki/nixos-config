@@ -7,7 +7,6 @@ _:
     # ./docker.nix
     ./podman.nix
     ./greetd.nix
-    # ./virtualization.nix
     ./fish.nix
     ./flatpak.nix
     ./gnome-keyring.nix
