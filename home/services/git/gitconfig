@@ -1,3 +1,6 @@
+[includeIf "gitdir:~/Workspace/school/"] # include for all .git projects under $HOME/Workspace/extras/
+  path = ~/.gitconfigs/.gitconfig.extras
+
 [includeIf "gitdir:~/Workspace/work/"] # include for all .git projects under $HOME/Workspace/work/
   path = ~/.gitconfigs/.gitconfig.work
 
