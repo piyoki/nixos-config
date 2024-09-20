@@ -1,6 +1,7 @@
 # Reference:
 # https://github.com/hyprwm/xdg-desktop-portal-hyprland
 # https://nixos.wiki/wiki/Sway
+# https://search.nixos.org/options?channel=unstable&show=xdg.portal
 
 { pkgs, inputs, system, ... }:
 
@@ -26,9 +27,8 @@ in
   # enable hyprland's xdg-desktop-portal
   xdg.portal = {
     enable = true;
-    # hyprland has its own portal, wlr is not needed
-    wlr.enable = false;
-    configPackages = [ pkgs-hypr.xdg-desktop-portal-hyprland ];
+    # sets environment variable NIXOS_XDG_OPEN_USE_PORTAL to 1
+    xdgOpenUsePortal = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
       pkgs-hypr.xdg-desktop-portal-hyprland

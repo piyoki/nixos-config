@@ -8,12 +8,15 @@
     ./hyprpaper.nix
     ./pyprland.nix
     ./xdg-portal.nix
+    ./xwayland.nix
   ];
 
-  # enable hyprland
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+  programs = {
+    # enable hyprland
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+    };
   };
 }
