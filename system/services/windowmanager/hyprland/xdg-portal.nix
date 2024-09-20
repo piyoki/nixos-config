@@ -3,6 +3,10 @@
 # https://nixos.wiki/wiki/Sway
 # https://search.nixos.org/options?channel=unstable&show=xdg.portal
 
+# Screensharing issues:
+# https://wiki.hyprland.org/Configuring/Monitors/#extra-args
+# https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/99
+
 { pkgs, inputs, system, ... }:
 
 let
