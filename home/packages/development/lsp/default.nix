@@ -1,4 +1,4 @@
-{ inputs, pkgs, system, ... }:
+{ pkgs, ... }:
 
 # Reference
 # https://github.com/ryan4yin/nix-config/blob/main/home/base/tui/editors/neovim/nvim/lua/plugins/mason.lua
@@ -15,7 +15,6 @@
     docker-ls # Dockerfile language server
     emmet-ls # Emmet support based on LSP
     gopls # Official language server for the Go language
-    inputs.rust-nightly-overlay.packages.${system}.latest.rust-analyzer # Modular compiler frontend for the Rust language
     jdt-language-server # Java language server
     lua-language-server # Lua language server
     marksman # Language Server for Markdown

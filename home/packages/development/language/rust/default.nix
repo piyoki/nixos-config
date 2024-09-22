@@ -5,8 +5,6 @@
 
 {
   home.packages = with inputs.rust-nightly-overlay.packages.${system}.latest; [
-    cargo # Downloads your Rust project's dependencies and builds your project
-    rustc # Safe, concurrent, practical language (wrapper script)
-    rustfmt # Tool for formatting Rust code according to style guidelines
+    toolchain # derivation with all the Rust components; including rust-analyzer (LSP)
   ];
 }
