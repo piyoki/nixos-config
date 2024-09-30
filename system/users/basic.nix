@@ -10,7 +10,7 @@ in
   users.users = {
     ${user} = {
       isNormalUser = true;
-      extraGroups = mkDefault [ "networkmanager" "wheel" "docker" "libvirtd" ];
+      extraGroups = mkDefault [ "networkmanager" "wheel" ];
       home = "/home/${user}";
       # /etc/ssh/authorized_keys.d/${user}
       openssh.authorizedKeys.keyFiles = keyFiles;
