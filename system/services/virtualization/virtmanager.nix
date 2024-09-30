@@ -9,6 +9,12 @@
 # https://www.youtube.com/watch?v=Zei8i9CpAn0
 # https://www.reddit.com/r/VFIO/comments/q253sr/windows_11_system_doesnt_meet_minimum_requirements/
 # https://discourse.nixos.org/t/windows-11-vm-on-nixos/30631
+# https://superuser.com/a/1762882
+
+# Win11 Supplements Download:
+# https://www.microsoft.com/en-us/software-download/windows11
+# https://github.com/virtio-win/virtio-win-pkg-scripts
+# https://www.spice-space.org/download.html
 
 {
   # enable virtmanager
