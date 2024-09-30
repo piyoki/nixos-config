@@ -14,6 +14,7 @@
   };
 
   users.extraGroups.docker.members = [ user ];
+  users.users.${user}.extraGroups = [ "docker" ];
 
   # Useful other development tools
   environment.systemPackages = with pkgs; [
