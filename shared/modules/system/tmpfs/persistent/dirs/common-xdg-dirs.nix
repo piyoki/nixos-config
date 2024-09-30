@@ -8,4 +8,5 @@
   "Music"
   "Public"
   "Templates"
+  "Shared"
 ]
