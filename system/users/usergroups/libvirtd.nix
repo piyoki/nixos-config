@@ -1,0 +1,5 @@
+[
+  "libvirtd"
+  "kvm"
+  "qemu-libvirtd"
+]

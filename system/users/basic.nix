@@ -1,16 +1,18 @@
-{ inputs, pkgs, user, lib, ... }:
+{ inputs, pkgs, user, ... }:
 
-with lib;
 let
   keyFiles = [
     "${inputs.home-estate}/authorized_keys"
   ];
 in
 {
+  imports = [
+    ./usergroups
+  ];
+
   users.users = {
     ${user} = {
       isNormalUser = true;
-      extraGroups = mkDefault [ "networkmanager" "wheel" ];
       home = "/home/${user}";
       # /etc/ssh/authorized_keys.d/${user}
       openssh.authorizedKeys.keyFiles = keyFiles;
