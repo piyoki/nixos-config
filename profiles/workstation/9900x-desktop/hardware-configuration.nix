@@ -43,6 +43,10 @@
     };
 
     kernelModules = [ "kvm-amd" ];
+    # NOTE:
+    # "amd_pstate=active" - CPU frequency control mechanism
+    # "amdgpu.sg_display=0" - # Resolve flickering issue on Wayland
+    # "random.trust_cpu=off" - CPU forced to gather more entropy from other sources
     kernelParams = [
       "amd_pstate=active"
       "amd_iommu=on"

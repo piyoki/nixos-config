@@ -61,7 +61,14 @@
     };
 
     kernelModules = [ "kvm-intel" ];
-    kernelParams = [ ];
+    # NOTE:
+    # "random.trust_cpu=off" - CPU forced to gather more entropy from other sources
+    kernelParams = [
+      "random.trust_cpu=off"
+      "zswap.enabled=1"
+      "zswap.compressor=zstd"
+      "zswap.zpool=zsmalloc"
+    ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''
       # blacklist legacy realtek codec (since Kernel 6.7.x)
