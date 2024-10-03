@@ -10,6 +10,12 @@ let
   lowerBound = "0";
 in
 {
+  environment.systemPackages = with pkgs; [
+    upower # D-Bus service for power management
+    upower-notify # simple tool to give you Desktop Notifications about your battery
+    poweralertd # UPower-powered power alerter
+  ];
+
   # systemd unit
   systemd.services = {
     # set battery charge max and min threshold
