@@ -2,6 +2,7 @@ _:
 
 {
   imports = [
+    ./atuin-client
     ./dconf
     ./dunst
     ./git
