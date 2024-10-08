@@ -7,6 +7,7 @@
   imports = [
     ./hyprpaper.nix
     ./hypridle.nix
+    ./hyprlock.nix
     ./pyprland.nix
     ./xdg-portal.nix
     ./xwayland.nix

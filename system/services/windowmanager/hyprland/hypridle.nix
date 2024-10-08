@@ -1,9 +1,10 @@
 # Reference:
 # https://github.com/hyprwm/hypridle
+# https://wiki.hyprland.org/Hypr-Ecosystem/hypridle/
 
 _:
 
 {
-  # enable xwayland
+  # enable hypridle
   services.hypridle.enable = true;
 }
