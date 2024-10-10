@@ -9,6 +9,7 @@
       inputs.nur.packages.${system}.comic-code-ligatures
       inputs.nur.packages.${system}.vt323
       inputs.nur.packages.${system}.zpix-pixel
+      inputs.nur.packages.${system}.genryu
     ];
   };
 }
