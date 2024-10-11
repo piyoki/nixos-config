@@ -2,6 +2,7 @@ _:
 
 {
   imports = [
-    ./wallpaper.nix
+    ./avatars.nix
+    ./wallpapers.nix
   ];
 }
