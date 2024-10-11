@@ -1,15 +1,15 @@
-{ inputs, pkgs, ... }:
+{ inputs, system, ... }:
 
 {
   # Enable fonts
   fonts = {
-    packages = with pkgs; [
-      inputs.nur.packages.${system}.genseki-gothic
-      inputs.nur.packages.${system}.comic-code
-      inputs.nur.packages.${system}.comic-code-ligatures
-      inputs.nur.packages.${system}.vt323
-      inputs.nur.packages.${system}.zpix-pixel
-      inputs.nur.packages.${system}.genryu
+    packages = with inputs.nur.packages.${system}; [
+      genseki-gothic
+      comic-code
+      comic-code-ligatures
+      vt323
+      zpix-pixel
+      genryu
     ];
   };
 }
