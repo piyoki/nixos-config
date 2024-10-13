@@ -17,5 +17,6 @@
     just # Just a command runner
     pwgen # Password generator
     openssl # Secure Sockets Layer toolkit
+    pkg-config # Manage compile and link flags for libraries
   ];
 }
