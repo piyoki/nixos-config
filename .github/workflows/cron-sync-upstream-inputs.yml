@@ -3,8 +3,8 @@ name: (Cron) Synchronize upstream flake inputs
 on:
   workflow_dispatch:
   schedule:
-    # Run this Action every 3 days at 0:00pm UTC
-    - cron: "0 0 */3 * *"
+    # Run this Action every 7 days at 0:00pm UTC
+    - cron: "0 0 */7 * *"
 
 env:
   OWNER: piyoki
