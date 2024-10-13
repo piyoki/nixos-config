@@ -6,7 +6,7 @@ _:
     # system-level variables
     variables = {
       # set vim as the default editor
-      EDITOR = "vim";
+      EDITOR = "nvim";
     };
 
     # session-specfic variables
@@ -16,7 +16,7 @@ _:
       # Wayland specific
       NIXOS_OZONE_WL = "1";
       # Default applications
-      BROWSER = "qutebrowser";
+      BROWSER = "firefox";
       # Force intel-media-driver
       LIBVA_DRIVER_NAME = "iHD";
     };
