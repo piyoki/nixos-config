@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 # References:
 # # https://github.com/ryan4yin/nix-config/blob/main/home/base/tui/editors/packages.nix
@@ -25,5 +25,6 @@
     git-trim # Automatically trims your branches whose tracking remote refs are merged or gone
     hugo # A fast and modern static website engine
     pre-commit # A framework for managing and maintaining multi-language pre-commit hooks
+    inputs.nur.packages.${system}.gitmux # Git in your tmux status bar
   ];
 }
