@@ -47,6 +47,7 @@ in
 {
   home.file = {
     ".tmux.conf".source = inputs.dotfiles.packages.${system}.tmux-universal + "/.tmux.conf";
+    ".gitmux.conf".source = inputs.dotfiles.packages.${system}.tmux-universal + "/.gitmux.conf";
     ".tmux/plugins/tpm".source = tpm + "/";
     ".tmux/plugins/tmux-sensible".source = tmux-sensible + "/";
     ".tmux/plugins/tmux-continuum".source = tmux-continuum + "/";
