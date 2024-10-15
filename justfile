@@ -88,12 +88,13 @@ prefetch-git repo rev:
 repl:
   @nix repl -f flake:nixpkgs
 
-# remove all generations older than 7 days
-clean:
-  @sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 3d
+# garbage collect all unused nix store entries older than x days
+gc days:
+  @sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than {{ days }}d
+  @sudo nix-collect-garbage --delete-older-than {{ days }}d
 
 # garbage collect all unused nix store entries
-gc:
+gc-all:
   @sudo nix store gc --debug
   @sudo nix-collect-garbage --delete-old
 
