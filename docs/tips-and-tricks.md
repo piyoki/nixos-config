@@ -105,11 +105,27 @@ sudo nix-collect-garbage
 
 </details>
 
+<details><summary>Remove history profiles</summary>
+</br>
+
+```bash
+sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
+
+# or with a specific number
+sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d
+```
+
+</details>
+
 <details><summary>Remove above of older generations</summary>
 </br>
 
 ```bash
+sudo nix store gc --debug
 sudo nix-collect-garbage --delete-old
+
+# or with a specific number
+sudo nix-collect-garbage --delete-older-than 7d
 ```
 
 </details>
