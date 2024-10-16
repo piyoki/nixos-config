@@ -345,6 +345,7 @@
         "kitty-universal": "kitty-universal",
         "lazygit-universal": "lazygit-universal",
         "lf-universal": "lf-universal",
+        "mpv-universal": "mpv-universal",
         "nixpkgs": "nixpkgs_5",
         "nvim-universal": "nvim-universal",
         "qutebrowser-universal": "qutebrowser-universal",
@@ -357,11 +358,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1729024470,
-        "narHash": "sha256-YtvGdIHtWC01BrtFKu+M6OIUiPVWTexQpL1z7kz4g0M=",
+        "lastModified": 1729051540,
+        "narHash": "sha256-GZa1yi7Vq64Y87fYMc/y4FePcrfMJxoyLbeLj+RD2og=",
         "ref": "master",
-        "rev": "2ed115ff3cc79850a5e5f92a6d5cf134937df20f",
-        "revCount": 358,
+        "rev": "17fecde13cb98ee7c6a986e6e02da76db06f87af",
+        "revCount": 359,
         "type": "git",
         "url": "https://github.com/piyoki/dotfiles.nix"
       },
@@ -1926,6 +1927,22 @@
       "original": {
         "owner": "astro",
         "repo": "microvm.nix",
+        "type": "github"
+      }
+    },
+    "mpv-universal": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1729051477,
+        "narHash": "sha256-XBLhJxCB7SGFXrQdjOhlMyvZ2gBkK/jyvoWJgMidqTo=",
+        "owner": "piyoki",
+        "repo": "dot-mpv",
+        "rev": "9004cb53b0feed19229df8bbec66855da828f5d0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "piyoki",
+        "repo": "dot-mpv",
         "type": "github"
       }
     },
