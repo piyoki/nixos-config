@@ -18,5 +18,6 @@
     trash-cli
     unzip
     trayscale # Unofficial GUI wrapper around the Tailscale CLI client
+    mountpoint-s3 # A simple, high-throughput file client for mounting an Amazon S3 bucket as a local file system.
   ];
 }
