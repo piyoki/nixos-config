@@ -7,6 +7,7 @@ _:
     ./chinese-fonts.nix
     ./common-fonts.nix
     ./custom-fonts.nix
+    ./fontconfig.nix
     ./japanese-fonts.nix
     ./icons.nix
   ];
