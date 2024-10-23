@@ -9,11 +9,12 @@
     kubectl
     kubernetes-helm
     k9s # TUI for k8s
-
-    # gitops
     fluxcd # Open and extensible continuous delivery solution for Kubernetes
 
     # cloudinit
     cloud-utils # cloud-init utilities
+
+    # containerization
+    buildkit # Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit
   ];
 }
