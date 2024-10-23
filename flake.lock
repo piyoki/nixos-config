@@ -3040,11 +3040,11 @@
         "pre-commit-hooks": "pre-commit-hooks_5"
       },
       "locked": {
-        "lastModified": 1728914566,
-        "narHash": "sha256-i8S+Dpj/vU+vayVUjpDZlxVVMc047CPF4kRikCt3Nho=",
+        "lastModified": 1729692665,
+        "narHash": "sha256-h6fVKCpo5Aqux4zKV3ZIUUrlepGjBepK9fYIsV81GHQ=",
         "owner": "piyoki",
         "repo": "nur-packages",
-        "rev": "ed9065c84dc2ff117d2045670af8bec8352eecca",
+        "rev": "914f2df05f87f05d6f4b3e375b357a0595e38410",
         "type": "github"
       },
       "original": {

@@ -10,6 +10,7 @@
       vt323
       zpix-pixel
       genryu
+      genwan
     ];
   };
 }

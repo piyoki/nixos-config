@@ -9,12 +9,12 @@ _:
           "Noto Color Emoji"
         ];
         serif = [
-          "GenSekiGothic TW B"
+          "GenSekiGothic TW R"
           "Noto Serif CJK TC"
           "Source Han Serif TC"
         ];
         sansSerif = [
-          "GenSekiGothic TW B"
+          "GenSekiGothic TW R"
           "Noto Sans CJK TC"
           "Source Han Sans TC"
         ];
