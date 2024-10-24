@@ -10,7 +10,7 @@
   <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/piyoki/nixos-config?style=flat&logo=history&colorA=24273A&colorB=C4EEF2" alt="lastcommit"/>
 </p>
 
-![image](https://github.com/piyoki/nixos-config/assets/31861128/f73eb978-99db-4c25-958e-c95906850075)
+![image](https://github.com/user-attachments/assets/9f4079e3-6bdf-454b-a946-443e4d7aa97f)
 
 > [!NOTE]
 > This repo contains the declarative configuration of a few NixOS systems, with ~100% config nixfied.
