@@ -132,8 +132,6 @@
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
-    hyprland = { url = "git+https://github.com/hyprwm/Hyprland?tag=v0.44.1&submodules=1"; };
-    pyprland = { url = "git+https://github.com/hyprland-community/pyprland?tag=2.4.0"; };
     rust-nightly-overlay = { url = "github:nix-community/fenix"; inputs.nixpkgs.follows = "nixpkgs"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     impermanence.url = "github:nix-community/impermanence";
@@ -141,6 +139,12 @@
     microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
     nix-fast-build.url = "github:Mic92/nix-fast-build";
     auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
+
+    # hyprland-related
+    hyprland = { url = "git+https://github.com/hyprwm/Hyprland?tag=v0.44.1&submodules=1"; };
+    pyprland = { url = "git+https://github.com/hyprland-community/pyprland?tag=2.4.0"; };
+    hyprland-plugins = { url = "github:hyprwm/hyprland-plugins"; inputs.hyprland.follows = "hyprland"; };
+    split-monitor-workspaces = { url = "github:Duckonaut/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
 
     # personal nur
     nur.url = "github:piyoki/nur-packages";
