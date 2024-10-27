@@ -2,6 +2,7 @@
   # common XDG_DIRS
   "Downloads"
   "Pictures"
+  "Photos"
   "Desktop"
   "Documents"
   "Videos"
@@ -9,4 +10,5 @@
   "Public"
   "Templates"
   "Shared"
+  "External"
 ]
