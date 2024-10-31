@@ -17,8 +17,9 @@ _:
       NIXOS_OZONE_WL = "1";
       # Default applications
       BROWSER = "firefox";
-      # Force intel-media-driver
-      LIBVA_DRIVER_NAME = "iHD";
+      # Fix Wayland VRR issues since kernel 6.11.0+
+      # Ref: https://gitlab.freedesktop.org/drm/amd/-/issues/2186
+      WLR_DRM_NO_ATOMIC = 1;
     };
   };
 }
