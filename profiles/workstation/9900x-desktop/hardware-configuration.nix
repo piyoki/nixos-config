@@ -46,11 +46,13 @@
     # NOTE:
     # "amd_pstate=active" - CPU frequency control mechanism
     # "amdgpu.sg_display=0" - # Resolve flickering issue on Wayland
+    # "amdgpu.freesync_video=1" - # Enable FreeSync for video playback
     # "random.trust_cpu=off" - CPU forced to gather more entropy from other sources
     kernelParams = [
       "amd_pstate=active"
       "amd_iommu=on"
       "amdgpu.sg_display=0"
+      "amdgpu.freesync_video=1"
       "random.trust_cpu=off"
       "zswap.enabled=1"
       "zswap.compressor=zstd"
