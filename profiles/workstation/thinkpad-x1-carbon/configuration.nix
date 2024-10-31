@@ -11,6 +11,7 @@
     "system/hardware/keyd.nix"
     "system/services/virtualization/virtmanager.nix"
     "system/services/sshfs.nix"
+    "system/environment/intel-specific.nix"
     # "system/hardware/fingerprint.nix"
     # "system/networking/udp-gro-forwarding.nix"
 
