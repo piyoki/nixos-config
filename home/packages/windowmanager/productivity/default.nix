@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     # localsend # An open source cross-platform alternative to AirDrop
-    alacritty_git # A cross-platform, GPU-accelerated terminal emulator
+    alacritty # A cross-platform, GPU-accelerated terminal emulator
     android-file-transfer # Reliable MTP client with minimalistic UI
     hyprpicker # color picker
     inputs.nixpkgs-wayland.packages.${system}.foot # A fast, lightweight and minimalistic Wayland terminal emulator

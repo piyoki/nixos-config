@@ -16,7 +16,7 @@
 { inputs, system, ... }:
 
 let
-  scx_bin = inputs.chaotic.packages.${system}.scx;
+  scx_bin = inputs.chaotic.packages.${system}.scx_git.full;
 in
 {
   # --- Legacy Configuration ---
