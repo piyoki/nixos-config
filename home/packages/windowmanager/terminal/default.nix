@@ -14,7 +14,6 @@
     jp2a # A small utility that converts JPG images to ASCII
     vivid
     zoxide
-    tailspin # A log file highlighter
     entr # Run arbitrary commands when files change
   ];
 }
