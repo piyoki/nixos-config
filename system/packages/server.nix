@@ -23,8 +23,5 @@
 
     # monitoring
     htop
-
-    # terminal
-    tailspin # A log file highlighter
   ];
 }
