@@ -4,7 +4,7 @@
   # Ref: https://nixos.wiki/wiki/Nixos-rebuild
   nix = {
     # enable flake
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = "experimental-features = nix-command flakes";
     settings = {
       # enable auto-cleanup
