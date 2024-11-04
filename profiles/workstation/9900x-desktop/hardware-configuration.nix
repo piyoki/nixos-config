@@ -136,7 +136,7 @@
     graphics = {
       enable = false; # use mesa-git instead
       extraPackages = with pkgs; [
-        inputs.chaotic-kernel.packages.${system}.mesa_git.opencl # OpenCL support for Mesa
+        inputs.chaotic.packages.${system}.mesa_git.opencl # OpenCL support for Mesa
         amdvlk # AMD Open Source Driver For Vulkan
         rocmPackages.clr.icd # AMD Common Language Runtime for hipamd, opencl, and rocclr
         vaapiVdpau # VDPAU driver for the VAAPI library
