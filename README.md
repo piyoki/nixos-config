@@ -50,6 +50,7 @@ As the date of writing (March 2024), I've committed myself switching to NixOS on
 - [Noogle](https://noogle.dev/)
 - [NixOS CN](https://nixos-cn.org/)
 - [Awesome Nix](https://github.com/nix-community/awesome-nix)
+- [Nixpkgs Pull Request Tracker](https://nixpk.gs/pr-tracker.html)
 
 ### Configs from open-source community
 
