@@ -15,9 +15,6 @@
 
 { pkgs, ... }:
 
-# let
-#   scx_bin = inputs.chaotic.packages.${system}.scx.full;
-# in
 {
   # --- Legacy Configuration ---
   # A Linux kernel feature which enables implementing kernel thread schedulers in BPF and dynamically loading them.
