@@ -16,9 +16,9 @@
 
 
 {
-  imports = (map sharedLib.relativeToRoot [
+  imports = map sharedLib.relativeToRoot [
     "system/networking/firewall/avahi-daemon.nix"
-  ]);
+  ];
 
   services = {
     # Enable Avahi service

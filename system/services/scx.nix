@@ -13,7 +13,7 @@
 # 21:38:53 [INFO] DOM[01] cpumask 0000000000FC0FC0 (12 cpus)
 # 21:38:53 [INFO] Rusty Scheduler Attached
 
-{ inputs, system, pkgs, ... }:
+{ pkgs, ... }:
 
 # let
 #   scx_bin = inputs.chaotic.packages.${system}.scx.full;
