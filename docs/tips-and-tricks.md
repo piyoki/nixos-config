@@ -351,7 +351,7 @@ home.file.".config/polybar/script/mic.sh" = { # <- copy source file to destinati
 # configuration.nix
 #+BEGIN_SRC nix
 nix = {
-  package = pkgs.nixFlakes;
+  package = pkgs.nixVersions.stable;
   extraOptions = "experimental-features = nix-command flakes";
 };
 #+END_SRC
