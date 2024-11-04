@@ -2688,11 +2688,11 @@
     },
     "nixpkgs_18": {
       "locked": {
-        "lastModified": 1728018373,
-        "narHash": "sha256-NOiTvBbRLIOe5F6RbHaAh6++BNjsb149fGZd1T4+KBg=",
+        "lastModified": 1730531603,
+        "narHash": "sha256-Dqg6si5CqIzm87sp57j5nTaeBbWhHFaVyG7V6L8k3lY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "bc947f541ae55e999ffdb4013441347d83b00feb",
+        "rev": "7ffd9ae656aec493492b44d0ddfb28e79a1ea25d",
         "type": "github"
       },
       "original": {
@@ -3259,11 +3259,11 @@
         "systems": "systems_18"
       },
       "locked": {
-        "lastModified": 1730589468,
-        "narHash": "sha256-qWvfvgTR16Srpoveg3gIykFXign1CdKi2nf6++bf3vw=",
+        "lastModified": 1730710336,
+        "narHash": "sha256-kQSfwoqA2QoJJnU25EyJfFOb2yzcZc6Tjl4izqFMEJU=",
         "ref": "refs/heads/main",
-        "rev": "068a9334e9e3fc8c7bc37db1daac43f0f376b8a1",
-        "revCount": 1385,
+        "rev": "f3cb399d3cf9916250f98338bb1607790e5bfa72",
+        "revCount": 1386,
         "type": "git",
         "url": "https://github.com/hyprland-community/pyprland?tag=2.4.1"
       },
