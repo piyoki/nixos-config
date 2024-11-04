@@ -73,7 +73,7 @@ run pkg:
   @nix run .#{{ pkg }}
 
 # view flake.lock
-view:
+lock:
   @nix-melt
 
 # nix-prefetch-url
