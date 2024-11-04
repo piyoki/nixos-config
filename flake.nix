@@ -124,7 +124,7 @@
 
   inputs = {
     # public source
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     pilots.url = "github:NixOS-Pilots/pilots";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
