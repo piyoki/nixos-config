@@ -149,7 +149,7 @@
 
     # GPU (OpenGL)
     graphics = {
-      enable = false; # use mesa-git instead
+      enable = true;
       extraPackages = with pkgs; [
         inputs.chaotic.packages.${system}.mesa_git.opencl # OpenCL support for Mesa
         intel-ocl # Official OpenCL runtime for Intel CPUs
@@ -168,7 +168,7 @@
   };
 
   # OpenGL (mesa-git)
-  chaotic.mesa-git.enable = true;
+  # chaotic.mesa-git.enable = true;
 
   # Extra hardware packages
   environment.systemPackages = with pkgs; [
