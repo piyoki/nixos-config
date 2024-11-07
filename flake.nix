@@ -159,4 +159,8 @@
     # secrets = { url = "git+file:/home/kev/flake/secrets?shallow=1"; flake = false; };
     # home-estate.url = "git+file:/home/kev/flake/home-estate?shallow=1";
   };
+
+  # === Issues to be fixed ===
+  # AMD GPU flickering on new Linux kernel patched
+  # https://www.reddit.com/r/archlinux/comments/1ec3n2e/is_amd_gpu_flickering_on_new_linux_kernel_patched/
 }
