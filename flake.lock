@@ -3275,17 +3275,17 @@
         "systems": "systems_18"
       },
       "locked": {
-        "lastModified": 1730829404,
-        "narHash": "sha256-KzVCO0DPgoncMktMxFPM4wQRBz9Rz/HFF1XdpNBaNK4=",
+        "lastModified": 1730933650,
+        "narHash": "sha256-28EKHxn80MfDuS01ty4v/mELq81vFit6Lm7//61kk4Y=",
         "ref": "refs/heads/main",
-        "rev": "b32b8c8b8373075e8e15bad029c80ad68a22b32b",
-        "revCount": 1392,
+        "rev": "8a93a6730d65aef87b16fd114f3808fa4da10b1f",
+        "revCount": 1402,
         "type": "git",
-        "url": "https://github.com/hyprland-community/pyprland?tag=2.4.2"
+        "url": "https://github.com/hyprland-community/pyprland?tag=2.4.3"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/hyprland-community/pyprland?tag=2.4.2"
+        "url": "https://github.com/hyprland-community/pyprland?tag=2.4.3"
       }
     },
     "qutebrowser-universal": {
