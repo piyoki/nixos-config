@@ -1416,10 +1416,10 @@
         "secrets": "secrets"
       },
       "locked": {
-        "lastModified": 1730646895,
-        "narHash": "sha256-T+mH/xu0NTvU42m7oetQVKCh+xb8uZNWxWuGSbBFOQk=",
+        "lastModified": 1731168640,
+        "narHash": "sha256-W72B2exTe594EvH1NuCkOnus0b1KAQyJnqPJrQo1Z8s=",
         "ref": "refs/heads/master",
-        "rev": "b52d32459a73d668f70de535b85991f7425e184a",
+        "rev": "d3155efea97efb7fb1238a7596f8cd1ee06f9f3f",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/home-estate.git"
