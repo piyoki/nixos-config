@@ -151,7 +151,6 @@
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
-        inputs.chaotic.packages.${system}.mesa_git.opencl # OpenCL support for Mesa
         intel-ocl # Official OpenCL runtime for Intel CPUs
         intel-compute-runtime # Intel Graphics Compute Runtime for OpenCL. Replaces Beignet for Gen8 (Broadwell) and beyond
         intel-media-driver # Intel Media Driver for VAAPI; # LIBVA_DRIVER_NAME=iHD
