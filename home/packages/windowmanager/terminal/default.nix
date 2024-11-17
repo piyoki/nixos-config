@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    cava
     fd
     figlet
     fzf
