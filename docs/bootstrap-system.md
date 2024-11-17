@@ -11,6 +11,7 @@
 * [Create sub-volumes](#create-sub-volumes)
 * [Generate Nix configurations](#generate-nix-configurations)
 * [Build the system](#build-the-system)
+* [Binary cache usage](#binary-cache-usage)
 * [Flake integration](#flake-integration)
 * [Home-manager integration](#home-manager-integration)
 * [References](#references)
@@ -261,8 +262,8 @@ Start with the following barebone configuraton
 {
   user = "kev";
   defaultLocale = "en_US.UTF-8";
-  defaultTimeZone = "Asia/Hong_Kong";
-  stateVersion = "24.11";
+  defaultTimeZone = "America/New_York";
+  stateVersion = "25.05";
 }
 ```
 
