@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, system, ... }:
 
 # References:
 # https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265/23
@@ -8,7 +8,8 @@ in
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { };
+    # package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { };
+    package = inputs.chaotic.packages.${system}.firefox_nightly;
     policies = {
       /* ---- PREFERENCES ---- */
       # Set preferences shared by all profiles.
