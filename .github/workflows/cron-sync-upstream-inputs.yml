@@ -11,7 +11,6 @@ env:
   TARGETS: |
     pilots
     chaotic
-    home-manager
     sops-nix
     nixpkgs-wayland
     rust-nightly-overlay

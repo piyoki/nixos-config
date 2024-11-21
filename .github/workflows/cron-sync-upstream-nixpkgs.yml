@@ -10,6 +10,8 @@ env:
   OWNER: piyoki
   TARGETS: |
     nixpkgs
+    nixpkgs-small
+    home-manager
   PR_LABELS: |
     flake-lock
     automated
