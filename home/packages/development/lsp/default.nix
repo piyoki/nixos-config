@@ -8,7 +8,7 @@
   home.packages = with pkgs; [
     ansible-language-server # Ansible language server
     bash-language-server # Bash language server
-    buf-language-server # Language server for protocol buffers
+    buf # Language server for protocol buffers
     clang-tools # Clang tools and libraries
     cmake-language-server # CMake language server
     docker-compose-language-service # Docker Compose language server
