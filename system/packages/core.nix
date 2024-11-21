@@ -18,5 +18,6 @@
     pwgen # Password generator
     openssl # Secure Sockets Layer toolkit
     pkg-config # Manage compile and link flags for libraries
+    tailspin # A log file highlighter
   ];
 }

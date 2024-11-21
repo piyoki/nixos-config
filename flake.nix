@@ -127,14 +127,14 @@
     # public source
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/bc947f541ae55e999ffdb4013441347d83b00feb";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/24.05";
     pilots.url = "github:NixOS-Pilots/pilots";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     chaotic-kernel.url = "github:chaotic-cx/nyx/93e6cdc6335d9c7652e89466b5e05a3cce836906";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
-    hyprland = { url = "git+https://github.com/hyprwm/Hyprland?tag=v0.45.0&submodules=1"; };
+    hyprland = { url = "git+https://github.com/hyprwm/Hyprland?tag=v0.45.2&submodules=1"; };
     pyprland = { url = "git+https://github.com/hyprland-community/pyprland?tag=2.4.3"; };
     rust-nightly-overlay = { url = "github:nix-community/fenix"; inputs.nixpkgs.follows = "nixpkgs"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
