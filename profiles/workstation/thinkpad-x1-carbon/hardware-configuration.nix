@@ -181,6 +181,9 @@
     acpi # Show battery status and other ACPI information
   ];
 
+  # Thunderbolt
+  services.hardware.bolt.enable = true;
+
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 
