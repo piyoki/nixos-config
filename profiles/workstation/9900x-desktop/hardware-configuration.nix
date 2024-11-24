@@ -133,6 +133,7 @@
     enableAllFirmware = true;
 
     # GPU (OpenGL)
+    # Command to check the current Mesa version: glxinfo | grep "OpenGL version"
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
