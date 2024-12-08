@@ -3695,11 +3695,11 @@
     "waybar-laptop": {
       "flake": false,
       "locked": {
-        "lastModified": 1729784368,
-        "narHash": "sha256-GkotA8Q2eVtLfKi+djGLbZd8UXRkRmvEdqXhC0Xu3vM=",
+        "lastModified": 1733676650,
+        "narHash": "sha256-YpzXz4tmpsG6N/SW7TlySXRlL9UHTXqYt/BJ3gS/ieQ=",
         "owner": "piyoki",
         "repo": "dot-waybar",
-        "rev": "fe2d3e88ad6dc6c394f3af27ca84aa3960cc619a",
+        "rev": "3e053fd37dee03f58dcb9acd4d51cdf4b995767c",
         "type": "github"
       },
       "original": {
@@ -3712,11 +3712,11 @@
     "waybar-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1724639399,
-        "narHash": "sha256-RsF90KJP+a6keFaApjZOF/wXdicMw2j8a4FBaKNmUB0=",
+        "lastModified": 1733676583,
+        "narHash": "sha256-gIzw1YZuL6zEfH2KfaKLZ7cYoiMEEDKfemRiygQH0mo=",
         "owner": "piyoki",
         "repo": "dot-waybar",
-        "rev": "5b5f5a9bce8f36e5815a4e9a47c0b6beb19e26ab",
+        "rev": "be64489bca28e53e10968b9eafb58bcc6b6bf835",
         "type": "github"
       },
       "original": {
