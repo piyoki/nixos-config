@@ -40,7 +40,7 @@
   # };
 
   # --- New Configuration ---
-  chaotic.scx = {
+  services.scx = {
     enable = true;
     package = pkgs.scx.full;
     # one of "scx_bpfland", "scx_central", "scx_flatcg", "scx_lavd", "scx_layered", "scx_nest", "scx_pair", "scx_qmap", "scx_rlfifo", "scx_rustland", "scx_rusty", "scx_simple", "scx_userland"
