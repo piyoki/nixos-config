@@ -11,6 +11,7 @@
       zpix-pixel
       genryu
       genwan
+      iansui
     ];
   };
 }
