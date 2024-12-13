@@ -4,6 +4,12 @@
 # OpenGL related:
 # https://discourse.nixos.org/t/what-exactly-does-hardware-opengl-extrapackages-influence/36384/2
 
+# Wireless related:
+# https://wiki.debian.org/iwlwifi
+
+# Commands to check the parameters of a kernel module:
+# modinfo -p <module>
+
 { inputs, config, lib, pkgs, modulesPath, system, ... }:
 
 {
@@ -25,7 +31,7 @@
 
     initrd = {
       availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "lz4" ];
-      kernelModules = [ "amdgpu" "i2c_dev" ];
+      kernelModules = [ "amdgpu" "i2c_dev" "iwlwifi" "iwlmvm" ];
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/a1a6982e-78b9-49ae-9563-a60c7f3ec282";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
@@ -48,6 +54,8 @@
     # "amdgpu.sg_display=0" - # Resolve flickering issue on Wayland
     # "amdgpu.freesync_video=1" - # Enable FreeSync for video playback
     # "random.trust_cpu=off" - CPU forced to gather more entropy from other sources
+    # "iwlwifi.power_save=0" - Disable power saving mode for Intel Wireless
+    # "iwlmvm.power_scheme=1" - Switch power scheme from (Default:Balanced - 2) to (Active - 1) for Intel Wireless
     kernelParams = [
       "amd_pstate=active"
       "amd_iommu=on"
@@ -57,6 +65,8 @@
       "zswap.enabled=1"
       "zswap.compressor=zstd"
       "zswap.zpool=zsmalloc"
+      "iwlwifi.power_save=0"
+      "iwlmvm.power_scheme=1"
     ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''
