@@ -89,6 +89,7 @@
         XDG_PICTURES_DIR = "${config.home.homeDirectory}/Pictures";
         XDG_PHOTOS_DIR = "${config.home.homeDirectory}/Photos";
         XDG_PIKPAK_DIR = "${config.home.homeDirectory}/Pikpak";
+        XDG_GAMES_DIR = "${config.home.homeDirectory}/Games";
         XDG_WORKSPACE_DIR = "${config.home.homeDirectory}/Workspace";
         XDG_WORKSPACE_GIT_PERSONAL_DIR = "${config.home.homeDirectory}/Workspace/personal";
         XDG_WORKSPACE_GIT_WORK_DIR = "${config.home.homeDirectory}/Workspace/work";
