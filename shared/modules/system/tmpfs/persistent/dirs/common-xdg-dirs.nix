@@ -4,7 +4,7 @@
   "Documents"
   "Downloads"
   "External"
-  "Gaming"
+  "Games"
   "Music"
   "Photos"
   "Pictures"
