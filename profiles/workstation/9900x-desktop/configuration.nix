@@ -11,6 +11,7 @@
     # "system/services/avahi.nix"
     "system/services/virtualization/virtmanager.nix"
     "system/services/sshfs.nix"
+    "system/services/gaming.nix"
     # "system/networking/udp-gro-forwarding.nix"
 
     # themes modules
