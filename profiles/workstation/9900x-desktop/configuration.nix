@@ -8,7 +8,7 @@
     "system/services/greetd.nix"
     "system/services/scx.nix"
     "system/services/coolercontrold.nix"
-    # "system/services/avahi.nix"
+    "system/services/avahi.nix"
     "system/services/virtualization/virtmanager.nix"
     "system/services/sshfs.nix"
     # "system/networking/udp-gro-forwarding.nix"
