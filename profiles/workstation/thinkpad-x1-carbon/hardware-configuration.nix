@@ -32,7 +32,7 @@
 
   boot = {
     # Use the systemd-boot EFI boot loader.
-    kernelPackages = inputs.chaotic-kernel.packages.${system}.linuxPackages_cachyos-lto;
+    kernelPackages = inputs.chaotic-kernel.legacyPackages.${system}.linuxPackages_cachyos-lto;
     # kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
 
