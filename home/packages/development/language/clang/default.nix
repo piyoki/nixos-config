@@ -4,5 +4,6 @@
   home.packages = with pkgs; [
     cmake # Cross-platform build system
     cmake-format # Source code formatter for cmake listfiles
+    gdb # GNU Project debugger
   ];
 }
