@@ -11,4 +11,5 @@
   "Shared"
   "Templates"
   "Videos"
+  "Remote"
 ]
