@@ -1,4 +1,4 @@
-[includeIf "gitdir:~/Workspace/school/"] # include for all .git projects under $HOME/Workspace/extras/
+[includeIf "gitdir:~/Workspace/school/"] # include for all .git projects under $HOME/Workspace/school/
   path = ~/.gitconfigs/.gitconfig.extras
 
 [includeIf "gitdir:~/Workspace/work/"] # include for all .git projects under $HOME/Workspace/work/
@@ -8,6 +8,9 @@
   path = ~/.gitconfigs/.gitconfig.extras
 
 [includeIf "gitdir:~/flake/"] # include for all .git projects under $HOME/flake/
+  path = ~/.gitconfigs/.gitconfig.personal
+
+[includeIf "gitdir:~/Workspace/private/"] # include for all .git projects under $HOME/Workspace/private/
   path = ~/.gitconfigs/.gitconfig.personal
 
 [includeIf "gitdir:~/Workspace/personal/"] # include for all .git projects under $HOME/Workspace/personal/
