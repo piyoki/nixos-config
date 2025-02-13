@@ -10,7 +10,7 @@
 
 
   boot = {
-    kernelPackages = inputs.chaotic-kernel.packages.${system}.linuxPackages_cachyos-lto;
+    kernelPackages = inputs.chaotic-kernel.legacyPackages.${system}.linuxPackages_cachyos-lto;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
     # after resize the disk, it will grow partition automatically.
     growPartition = true;

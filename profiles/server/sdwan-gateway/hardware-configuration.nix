@@ -6,7 +6,7 @@
 
   boot = {
     # use latest kernel
-    kernelPackages = inputs.chaotic-kernel.packages.${system}.linuxPackages_cachyos-lto;
+    kernelPackages = inputs.chaotic-kernel.legacyPackages.${system}.linuxPackages_cachyos-lto;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
     growPartition = true;
     kernelModules = [ "kvm-amd" ];
