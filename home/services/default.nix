@@ -7,7 +7,7 @@ _:
     ./dunst
     ./git
     ./go
-    ./mpd
+    # ./mpd
     ./password-manager
     ./scdaemon
     ./wayland-session
