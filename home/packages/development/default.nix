@@ -18,6 +18,7 @@
     github-cli # GitHub’s official command line tool
     gnumake # The GNU version of the 'make' utility
     httpie # A command line HTTP client
+    xh # Friendly and fast tool for sending HTTP requests
     jq # A lightweight and flexible command-line JSON processor
     lazygit # A simple terminal UI for git commands
     litecli # Command-line interface for SQLite
