@@ -8,5 +8,6 @@
 
     nodePackages.prettier # Opinionated code formatter
     nodePackages.vercel # Vercel CLI
+    prisma # Next-generation ORM for Node.js and TypeScript
   ];
 }
