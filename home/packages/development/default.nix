@@ -28,5 +28,6 @@
     pre-commit # A framework for managing and maintaining multi-language pre-commit hooks
     inputs.nur.packages.${system}.gitmux # Git in your tmux status bar
     oha # HTTP load generator inspired by rakyll/hey with tui animation
+    tmate # Instant Terminal Sharing
   ];
 }
