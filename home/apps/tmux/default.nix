@@ -43,6 +43,12 @@ let
     rev = "8677c29003f95695970eb6f4b7793158c9baf1a0";
     sha256 = "0nly1ki2b0k0ycvyp863dragv6xa6vm0lmh98x62rbiyww0z60gy";
   };
+  tmuxifier = pkgs.fetchFromGitHub {
+    owner = "jimeh";
+    repo = "tmuxifier";
+    rev = "9941b280635c7396b3cc6c15e92ea68a5cc24dd4";
+    sha256 = "08sffzl7gnw5v9izs4a8wjz8inkvngywhkhv5das1ipqxpmilpm8";
+  };
 in
 {
   home.file = {
@@ -55,5 +61,6 @@ in
     ".tmux/plugins/tmux-yank".source = tmux-yank + "/";
     ".tmux/plugins/t-smart-tmux-session-manager".source = t-smart-tmux-session-manager + "/";
     ".tmux/plugins/minimal-tmux-status".source = minimal-tmux-status + "/";
+    ".tmux/plugins/tmuxifier".source = tmuxifier + "/";
   };
 }
