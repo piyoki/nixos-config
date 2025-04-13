@@ -8,5 +8,5 @@
   ".terminfo"
   ".sops"
   ".tmux"
-  # ".tmuxifier"
+  ".tmuxifier"
 ]

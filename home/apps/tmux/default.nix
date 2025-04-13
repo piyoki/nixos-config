@@ -61,6 +61,6 @@ in
     ".tmux/plugins/tmux-yank".source = tmux-yank + "/";
     ".tmux/plugins/t-smart-tmux-session-manager".source = t-smart-tmux-session-manager + "/";
     ".tmux/plugins/minimal-tmux-status".source = minimal-tmux-status + "/";
-    ".tmuxifier".source = tmuxifier + "/";
+    ".tmux/plugins/tmuxifier".source = tmuxifier + "/";
   };
 }
