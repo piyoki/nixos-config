@@ -135,7 +135,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "git+https://github.com/hyprwm/Hyprland?tag=v0.46.2&submodules=1"; };
-    pyprland = { url = "git+https://github.com/hyprland-community/pyprland?tag=2.4.5"; };
+    pyprland = { url = "github:hyprland-community/pyprland/cc1be63ef4b998f4aebd5336a148b0aa267b54a7"; };
     rust-nightly-overlay = { url = "github:nix-community/fenix"; inputs.nixpkgs.follows = "nixpkgs"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     impermanence.url = "github:nix-community/impermanence";
@@ -158,6 +158,7 @@
     # legacy
     # secrets = { url = "git+file:/home/kev/flake/secrets?shallow=1"; flake = false; };
     # home-estate.url = "git+file:/home/kev/flake/home-estate?shallow=1";
+    # pyprland = { url = "git+https://github.com/hyprland-community/pyprland?tag=2.4.5"; };
   };
 
   # === Issues to be fixed ===
