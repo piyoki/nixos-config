@@ -9,8 +9,8 @@
     dunst # notification daemon
     # swaynotificationcenter # notification daemon
     ffmpeg
-    ffmpegthumbs
-    ark # kde file archiver
+    kdePackages.ffmpegthumbs
+    kdePackages.ark # kde file archiver
     xfce.tumbler # thumbnailer service
     rclone # Command line program to sync files and directories to and from major cloud storage
     fuse3 # Library that allows filesystems to be implemented in user space

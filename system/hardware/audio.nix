@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 # References:
 # https://nixos.wiki/wiki/ALSA
@@ -10,7 +10,7 @@
   ];
 
   # Disable Pulseaudio because Pipewire is used
-  hardware.pulseaudio.enable = lib.mkForce false;
+  # hardware.pulseaudio.enable = lib.mkForce false;
 
   # Enable pipewire, alsa, and jack
   services.pipewire = {
