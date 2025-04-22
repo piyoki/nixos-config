@@ -21,7 +21,7 @@
         pkgs-small = (import nixpkgs-small) { inherit system; config.allowUnfree = lib.mkDefault true; };
         pkgs-stable = (import nixpkgs-stable) { inherit system; config.allowUnfree = lib.mkDefault true; };
         inherit (import ./shared/lib { inherit lib; }) sharedLib;
-        inherit inputs pkgs system user;
+        inherit inputs system user;
       };
       # function to generate homeModule
       genHomeModules = homeModules: [
@@ -50,7 +50,7 @@
           )
         , homeModules ? lib.optionals profile.home-manager (genHomeModules (import (profilePrefix + "/home.nix")))
         }: lib.nixosSystem {
-          inherit specialArgs;
+          inherit pkgs specialArgs;
           modules = hostModules ++ homeModules ++ extraModules;
         };
       # function to generate remote deploy nixosSystem
