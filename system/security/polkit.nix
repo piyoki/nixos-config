@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    polkit-kde-agent
+    kdePackages.polkit-kde-agent-1
   ];
 
   # policy daemon

@@ -5,8 +5,7 @@
   fonts = {
     packages = with pkgs; [
       cantarell-fonts
-      maple-mono
-      maple-mono-NF
+      maple-mono.NF
       noto-fonts
       noto-fonts-extra
       noto-fonts-emoji
