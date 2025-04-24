@@ -42,7 +42,7 @@
   co = "checkout"
   ca = "commit -am" # commit all changes via `git ca <message>`
   dc = "diff --cached"
-  swc = "git switch -C <local_branch> <remote/branch>" # reset local branch to specific remote branch
+  swc = "git switch -C" # <local_branch> <remote/branch> - reset local branch to specific remote branch
   amend = "commit --amend" # amend commit message via `git amend <message>`
   unstage = "reset HEAD --" # unstage file via `git unstage <file>`
   undo = "reset --soft HEAD~" # undo last commit via `git undo`
