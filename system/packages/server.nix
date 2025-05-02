@@ -16,6 +16,7 @@
     zip
     unzip
     neofetch
+    fastfetch
     curl
     ethtool
     pwgen

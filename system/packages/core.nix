@@ -8,6 +8,7 @@
     gnutar # GNU version of the tar archiving utility
     killall # Kill processes
     neofetch # A command-line system information tool
+    fastfetch # A command-line system information tool
     screen # Terminal multiplexer with VT100/ANSI terminal emulation
     tmux # Terminal multiplexer
     tree # List contents of directories in a tree-like format
