@@ -139,9 +139,9 @@
 
   # GPU (Accelerate Video Playback)
   # ref: https://nixos.wiki/wiki/Accelerated_Video_Playback
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-  };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   vaapiIntel = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  # };
 
   hardware = {
     # linux-firmware
