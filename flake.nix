@@ -4,12 +4,13 @@
   outputs = { nixpkgs, home-manager, ... }@inputs: with inputs;
     let
       system = "x86_64-linux";
+      inherit (import ./shared/vars) user;
       inherit (import ./profiles.nix { }) profiles;
       inherit (import ./shared/overlays { inherit inputs; }) overlays;
-      # use a system-specific version of nixpkgs
-      pkgs = (import nixpkgs) { inherit system overlays; config.allowUnfree = lib.mkDefault true; };
+      inherit (import ./shared/config { inherit lib; }) config;
       inherit (nixpkgs) lib;
-      inherit (import ./shared/vars) user;
+      # use a system-specific version of nixpkgs
+      pkgs = (import nixpkgs) { inherit system overlays config; };
       specialArgs = genSpecialArgs system;
       extraModules = [
         sops-nix.nixosModules.sops
@@ -18,7 +19,7 @@
       ];
       # function to generate specialArgs
       genSpecialArgs = system: {
-        pkgs-small = (import nixpkgs-small) { inherit system; config.allowUnfree = lib.mkDefault true; };
+        pkgs-small = (import nixpkgs-small) { inherit system config; };
         pkgs-stable = (import nixpkgs-stable) { inherit system; config.allowUnfree = lib.mkDefault true; };
         inherit (import ./shared/lib { inherit lib; }) sharedLib;
         inherit inputs system user;
