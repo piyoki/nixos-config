@@ -296,11 +296,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1741008028,
-        "narHash": "sha256-Dypah+fVZ30hCRG96hu1Vmi0DHQSv6XKfy8S6kiS2CQ=",
+        "lastModified": 1747009814,
+        "narHash": "sha256-b3sOJbDYjqGtoRbgg7jichWclNHYBX0xHkWV/lzs9j0=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "2d2ea1661c89efc9c12781572b95f4bb700f2a4a",
+        "rev": "0b7800c3fe6e1596521d8270c428b7aced42f3da",
         "type": "github"
       },
       "original": {
@@ -1293,10 +1293,10 @@
         "secrets": "secrets"
       },
       "locked": {
-        "lastModified": 1745283562,
-        "narHash": "sha256-19z+u2mx5SMKFhlEXBgGevvezIN8wvDnF9h0fYbk3Ig=",
+        "lastModified": 1747009832,
+        "narHash": "sha256-g746q6lyH+x8jGbN6K2kATrE2ouEsaZiDhQ0LMo00YU=",
         "ref": "refs/heads/master",
-        "rev": "7461fc83c64852408fb9cde5f965366199f183d4",
+        "rev": "2ff4ba93510536b8d69b1e480f6c9f0a598e002b",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/piyoki/home-estate.git"
