@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-    neovim
+    inputs.neovim-nightly-overlay.packages.${system}.default
     notepadqq
   ];
 }
