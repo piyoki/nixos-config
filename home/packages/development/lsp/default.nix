@@ -18,7 +18,7 @@
     jdt-language-server # Java language server
     lua-language-server # Lua language server
     marksman # Language Server for Markdown
-    nil # Yet another language server for Nix
+    nixd # Language server for Nix
     nodePackages_latest.graphql-language-service-cli # An interface for building GraphQL language services for IDEs
     nodePackages_latest.vscode-json-languageserver # JSON language server
     nodePackages_latest.vscode-langservers-extracted # HTML/CSS/JSON/ESLint language servers extracted from VSCode
