@@ -21,5 +21,8 @@
 
     # fish plugins
     fishPlugins.fzf-fish
+
+    # tmux addons
+    sesh # Smart session manager for the terminal
   ];
 }
