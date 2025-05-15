@@ -8,6 +8,7 @@
     hyprpicker # color picker
     inputs.nixpkgs-wayland.packages.${system}.foot # A fast, lightweight and minimalistic Wayland terminal emulator
     inputs.nixpkgs-wayland.packages.${system}.wf-recorder # screen recorder
+    asak # A cross-platform audio recording/playback CLI tool with TUI, written in Rust
     kid3 # A simple and powerful audio tag editor
     lf # terminal file manager
     minio-client # A replacement for ls, cp, mkdir, diff and rsync commands for filesystems and object storage
