@@ -16,7 +16,6 @@
     rofi-wayland # Window switcher, run dialog and dmenu replacement for Wayland (App Launcher)
     tdf # Tui-based PDF viewer
     thunderbird # A full-featured e-mail client
-    ventoy # bootable usb solution
     trayscale # Unofficial GUI wrapper around the Tailscale CLI client
     mountpoint-s3 # A simple, high-throughput file client for mounting an Amazon S3 bucket as a local file system.
 
