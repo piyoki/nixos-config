@@ -31,12 +31,12 @@ let
     rev = "acfd36e4fcba99f8310a7dfb432111c242fe7392";
     sha256 = "142ybm3wdqbdmdc7502am2xscrrabn72cnanyaflvndihdmcz4gz";
   };
-  t-smart-tmux-session-manager = pkgs.fetchFromGitHub {
-    owner = "joshmedeski";
-    repo = "t-smart-tmux-session-manager";
-    rev = "3726950525ac9966412ea3f2093bf2ffe06aa023";
-    sha256 = "0pnr1d582znbypclqc724lsfzmzz7s4sc468qgsi7dfmf6iriiq0";
-  };
+  # t-smart-tmux-session-manager = pkgs.fetchFromGitHub {
+  #   owner = "joshmedeski";
+  #   repo = "t-smart-tmux-session-manager";
+  #   rev = "3726950525ac9966412ea3f2093bf2ffe06aa023";
+  #   sha256 = "0pnr1d582znbypclqc724lsfzmzz7s4sc468qgsi7dfmf6iriiq0";
+  # };
   minimal-tmux-status = pkgs.fetchFromGitHub {
     owner = "niksingh710";
     repo = "minimal-tmux-status";
@@ -59,7 +59,7 @@ in
     ".tmux/plugins/tmux-continuum".source = tmux-continuum + "/";
     ".tmux/plugins/tmux-resurrect".source = tmux-resurrect + "/";
     ".tmux/plugins/tmux-yank".source = tmux-yank + "/";
-    ".tmux/plugins/t-smart-tmux-session-manager".source = t-smart-tmux-session-manager + "/";
+    # ".tmux/plugins/t-smart-tmux-session-manager".source = t-smart-tmux-session-manager + "/";
     ".tmux/plugins/minimal-tmux-status".source = minimal-tmux-status + "/";
     ".tmux/plugins/tmuxifier".source = tmuxifier + "/";
   };
