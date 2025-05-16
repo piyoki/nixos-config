@@ -19,13 +19,29 @@
 [includeIf "gitdir:~/.local/share/"] # include for all .git projects under $HOME/.local/share/
   path = ~/.gitconfigs/.gitconfig.personal
 
+[url "git@github.com:piyoki"]
+  insteadOf = "piyoki:"
+
+[url "git@github.com"]
+  insteadOf = "gh:"
+
 [core]
   editor = vim
   pager = less
   excludesfile = ~/.gitignore # valid everywhere
+  preloadindex = true
 
-[diff]
-  colorMoved = default
+[init]
+  defaultBranch = master
+
+[status]
+  showStash = true
+  showUntrackedFiles = all
+
+[advice]
+  addEmptyPathspec = false
+  pushNonFastForward = false
+  statusHints = false
 
 [merge]
   conflictstyle = diff3
@@ -33,6 +49,35 @@
 
 [interactive]
   diffFilter = delta --color-only --features=interactive
+
+[push]
+  autoSetupRemote = true
+  default = current
+  followTags = false
+
+[pull]
+  default = current
+  rebase = true
+
+[log]
+  abbrevCommit = true
+  graphColors = blue,yellow,cyan,magenta,green,red
+
+[branch]
+  sort = -commiterdate
+
+[tag]
+  sort = -taggerdate
+
+[pager]
+  branch = false
+  tag = false
+
+[color "decorate"]
+  HEAD = red
+  branch = blue
+  tag = yellow
+  remoteBranch = magenta
 
 [alias]
   # basic
@@ -57,8 +102,8 @@
   delnonexist = "remote prune origin"
 
   # submodule interactions
-  update = "submodule update --init --recursive"
-  foreach = "submodule foreach"
+  submodule-remote = "submodule update --remote --recursive"
+  submodule-init = "submodule update --init --recursive"
 
 [delta]
   ; (cmd to check current config) delta --diff-so-fancy --show-config
