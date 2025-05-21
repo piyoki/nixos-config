@@ -11,6 +11,7 @@
 </p>
 
 ![image](https://github.com/user-attachments/assets/9f4079e3-6bdf-454b-a946-443e4d7aa97f)
+![image](https://github.com/user-attachments/assets/b1584f71-9ad2-4eb5-b694-07a29ef47849)
 
 > [!NOTE]
 > This repo contains the declarative configuration of a few NixOS systems, with ~100% config nixfied.
