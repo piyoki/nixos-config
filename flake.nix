@@ -163,6 +163,6 @@
   };
 
   # === Issues to be fixed ===
-  # AMD GPU flickering on new Linux kernel patched
+  # AMD GPU flickering on new Linux kernel patched (Resolved)
   # https://www.reddit.com/r/archlinux/comments/1ec3n2e/is_amd_gpu_flickering_on_new_linux_kernel_patched/
 }
