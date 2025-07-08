@@ -29,5 +29,7 @@
     inputs.nur.packages.${system}.gitmux # Git in your tmux status bar
     oha # HTTP load generator inspired by rakyll/hey with tui animation
     tmate # Instant Terminal Sharing
+    redis # Open source, advanced key-value store
+    redisinsight # A Redis GUI client
   ];
 }
