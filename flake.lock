@@ -2964,18 +2964,18 @@
         "systems": "systems_16"
       },
       "locked": {
-        "lastModified": 1744756635,
-        "narHash": "sha256-o48AFUgi91LejL2zNt9fY4xKqoZI2mZUPzpLwWQM6Rw=",
-        "owner": "hyprland-community",
-        "repo": "pyprland",
-        "rev": "cc1be63ef4b998f4aebd5336a148b0aa267b54a7",
-        "type": "github"
+        "lastModified": 1750458215,
+        "narHash": "sha256-OH+BTPw574FykVYWG6TIOpSPeYB39UxyMy/gzMDw0z4=",
+        "ref": "refs/tags/2.4.6",
+        "rev": "619da2bcbae92014b8f0cdc2268b2cef3f7ad757",
+        "revCount": 1476,
+        "type": "git",
+        "url": "https://github.com/hyprland-community/pyprland"
       },
       "original": {
-        "owner": "hyprland-community",
-        "repo": "pyprland",
-        "rev": "cc1be63ef4b998f4aebd5336a148b0aa267b54a7",
-        "type": "github"
+        "ref": "refs/tags/2.4.6",
+        "type": "git",
+        "url": "https://github.com/hyprland-community/pyprland"
       }
     },
     "qutebrowser-universal": {
