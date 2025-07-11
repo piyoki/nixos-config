@@ -21,4 +21,10 @@
       portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
     };
   };
+
+  # session-specfic variables
+  environment.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+  };
 }
