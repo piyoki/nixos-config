@@ -135,7 +135,7 @@
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
-    hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.50.0"; };
+    hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.50.1"; };
     pyprland = { url = "git+https://github.com/hyprland-community/pyprland?ref=refs/tags/2.4.6"; };
     rust-nightly-overlay = { url = "github:nix-community/fenix"; inputs.nixpkgs.follows = "nixpkgs"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
