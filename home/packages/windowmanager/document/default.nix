@@ -7,6 +7,8 @@
 # pdfunite input1.pdf input2.pdf output.pdf
 # decrypt pdf by qpdf
 # qpdf --decrypt --password=PASSWORD input.pdf output.pdf
+# generate a thumbnail for a pdf with pdftoppm
+# pdftoppm -f 1 -l 1 -scale-to 1024 -png input.pdf thumbnail
 
 {
   home.packages = with pkgs; [
