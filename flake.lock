@@ -2964,16 +2964,16 @@
         "systems": "systems_16"
       },
       "locked": {
-        "lastModified": 1750458215,
-        "narHash": "sha256-OH+BTPw574FykVYWG6TIOpSPeYB39UxyMy/gzMDw0z4=",
-        "ref": "refs/tags/2.4.6",
-        "rev": "619da2bcbae92014b8f0cdc2268b2cef3f7ad757",
-        "revCount": 1476,
+        "lastModified": 1754771186,
+        "narHash": "sha256-rtAw6tdZY0BKb6Qjk/LHYYMB9nCPzkmw95wdjhJ191s=",
+        "ref": "refs/tags/2.4.7",
+        "rev": "33dc0f5c4bef4b3f094e641f0e31c6e3f9fe5a2d",
+        "revCount": 1483,
         "type": "git",
         "url": "https://github.com/hyprland-community/pyprland"
       },
       "original": {
-        "ref": "refs/tags/2.4.6",
+        "ref": "refs/tags/2.4.7",
         "type": "git",
         "url": "https://github.com/hyprland-community/pyprland"
       }
