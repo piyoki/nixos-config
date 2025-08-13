@@ -18,5 +18,6 @@
     poppler_utils # pdf utils (CLI), pdfunite included
     qpdf # pdf utils (CLI)
     ghostscript # PostScript interpreter (mainline version)
+    pandoc # universal document converter
   ];
 }
