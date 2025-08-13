@@ -1,3 +1,5 @@
+_:
+
 # Reference:
 # https://nixos.wiki/wiki/Flatpak
 
@@ -7,6 +9,13 @@
 # flatpak search bustle
 # flatpak install flathub org.freedesktop.Bustle
 # flatpak run org.freedesktop.Bustle
+# flatpak list
+
+# Current installed softwares:
+# - com.discordapp.Discord
+# - com.github.tchx84.Flatseal
+# - org.localsend.localsend_app
+
 {
   services.flatpak.enable = true;
 }
