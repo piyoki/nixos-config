@@ -13,6 +13,7 @@
 * [Build the system](#build-the-system)
 * [Reboot the system](#reboot-the-system)
 * [Network configuration](#network-configuration)
+* [Prepare private key to decrypt secrets (Personal Usage)](#prepare-private-key-to-decrypt-secrets-personal-usage)
 * [SSH Key (Personal Usage)](#ssh-key-personal-usage)
 * [Specify profile in the environment (Personal Usage)](#specify-profile-in-the-environment-personal-usage)
 * [Flake integration](#flake-integration)
@@ -201,6 +202,10 @@ If you are using a wired connection, you can skip this step. Otherwise, you can 
 ```bash
 sudo nmtui
 ```
+
+## Prepare private key to decrypt secrets (Personal Usage)
+
+Place the master key for decryption of secrets in `/var/lib/age/age-yubikey-master.key`.
 
 ## SSH Key (Personal Usage)
 

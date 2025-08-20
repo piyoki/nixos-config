@@ -24,6 +24,9 @@
 # Default system secret path:
 # /run/secrets/
 
+# Put the master age key in the following path:
+# /var/lib/age/age-yubikey-master.key
+
 # Reference: https://github.com/Mic92/sops-nix
 
 with lib;
