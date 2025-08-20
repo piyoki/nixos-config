@@ -483,6 +483,22 @@
         "type": "github"
       }
     },
+    "flake-compat_13": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1747046372,
+        "narHash": "sha256-CIVLLkVgvHYbgI2UpXvIIBJ12HWgX+fjA8Xf8PUmqCY=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "9100a0f413b0c601e0533d1d94ffd501ce2e7885",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-compat_2": {
       "flake": false,
       "locked": {
@@ -3051,7 +3067,8 @@
         "pyprland": "pyprland",
         "rust-nightly-overlay": "rust-nightly-overlay",
         "secrets": "secrets_2",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "waybar": "waybar"
       }
     },
     "rust-analyzer-src": {
@@ -3664,6 +3681,27 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "waybar": {
+      "inputs": {
+        "flake-compat": "flake-compat_13",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1754637322,
+        "narHash": "sha256-mGiBZjfvtZZkSHrha4UF2l1Ogbij8J//r2h4gcZAJ6w=",
+        "owner": "Alexays",
+        "repo": "Waybar",
+        "rev": "41de8964f1e3278edf07902ad68ca5e01e7abeeb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Alexays",
+        "repo": "Waybar",
         "type": "github"
       }
     },

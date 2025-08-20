@@ -27,6 +27,7 @@ As the date of writing (March 2024), I've committed myself switching to NixOS on
 - [home-manager](https://github.com/nix-community/home-manager) configurations as flake module.
 - [sops-nix](https://github.com/Mic92/sops-nix) to decrypt in-flight secrets from remote.
 - [nixpkgs-wayland](https://github.com/nix-community/nixpkgs-wayland) to fetch up-to-date wayland packages for daily usage.
+- [waybar](https://github.com/nix-community/waybar) to fetch the latest waybar package for daily usage.
 - [hyprland](https://github.com/hyprwm/Hyprland) to fetch up-to-date Hyprland packages for daily usage.
 - [pyprland](https://github.com/hyprland-community/pyprland) to fetch up-to-date Hyprland plugins for daily usage.
 - [rust-nightly-overlay](https://github.com/nix-community/fenix) to fetch nightly rust packages for daily usage.

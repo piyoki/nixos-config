@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    inputs.nixpkgs-wayland.packages.${system}.waybar # (nightly) wayland-based bar/dock
+    inputs.waybar.packages.${system}.waybar # (nightly) wayland-based bar/dock
     inputs.nixpkgs-wayland.packages.${system}.swayidle # idle management daemon
     cliphist # clipboard manager
     dunst # notification daemon
