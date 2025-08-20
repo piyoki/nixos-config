@@ -172,6 +172,9 @@ blkid /dev/mapper/root
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 ];
 
+  # Enable Flakes
+  nix.extraOptions = "experimental-features = nix-command flakes";
+  # Nix settings
   nix.settings.max-jobs = lib.mkDefault 8;
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "21.11";
