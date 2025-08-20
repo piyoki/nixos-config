@@ -15,6 +15,7 @@
 * [Network configuration](#network-configuration)
 * [Prepare private key to decrypt secrets (Personal Usage)](#prepare-private-key-to-decrypt-secrets-personal-usage)
 * [SSH Key (Personal Usage)](#ssh-key-personal-usage)
+* [Update hash for the key upstream inputs (Personal Usage)](#update-hash-for-the-key-upstream-inputs-personal-usage)
 * [Specify profile in the environment (Personal Usage)](#specify-profile-in-the-environment-personal-usage)
 * [Flake integration](#flake-integration)
 * [Home-manager integration](#home-manager-integration)
@@ -125,6 +126,7 @@ Make sure you have the right `UUID` mappings for your partitions
 
 ```bash
 # check uuid for a specific partition
+blkid /dev/nvme0n1p2
 blkid /dev/nvme0n1p1
 blkid /dev/mapper/root
 ```
@@ -157,7 +159,7 @@ blkid /dev/mapper/root
   users.users.kev = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ firefox justfile ];
+    packages = with pkgs; [ firefox just ];
   };
 
   # Enable openssh daemon.
@@ -237,7 +239,7 @@ Clone the repository using SSH:
 
 ```bash
 # clone the repository recursively with submodules
-git clone git@github.com/piyoki/nixos-config.git --recursive ~/flake
+git clone git@github.com:piyoki/nixos-config.git --recursive ~/flake
 # update submodules
 git submodule update --remote --recursive
 # checkout to the master branch for each submodule
@@ -248,6 +250,18 @@ cd ..
 cd home-estate/
 git checkout master
 cd ..
+```
+
+## Update hash for the key upstream inputs (Personal Usage)
+
+Run the justfile recipe to update the hashes for the key upstream inputs:
+
+```bash
+# update the hash associated with the submodules
+just upp home-estate
+just upp secrets
+# update the hash for the key upstream inputs
+just up
 ```
 
 ## Specify profile in the environment (Personal Usage)
@@ -368,6 +382,8 @@ Rebuild system with flake
 
 ```bash
 sudo nixos-rebuild switch --upgrade --flake .#nixos
+# with just recipe
+just b
 ```
 
 ## Binary cache usage

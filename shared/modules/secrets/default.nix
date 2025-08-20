@@ -68,7 +68,7 @@ in
     };
 
     server = {
-      system.base.enable = mkEnableOption "System secrets for network servers";
+      system.base.enable = mkEnableOption "System secrets for base servers";
       # system.network.enable = mkEnableOption "System secrets for network servers";
       # system.application.enable = mkEnableOption "Secrets for application servers";
       # system.operation.enable = mkEnableOption "Secrets for operation servers (backup, monitoring, etc)";
