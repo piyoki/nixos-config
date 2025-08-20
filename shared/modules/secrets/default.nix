@@ -114,12 +114,13 @@ in
               sopsFile = "${inputs.secrets}/ssh-keys.enc.yaml";
               access = defaultAccess;
               secretPaths = [
-                { "ssh_keys/id_rsa_s_user".path = "${config.home.homeDirectory}/.ssh/id_rsa_s_user"; }
-                { "ssh_keys/id_rsa_h_user".path = "${config.home.homeDirectory}/.ssh/id_rsa_h_user"; }
-                { "ssh_keys/id_rsa_semaphore".path = "${config.home.homeDirectory}/.ssh/id_rsa_semaphore.pub"; }
-                { "ssh_keys/id_rsa_yubikey_desktop".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_desktop.pub"; }
-                { "ssh_keys/id_rsa_yubikey_laptop".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_laptop.pub"; }
-                { "ssh_keys/id_rsa_yubikey_${cfg.workstation.kind}".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey.pub"; }
+                { "ssh_keys/id_rsa_semaphore_pub".path = "${config.home.homeDirectory}/.ssh/id_rsa_semaphore.pub"; }
+                { "ssh_keys/id_rsa_yubikey_desktop_pub".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_desktop.pub"; }
+                { "ssh_keys/id_rsa_yubikey_laptop_pub".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey_laptop.pub"; }
+                { "ssh_keys/id_rsa_yubikey_${cfg.workstation.kind}_pub".path = "${config.home.homeDirectory}/.ssh/id_rsa_yubikey.pub"; }
+                { "ssh_keys/id_rsa_semaphore_key".path = "${config.home.homeDirectory}/.ssh/id_rsa_semaphore.pub"; }
+                { "ssh_keys/id_rsa_s_user_key".path = "${config.home.homeDirectory}/.ssh/id_rsa_s_user"; }
+                { "ssh_keys/id_rsa_h_user_key".path = "${config.home.homeDirectory}/.ssh/id_rsa_h_user"; }
               ];
             }
             // genNestedSecrets {
