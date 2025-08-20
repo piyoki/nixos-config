@@ -11,8 +11,11 @@
 * [Create sub-volumes](#create-sub-volumes)
 * [Generate Nix configurations](#generate-nix-configurations)
 * [Build the system](#build-the-system)
+* [SSH Key (Personal Usage)](#ssh-key-personal-usage)
+* [Specify profile in the environment (Personal Usage)](#specify-profile-in-the-environment-personal-usage)
 * [Flake integration](#flake-integration)
 * [Home-manager integration](#home-manager-integration)
+* [Binary cache usage](#binary-cache-usage)
 * [References](#references)
 
 <!-- vim-markdown-toc -->
@@ -151,7 +154,7 @@ blkid /dev/mapper/root
   users.users.kev = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ firefox ];
+    packages = with pkgs; [ firefox justfile ];
   };
 
   # Enable openssh daemon.
@@ -184,31 +187,55 @@ reboot
 
 If all goes well, we’ll be prompted for the passphrase for $DISK entered earlier. Switch to another `tty` with `Ctrl+Alt+F1`, login as `root`, passwd <passwd> to set your password. Once you’re logged in, you can continue to tweak your NixOS configuration as you want. However, I generally recommend keeping enabled services at a minimum, and setting up opt-in state first.
 
-## Binary cache usage
+## SSH Key (Personal Usage)
 
-> [!NOTE]
-> A binary cache builds Nix packages and caches the result for other machines. Any machine with Nix installed can be a binary cache for another one, no matter the operating system.
-> If you are facing problems with derivations not being in a cache, try switching to a release version. Most caches will have many derivations for a specific release.
+Download the authorized private key to the new machine, and place it in `~/.ssh/id_rsa`. Make sure the permissions are set correctly:
 
-Reference: https://nixos.wiki/wiki/Binary_Cache
+```bash
+sudo chown <username> ~/.ssh/id_rsa
+sudo chmod 0400 ~/.ssh/id_rsa
+```
 
-```nix
-# /etc/nixos/configuration.nix
-{
-  nix = {
-    settings = {
-      substituters = [
-        "http://binarycache.example.com"
-        "https://nix-community.cachix.org"
-        "https://cache.nixos.org/"
-      ];
-      trusted-public-keys = [
-        "binarycache.example.com-1:dsafdafDFW123fdasfa123124FADSAD"
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      ];
-    };
-  };
-}
+Add the following line to `~/.ssh/config`:
+
+```ssh
+Host *
+  StrictHostKeyChecking no
+  LogLevel quiet
+
+# Public services
+# Using SSH over the HTTPS port
+# Ref: https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+  User git
+  IdentityFile ~/.ssh/id_rsa
+```
+
+Clone the repository using SSH:
+
+```bash
+# clone the repository recursively with submodules
+git clone git@github.com/piyoki/nixos-config.git --recursive ~/flake
+# update submodules
+git submodule update --remote --recursive
+# checkout to the master branch for each submodule
+cd ~/flake
+cd secrets/
+git checkout master
+cd ..
+cd home-estate/
+git checkout master
+cd ..
+```
+
+## Specify profile in the environment (Personal Usage)
+
+Add the following line to `~/.env`:
+
+```env
+PROFILE=<profile name>
 ```
 
 ## Flake integration
@@ -321,6 +348,33 @@ Rebuild system with flake
 
 ```bash
 sudo nixos-rebuild switch --upgrade --flake .#nixos
+```
+
+## Binary cache usage
+
+> [!NOTE]
+> A binary cache builds Nix packages and caches the result for other machines. Any machine with Nix installed can be a binary cache for another one, no matter the operating system.
+> If you are facing problems with derivations not being in a cache, try switching to a release version. Most caches will have many derivations for a specific release.
+
+Reference: https://nixos.wiki/wiki/Binary_Cache
+
+```nix
+# /etc/nixos/configuration.nix
+{
+  nix = {
+    settings = {
+      substituters = [
+        "http://binarycache.example.com"
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org/"
+      ];
+      trusted-public-keys = [
+        "binarycache.example.com-1:dsafdafDFW123fdasfa123124FADSAD"
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
+  };
+}
 ```
 
 ## References
