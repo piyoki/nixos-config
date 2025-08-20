@@ -11,6 +11,8 @@
 * [Create sub-volumes](#create-sub-volumes)
 * [Generate Nix configurations](#generate-nix-configurations)
 * [Build the system](#build-the-system)
+* [Reboot the system](#reboot-the-system)
+* [Network configuration](#network-configuration)
 * [SSH Key (Personal Usage)](#ssh-key-personal-usage)
 * [Specify profile in the environment (Personal Usage)](#specify-profile-in-the-environment-personal-usage)
 * [Flake integration](#flake-integration)
@@ -185,7 +187,17 @@ nixos-install
 reboot
 ```
 
+## Reboot the system
+
 If all goes well, we’ll be prompted for the passphrase for $DISK entered earlier. Switch to another `tty` with `Ctrl+Alt+F1`, login as `root`, passwd <passwd> to set your password. Once you’re logged in, you can continue to tweak your NixOS configuration as you want. However, I generally recommend keeping enabled services at a minimum, and setting up opt-in state first.
+
+## Network configuration
+
+If you are using a wired connection, you can skip this step. Otherwise, you can use `nmtui` to configure your network.
+
+```bash
+sudo nmtui
+```
 
 ## SSH Key (Personal Usage)
 
