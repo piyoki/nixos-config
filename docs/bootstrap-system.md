@@ -50,6 +50,8 @@ cryptsetup luksOpen /dev/nvme0n1p2 root
 cryptsetup -v status root
 
 # format LUKS partition
+wipefs --all /dev/mapper/root
+# OR
 dd if=/dev/zero of=/dev/mapper/root
 ```
 
