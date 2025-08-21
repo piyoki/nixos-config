@@ -6,18 +6,19 @@
     "system/workstation.nix"
     "system/users/init-pass.nix"
     "system/services/greetd.nix"
-    "system/services/powermanagement/laptop.nix"
     "system/services/scx.nix"
     "system/hardware/keyd.nix"
     "system/services/virtualization/virtmanager.nix"
     "system/services/sshfs.nix"
+
+    # misc modules
     "system/environment/intel-specific.nix"
+    "system/services/powermanagement/laptop.nix"
     # "system/hardware/fingerprint.nix"
     # "system/networking/udp-gro-forwarding.nix"
 
     # themes modules
     "themes"
-
     # shared modules
     "shared/modules/secrets"
     "shared/modules/system/tmpfs/persistent"
