@@ -17,6 +17,7 @@
 * [SSH Key (Personal Usage)](#ssh-key-personal-usage)
 * [Update hash for the key upstream inputs (Personal Usage)](#update-hash-for-the-key-upstream-inputs-personal-usage)
 * [Specify profile in the environment (Personal Usage)](#specify-profile-in-the-environment-personal-usage)
+* [Persistence for tmpfs (Personal Usage)](#persistence-for-tmpfs-personal-usage)
 * [Flake integration](#flake-integration)
 * [Home-manager integration](#home-manager-integration)
 * [Binary cache usage](#binary-cache-usage)
@@ -270,6 +271,14 @@ Add the following line to `~/.env`:
 
 ```env
 PROFILE=<profile name>
+```
+
+## Persistence for tmpfs (Personal Usage)
+
+Make sure to change the ownership of the home directory to the user:
+
+```bash
+sudo chown -R <username>:users /home/<username>
 ```
 
 ## Flake integration
