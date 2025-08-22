@@ -110,12 +110,12 @@
       neededForBoot = true;
     };
 
-  fileSystems."/tmp" =
-    {
-      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@tmp" ];
-    };
+  # fileSystems."/tmp" =
+  #   {
+  #     device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+  #     fsType = "btrfs";
+  #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@tmp" ];
+  #   };
 
   fileSystems."/boot" =
     {

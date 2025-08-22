@@ -121,14 +121,14 @@
         neededForBoot = true;
       };
 
-    "/tmp" =
-      {
-        device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@tmp" ];
-        # impermanence's data is required for booting
-        neededForBoot = true;
-      };
+    # "/tmp" =
+    #   {
+    #     device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
+    #     fsType = "btrfs";
+    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@tmp" ];
+    #     # impermanence's data is required for booting
+    #     neededForBoot = true;
+    #   };
 
     "/boot" =
       {
