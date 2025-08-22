@@ -2767,11 +2767,11 @@
         "pre-commit-hooks": "pre-commit-hooks_4"
       },
       "locked": {
-        "lastModified": 1733934968,
-        "narHash": "sha256-KWZ6fjQN/watSgqA1OUNZpWHkx+wjyxjEMZcBUu27a0=",
+        "lastModified": 1755831840,
+        "narHash": "sha256-IHICiPlzbcbdOV3COGMt31M+csuFEfztNbRzn2Y4TGI=",
         "owner": "piyoki",
         "repo": "nur-packages",
-        "rev": "256074f6d3c7a03f875e7b48797d8d016d13b5bf",
+        "rev": "67b64ac1ef70c48f5134b809904c427c4d0562ae",
         "type": "github"
       },
       "original": {
