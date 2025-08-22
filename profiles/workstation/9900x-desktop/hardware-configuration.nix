@@ -80,48 +80,50 @@
     };
   };
 
-  fileSystems."/" =
-    {
-      device = "tmpfs";
-      fsType = "tmpfs";
-      options = [ "relatime" "size=25%" "mode=755" ];
-    };
+  fileSystems = {
+    "/" =
+      {
+        device = "tmpfs";
+        fsType = "tmpfs";
+        options = [ "relatime" "size=25%" "mode=755" ];
+      };
 
-  fileSystems."/nix" =
-    {
-      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@nix" ];
-    };
+    "/nix" =
+      {
+        device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@nix" ];
+      };
 
-  fileSystems."/snapshots" =
-    {
-      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
-    };
+    "/snapshots" =
+      {
+        device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
+      };
 
-  fileSystems."/persistent" =
-    {
-      device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
-      fsType = "btrfs";
-      options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
-      # impermanence's data is required for booting
-      neededForBoot = true;
-    };
+    "/persistent" =
+      {
+        device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
+        # impermanence's data is required for booting
+        neededForBoot = true;
+      };
 
-  # fileSystems."/tmp" =
-  #   {
-  #     device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
-  #     fsType = "btrfs";
-  #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@tmp" ];
-  #   };
+    # "/tmp" =
+    #   {
+    #     device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+    #     fsType = "btrfs";
+    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@tmp" ];
+    #   };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/FDF8-EDDF";
-      fsType = "vfat";
-    };
+    "/boot" =
+      {
+        device = "/dev/disk/by-uuid/FDF8-EDDF";
+        fsType = "vfat";
+      };
+  };
 
   swapDevices = [ ];
 
