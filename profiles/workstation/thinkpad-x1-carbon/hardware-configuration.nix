@@ -45,7 +45,7 @@
       availableKernelModules = [ "xe" "i915" "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "lz4" ];
       kernelModules = [ "xe" "i915" "i2c_dev" "coretemp" ];
       luks.devices."root" = {
-        device = "/dev/disk/by-uuid/4a68213a-fff8-4425-b646-116bcf2568a2";
+        device = "/dev/disk/by-uuid/7683f610-627e-442e-8bfd-6b038291c603";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
         # if not specified, you will be prompted for a passphrase instead.
         #keyFile = "/root-part.key";
@@ -92,50 +92,41 @@
   };
 
   fileSystems = {
-    "/" = {
-      device = "tmpfs";
-      fsType = "tmpfs";
-      options = [ "relatime" "size=25%" "mode=755" ];
-    };
+    # "/" = {
+    #   device = "tmpfs";
+    #   fsType = "tmpfs";
+    #   options = [ "relatime" "size=25%" "mode=755" ];
+    # };
 
-    # "/" =
-    #   {
-    #     device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
-    #     fsType = "btrfs";
-    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
-    #   };
+    "/" =
+      {
+        device = "/dev/disk/by-uuid/4b5a3f36-12fa-42f2-a888-09e1abc1863c";
+        fsType = "btrfs";
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@" ];
+      };
 
     "/nix" =
       {
-        device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
+        device = "/dev/disk/by-uuid/4b5a3f36-12fa-42f2-a888-09e1abc1863c";
         fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@nix" ];
       };
 
     "/snapshots" =
       {
-        device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
+        device = "/dev/disk/by-uuid/4b5a3f36-12fa-42f2-a888-09e1abc1863c";
         fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
       };
 
     "/persistent" =
       {
-        device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
+        device = "/dev/disk/by-uuid/4b5a3f36-12fa-42f2-a888-09e1abc1863c";
         fsType = "btrfs";
         options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
         # impermanence's data is required for booting
         neededForBoot = true;
       };
-
-    # "/tmp" =
-    #   {
-    #     device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
-    #     fsType = "btrfs";
-    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
-    #     # impermanence's data is required for booting
-    #     neededForBoot = true;
-    #   };
 
     "/boot" =
       {

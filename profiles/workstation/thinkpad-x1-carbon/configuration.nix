@@ -40,7 +40,7 @@
     secrets.workstation.system.enable = true;
     # Load persistent dirs and files
     persistent = {
-      enable = true;
+      enable = false;
       hostType = "workstation";
     };
   };
