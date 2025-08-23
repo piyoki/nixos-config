@@ -13,15 +13,16 @@
 * [Build the system](#build-the-system)
 * [Reboot the system](#reboot-the-system)
 * [Network configuration](#network-configuration)
-* [Prepare private key to decrypt secrets (Personal Usage)](#prepare-private-key-to-decrypt-secrets-personal-usage)
-* [SSH Key (Personal Usage)](#ssh-key-personal-usage)
-* [Update hash for the key upstream inputs (Personal Usage)](#update-hash-for-the-key-upstream-inputs-personal-usage)
-* [Specify profile in the environment (Personal Usage)](#specify-profile-in-the-environment-personal-usage)
-* [Backup legacy configuration to persistent volume (Personal Usage)](#backup-legacy-configuration-to-persistent-volume-personal-usage)
-* [Persistence for tmpfs (Personal Usage)](#persistence-for-tmpfs-personal-usage)
 * [Flake integration](#flake-integration)
 * [Home-manager integration](#home-manager-integration)
 * [Binary cache usage](#binary-cache-usage)
+* [Personal Usage](#personal-usage)
+  * [Prepare private key to decrypt secrets](#prepare-private-key-to-decrypt-secrets)
+  * [SSH Key](#ssh-key)
+  * [Update hash for the key upstream inputs](#update-hash-for-the-key-upstream-inputs)
+  * [Specify profile in the environment](#specify-profile-in-the-environment)
+  * [Backup legacy configuration to persistent volume](#backup-legacy-configuration-to-persistent-volume)
+  * [Persistence for tmpfs](#persistence-for-tmpfs)
 * [References](#references)
 
 <!-- vim-markdown-toc -->
@@ -205,87 +206,6 @@ If you are using a wired connection, you can skip this step. Otherwise, you can 
 sudo nmtui
 ```
 
-## Prepare private key to decrypt secrets (Personal Usage)
-
-Place the master key for decryption of secrets in `/var/lib/age/age-yubikey-master.key`.
-
-## SSH Key (Personal Usage)
-
-Download the authorized private key to the new machine, and place it in `~/.ssh/id_rsa`. Make sure the permissions are set correctly:
-
-```bash
-sudo chown <username> ~/.ssh/id_rsa
-sudo chmod 0400 ~/.ssh/id_rsa
-```
-
-Add the following line to `~/.ssh/config`:
-
-```ssh
-Host *
-  StrictHostKeyChecking no
-  LogLevel quiet
-
-# Public services
-# Using SSH over the HTTPS port
-# Ref: https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port
-Host github.com
-  Hostname ssh.github.com
-  Port 443
-  User git
-  IdentityFile ~/.ssh/id_rsa
-```
-
-Clone the repository using SSH:
-
-```bash
-# clone the repository recursively with submodules
-git clone git@github.com:piyoki/nixos-config.git --recursive ~/flake
-# update submodules
-git submodule update --remote --recursive
-# checkout to the master branch for each submodule
-cd ~/flake
-cd secrets/
-git checkout master
-cd ..
-cd home-estate/
-git checkout master
-cd ..
-```
-
-## Update hash for the key upstream inputs (Personal Usage)
-
-Run the justfile recipe to update the hashes for the key upstream inputs:
-
-```bash
-# update the hash associated with the submodules
-just upp home-estate
-just upp secrets
-# update the hash for the key upstream inputs
-just up
-```
-
-## Specify profile in the environment (Personal Usage)
-
-Add the following line to `~/.env`:
-
-```env
-PROFILE=<profile name>
-```
-
-## Backup legacy configuration to persistent volume (Personal Usage)
-
-```bash
-sudo cp -r /etc/nixos /persistent/etc/
-```
-
-## Persistence for tmpfs (Personal Usage)
-
-Make sure to change the ownership of the home directory to the user:
-
-```bash
-sudo chown -R <username>:users /home/<username>
-```
-
 ## Flake integration
 
 Start with the following barebone configuraton
@@ -425,6 +345,101 @@ Reference: https://nixos.wiki/wiki/Binary_Cache
     };
   };
 }
+```
+
+## Personal Usage
+
+### Prepare private key to decrypt secrets
+
+Place the master key for decryption of secrets in `/var/lib/age/age-yubikey-master.key`.
+
+### SSH Key
+
+Download the authorized private key to the new machine, and place it in `~/.ssh/id_rsa`. Make sure the permissions are set correctly:
+
+```bash
+sudo chown <username> ~/.ssh/id_rsa
+sudo chmod 0400 ~/.ssh/id_rsa
+```
+
+Add the following line to `~/.ssh/config`:
+
+```ssh
+Host *
+  StrictHostKeyChecking no
+  LogLevel quiet
+
+# Public services
+# Using SSH over the HTTPS port
+# Ref: https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+  User git
+  IdentityFile ~/.ssh/id_rsa
+```
+
+Clone the repository using SSH:
+
+```bash
+# clone the repository recursively with submodules
+git clone git@github.com:piyoki/nixos-config.git --recursive ~/flake
+# update submodules
+git submodule update --remote --recursive
+# checkout to the master branch for each submodule
+cd ~/flake
+cd secrets/
+git checkout master
+cd ..
+cd home-estate/
+git checkout master
+cd ..
+```
+
+### Update hash for the key upstream inputs
+
+Run the justfile recipe to update the hashes for the key upstream inputs:
+
+```bash
+# update the hash associated with the submodules
+just upp home-estate
+just upp secrets
+# update the hash for the key upstream inputs
+just up
+```
+
+### Specify profile in the environment
+
+Add the following line to `~/.env`:
+
+```env
+PROFILE=<profile name>
+```
+
+### Backup legacy configuration to persistent volume
+
+```bash
+sudo cp -r /etc/nixos /persistent/etc/
+```
+
+### Persistence for tmpfs
+
+> [!NOTE]
+> Please make sure the system is running as expected before enabling persistence for tmpfs. Otherwise, the system may fail to boot.
+> Files and directories to be copied to are under ../shared/modules/system/tmpfs/persistent/
+
+Copy the necessary files and directories to the persistent volume:
+
+```bash
+# e.g.
+sudo cp -r /home/<username> /persistent/
+sudo cp -r /etc /persistent/
+```
+
+Make sure to change the ownership of the home directory to the user:
+
+```bash
+sudo chown -R <username>:users /home/<username>
 ```
 
 ## References
