@@ -17,6 +17,7 @@
 * [SSH Key (Personal Usage)](#ssh-key-personal-usage)
 * [Update hash for the key upstream inputs (Personal Usage)](#update-hash-for-the-key-upstream-inputs-personal-usage)
 * [Specify profile in the environment (Personal Usage)](#specify-profile-in-the-environment-personal-usage)
+* [Backup legacy configuration to persistent volume (Personal Usage)](#backup-legacy-configuration-to-persistent-volume-personal-usage)
 * [Persistence for tmpfs (Personal Usage)](#persistence-for-tmpfs-personal-usage)
 * [Flake integration](#flake-integration)
 * [Home-manager integration](#home-manager-integration)
@@ -83,19 +84,17 @@ btrfs subvolume create @nix
 btrfs subvolume create @snapshots
 # for tmpfs filesystem only
 # btrfs subvolume create @persistent
-# btrfs subvolume create @tmp
 cd
 umount /mnt
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/mapper/root /mnt
 mkdir /mnt/{boot,home,nix,snapshots}
 # for tmpfs filesystem only
-# mkdir /mnt/{boot,home,nix,snapshots,persistent,tmp}
+# mkdir /mnt/{boot,home,nix,snapshots,persistent}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/mapper/root /mnt/home/
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@nix /dev/mapper/root /mnt/nix/
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/mapper/root /mnt/snapshots/
 # for tmpfs filesystem only
 # mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@persistent /dev/mapper/root /mnt/persistent/
-# mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@tmp /dev/mapper/root /mnt/tmp/
 mount /dev/nvme0n1p1 /mnt/boot
 # verify mount points
 lsblk -o PATH,FSTYPE,MOUNTPOINT /dev/nvme0n1
@@ -271,6 +270,12 @@ Add the following line to `~/.env`:
 
 ```env
 PROFILE=<profile name>
+```
+
+## Backup legacy configuration to persistent volume (Personal Usage)
+
+```bash
+sudo cp -r /etc/nixos /persistent/etc/
 ```
 
 ## Persistence for tmpfs (Personal Usage)
