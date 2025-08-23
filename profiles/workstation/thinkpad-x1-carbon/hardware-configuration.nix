@@ -98,18 +98,25 @@
       options = [ "relatime" "size=25%" "mode=755" ];
     };
 
+    # "/" =
+    #   {
+    #     device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
+    #     fsType = "btrfs";
+    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
+    #   };
+
     "/nix" =
       {
         device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
         fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@nix" ];
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
       };
 
     "/snapshots" =
       {
         device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
         fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
+        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
       };
 
     "/persistent" =
@@ -125,7 +132,7 @@
     #   {
     #     device = "/dev/disk/by-uuid/3f959040-7d45-4392-9a20-a766143e18d1";
     #     fsType = "btrfs";
-    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@tmp" ];
+    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
     #     # impermanence's data is required for booting
     #     neededForBoot = true;
     #   };

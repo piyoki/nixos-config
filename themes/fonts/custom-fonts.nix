@@ -7,7 +7,7 @@
       genseki-gothic
       comic-code
       comic-code-ligatures
-      # vt323
+      vt323
       zpix-pixel
       genryu
       genwan
