@@ -88,6 +88,13 @@
         options = [ "relatime" "size=25%" "mode=755" ];
       };
 
+    # "/" =
+    #   {
+    #     device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+    #     fsType = "btrfs";
+    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@" ];
+    #   };
+
     "/nix" =
       {
         device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
@@ -110,13 +117,6 @@
         # impermanence's data is required for booting
         neededForBoot = true;
       };
-
-    # "/tmp" =
-    #   {
-    #     device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
-    #     fsType = "btrfs";
-    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@tmp" ];
-    #   };
 
     "/boot" =
       {

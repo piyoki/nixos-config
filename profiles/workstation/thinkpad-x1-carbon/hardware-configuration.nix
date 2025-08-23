@@ -92,18 +92,18 @@
   };
 
   fileSystems = {
-    # "/" = {
-    #   device = "tmpfs";
-    #   fsType = "tmpfs";
-    #   options = [ "relatime" "size=25%" "mode=755" ];
-    # };
+    "/" = {
+      device = "tmpfs";
+      fsType = "tmpfs";
+      options = [ "relatime" "size=25%" "mode=755" ];
+    };
 
-    "/" =
-      {
-        device = "/dev/disk/by-uuid/4b5a3f36-12fa-42f2-a888-09e1abc1863c";
-        fsType = "btrfs";
-        options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@" ];
-      };
+    # "/" =
+    #   {
+    #     device = "/dev/disk/by-uuid/4b5a3f36-12fa-42f2-a888-09e1abc1863c";
+    #     fsType = "btrfs";
+    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@" ];
+    #   };
 
     "/nix" =
       {
