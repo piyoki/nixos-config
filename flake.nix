@@ -128,7 +128,7 @@
     # public source
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     pilots.url = "github:NixOS-Pilots/pilots";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     chaotic-kernel.url = "github:chaotic-cx/nyx/018c0eeafe5eb58ed2164f2628d6843b28053a64";
