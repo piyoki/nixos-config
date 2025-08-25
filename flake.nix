@@ -131,12 +131,13 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     pilots.url = "github:NixOS-Pilots/pilots";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    chaotic-kernel.url = "github:chaotic-cx/nyx/018c0eeafe5eb58ed2164f2628d6843b28053a64";
+    chaotic-kernel.url = "github:chaotic-cx/nyx?rev=a12198a1d1af26d8bb639d8a9742f4a18269e840";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; inputs.nixpkgs.follows = "nixpkgs"; };
     waybar = { url = "github:Alexays/Waybar"; inputs.nixpkgs.follows = "nixpkgs"; };
-    hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.50.1"; };
+    # hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.50.1"; };
+    hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=1&rev=0ed880f3f7dc2c746bf3590eee266c010d737558"; };
     pyprland = { url = "git+https://github.com/hyprland-community/pyprland?ref=refs/tags/2.4.7"; };
     rust-nightly-overlay = { url = "github:nix-community/fenix"; inputs.nixpkgs.follows = "nixpkgs"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
