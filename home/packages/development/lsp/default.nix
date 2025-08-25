@@ -20,7 +20,7 @@
     marksman # Language Server for Markdown
     nixd # Language server for Nix
     nodePackages_latest.graphql-language-service-cli # An interface for building GraphQL language services for IDEs
-    nodePackages_latest.vscode-json-languageserver # JSON language server
+    # nodePackages_latest.vscode-json-languageserver # JSON language server
     nodePackages_latest.vscode-langservers-extracted # HTML/CSS/JSON/ESLint language servers extracted from VSCode
     pyright # Python language server
     sqls # SQL language server written in Go
