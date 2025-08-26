@@ -79,7 +79,8 @@
       # extra dirs
       extraConfig = {
         XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
-        XDG_WALLPAPER_DIR = "${config.xdg.userDirs.pictures}/Wallpapers";
+        XDG_WALLPAPER_PUBLIC_DIR = "${config.xdg.userDirs.pictures}/Wallpapers/Public";
+        XDG_WALLPAPER_PRIVATE_DIR = "${config.xdg.userDirs.pictures}/Wallpapers/Private";
         XDG_AVATAR_DIR = "${config.xdg.userDirs.pictures}/Avatars";
         XDG_MEDIA_DIR = "${config.home.homeDirectory}/Media";
         XDG_TANK_DIR = "${config.home.homeDirectory}/Tank";
