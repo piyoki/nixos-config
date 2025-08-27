@@ -10,7 +10,7 @@
   <img src="https://custom-icon-badges.herokuapp.com/github/last-commit/piyoki/nixos-config?style=flat&logo=history&colorA=24273A&colorB=C4EEF2" alt="lastcommit"/>
 </p>
 
-![image](https://github.com/user-attachments/assets/cb7faa60-58f2-47a7-9e95-707f8a3ca373)
+![image](https://github.com/user-attachments/assets/6a918b4b-d42a-4fe4-b012-da0fd3cf4834)
 ![image](https://github.com/user-attachments/assets/b1584f71-9ad2-4eb5-b694-07a29ef47849)
 
 > [!NOTE]
