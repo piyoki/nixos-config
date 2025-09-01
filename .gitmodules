@@ -1,8 +1,8 @@
 [submodule "secrets"]
 	path = secrets
-	url = git@github.com:yqlbu/sops-credentials.git
+	url = git@github.com:piyoki/sops-credentials.git
 	branch = master
 [submodule "home-estate"]
 	path = home-estate
-	url = git@github.com:yqlbu/home-estate.git
+	url = git@github.com:piyoki/home-estate.git
 	branch = master

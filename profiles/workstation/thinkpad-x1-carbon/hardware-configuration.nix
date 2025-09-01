@@ -62,12 +62,19 @@
 
     kernelModules = [ "kvm-intel" ];
     # NOTE:
+    # ---
     # "random.trust_cpu=off" - CPU forced to gather more entropy from other sources
+    # ---
+    # Enable deep-sleep suspend states
+    # Suspend-to-RAM; providing power to RAM, CPU goes off-line
+    # echo "deep" | sudo tee /sys/power/mem_sleep
+    # Reference: https://askubuntu.com/questions/1464591/quick-battery-drain-in-suspend-mode
     kernelParams = [
       "random.trust_cpu=off"
       "zswap.enabled=1"
       "zswap.compressor=zstd"
       "zswap.zpool=zsmalloc"
+      "mem_sleep_default=deep"
     ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''

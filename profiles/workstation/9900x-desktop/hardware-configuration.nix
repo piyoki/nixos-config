@@ -56,6 +56,7 @@
     # "random.trust_cpu=off" - CPU forced to gather more entropy from other sources
     # "iwlwifi.power_save=0" - Disable power saving mode for Intel Wireless
     # "iwlmvm.power_scheme=1" - Switch power scheme from (Default:Balanced - 2) to (Active - 1) for Intel Wireless
+    # "rtc_cmos.use_acpi_alarm=1" - Enable RTC wake from suspend
     kernelParams = [
       "amd_pstate=active"
       "amd_iommu=on"
@@ -67,6 +68,7 @@
       "zswap.zpool=zsmalloc"
       "iwlwifi.power_save=0"
       "iwlmvm.power_scheme=1"
+      "rtc_cmos.use_acpi_alarm=1"
     ];
     extraModulePackages = [ ];
     extraModprobeConfig = ''

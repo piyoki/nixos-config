@@ -39,7 +39,7 @@ in
   # Reference: https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_10)#Powersaving
   # Lenovo supports 'platform-profiles' on newer kernels which can rather dramatically improve performance by decreasing throttling, or greatly improve battery life and thermals by lowering the CPU's power limit. These modes can result in over a 100% increase or decrease in CPU power draw. The default mode is "balanced" however users can switch between these modes using the following keyboard shortcuts:
   # The currently active mode can be checked with the following command:
-  # Fn+l - Low-power mode
+  # Fn+l - Low-power mode (aka Low)
   # Fn+m - Balanced mode (aka Medium)
   # Fn+h - Performance mode (aka High)
   # cat /sys/firmware/acpi/platform_profile_choices
