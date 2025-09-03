@@ -2,6 +2,9 @@
 
 {
   home.packages = with pkgs; [
+    # aws
+    awscli2
+
     # ansible
     ansible
 
