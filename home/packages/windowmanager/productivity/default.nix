@@ -11,6 +11,7 @@
     asak # A cross-platform audio recording/playback CLI tool with TUI, written in Rust
     kid3 # A simple and powerful audio tag editor
     lf # terminal file manager
+    termscp # A feature rich terminal UI file transfer and explorer with support for SCP/SFTP/FTP/S3/SMB
     minio-client # A replacement for ls, cp, mkdir, diff and rsync commands for filesystems and object storage
     pistol # General purpose file previewer designed for Ranger, Lf to make scope.sh redundant
     remmina # Remote desktop client written in GTK
