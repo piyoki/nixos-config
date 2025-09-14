@@ -136,10 +136,14 @@ sync-mirror-remote:
 
 # ===== Tests ===== #
 
-# clean nvim configs
+# clean local dot configs
 dot-clean config:
   @rm -rf ${HOME}/.config/{{ config }}
 
-# rsync nvim configs from dot-nvim
-dot-test config:
+# rsync dot configs from dot-nvim
+dot-test config: (dot-clean config)
+  @rsync -avz --copy-links --chmod=D2755,F744 $HOME/Workspace/personal/dot-submodules/dot-{{ config }}/ ${HOME}/.config/{{ config }}
+
+# rsync dot configs from dot-{config} repo
+dot-sync config:
   @rsync -avz --copy-links --chmod=D2755,F744 $HOME/Workspace/personal/dot-submodules/dot-{{ config }}/ ${HOME}/.config/{{ config }}
