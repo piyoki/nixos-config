@@ -129,6 +129,10 @@ add:
 pull:
   @git pull --rebase
 
+sync-mirror-remote:
+  @git push -u mirror --tags
+  @git branch --set-upstream-to=origin/master master
+
 # ===== Tests ===== #
 
 # clean nvim configs
