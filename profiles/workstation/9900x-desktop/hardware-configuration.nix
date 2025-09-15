@@ -122,7 +122,7 @@
 
     "/boot" =
       {
-        device = "/dev/disk/by-uuid/FDF8-EDDF";
+        device = "/dev/disk/by-uuid/3FEC-8D80";
         fsType = "vfat";
       };
   };
