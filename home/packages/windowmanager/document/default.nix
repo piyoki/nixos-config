@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 # -- Advanced PDF utilities Usage --
+# convert pdf to single high-resolution image by convert (ImageMagick)
+# convert -density 300 input.pdf -quality 100 output.jpg
 # convert pdf to image by poppler-utils
 # pdftoppm input.pdf output -jpeg
 # combine multiple pdfs into one by poppler-utils
