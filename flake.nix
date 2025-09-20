@@ -139,6 +139,8 @@
     hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.51.0"; };
     # hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=1&rev=0ed880f3f7dc2c746bf3590eee266c010d737558"; };
     pyprland = { url = "git+https://github.com/hyprland-community/pyprland?ref=refs/tags/2.4.7"; };
+    hyprlock = { url = "git+https://github.com/hyprwm/hyprlock"; };
+    hyprpaper = { url = "git+https://github.com/hyprwm/hyprpaper"; };
     rust-nightly-overlay = { url = "github:nix-community/fenix"; inputs.nixpkgs.follows = "nixpkgs"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     impermanence.url = "github:nix-community/impermanence";

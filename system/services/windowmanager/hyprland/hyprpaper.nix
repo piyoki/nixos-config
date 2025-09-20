@@ -1,9 +1,9 @@
 # Reference:
-# https://hyprland-community.github.io/pyprland/
+# https://github.com/hyprwm/hyprpaper
+# https://wiki.hyprland.org/Hypr-Ecosystem/hyprpaper/
 
-{ pkgs, ... }:
+{ inputs, system, ... }:
 
 {
-  # enable pyprland, the plugin manager for hyprland
-  environment.systemPackages = with pkgs; [ hyprpaper ];
+  environment.systemPackages = [ inputs.hyprpaper.packages.${system}.hyprpaper ];
 }
