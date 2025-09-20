@@ -21,6 +21,8 @@ env:
     microvm
     nix-fast-build
     auto-cpufreq
+    hyprlock
+    hyprpaper
   PR_LABELS: |
     flake-lock
     automated

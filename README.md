@@ -28,8 +28,6 @@ As the date of writing (March 2024), I've committed myself switching to NixOS on
 - [sops-nix](https://github.com/Mic92/sops-nix) to decrypt in-flight secrets from remote.
 - [nixpkgs-wayland](https://github.com/nix-community/nixpkgs-wayland) to fetch up-to-date wayland packages for daily usage.
 - [waybar](https://github.com/Alexays/waybar) to fetch the latest waybar package for daily usage.
-- [hyprland](https://github.com/hyprwm/Hyprland) to fetch up-to-date Hyprland packages for daily usage.
-- [pyprland](https://github.com/hyprland-community/pyprland) to fetch up-to-date Hyprland plugins for daily usage.
 - [rust-nightly-overlay](https://github.com/nix-community/fenix) to fetch nightly rust packages for daily usage.
 - [neovim-nightly-overlay](https://github.com/nix-community/neovim-nightly-overlay) to fetch nightly neovim package for daily usage.
 - [impemenance](https://github.com/nix-community/impermanence) to create tmpfs root stateless OS.
@@ -37,6 +35,13 @@ As the date of writing (March 2024), I've committed myself switching to NixOS on
 - [microvm](https://github.com/astro/microvm.nix) to spin up microvm locally in seconds.
 - [nix-fast-build](https://github.com/Mic92/nix-fast-build) to speed up evaluation and building process.
 - [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq) to optimize power management and efficiency.
+
+### Hyprland ecosystem
+
+- [hyprland](https://github.com/hyprwm/Hyprland) to fetch up-to-date Hyprland packages for daily usage.
+- [pyprland](https://github.com/hyprland-community/pyprland) to fetch up-to-date Hyprland plugins for daily usage.
+- [hyprlock](https://github.com/hyprwm/hyprlock) to fetch up-to-date hyprlock package for daily usage.
+- [hyprpaper](https://github.com/hyprwm/hyprpaper) to fetch up-to-date hyprpaper package for daily usage.
 
 ## References
 
