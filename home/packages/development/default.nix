@@ -8,6 +8,7 @@
     ./language
     ./linter
     ./lsp
+    ./ai
   ];
 
   home.packages = with pkgs; [
