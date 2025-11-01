@@ -13,6 +13,7 @@
     kubernetes-helm
     k9s # TUI for k8s
     fluxcd # Open and extensible continuous delivery solution for Kubernetes
+    minikube # Run Kubernetes locally
 
     # cloudinit
     cloud-utils # cloud-init utilities
