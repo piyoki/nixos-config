@@ -9,4 +9,5 @@
   ".sops"
   ".tmux"
   ".tmuxifier"
+  ".codex"
 ]
