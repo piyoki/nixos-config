@@ -13,8 +13,10 @@
       pkgs = (import nixpkgs) { inherit system overlays config; };
       specialArgs = genSpecialArgs system;
       extraModules = [
+        chaotic.nixosModules.nyx-cache
+        chaotic.nixosModules.nyx-overlay
+        chaotic.nixosModules.nyx-registry
         sops-nix.nixosModules.sops
-        chaotic.nixosModules.default
         auto-cpufreq.nixosModules.default
       ];
       # function to generate specialArgs
