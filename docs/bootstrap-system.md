@@ -145,6 +145,10 @@ blkid /dev/mapper/root
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "btrfs" ];
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
   hardware.enableAllFirmware = true;
 
   networking.hostName = "nixos"; # Define your hostname.
