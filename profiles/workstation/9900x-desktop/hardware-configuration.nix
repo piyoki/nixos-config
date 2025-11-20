@@ -20,8 +20,8 @@
 
   boot = {
     # Use the systemd-boot EFI boot loader.
-    kernelPackages = inputs.chaotic-kernel.legacyPackages.${system}.linuxPackages_cachyos-lto;
-    # kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = inputs.chaotic-kernel.legacyPackages.${system}.linuxPackages_cachyos-lto;
+    kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
 
     loader = {
@@ -33,7 +33,7 @@
       availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "lz4" ];
       kernelModules = [ "amdgpu" "i2c_dev" "iwlwifi" "iwlmvm" ];
       luks.devices."root" = {
-        device = "/dev/disk/by-uuid/a1a6982e-78b9-49ae-9563-a60c7f3ec282";
+        device = "/dev/disk/by-uuid/84f48267-abae-4386-9f7f-b1cc6269a522";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
         # if not specified, you will be prompted for a passphrase instead.
         #keyFile = "/root-part.key";
@@ -92,28 +92,35 @@
 
     # "/" =
     #   {
-    #     device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+    #     device = "/dev/disk/by-uuid/ca839182-de42-4120-8c77-e640d72299bd";
     #     fsType = "btrfs";
     #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@" ];
     #   };
 
+    # "/home" =
+    #   {
+    #     device = "/dev/disk/by-uuid/ca839182-de42-4120-8c77-e640d72299bd";
+    #     fsType = "btrfs";
+    #     options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@home" ];
+    #   };
+
     "/nix" =
       {
-        device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+        device = "/dev/disk/by-uuid/ca839182-de42-4120-8c77-e640d72299bd";
         fsType = "btrfs";
         options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@nix" ];
       };
 
     "/snapshots" =
       {
-        device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+        device = "/dev/disk/by-uuid/ca839182-de42-4120-8c77-e640d72299bd";
         fsType = "btrfs";
         options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@snapshots" ];
       };
 
     "/persistent" =
       {
-        device = "/dev/disk/by-uuid/e42e5d91-8863-4773-bbe4-10aa8e8185b6";
+        device = "/dev/disk/by-uuid/ca839182-de42-4120-8c77-e640d72299bd";
         fsType = "btrfs";
         options = [ "noatime" "space_cache=v2" "compress-force=zstd" "ssd" "discard=async" "subvol=@persistent" ];
         # impermanence's data is required for booting
@@ -122,7 +129,7 @@
 
     "/boot" =
       {
-        device = "/dev/disk/by-uuid/3FEC-8D80";
+        device = "/dev/disk/by-uuid/51AE-572A";
         fsType = "vfat";
       };
   };
