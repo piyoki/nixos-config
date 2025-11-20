@@ -423,6 +423,7 @@ PROFILE=<profile name>
 ### Backup legacy configuration to persistent volume
 
 ```bash
+sudo mkdir -p /persistent/etc/nixos/
 sudo cp -r /etc/nixos /persistent/etc/
 ```
 
