@@ -2334,22 +2334,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-kernel": {
-      "locked": {
-        "lastModified": 1763678758,
-        "narHash": "sha256-+hBiJ+kG5IoffUOdlANKFflTT5nO3FrrR2CA3178Y5s=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "117cc7f94e8072499b0a7aa4c52084fa4e11cc9b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1738452942,
@@ -3233,7 +3217,6 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nix-fast-build": "nix-fast-build_2",
         "nixpkgs": "nixpkgs_17",
-        "nixpkgs-kernel": "nixpkgs-kernel",
         "nixpkgs-small": "nixpkgs-small",
         "nixpkgs-stable": "nixpkgs-stable_3",
         "nixpkgs-wayland": "nixpkgs-wayland",
