@@ -10,7 +10,7 @@
 # Commands to check the parameters of a kernel module:
 # modinfo -p <module>
 
-{ inputs, config, lib, pkgs, modulesPath, system, ... }:
+{ inputs, config, lib, pkgs, pkgs-kernel, modulesPath, system, ... }:
 
 {
   imports =
@@ -21,7 +21,7 @@
   boot = {
     # Use the systemd-boot EFI boot loader.
     # kernelPackages = inputs.chaotic-kernel.legacyPackages.${system}.linuxPackages_cachyos-lto;
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs-kernel.linuxPackages_latest;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
 
     loader = {
