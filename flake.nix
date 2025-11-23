@@ -21,6 +21,7 @@
       genSpecialArgs = system: {
         pkgs-small = (import nixpkgs-small) { inherit system config; };
         pkgs-stable = (import nixpkgs-stable) { inherit system; config.allowUnfree = lib.mkDefault true; };
+        pkgs-kernel = (import nixpkgs) { inherit system; config.allowUnfree = lib.mkDefault true; };
         inherit (import ./shared/lib { inherit lib; }) sharedLib;
         inherit inputs system user;
       };
@@ -129,6 +130,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-kernel.url = "github:nixos/nixpkgs/nixos-unstable";
     pilots.url = "github:NixOS-Pilots/pilots";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     chaotic-kernel.url = "github:chaotic-cx/nyx?rev=c4928ddfaf2fa4375e6cee429ad7d0ebd61222fd";
