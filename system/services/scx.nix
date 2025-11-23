@@ -13,7 +13,7 @@
 # 21:38:53 [INFO] DOM[01] cpumask 0000000000FC0FC0 (12 cpus)
 # 21:38:53 [INFO] Rusty Scheduler Attached
 
-{ pkgs, ... }:
+{ pkgs-kernel, ... }:
 
 {
   # --- Legacy Configuration ---
@@ -42,7 +42,7 @@
   # --- New Configuration ---
   services.scx = {
     enable = true;
-    package = pkgs.scx.full;
+    package = pkgs-kernel.scx.full;
     # one of "scx_bpfland", "scx_central", "scx_flatcg", "scx_lavd", "scx_layered", "scx_nest", "scx_pair", "scx_qmap", "scx_rlfifo", "scx_rustland", "scx_rusty", "scx_simple", "scx_userland"
     scheduler = "scx_bpfland";
   };
