@@ -158,11 +158,12 @@
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
-        amdvlk # AMD Open Source Driver For Vulkan
+        # 'amdvlk' has been removed since it was deprecated by AMD. Its replacement, RADV, is enabled by default.
+        # amdvlk # AMD Open Source Driver For Vulkan
         # AMD ROCm OpenCL runtime
         # AMD Common Language Runtime for hipamd, opencl, and rocclr
         rocmPackages.clr.icd
-        vaapiVdpau # VDPAU driver for the VAAPI library
+        libva-vdpau-driver # VDPAU driver for the VAAPI library
         libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
         libdrm # Direct Rendering Manager library and headers
       ];

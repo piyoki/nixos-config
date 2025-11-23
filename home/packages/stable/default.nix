@@ -7,5 +7,6 @@
 
     # development
     nodePackages_latest.vscode-json-languageserver # JSON language server
+    ansible-language-server # Ansible language server
   ];
 }

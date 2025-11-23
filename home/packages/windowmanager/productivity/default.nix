@@ -15,7 +15,7 @@
     minio-client # A replacement for ls, cp, mkdir, diff and rsync commands for filesystems and object storage
     pistol # General purpose file previewer designed for Ranger, Lf to make scope.sh redundant
     remmina # Remote desktop client written in GTK
-    rofi-wayland # Window switcher, run dialog and dmenu replacement for Wayland (App Launcher)
+    rofi # Window switcher, run dialog and dmenu replacement for Wayland (App Launcher)
     tdf # Tui-based PDF viewer
     thunderbird # A full-featured e-mail client
     trayscale # Unofficial GUI wrapper around the Tailscale CLI client

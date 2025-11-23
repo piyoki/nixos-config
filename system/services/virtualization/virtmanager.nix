@@ -24,10 +24,11 @@
       enable = true;
       qemu = {
         package = pkgs.qemu_kvm;
-        ovmf = {
-          packages = [ pkgs.OVMFFull.fd ];
-          enable = true;
-        };
+        # The 'virtualisation.libvirtd.qemu.ovmf' submodule has been removed. All OVMF images distributed with QEMU are now available by default.
+        # ovmf = {
+        #   packages = [ pkgs.OVMFFull.fd ];
+        #   enable = true;
+        # };
         swtpm.enable = true;
       };
     };

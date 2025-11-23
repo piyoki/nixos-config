@@ -6,7 +6,8 @@
 
 {
   home.packages = with pkgs; [
-    ansible-language-server # Ansible language server
+    # migrated to pkgs-stable
+    # ansible-language-server # Ansible language server
     bash-language-server # Bash language server
     buf # Language server for protocol buffers
     clang-tools # Clang tools and libraries
