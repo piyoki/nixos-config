@@ -23,7 +23,6 @@ As the date of writing (March 2024), I've committed myself switching to NixOS on
 ## Upstream inputs
 
 - [pilots](https://github.com/NixOS-Pilots) to get bleeding-edge softwares from NixOS-Pilots.
-- [chaotic](https://github.com/chaotic-cx/nyx) to get bleeding-edge softwares from nyx.
 - [home-manager](https://github.com/nix-community/home-manager) configurations as flake module.
 - [sops-nix](https://github.com/Mic92/sops-nix) to decrypt in-flight secrets from remote.
 - [nixpkgs-wayland](https://github.com/nix-community/nixpkgs-wayland) to fetch up-to-date wayland packages for daily usage.

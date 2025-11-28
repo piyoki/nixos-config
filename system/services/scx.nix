@@ -1,5 +1,4 @@
 # References:
-# https://github.com/chaotic-cx/nyx/issues/460
 # https://github.com/sched-ext/scx
 
 # Debug:
