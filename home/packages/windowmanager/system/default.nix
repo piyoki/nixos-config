@@ -1,3 +1,8 @@
+# References:
+
+# ffmpeg commands to compress video
+# ffmpeg -i input.mp4 -vcodec h264 -b:v 700k -acodec mp3 output.mp4
+
 { inputs, pkgs, ... }:
 
 {
