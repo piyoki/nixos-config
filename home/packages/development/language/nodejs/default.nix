@@ -8,6 +8,7 @@
 
     nodePackages.prettier # Opinionated code formatter
     nodePackages.vercel # Vercel CLI
+    nodePackages_latest.vscode-json-languageserver # JSON language server
     prisma # Next-generation ORM for Node.js and TypeScript
   ];
 }
