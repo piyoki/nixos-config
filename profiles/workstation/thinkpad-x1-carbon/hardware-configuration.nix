@@ -22,7 +22,7 @@
 # View options of a specific kernel module
 # sudo modinfo i915 | egrep -i "guc|huc|dmc"
 
-{ inputs, config, lib, pkgs, modulesPath, system, ... }:
+{ config, lib, pkgs, modulesPath, system, ... }:
 
 {
   imports =
@@ -32,8 +32,7 @@
 
   boot = {
     # Use the systemd-boot EFI boot loader.
-    kernelPackages = inputs.chaotic-kernel.legacyPackages.${system}.linuxPackages_cachyos-lto;
-    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ext4" "btrfs" "xfs" "fat" "vfat" "cifs" "nfs" ];
 
     loader = {
@@ -180,9 +179,6 @@
     # CPU
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
-
-  # OpenGL (mesa-git)
-  # chaotic.mesa-git.enable = true;
 
   # Extra hardware packages
   environment.systemPackages = with pkgs; [

@@ -10,7 +10,6 @@ env:
   OWNER: piyoki
   TARGETS: |
     pilots
-    chaotic
     sops-nix
     nixpkgs-wayland
     waybar

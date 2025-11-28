@@ -14,7 +14,6 @@
       specialArgs = genSpecialArgs system;
       extraModules = [
         sops-nix.nixosModules.sops
-        chaotic.nixosModules.default
         auto-cpufreq.nixosModules.default
       ];
       # function to generate specialArgs
@@ -129,8 +128,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     pilots.url = "github:NixOS-Pilots/pilots";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    chaotic-kernel.url = "github:chaotic-cx/nyx?rev=c4928ddfaf2fa4375e6cee429ad7d0ebd61222fd";
     # home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     home-manager = { url = "github:nix-community/home-manager/release-25.05"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix.url = "github:Mic92/sops-nix";
