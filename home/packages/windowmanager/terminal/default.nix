@@ -1,4 +1,4 @@
-{ inputs, pkgs, system, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -9,7 +9,7 @@
     graphicsmagick
     gzip
     imagemagick
-    inputs.nixpkgs-wayland.packages.${system}.imv # A command line image viewer for tiling window managers
+    imv # A command line image viewer for tiling window managers
     jp2a # A small utility that converts JPG images to ASCII
     vivid
     zoxide
