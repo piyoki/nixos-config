@@ -10,7 +10,7 @@
 # Commands to check the parameters of a kernel module:
 # modinfo -p <module>
 
-{ config, lib, pkgs, modulesPath, system, ... }:
+{ pkgs-unstable, config, lib, pkgs, modulesPath, system, ... }:
 
 {
   imports =
@@ -151,6 +151,12 @@
   hardware = {
     # linux-firmware
     enableAllFirmware = true;
+
+    # additional firmware packages
+    firmware = [
+      # use the latest firmware from nixpkgs-unstable
+      pkgs-unstable.linux-firmware
+    ];
 
     # GPU (OpenGL)
     # Command to check the current Mesa version: glxinfo | grep "OpenGL version"
