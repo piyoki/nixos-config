@@ -157,11 +157,13 @@
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
-        amdvlk # AMD Open Source Driver For Vulkan
+        # NOTE: amdvlk has been removed since it was deprecated by AMD. Its replacement, RADV, is enabled by default.
+        # amdvlk # AMD Open Source Driver For Vulkan
         # AMD ROCm OpenCL runtime
         # AMD Common Language Runtime for hipamd, opencl, and rocclr
         rocmPackages.clr.icd
-        vaapiVdpau # VDPAU driver for the VAAPI library
+        # vaapiVdpau has been renamed to/replaced by 'libva-vdpau-driver'
+        libva-vdpau-driver # VDPAU driver for the VAAPI library
         libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
         libdrm # Direct Rendering Manager library and headers
       ];
@@ -179,7 +181,9 @@
     libva-utils # A collection of utilities and examples for VA-API
     cpufetch # Simplistic yet fancy CPU architecture fetching tool
     vulkan-tools # Khronos official Vulkan Tools and Utilities
-    glxinfo # Test utilities for OpenGL
+    # glxinfo # rename to mesa-demos
+    mesa-demos # Test utilities for OpenGL
+    # Test utilities for OpenGL
     acpi # Show battery status and other ACPI information
   ];
 

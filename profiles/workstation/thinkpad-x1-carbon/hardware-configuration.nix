@@ -188,7 +188,8 @@
     libva-utils # A collection of utilities and examples for VA-API
     cpufetch # Simplistic yet fancy CPU architecture fetching tool
     vulkan-tools # Khronos official Vulkan Tools and Utilities
-    glxinfo # Test utilities for OpenGL
+    # glxinfo # rename to mesa-demos
+    mesa-demos # Test utilities for OpenGL
     acpi # Show battery status and other ACPI information
   ];
 

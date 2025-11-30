@@ -7,8 +7,8 @@
       cantarell-fonts
       maple-mono.NF
       noto-fonts
-      noto-fonts-extra
-      noto-fonts-emoji
+      noto-fonts
+      noto-fonts-color-emoji
       noto-fonts-emoji-blob-bin
       source-code-pro
 

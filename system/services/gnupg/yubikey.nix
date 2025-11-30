@@ -9,7 +9,7 @@
     libusb-compat-0_1
     opensc # Set of libraries and utilities to access smart cards
     pam_u2f
-    pcsctools # Tools used to test a PC/SC driver, card or reader
+    pcsc-tools # Tools used to test a PC/SC driver, card or reader
     yubico-pam
     yubikey-personalization # A library and command line tool to personalize YubiKeys
   ];
