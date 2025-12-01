@@ -10,7 +10,7 @@ env:
   OWNER: piyoki
   TARGETS: |
     nixpkgs
-    nixpkgs-small
+    nixpkgs-unstable
     home-manager
   PR_LABELS: |
     flake-lock
@@ -31,8 +31,8 @@ jobs:
 
       - uses: actions/checkout@main
         with:
-        #   ref: master
-        #   submodules: true
+          #   ref: master
+          #   submodules: true
           token: ${{ steps.generate_token.outputs.token }}
 
       - uses: DeterminateSystems/nix-installer-action@main
