@@ -18,7 +18,7 @@
       ];
       # function to generate specialArgs
       genSpecialArgs = system: {
-        pkgs-stable = (import nixpkgs-stable) { inherit system; config.allowUnfree = lib.mkDefault true; };
+        pkgs-unstable = (import nixpkgs-unstable) { inherit system; config.allowUnfree = lib.mkDefault true; };
         inherit (import ./shared/lib { inherit lib; }) sharedLib;
         inherit inputs system user;
       };
