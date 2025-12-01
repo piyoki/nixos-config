@@ -131,11 +131,11 @@
         "waybar-universal": "waybar-universal"
       },
       "locked": {
-        "lastModified": 1764551169,
-        "narHash": "sha256-7LG9vJxqaH3exIAz+Mv4reV/u+VuF/iyvgq27IZnLgM=",
+        "lastModified": 1764551476,
+        "narHash": "sha256-go/U6XmYZRPWmHGkGFdHW1mMH3aTUDZ0KUcnjJm4e4o=",
         "ref": "master",
-        "rev": "532af1134c5f906263cc520affe526a3cb706f77",
-        "revCount": 498,
+        "rev": "74d9f6706f771ced5e6d39d518ef90b080b5cb16",
+        "revCount": 499,
         "type": "git",
         "url": "https://github.com/piyoki/dotfiles.nix"
       },
@@ -881,11 +881,11 @@
     "hypr-universal": {
       "flake": false,
       "locked": {
-        "lastModified": 1764551058,
-        "narHash": "sha256-lakGcYkUETWIAIujpIi1fFsAZZzwhJjvrOOxYJhKeDs=",
+        "lastModified": 1764551430,
+        "narHash": "sha256-GcLdTYyarGvOTG1UX1sG5CXdmgXQQjnnzAsJIJT2B2o=",
         "owner": "piyoki",
         "repo": "dot-hypr",
-        "rev": "78d9ad0b07a4f3e6fb0bf13bb8ff011b8172ae95",
+        "rev": "768ac42b56b258b9709d9ced82c5359e10b40a1e",
         "type": "github"
       },
       "original": {
