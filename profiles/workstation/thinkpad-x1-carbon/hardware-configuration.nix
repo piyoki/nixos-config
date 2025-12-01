@@ -42,7 +42,7 @@
 
     initrd = {
       availableKernelModules = [ "xe" "i915" "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "lz4" ];
-      kernelModules = [ "xe" "i915" "i2c_dev" "coretemp" ];
+      kernelModules = [ "xe" "i915" ];
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/7683f610-627e-442e-8bfd-6b038291c603";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
@@ -59,7 +59,8 @@
       };
     };
 
-    kernelModules = [ "kvm-intel" ];
+    # NOTE: boot.kernelModules are loaded later in stage‑2 (after switching to the real root, when full firmware and configs are available). Use these for drivers that aren’t required to bring up the root filesystem but should be present once the system proper starts
+    kernelModules = [ "kvm-intel" "i2c_dev" "coretemp" "iwlwifi" "iwlmvm" ];
     # NOTE:
     # ---
     # "random.trust_cpu=off" - CPU forced to gather more entropy from other sources
