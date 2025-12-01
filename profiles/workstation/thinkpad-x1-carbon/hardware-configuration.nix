@@ -171,7 +171,9 @@
         intel-media-driver # Intel Media Driver for VAAPI; # LIBVA_DRIVER_NAME=iHD
         intel-vaapi-driver # VAAPI user mode driver for Intel Gen Graphics family; # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
         # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-        vaapiVdpau # VDPAU driver for the VAAPI library
+        #
+        # vaapiVdpau has been renamed to/replaced by 'libva-vdpau-driver'
+        libva-vdpau-driver # VDPAU driver for the VAAPI library
         libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
         libdrm # Direct Rendering Manager library and headers
       ];
