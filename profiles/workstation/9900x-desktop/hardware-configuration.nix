@@ -10,7 +10,7 @@
 # Commands to check the parameters of a kernel module:
 # modinfo -p <module>
 
-{ config, lib, pkgs, modulesPath, system, ... }:
+{ config, lib, pkgs, pkgs-unstable, modulesPath, system, ... }:
 
 {
   imports =
@@ -30,7 +30,8 @@
 
     initrd = {
       availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "lz4" ];
-      kernelModules = [ "amdgpu" "i2c_dev" "iwlwifi" "iwlmvm" ];
+      # Load Wi‑Fi modules after root is mounted so full firmware set is available
+      kernelModules = [ "amdgpu" ];
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/84f48267-abae-4386-9f7f-b1cc6269a522";
         # the keyfile(or device partition) that should be used as the decryption key for the encrypted device.
@@ -47,7 +48,8 @@
       };
     };
 
-    kernelModules = [ "kvm-amd" ];
+    # NOTE: boot.kernelModules are loaded later in stage‑2 (after switching to the real root, when full firmware and configs are available). Use these for drivers that aren’t required to bring up the root filesystem but should be present once the system proper starts
+    kernelModules = [ "kvm-amd" "i2c_dev" "iwlwifi" "iwlmvm" ];
     # NOTE:
     # "amd_pstate=active" - CPU frequency control mechanism
     # "amdgpu.sg_display=0" - # Resolve flickering issue on Wayland
@@ -152,16 +154,24 @@
     # linux-firmware
     enableAllFirmware = true;
 
+    # Ensure non-free firmware is allowed and included
+    enableRedistributableFirmware = true;
+
+    # Use unstable linux-firmware for latest hardware support
+    firmware = with pkgs-unstable; [ linux-firmware ];
+
     # GPU (OpenGL)
     # Command to check the current Mesa version: glxinfo | grep "OpenGL version"
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
-        amdvlk # AMD Open Source Driver For Vulkan
+        # NOTE: amdvlk has been removed since it was deprecated by AMD. Its replacement, RADV, is enabled by default.
+        # amdvlk # AMD Open Source Driver For Vulkan
         # AMD ROCm OpenCL runtime
         # AMD Common Language Runtime for hipamd, opencl, and rocclr
         rocmPackages.clr.icd
-        vaapiVdpau # VDPAU driver for the VAAPI library
+        # vaapiVdpau has been renamed to/replaced by 'libva-vdpau-driver'
+        libva-vdpau-driver # VDPAU driver for the VAAPI library
         libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
         libdrm # Direct Rendering Manager library and headers
       ];
@@ -179,7 +189,9 @@
     libva-utils # A collection of utilities and examples for VA-API
     cpufetch # Simplistic yet fancy CPU architecture fetching tool
     vulkan-tools # Khronos official Vulkan Tools and Utilities
-    glxinfo # Test utilities for OpenGL
+    # glxinfo # rename to mesa-demos
+    mesa-demos # Test utilities for OpenGL
+    # Test utilities for OpenGL
     acpi # Show battery status and other ACPI information
   ];
 

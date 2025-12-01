@@ -12,7 +12,10 @@
   ];
 
   networking = {
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.backend = "wpa_supplicant";
+    };
     nftables.enable = true;
   };
 }

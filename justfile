@@ -88,6 +88,11 @@ prefetch-git repo rev:
 repl:
   @nix repl -f flake:nixpkgs
 
+# search dependencies in nixpkgs
+search-deps pkg:
+  @nix why-depends /run/current-system $(nix-build '<nixpkgs>' -A {{ pkg }})
+
+
 # garbage collect all unused nix store entries older than x days
 gc days:
   @sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than {{ days }}d
