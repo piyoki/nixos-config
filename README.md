@@ -39,8 +39,6 @@ As the date of writing (March 2024), I've committed myself switching to NixOS on
 
 - [hyprland](https://github.com/hyprwm/Hyprland) to fetch up-to-date Hyprland packages for daily usage.
 - [pyprland](https://github.com/hyprland-community/pyprland) to fetch up-to-date Hyprland plugins for daily usage.
-- [hyprlock](https://github.com/hyprwm/hyprlock) to fetch up-to-date hyprlock package for daily usage.
-- [hyprpaper](https://github.com/hyprwm/hyprpaper) to fetch up-to-date hyprpaper package for daily usage.
 
 ## References
 
