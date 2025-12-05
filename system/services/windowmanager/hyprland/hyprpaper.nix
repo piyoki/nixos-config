@@ -2,8 +2,8 @@
 # https://github.com/hyprwm/hyprpaper
 # https://wiki.hyprland.org/Hypr-Ecosystem/hyprpaper/
 
-{ inputs, system, ... }:
+{ pkgs, ... }:
 
 {
-  environment.systemPackages = [ inputs.hyprpaper.packages.${system}.hyprpaper ];
+  environment.systemPackages = with pkgs; [ hyprpaper ];
 }
