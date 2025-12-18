@@ -134,7 +134,7 @@
     waybar = { url = "github:Alexays/Waybar"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=2&ref=refs/tags/v0.52.2"; };
     # hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=1&rev=0ed880f3f7dc2c746bf3590eee266c010d737558"; };
-    pyprland = { url = "git+https://github.com/hyprland-community/pyprland?ref=refs/tags/2.5.0"; };
+    pyprland = { url = "git+https://github.com/hyprland-community/pyprland?ref=refs/tags/2.5.1"; };
     rust-nightly-overlay = { url = "github:nix-community/fenix"; };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     impermanence.url = "github:nix-community/impermanence";
