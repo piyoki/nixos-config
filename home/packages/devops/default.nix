@@ -19,5 +19,10 @@
 
     # containerization
     buildkit # Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit
+
+    # infrastructure management
+    terraform # Infrastructure as Code software tool
+    terragrunt # Thin wrapper for Terraform that provides extra tools for keeping your configurations DRY
+    terraform-docs # Generate documentation from Terraform modules in various formats
   ];
 }
