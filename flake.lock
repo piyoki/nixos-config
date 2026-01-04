@@ -951,17 +951,17 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1767021696,
-        "narHash": "sha256-q365S7ePBQStSDPEzssCU14TzRqdKzEdh0+0rR2KDnU=",
-        "ref": "refs/tags/v0.53.0",
-        "rev": "ea444c35bb23b6e34505ab6753e069de7801cc25",
-        "revCount": 6756,
+        "lastModified": 1767388857,
+        "narHash": "sha256-h70Tlpce8NEkwWqw/DDpeOKPzPyfq7P2t0HtGM5Z3Cw=",
+        "ref": "refs/tags/v0.53.1",
+        "rev": "ab1d80f3d6aebd57a0971b53a1993b1c1dfe0b09",
+        "revCount": 6766,
         "submodules": false,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
       },
       "original": {
-        "ref": "refs/tags/v0.53.0",
+        "ref": "refs/tags/v0.53.1",
         "submodules": false,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
