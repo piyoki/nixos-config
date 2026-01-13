@@ -142,6 +142,7 @@
     microvm = { url = "github:astro/microvm.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
     nix-fast-build.url = "github:Mic92/nix-fast-build";
     auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
+    hyprsession.url = "github:joshurtree/hyprsession";
 
     # personal nur
     nur.url = "github:piyoki/nur-packages";
