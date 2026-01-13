@@ -8,6 +8,7 @@
     ./hyprpaper.nix
     ./hypridle.nix
     ./hyprlock.nix
+    ./hyprsession.nix
     ./pyprland.nix
     ./xdg-portal.nix
     ./xwayland.nix
