@@ -39,6 +39,7 @@ As the date of writing (March 2024), I've committed myself switching to NixOS on
 
 - [hyprland](https://github.com/hyprwm/Hyprland) to fetch up-to-date Hyprland packages for daily usage.
 - [pyprland](https://github.com/hyprland-community/pyprland) to fetch up-to-date Hyprland plugins for daily usage.
+- [hyprsession](https://github.com/joshurtree/hyprsession) to manage Hyprland sessions easily.
 
 ## References
 
