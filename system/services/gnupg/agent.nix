@@ -15,8 +15,8 @@
         settings = {
           enable-ssh-support = "";
           ttyname = "$GPG_TTY";
-          default-cache-ttl = 60;
-          max-cache-ttl = 120;
+          default-cache-ttl = 600;
+          max-cache-ttl = 7200;
           allow-loopback-pinentry = "";
         };
       };
