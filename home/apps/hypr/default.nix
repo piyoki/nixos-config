@@ -16,5 +16,6 @@ in
 
   config = {
     xdg.configFile."hypr".source = inputs.dotfiles.packages.${system}."hypr-${cfg.profile}" + "/";
+    xdg.configFile."pypr/config.toml".source = inputs.dotfiles.packages.${system}."hypr-${cfg.profile}" + "/pyprland.toml";
   };
 }
