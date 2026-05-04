@@ -10,6 +10,7 @@ env:
   OWNER: piyoki
   TARGETS: |
     nixpkgs
+    nixpkgs-unstable
     home-manager
   PR_LABELS: |
     flake-lock
