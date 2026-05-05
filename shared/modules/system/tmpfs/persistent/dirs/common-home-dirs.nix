@@ -10,4 +10,6 @@
   ".tmux"
   ".tmuxifier"
   ".codex"
+  ".copilot"
+  ".claude"
 ]
